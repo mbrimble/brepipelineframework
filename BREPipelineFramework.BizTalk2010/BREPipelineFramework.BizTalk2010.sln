@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{20543A14-F5A4-455F-9E0E-415C8F553932}"
+	ProjectSection(SolutionItems) = preProject
+		BREPipelineFramework.snk = BREPipelineFramework.snk
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BREPipelineFramework.TestProject", "BREPipelineFramework.TestProject\BREPipelineFramework.TestProject.btproj", "{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BREPipelineFramework.UnitTests", "BREPipelineFramework.UnitTests\BREPipelineFramework.UnitTests.csproj", "{456A6B6A-61C4-48C2-9872-AE30C98029E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{8AB1DEFC-1F00-44C2-B457-E1561A6F0F6C}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\BREPipelineFramework.CustomBizUnitTestSteps.dll = Libs\BREPipelineFramework.CustomBizUnitTestSteps.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs13
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BREPipelineFramework.TestProject\\BREPipelineFramework.TestProject.btproj
+		SccProjectName1 = BREPipelineFramework.TestProject
+		SccLocalPath1 = BREPipelineFramework.TestProject
+		SccProjectUniqueName2 = BREPipelineFramework.UnitTests\\BREPipelineFramework.UnitTests.csproj
+		SccProjectName2 = BREPipelineFramework.UnitTests
+		SccLocalPath2 = BREPipelineFramework.UnitTests
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Without UnitTests|Any CPU = Debug Without UnitTests|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}.Debug Without UnitTests|Any CPU.ActiveCfg = Debug Without UnitTests|Any CPU
+		{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}.Debug Without UnitTests|Any CPU.Build.0 = Debug Without UnitTests|Any CPU
+		{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}.Debug Without UnitTests|Any CPU.Deploy.0 = Debug Without UnitTests|Any CPU
+		{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{456A6B6A-61C4-48C2-9872-AE30C98029E3}.Debug Without UnitTests|Any CPU.ActiveCfg = Debug Without UnitTests|Any CPU
+		{456A6B6A-61C4-48C2-9872-AE30C98029E3}.Debug Without UnitTests|Any CPU.Build.0 = Debug Without UnitTests|Any CPU
+		{456A6B6A-61C4-48C2-9872-AE30C98029E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{456A6B6A-61C4-48C2-9872-AE30C98029E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{456A6B6A-61C4-48C2-9872-AE30C98029E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{456A6B6A-61C4-48C2-9872-AE30C98029E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

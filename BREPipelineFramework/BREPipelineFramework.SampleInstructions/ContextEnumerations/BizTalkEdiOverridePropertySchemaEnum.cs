@@ -1,0 +1,82 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace BREPipelineFramework.SampleInstructions
+{
+    /// <summary>
+    /// See http://msdn.microsoft.com/en-us/library/dd210685(v=bts.10).aspx for an explanation of the EDI Override context properties
+    /// </summary>
+    public enum BizTalkEdiOverridePropertySchemaEnum
+    {
+        edi_properties = 0,
+        GenerateUNA = 1,
+        GenerateUNG = 2,
+        GS01 = 3,
+        GS02 = 4,
+        GS03 = 5,
+        GS04 = 6,
+        GS05 = 7,
+        GS06 = 8,
+        GS07 = 9,
+        GS08 = 10,
+        ISA01 = 11,
+        ISA02 = 12,
+        ISA03 = 13,
+        ISA04 = 14,
+        ISA05 = 15,
+        ISA06 = 16,
+        ISA07 = 17,
+        ISA08 = 18,
+        ISA09 = 19,
+        ISA10 = 20,
+        ISA11 = 21,
+        ISA12 = 22,
+        ISA13 = 23,
+        ISA14 = 24,
+        ISA15 = 25,
+        ISA16 = 26,
+        OverrideEDIHeader = 27,
+        ST02 = 28,
+        UNA1 = 29,
+        UNA2 = 30,
+        UNA3 = 31,
+        UNA4 = 32,
+        UNA5 = 33,
+        UNA6 = 34,
+        UNA6Suffix = 35,
+        UNB1_1 = 36,
+        UNB1_2 = 37,
+        UNB10 = 38,
+        UNB11 = 39,
+        UNB2_2 = 40,
+        UNB2_3 = 41,
+        Unb21 = 42,
+        UNB3_2 = 43,
+        UNB3_3 = 44,
+        Unb31 = 45,
+        UNB4_1 = 46,
+        UNB4_2 = 47,
+        UNB5 = 48,
+        UNB6_1 = 49,
+        UNB6_2 = 50,
+        UNB7 = 51,
+        UNB8 = 52,
+        UNB9 = 53,
+        UNG1 = 54,
+        UNG2_2 = 55,
+        Ung21 = 56,
+        UNG3_2 = 57,
+        Ung31 = 58,
+        UNG4_1 = 59,
+        UNG4_2 = 60,
+        UNG5 = 61,
+        UNG6 = 62,
+        UNG7_1 = 63,
+        UNG7_2 = 64,
+        UNG7_3 = 65,
+        UNG8 = 66,
+        UNH1 = 67
+    }
+}

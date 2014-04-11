@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{456A6B6A-61C4-48C2-9872-AE30C98029E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BREPipelineFramework.UnitTests</RootNamespace>
+    <AssemblyName>BREPipelineFramework.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Without UnitTests|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug Without UnitTests\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\BREPipelineFramework.UnitTests.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Without UnitTests|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug Without UnitTests\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BizUnit, Version=4.0.154.0, Culture=neutral, PublicKeyToken=8ab3cc29608bfce0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\BizUnit.dll</HintPath>
+    </Reference>
+    <Reference Include="BizUnit.CoreSteps, Version=4.0.154.0, Culture=neutral, PublicKeyToken=8ab3cc29608bfce0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\BizUnit.CoreSteps.dll</HintPath>
+    </Reference>
+    <Reference Include="BizUnit.TestSteps, Version=4.0.154.0, Culture=neutral, PublicKeyToken=8ab3cc29608bfce0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\BizUnit.TestSteps.dll</HintPath>
+    </Reference>
+    <Reference Include="BizUnit.TestSteps.BizTalk, Version=4.0.154.0, Culture=neutral, PublicKeyToken=7eb7d82981ae5162, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\BizUnit.TestSteps.BizTalk.dll</HintPath>
+    </Reference>
+    <Reference Include="BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="BREPipelineFramework.CustomBizUnitTestSteps, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\BREPipelineFramework.CustomBizUnitTestSteps.dll</HintPath>
+    </Reference>
+    <Reference Include="BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\BREPipelineFramework.Helpers\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Edi.BaseArtifacts, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.BizTalk.Pipeline, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.BizTalk.Streaming, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.BizTalk.XPathReader, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.XLANGs.BaseTypes, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="xmlunit, Version=0.3.0.0, Culture=neutral, PublicKeyToken=f91c5db14588c7d5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\xmlunit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContextMetaInstructionsTest.cs" />
+    <Compile Include="FrameworkTests.cs" />
+    <Compile Include="CustomMetaInstructionsTests.cs" />
+    <Compile Include="HelperMetaInstructionsTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestHelpers.cs" />
+    <Compile Include="XPathCollection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sample Files\Input Context Files\" />
+    <Folder Include="Sample Files\Output Files\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Instructions - Setup steps in order to ensure tests can run.txt" />
+    <Content Include="Sample Files\Input Files\Test1.xml" />
+    <Content Include="Sample Files\Input Files\Message.xml" />
+    <Content Include="Sample Files\Input Files\TestEnvelope.xml" />
+    <Content Include="Sample Files\Input Files\Test.txt" />
+    <Content Include="Sample Files\Input Files\Test.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_ReplaceDocumentNamespace Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_ReplaceDocumentNamespaceAndPrefix Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_DuplicateHelperMetaInstructions Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_DuplicateContextMetaInstructions Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_CustomMetaInstruction Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_GetPartyNameFromAliasNotFoundNoException Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_GetPartyNameFromAliasNotFoundException Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_GetPartyNameFromAlias Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_AddDocumentNamespaceAndPrefix Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_AddDocumentNamespace Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_ThrowException Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_RemoveContextProperty Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_GetStringLength Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_RoundCurrentTime Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_ValidateStringLength_Success Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_ValidateStringLength_Fail Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_ConcatenateString Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_GenerateGUID Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_GetFileExtension Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_GetLowercaseString Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_GetUppercaseString Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_GetXPathResult Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_ReplaceSubstring Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_NotEnabled Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Set_Multiple Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Get_Multiple Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_Get_FILE_ReceivedFileName Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_Get_CustomProperty_Int Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_Get_WCF_Action Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_Get_SQL_ConnectionString Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_Get_XMLNORM_PreserveBom Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_Get_WSS_Url Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_Get_SMTP_From Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_Get_BTS_DestinationParty Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_Set_CustomProperty_DateTime Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Set_CustomProperty_Boolean Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Set_CustomProperty_Int Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Set_CustomProperty_String Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Set_SSO Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Set_XPath_Namespace Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Set_XPath_Name Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Set_XPath_Value Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Set_SMTP_From Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Set_WSS_Url Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Set_XMLNORM_PreserveBom Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Set_SQL_ConnectionString Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Set_BTS_DestinationParty Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Set_WCF_Action Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Set_FILE_ReceivedFileName Config.xml" />
+    <Content Include="Sample Files\Party config\Parties.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

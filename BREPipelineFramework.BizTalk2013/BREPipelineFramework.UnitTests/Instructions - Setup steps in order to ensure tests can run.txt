@@ -1,0 +1,5 @@
+﻿In order to ensure that unit tests can run you must do the below
+-Deploy the BREPipelineFramework.TestProject project in debug build profile
+-Import the BREPipelineFramework.sso file from Solution Items into the SSO Application Configuration MMC (password in the "BREPipelineFramework SSO Password.txt" file)
+-Import and deploy the policies contained in BRE Artifacts\Policies to the Business rules database via the Business Rules Engine Deployment Wizard
+-GAC all the BizUnit dlls in the Libs folder as well as the BREPipelineFramework.CustomBizUnitTestSteps project

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
+  <vocabulary id="d55d0669-9307-4290-bbe8-a81bd7417c65" name="BREPipelineFramework" uri="" description="">
+    <version major="1" minor="0" description="" modifiedby="johannc" date="2012-11-19T16:07:20.2249862+13:00" />
+    <vocabularydefinition id="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" name="ApplicationContext" description="">
+      <bindingdefinition>
+        <classbindingdefinition>
+          <classinfo class="String" instance="0">
+            <assembly>mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</assembly>
+            <!--C:\Windows\Microsoft.NET\Framework\v4.0.30319\mscorlib.dll-->
+            <namespace>System</namespace>
+          </classinfo>
+        </classbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="The context or name of the calling application (pipeline / orchestration / class etc...)" />
+    </vocabularydefinition>
+    <vocabularydefinition id="41ac688f-5a34-488e-a3fd-073d168fc3eb" name="AddMetaInstruction" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AddMetaInstruction" type="void">
+          <classinfo class="BREPipelineMetaInstructionCollection" instance="0">
+            <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
+            <namespace>BREPipelineFramework</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Instantiate and load a MetaInstruction object with a fully qualified class name of {0} and a fully qualified assembly name of {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+  </vocabulary>
+</brl>

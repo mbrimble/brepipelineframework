@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
+  <ruleset name="BREPipelineFramework InstructionLoaderPolicy">
+    <version major="1" minor="2" description="" modifiedby="DATACOM\johannc" date="2014-02-12T23:45:01.0874674+13:00" />
+    <version major="1" minor="0" description="" modifiedby="DATACOM\johannc" date="2014-02-12T23:45:11.8067979+13:00" />
+    <configuration />
+    <bindings>
+      <class ref="BREPipelineMetaInstructionCollection" class="BREPipelineMetaInstructionCollection" instance="0" instances="16" selectivity="1">
+        <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+        <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
+        <namespace>BREPipelineFramework</namespace>
+      </class>
+    </bindings>
+    <rule name="Instantiate Test Custom MetaInstruction" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <reference>
+              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
+              <classref ref="string" />
+            </reference>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>Test_CustomMetaInstruction</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="41ac688f-5a34-488e-a3fd-073d168fc3eb" />
+          <classmember member="AddMetaInstruction" sideeffects="true">
+            <classref ref="BREPipelineMetaInstructionCollection" />
+            <argument>
+              <constant>
+                <string>BREPipelineFramework.TestSampleInstructions.MetaInstruction</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>BREPipelineFramework.TestSampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="Duplicate HelperInstructions" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <reference>
+              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
+              <classref ref="string" />
+            </reference>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>Test_DuplicateHelperMetaInstructions</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="41ac688f-5a34-488e-a3fd-073d168fc3eb" />
+          <classmember member="AddMetaInstruction" sideeffects="true">
+            <classref ref="BREPipelineMetaInstructionCollection" />
+            <argument>
+              <constant>
+                <string>BREPipelineFramework.SampleInstructions.MetaInstructions.HelperMetaInstructions</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="Duplicate ContextInstructions" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <reference>
+              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
+              <classref ref="string" />
+            </reference>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>Test_DuplicateContextMetaInstructions</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="41ac688f-5a34-488e-a3fd-073d168fc3eb" />
+          <classmember member="AddMetaInstruction" sideeffects="true">
+            <classref ref="BREPipelineMetaInstructionCollection" />
+            <argument>
+              <constant>
+                <string>BREPipelineFramework.SampleInstructions.MetaInstructions.ContextMetaInstructions</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+  </ruleset>
+</brl>
