@@ -11,7 +11,7 @@ namespace BREPipelineFramework
     {
         #region Private/Internal properties
 
-        private List<IBREPipelineInstruction> instructionCollection;
+        private Dictionary<int, IBREPipelineInstruction> instructionCollection;
         private Exception _BREException = null;
         private IBaseMessage inMsg;
 
@@ -48,7 +48,7 @@ namespace BREPipelineFramework
         public BREPipelineMetaInstructionBase()
         {
             //Instantiate the instructionCollection so that Instructions can be added to it
-            this.instructionCollection = new List<IBREPipelineInstruction>();
+            this.instructionCollection = new Dictionary<int, IBREPipelineInstruction>();
         }
 
         #endregion
@@ -59,14 +59,14 @@ namespace BREPipelineFramework
         /// Add an Instruction to the collection of Instructions contained within this MetaInstruction
         /// </summary>
         /// <param name="instruction">Instruction to add to the collection</param>
-        public void AddInstruction(IBREPipelineInstruction instruction)
+        public virtual void AddInstruction(IBREPipelineInstruction instruction)
         {
-            instructionCollection.Add(instruction);
+            instructionCollection.Add(BREPipelineMetaInstructionCollection.GetLatestCounter(), instruction);
         }
 
         /// <summary>
-        /// Set an exception to the MetaInstruction rather than throwing it since thrown exceptions within policy execution aren't displayed well, the exception will
-        /// will be thrown by the Pipeline Component
+        /// Set an exception to the MetaInstruction rather than throwing it since thrown exceptions within policy execution aren't displayed well
+        /// (no longer true in v1.5 but still available if you want to explicitly thrown an exception) the exception will be thrown by the Pipeline Component
         /// </summary>
         /// <param name="exception"></param>
         public void SetException(Exception exception)
@@ -79,12 +79,35 @@ namespace BREPipelineFramework
         /// </summary>
         /// <param name="inmsg">The message to be manipulated by the </param>
         /// <param name="pc">The pipeline context</param>
-        public void ExecuteBREPipelineMetaInstruction(ref IBaseMessage inmsg, IPipelineContext pc)
+        public void ExecuteAllBREPipelineInstructions(ref IBaseMessage inmsg, IPipelineContext pc)
         {
             foreach (var instruction in instructionCollection)
             {
-                instruction.Execute(ref inmsg, pc);
+                instruction.Value.Execute(ref inmsg, pc);
             }
+        }
+
+        public virtual void ExecutionPreProcessing()
+        {
+            // No base implementation but derived classes are free to implement this method
+            // which will be called before instructions execute
+        }
+
+        public virtual void ExecutionPostProcessing()
+        {
+            // No base implementation but derived classes are free to implement this method
+            // which will be called after instructions execute
+        }
+
+        internal Dictionary<int, IBREPipelineInstruction> GetInstructionCollection()
+        {
+            return instructionCollection;
+        }
+
+        public virtual void Compensate()
+        {
+            // No base implementation but derived classes are free to implement this method
+            // which will be called in cases of exceptions executing MetaInstructions
         }
 
         #endregion

@@ -10,7 +10,8 @@ namespace BREPipelineFramework.Helpers
     /// </summary>
     public enum FailureActionEnum
     {
-        Exception,
-        DefaultForType
+        Exception = 0,
+        DefaultForType = 1,
+        Null = 2
     }
 }

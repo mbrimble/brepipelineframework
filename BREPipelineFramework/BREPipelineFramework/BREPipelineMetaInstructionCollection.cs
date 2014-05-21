@@ -6,6 +6,7 @@ using System.Reflection;
 using Microsoft.BizTalk.Message.Interop;
 using Microsoft.BizTalk.Component.Interop;
 using BREPipelineFramework.Helpers;
+using System.Diagnostics;
 
 namespace BREPipelineFramework
 {
@@ -14,11 +15,17 @@ namespace BREPipelineFramework
         #region Private Properties
 
         private SortedDictionary<string, BREPipelineMetaInstructionBase> metaInstructionCollection = new SortedDictionary<string, BREPipelineMetaInstructionBase>();
+        private SortedList<int, IBREPipelineInstruction> orderedInstructionList = new SortedList<int, IBREPipelineInstruction>();
         private IBaseMessage inMsg;
         private IPipelineContext pc;
         private Exception _BREException = null;
         private string executionPolicyOverride;
         private string applicationContextOverride;
+        private XMLFactsApplicationStageEnum xmlFactsApplicationStageOverride;
+        private InstructionExecutionOrderEnum instructionExecutionOrder;
+
+        [ThreadStatic]
+        public static int instructionCounter;
 
         #endregion
 
@@ -54,9 +61,34 @@ namespace BREPipelineFramework
             set { applicationContextOverride = value; }
         }
 
+        /// <summary>
+        /// Provides the ability to override the chosen XMLFactsApplictionStage during execution of the InstructionLoaderPolicy
+        /// </summary>
+        public XMLFactsApplicationStageEnum XmlFactsApplicationStageOverride
+        {
+            get { return xmlFactsApplicationStageOverride; }
+            set { xmlFactsApplicationStageOverride = value; }
+        }
+
+        #endregion
+
+        #region Constructors
+
+        public BREPipelineMetaInstructionCollection(XMLFactsApplicationStageEnum xmlFactsApplicationStageOverride, InstructionExecutionOrderEnum instructionExecutionOrder)
+        {
+            this.xmlFactsApplicationStageOverride = xmlFactsApplicationStageOverride;
+            this.instructionExecutionOrder = instructionExecutionOrder;
+        }
+
         #endregion
 
         #region Public Methods
+
+        public static int GetLatestCounter()
+        {
+            BREPipelineMetaInstructionCollection.instructionCounter = BREPipelineMetaInstructionCollection.instructionCounter + 1;
+            return BREPipelineMetaInstructionCollection.instructionCounter;
+        }
 
         /// <summary>
         /// Instantiate and add a MetaInstruction to the MetaInstructionCollection by specifying the MetaInstruction's class name and assembly name
@@ -95,12 +127,12 @@ namespace BREPipelineFramework
 
         public void AddMetaInstruction(BREPipelineMetaInstructionBase metaInstruction)
         {
-            string t = metaInstruction.GetType().ToString();
+            string key = metaInstruction.GetType().ToString();
 
-            if (!metaInstructionCollection.ContainsKey(t))
+            if (!metaInstructionCollection.ContainsKey(key))
             {
                 metaInstruction._InMsg = inMsg;
-                metaInstructionCollection.Add(t, metaInstruction);
+                metaInstructionCollection.Add(key, metaInstruction);
             }
         }
 
@@ -128,9 +160,54 @@ namespace BREPipelineFramework
         /// </summary>
         public void Execute()
         {
+            if (instructionExecutionOrder != InstructionExecutionOrderEnum.Legacy && instructionExecutionOrder != InstructionExecutionOrderEnum.RulesExecution)
+            {
+                throw new Exception("Unexpected InstructionExecutionOrder value of " + instructionExecutionOrder);
+            }
+
+
             foreach (var metaInstruction in metaInstructionCollection)
             {
-                metaInstruction.Value.ExecuteBREPipelineMetaInstruction(ref inMsg, pc);
+                metaInstruction.Value.ExecutionPreProcessing();
+
+                if (instructionExecutionOrder == InstructionExecutionOrderEnum.Legacy)
+                {
+                    metaInstruction.Value.ExecuteAllBREPipelineInstructions(ref inMsg, pc);
+                }
+            }
+            
+            if (instructionExecutionOrder == InstructionExecutionOrderEnum.RulesExecution)
+            {
+                foreach (var metaInstruction in metaInstructionCollection)
+                {
+                    Dictionary<int, IBREPipelineInstruction> instructions = metaInstruction.Value.GetInstructionCollection();
+
+                    foreach (var instruction in instructions)
+                    {
+                        orderedInstructionList.Add(instruction.Key, instruction.Value);
+                    }
+                }
+
+                foreach (var instruction in orderedInstructionList)
+                {
+                    instruction.Value.Execute(ref inMsg, pc);
+                }
+            }
+
+            foreach (var metaInstruction in metaInstructionCollection)
+            {
+                metaInstruction.Value.ExecutionPostProcessing();
+            }
+        }
+
+        /// <summary>
+        /// Compensate all the MetaInstructions in the MetaInstructionCollection
+        /// </summary>
+        public void Compensate()
+        {
+            foreach (var metaInstruction in metaInstructionCollection)
+            {
+                metaInstruction.Value.Compensate();
             }
         }
 
@@ -143,6 +220,7 @@ namespace BREPipelineFramework
             {
                 if (metaInstruction.Value.BREException != null)
                 {
+                    Compensate();
                     throw metaInstruction.Value.BREException;
                 }
             }

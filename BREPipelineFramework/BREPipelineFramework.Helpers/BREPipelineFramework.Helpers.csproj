@@ -69,6 +69,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Windows\assembly\GAC_MSIL\Microsoft.BizTalk.Streaming\3.0.1.0__31bf3856ad364e35\Microsoft.BizTalk.Streaming.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.BizTalk.Tracing, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.BizTalk.Tracing\3.0.1.0__31bf3856ad364e35\Microsoft.BizTalk.Tracing.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.BizTalk.XPathReader, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Windows\assembly\GAC_MSIL\Microsoft.BizTalk.XPathReader\3.0.1.0__31bf3856ad364e35\Microsoft.BizTalk.XPathReader.dll</HintPath>
@@ -88,13 +92,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddXmlNamespaceStream.cs" />
+    <Compile Include="CacheFailureEnum.cs" />
     <Compile Include="ContextInstructionTypeEnum.cs" />
     <Compile Include="ContextPropertyCreator.cs" />
+    <Compile Include="ContextPropertyNamespaces.cs" />
     <Compile Include="FailureActionEnum.cs" />
     <Compile Include="ObjectCreator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SSOConfigurationPropertyBag.cs" />
     <Compile Include="StaticHelpers.cs" />
+    <Compile Include="TimeEnum.cs" />
+    <Compile Include="TimeHelper.cs" />
+    <Compile Include="Tracing\ComponentTraceProvider.cs" />
+    <Compile Include="Tracing\ExceptionFormatter.cs" />
+    <Compile Include="Tracing\FrameworkUtility.cs" />
+    <Compile Include="Tracing\Guard.cs" />
+    <Compile Include="Tracing\HighResTimer.cs" />
+    <Compile Include="Tracing\IComponentTraceProvider.cs" />
+    <Compile Include="Tracing\TraceManager.cs" />
     <Compile Include="TypeCaster.cs" />
     <Compile Include="TypeEnum.cs" />
     <Compile Include="XPathInstruction.cs" />

@@ -16,8 +16,18 @@ namespace BREPipelineFramework.SampleInstructions.Instructions
         private ContextInstructionTypeEnum promotion;
         private object value;
         private TypeEnum type;
+        private bool castRequired = false;
 
         public SetContextPropertyPipelineInstruction(string propertyName, string propertyNamespace, object value, ContextInstructionTypeEnum promotion, TypeEnum type)
+        {
+            this.propertyName = propertyName;
+            this.propertyNamespace = propertyNamespace;
+            this.promotion = promotion;
+            this.value = value;
+            this.castRequired = true;
+        }
+
+        public SetContextPropertyPipelineInstruction(string propertyName, string propertyNamespace, object value, ContextInstructionTypeEnum promotion)
         {
             this.propertyName = propertyName;
             this.propertyNamespace = propertyNamespace;
@@ -29,13 +39,27 @@ namespace BREPipelineFramework.SampleInstructions.Instructions
         {
             try
             {
-                if (promotion == ContextInstructionTypeEnum.Write)
+                if (castRequired)
                 {
-                    inmsg.Context.Write(propertyName, propertyNamespace, TypeCaster.GetTypedObject(value, type));
+                    if (promotion == ContextInstructionTypeEnum.Write)
+                    {
+                        inmsg.Context.Write(propertyName, propertyNamespace, TypeCaster.GetTypedObject(value, type));
+                    }
+                    else if (promotion == ContextInstructionTypeEnum.Promote)
+                    {
+                        inmsg.Context.Promote(propertyName, propertyNamespace, TypeCaster.GetTypedObject(value, type));
+                    }
                 }
-                else if (promotion == ContextInstructionTypeEnum.Promote)
+                else
                 {
-                    inmsg.Context.Promote(propertyName, propertyNamespace, TypeCaster.GetTypedObject(value, type));
+                    if (promotion == ContextInstructionTypeEnum.Write)
+                    {
+                        inmsg.Context.Write(propertyName, propertyNamespace, value);
+                    }
+                    else if (promotion == ContextInstructionTypeEnum.Promote)
+                    {
+                        inmsg.Context.Promote(propertyName, propertyNamespace, value);
+                    }
                 }
             }
             catch (Exception e)

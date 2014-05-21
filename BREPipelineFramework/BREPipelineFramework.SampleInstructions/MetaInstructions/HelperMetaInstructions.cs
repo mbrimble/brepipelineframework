@@ -14,6 +14,8 @@ using System.Data.SqlClient;
 using System.Data;
 using BREPipelineFramework.SampeInstructions.Instructions;
 using System.Text.RegularExpressions;
+using BREPipelineFramework.SampleInstructions.Instructions;
+using BREPipelineFramework.Helpers.Tracing;
 
 namespace BREPipelineFramework.SampleInstructions.MetaInstructions
 {
@@ -23,6 +25,7 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
 
         private FindReplaceStringInstruction findReplaceStringInstruction = null;
         private string bodyString;
+        private string callToken = Guid.NewGuid().ToString();
 
         public string BodyString
         {
@@ -210,6 +213,9 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
                             break;
                         case XPathResultTypeEnum.Value:
                             value = xPathReader.ReadString();
+                            break;
+                        default:
+                            base.SetException(new Exception(string.Format("Unexpected xpath result type of {0} encountered", _XPathResultType.ToString())));
                             break;
                     }
                 }
@@ -498,6 +504,30 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
 
 			return party;
 		}
+
+        /// <summary>
+        /// Transform a message using the specified map class
+        /// </summary>
+        public void TransformMessage(string mapClassName, string mapAssemblyName)
+        {
+            TransformationInstruction instruction = new TransformationInstruction(mapClassName, mapAssemblyName);
+            base.AddInstruction(instruction);
+        }
+
+        /// <summary>
+        /// Transform a message using the specified map class without any validation of the source schema (less safe)
+        /// </summary>
+        public void TransformMessageWithoutValidation(string mapClassName, string mapAssemblyName)
+        {
+            TransformationInstruction instruction = new TransformationInstruction(mapClassName, mapAssemblyName, false);
+            base.AddInstruction(instruction);
+        }
+
+        public bool TraceInfo(string infoToTrace)
+        {
+            TraceManager.RulesComponent.TraceInfo("{0} - {1}", callToken, infoToTrace);
+            return true;
+        }
 
         #endregion
 

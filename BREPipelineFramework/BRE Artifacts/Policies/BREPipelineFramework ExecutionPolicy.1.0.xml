@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
   <ruleset name="BREPipelineFramework ExecutionPolicy">
-    <version major="1" minor="4" description="" modifiedby="DATACOM\johannc" date="2014-02-12T23:35:53.9513012+13:00" />
-    <version major="1" minor="0" description="" modifiedby="DATACOM\johannc" date="2014-02-12T23:36:21.1786815+13:00" />
+    <version major="1" minor="4" description="" modifiedby="jcooper1982" date="2014-02-12T23:35:53.9513012+13:00" />
+    <version major="1" minor="0" description="" modifiedby="jcooper1982" date="2014-02-12T23:36:21.1786815+13:00" />
     <configuration />
     <bindings>
       <class ref="BizTalkHTTPPropertySchemaEnum" class="BizTalkHTTPPropertySchemaEnum">

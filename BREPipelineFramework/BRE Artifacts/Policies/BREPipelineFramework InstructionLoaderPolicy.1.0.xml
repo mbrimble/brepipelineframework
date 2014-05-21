@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
   <ruleset name="BREPipelineFramework InstructionLoaderPolicy">
-    <version major="1" minor="2" description="" modifiedby="DATACOM\johannc" date="2014-02-12T23:45:01.0874674+13:00" />
-    <version major="1" minor="0" description="" modifiedby="DATACOM\johannc" date="2014-02-12T23:45:11.8067979+13:00" />
+    <version major="1" minor="2" description="" modifiedby="jcooper1982" date="2014-02-12T23:45:01.0874674+13:00" />
+    <version major="1" minor="0" description="" modifiedby="jcooper1982" date="2014-02-12T23:45:11.8067979+13:00" />
     <configuration />
     <bindings>
       <class ref="BREPipelineMetaInstructionCollection" class="BREPipelineMetaInstructionCollection" instance="0" instances="16" selectivity="1">

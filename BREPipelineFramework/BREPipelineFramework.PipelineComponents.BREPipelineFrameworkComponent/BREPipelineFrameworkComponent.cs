@@ -17,6 +17,9 @@ using System.Globalization;
 using Microsoft.XLANGs.BaseTypes;
 using BTS;
 using System.Xml;
+using System.Drawing.Design;
+using BREPipelineFramework.Helpers;
+using BREPipelineFramework.SampleInstructions.MetaInstructions;
 
 namespace BREPipelineFramework.PipelineComponents
 {
@@ -35,10 +38,13 @@ namespace BREPipelineFramework.PipelineComponents
         private bool recoverableInterchangeProcessingEnabled;
         private string trackingFolder;
         private string trackingGuid;
-        BREPipelineMetaInstructionCollection _BREPipelineMetaInstructionCollection;
-        TypedXMLDocumentWrapper documentWrapper;
-        SQLDataConnectionCollection sqlConnectionCollection;
-        MessageUtility utility;
+        private XMLFactsApplicationStageEnum xmlFactsApplicationStage = XMLFactsApplicationStageEnum.AfterInstructionExecution;
+        private InstructionExecutionOrderEnum instructionExecutionOrder = InstructionExecutionOrderEnum.Legacy;
+        private BREPipelineMetaInstructionCollection _BREPipelineMetaInstructionCollection;
+        private TypedXMLDocumentWrapper documentWrapper;
+        private SQLDataConnectionCollection sqlConnectionCollection;
+        private MessageUtility utility;
+        private string bodyPartName = string.Empty;
 
         #endregion
 
@@ -109,8 +115,14 @@ namespace BREPipelineFramework.PipelineComponents
         /// </summary>
         public bool RecoverableInterchangeProcessingEnabled
         {
-            get { return recoverableInterchangeProcessingEnabled; }
-            set { recoverableInterchangeProcessingEnabled = value; }
+            get 
+            { 
+                return recoverableInterchangeProcessingEnabled; 
+            }
+            set 
+            { 
+                recoverableInterchangeProcessingEnabled = value;
+            }
         }
 
         /// <summary>
@@ -118,7 +130,10 @@ namespace BREPipelineFramework.PipelineComponents
         /// </summary>
         public string TrackingFolder
         {
-            get { return trackingFolder; }
+            get 
+            { 
+                return trackingFolder; 
+            }
             set
             {
                 if (value.Length > 0)
@@ -136,6 +151,36 @@ namespace BREPipelineFramework.PipelineComponents
                 {
                     trackingFolder = value;
                 }
+            }
+        }
+
+        /// <summary>
+        /// The stage at which the stream updated by XML facts in the execution policy is used to update the message body
+        /// </summary>
+        public XMLFactsApplicationStageEnum XmlFactsApplicationStage
+        {
+            get 
+            { 
+                return xmlFactsApplicationStage; 
+            }
+            set 
+            {
+                xmlFactsApplicationStage = value; 
+            }
+        }
+
+        /// <summary>
+        /// Whether instructions should fire in legacy mode (by MetaInstruction instantiation and then rules order) or by rules order only
+        /// </summary>
+        public InstructionExecutionOrderEnum InstructionExecutionOrder
+        {
+            get 
+            { 
+                return instructionExecutionOrder; 
+            }
+            set 
+            { 
+                instructionExecutionOrder = value; 
             }
         }
 
@@ -236,6 +281,26 @@ namespace BREPipelineFramework.PipelineComponents
             {
                 this.trackingFolder = ((string)(val));
             }
+            val = this.ReadPropertyBag(pb, "XmlFactsApplicationStage");
+            if ((val != null))
+            {
+                string enumValue = (string)val;
+
+                if (!Enum.TryParse<XMLFactsApplicationStageEnum>(enumValue, true, out this.xmlFactsApplicationStage))
+                {
+                    throw new Exception(String.Format("{0} is not a valid value for XmlFactsApplicationStage.", enumValue));
+                }
+            }
+            val = this.ReadPropertyBag(pb, "InstructionExecutionOrder");
+            if ((val != null))
+            {
+                string enumValue = (string)val;
+
+                if (!Enum.TryParse<InstructionExecutionOrderEnum>(enumValue, true, out this.instructionExecutionOrder))
+                {
+                    throw new Exception(String.Format("{0} is not a valid value for InstructionExecutionOrder.", enumValue));
+                }
+            }
         }
         
         /// <summary>
@@ -252,6 +317,8 @@ namespace BREPipelineFramework.PipelineComponents
             this.WritePropertyBag(pb, "InstructionLoaderPolicy", this.InstructionLoaderPolicy);
             this.WritePropertyBag(pb, "RecoverableInterchangeProcessingEnabled", this.recoverableInterchangeProcessingEnabled);
             this.WritePropertyBag(pb, "TrackingFolder", this.trackingFolder);
+            this.WritePropertyBag(pb, "XmlFactsApplicationStage", this.xmlFactsApplicationStage.ToString());
+            this.WritePropertyBag(pb, "InstructionExecutionOrder", this.instructionExecutionOrder.ToString());
         }
         
         #region utility functionality
@@ -343,6 +410,11 @@ namespace BREPipelineFramework.PipelineComponents
         {
             if (_Enabled)
             {
+                // Reset the instructionCounter, this is done just in case a thread is being reused (not sure if this is actually the way BizTalk behaves under heavy load
+                // but doing this to be on the safe side) and the old value has persisted, and also in case the BREPipelineFrameworkComponent pipeline component is used
+                // multiple times in the same pipeline in which case it will definitely reuse the same thread
+                BREPipelineMetaInstructionCollection.instructionCounter = 0;
+
                 // Setup the BREPipelineMetaInstructionCollection by copying over the body and context from the input message
                 SetupBREPipelineMetaInstructionCollection(pc, inmsg);
 
@@ -350,19 +422,21 @@ namespace BREPipelineFramework.PipelineComponents
                 // body part's stream, and if available the message type context property value as well
                 InstantiateInstructionLoaderPolicyFacts(inmsg);
 
+                // Set ApplicationContext to String.Empty if it has a null value since that would cause the rules engine to crash
+                if (_ApplicationContext == null)
+                {
+                    _ApplicationContext = string.Empty;
+                }
+
                 try
                 {
                     if (!string.IsNullOrEmpty(_InstructionLoaderPolicy))
                     {
-                        // Execute the InstructionLoaderPolicy to optionally instantiate the relevant MetaInstructions and to setup the TypedXMLDocumentWrapper
-                        using (Microsoft.RuleEngine.Policy policy = new Policy(_InstructionLoaderPolicy))
-                        {
-                            object[] instructionLoaderFacts = { _ApplicationContext, _BREPipelineMetaInstructionCollection, documentWrapper, sqlConnectionCollection, utility };
-                            ExecutePolicy(policy, instructionLoaderFacts);
-                        }
+                        object[] instructionLoaderFacts = { _ApplicationContext, _BREPipelineMetaInstructionCollection, documentWrapper, sqlConnectionCollection, utility };
+                        ExecutePolicy(_InstructionLoaderPolicy, instructionLoaderFacts);
                     }
 
-                    // Override the default ExecutionPolicy and ApplicationContext if an override instruction was set by the InstructionLoaderPolicy
+                    // Override the default ExecutionPolicy, ApplicationContext, and XMLFactsApplicationStage if an override instruction was set by the InstructionLoaderPolicy
                     ApplyOverrides();
 
                     // Add out of the box MetaInstructions to the collection so they can be used in any ExecutionPolicy
@@ -372,21 +446,39 @@ namespace BREPipelineFramework.PipelineComponents
                     // as well as any DataConnections that were setup in the InstructionLoaderPolicy
                     if (!string.IsNullOrEmpty(_ExecutionPolicy))
                     {
-                        using (Microsoft.RuleEngine.Policy policy = new Policy(_ExecutionPolicy))
+                        object[] pipelineMetaInstructionFacts = SetupExecutionPolicyFacts();
+
+                        // Execute the policy in question, utilizing the DebugTrackingInspector if a TrackingFolder has been specified
+                        ExecutePolicy(_ExecutionPolicy, pipelineMetaInstructionFacts);
+
+                        // If any of the MetaInstructions have returned exceptions then throw them now.
+                        _BREPipelineMetaInstructionCollection.ThrowExceptions();
+
+                        try
                         {
-                            object[] pipelineMetaInstructionFacts = SetupExecutionPolicyFacts(documentWrapper, sqlConnectionCollection);
-
-                            // Execute the policy in question, utilizing the DebutTrackingInspector if a TrackingFolder has been specified
-                            ExecutePolicy(policy, pipelineMetaInstructionFacts);
-
-                            // If any of the MetaInstructions have returned exceptions then throw them now.
-                            _BREPipelineMetaInstructionCollection.ThrowExceptions();
+                            // If a TypedXMLDocument had been setup and xmlFactsApplicationStage is set to BeforeInstructionExecution then fetch 
+                            // the potentially updated body from the asserted fact and replace the body with this
+                            if (xmlFactsApplicationStage == XMLFactsApplicationStageEnum.BeforeInstructionExecution && documentWrapper.DocumentCount == 1)
+                            {
+                                TypedXMLDocumentWrapper.ApplyTypedXMLDocument((TypedXmlDocument)pipelineMetaInstructionFacts[2], _BREPipelineMetaInstructionCollection.InMsg, pc);
+                            }
 
                             // Execute all the instructions that have been loaded into the MetaInstructions by the ExecutionPolicy
                             _BREPipelineMetaInstructionCollection.Execute();
 
-                            // If a TypedXMLDocument had been setup then fetch the potentially updated body from the asserted fact and replace the body with this
-                            ApplyTypedXMLDocumentUpdateBody(pc, documentWrapper, pipelineMetaInstructionFacts);
+                            // If a TypedXMLDocument had been setup and xmlFactsApplicationStage is set to AfterInstructionExecution then fetch 
+                            // the potentially updated body from the asserted fact and replace the body with this.  First check to see if the 
+                            // message and/or body part are null and if so create them with context copied from the original message
+                            if (xmlFactsApplicationStage == XMLFactsApplicationStageEnum.AfterInstructionExecution && documentWrapper.DocumentCount == 1)
+                            {
+                                RecreateBizTalkMessageAndBodyPartIfNecessary(pc, inmsg);
+                                TypedXMLDocumentWrapper.ApplyTypedXMLDocument((TypedXmlDocument)pipelineMetaInstructionFacts[2], _BREPipelineMetaInstructionCollection.InMsg, pc);
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            _BREPipelineMetaInstructionCollection.Compensate();
+                            throw;
                         }
                     }
                 }
@@ -433,62 +525,11 @@ namespace BREPipelineFramework.PipelineComponents
         #region Private Methods
 
         /// <summary>
-        /// Execute the policy in question, utilizing the DebutTrackingInspector if a TrackingFolder has been specified
-        /// </summary>
-        private void ExecutePolicy(Microsoft.RuleEngine.Policy policy, object[] facts)
-        {
-            if (string.IsNullOrEmpty(trackingFolder))
-            {
-                policy.Execute(facts);
-            }
-            else
-            {
-                if (string.IsNullOrEmpty(trackingGuid))
-                {
-                    trackingGuid = Guid.NewGuid().ToString();
-                }
-
-                DebugTrackingInterceptor dti = new DebugTrackingInterceptor(trackingFolder + String.Format("{0}.{1}.{2}-{3}.txt", policy.PolicyName, policy.MajorRevision.ToString(), policy.MinorRevision.ToString(), trackingGuid));
-
-                try
-                {
-                    policy.Execute(facts, dti);
-                }
-                catch
-                {
-                    throw;
-                }
-                finally
-                {
-                    dti.CloseTraceFile();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Override the default ExecutionPolicy and ApplicationContext if an override instruction was set by the InstructionLoaderPolicy
-        /// </summary>
-        private void ApplyOverrides()
-        {
-            // Override the Execution Policy if an instruction to override it was received during execution of the InstructionLoaderPolicy
-            if (!String.IsNullOrEmpty(_BREPipelineMetaInstructionCollection.ExecutionPolicyOverride))
-            {
-                _ExecutionPolicy = _BREPipelineMetaInstructionCollection.ExecutionPolicyOverride;
-            }
-
-            // Override the Application Context if an instruction to override it was received during execution of the InstructionLoaderPolicy
-            if (!String.IsNullOrEmpty(_BREPipelineMetaInstructionCollection.ApplicationContextOverride))
-            {
-                _ApplicationContext = _BREPipelineMetaInstructionCollection.ApplicationContextOverride;
-            }
-        }
-
-        /// <summary>
         /// Setup the BREPipelineMetaInstructionCollection by copying over the body and context from the input message
         /// </summary>
         private void SetupBREPipelineMetaInstructionCollection(Microsoft.BizTalk.Component.Interop.IPipelineContext pc, Microsoft.BizTalk.Message.Interop.IBaseMessage inmsg)
         {
-            _BREPipelineMetaInstructionCollection = new BREPipelineMetaInstructionCollection();
+            _BREPipelineMetaInstructionCollection = new BREPipelineMetaInstructionCollection(xmlFactsApplicationStage, instructionExecutionOrder);
             _BREPipelineMetaInstructionCollection.Pc = pc;
 
             // Get a stream containing the body part of the original message
@@ -516,23 +557,7 @@ namespace BREPipelineFramework.PipelineComponents
             _BREPipelineMetaInstructionCollection.InMsg.Context = pc.GetMessageFactory().CreateMessageContext();
 
             // Iterate through inbound message context properties and add to the new outbound message
-            for (int contextCounter = 0; contextCounter < inmsg.Context.CountProperties; contextCounter++)
-            {
-                string Name;
-                string Namespace;
-
-                object PropertyValue = inmsg.Context.ReadAt(contextCounter, out Name, out Namespace);
-
-                // If the property has been promoted, respect the settings
-                if (inmsg.Context.IsPromoted(Name, Namespace))
-                {
-                    _BREPipelineMetaInstructionCollection.InMsg.Context.Promote(Name, Namespace, PropertyValue);
-                }
-                else
-                {
-                    _BREPipelineMetaInstructionCollection.InMsg.Context.Write(Name, Namespace, PropertyValue);
-                }
-            }
+            CopyMessageContext(inmsg);
         }
 
         /// <summary>
@@ -557,6 +582,30 @@ namespace BREPipelineFramework.PipelineComponents
         }
 
         /// <summary>
+        /// Copy message context from the input BizTalk message to the BizTalk message in the _BREPipelineMetaInstructionCollection
+        /// </summary>
+        private void CopyMessageContext(Microsoft.BizTalk.Message.Interop.IBaseMessage inmsg)
+        {
+            for (int contextCounter = 0; contextCounter < inmsg.Context.CountProperties; contextCounter++)
+            {
+                string Name;
+                string Namespace;
+
+                object PropertyValue = inmsg.Context.ReadAt(contextCounter, out Name, out Namespace);
+
+                // If the property has been promoted, respect the settings
+                if (inmsg.Context.IsPromoted(Name, Namespace))
+                {
+                    _BREPipelineMetaInstructionCollection.InMsg.Context.Promote(Name, Namespace, PropertyValue);
+                }
+                else
+                {
+                    _BREPipelineMetaInstructionCollection.InMsg.Context.Write(Name, Namespace, PropertyValue);
+                }
+            }
+        }
+
+        /// <summary>
         /// Instantiate a TypedXMLDocumentWrapper class pointing to the body part's stream, a SQLDataConnectionCollection, and a MessageUtility object, passing in the 
         /// body part's stream, and if available the message type context property value as well
         /// </summary>
@@ -567,7 +616,7 @@ namespace BREPipelineFramework.PipelineComponents
 
             try
             {
-                string messageType = inmsg.Context.Read("MessageType", "http://schemas.microsoft.com/BizTalk/2003/system-properties").ToString();
+                string messageType = inmsg.Context.Read("MessageType", ContextPropertyNamespaces._BTSPropertyNamespace).ToString();
                 utility = new MessageUtility(_BREPipelineMetaInstructionCollection.InMsg.BodyPart.Data, messageType);
             }
             catch
@@ -577,28 +626,134 @@ namespace BREPipelineFramework.PipelineComponents
         }
 
         /// <summary>
-        /// If a TypedXMLDocument had been setup then fetch the potentially updated body from the asserted fact and replace the body with this
+        /// Execute the policy in question, utilizing the DebutTrackingInspector if a TrackingFolder has been specified
         /// </summary>
-        private void ApplyTypedXMLDocumentUpdateBody(Microsoft.BizTalk.Component.Interop.IPipelineContext pc, TypedXMLDocumentWrapper documentWrapper, object[] pipelineMetaInstructionFacts)
+        private void ExecutePolicy(string policyName, object[] facts)
         {
+            using (Microsoft.RuleEngine.Policy policy = new Policy(policyName))
+            {
+                if (string.IsNullOrEmpty(trackingFolder))
+                {
+                    policy.Execute(facts);
+                }
+                else
+                {
+                    if (trackingFolder.Substring(trackingFolder.Length - 1) != @"\")
+                    {
+                        trackingFolder = trackingFolder + @"\";
+                    }
+
+                    if (!Directory.Exists(trackingFolder))
+                    {
+                        throw new Exception(String.Format("Tracking folder {0} does not resolve to a valid folder location", trackingFolder));
+                    }
+
+                    if (string.IsNullOrEmpty(trackingGuid))
+                    {
+                        trackingGuid = Guid.NewGuid().ToString();
+                    }
+
+                    DebugTrackingInterceptor dti = new DebugTrackingInterceptor(trackingFolder + String.Format("{0}.{1}.{2}-{3}.txt",
+                        policy.PolicyName, policy.MajorRevision.ToString(), policy.MinorRevision.ToString(), trackingGuid));
+
+                    try
+                    {
+                        policy.Execute(facts, dti);
+                    }
+                    catch (PolicyExecutionException ex)
+                    {
+                        string exceptionMessage = string.Format("Exception encountered while executing BRE policy {0}.  Top level exception message - {1}", policyName, ex.InnerException.Message);
+
+                        if (ex.InnerException.InnerException != null)
+                        {
+                            exceptionMessage = exceptionMessage + Environment.NewLine;
+                            exceptionMessage = exceptionMessage + string.Format("Innermost exception was - {0}", ex.GetBaseException());
+                        }
+
+                        throw new Exception(exceptionMessage);
+                    }
+                    catch (Exception)
+                    {
+                        throw;
+                    }
+                    finally
+                    {
+                        dti.CloseTraceFile();
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Override the default ExecutionPolicy and ApplicationContext if an override instruction was set by the InstructionLoaderPolicy
+        /// </summary>
+        private void ApplyOverrides()
+        {
+            // Override the Execution Policy if an instruction to override it was received during execution of the InstructionLoaderPolicy
+            if (!String.IsNullOrEmpty(_BREPipelineMetaInstructionCollection.ExecutionPolicyOverride))
+            {
+                _ExecutionPolicy = _BREPipelineMetaInstructionCollection.ExecutionPolicyOverride;
+            }
+
+            // Override the Application Context if an instruction to override it was received during execution of the InstructionLoaderPolicy
+            if (!String.IsNullOrEmpty(_BREPipelineMetaInstructionCollection.ApplicationContextOverride))
+            {
+                _ApplicationContext = _BREPipelineMetaInstructionCollection.ApplicationContextOverride;
+            }
+
+            // Override the XML Facts application stage if an instruction to override it was received during execution of the InstructionLoaderPolicy
+            if (_BREPipelineMetaInstructionCollection.XmlFactsApplicationStageOverride != xmlFactsApplicationStage)
+            {
+                xmlFactsApplicationStage = _BREPipelineMetaInstructionCollection.XmlFactsApplicationStageOverride;
+            }
+        }
+                
+        /// <summary>
+        /// If the BizTalk message in the _BREPipelineMetaInstructionCollection and/or it's body part are null then instantiate them and copy
+        /// context over from the original message
+        /// </summary>
+        private void RecreateBizTalkMessageAndBodyPartIfNecessary(Microsoft.BizTalk.Component.Interop.IPipelineContext pc, Microsoft.BizTalk.Message.Interop.IBaseMessage inmsg)
+        {
+            // If the BizTalk message has been nullified then create the message again and copy over the context from the original message
+            if (_BREPipelineMetaInstructionCollection.InMsg == null)
+            {
+                _BREPipelineMetaInstructionCollection.InMsg = pc.GetMessageFactory().CreateMessage();
+                CopyMessageContext(inmsg);
+            }
+
+            // If the message body part is null then instantiate it again so we can assign the typed xml document stream to it
+            if (_BREPipelineMetaInstructionCollection.InMsg.BodyPart == null)
+            {
+                IBaseMessagePart messageBodyPart = pc.GetMessageFactory().CreateMessagePart();
+                _BREPipelineMetaInstructionCollection.InMsg.AddPart("Body", messageBodyPart, true);
+            }
+        }
+
+        /// <summary>
+        /// Add out of the box MetaInstructions to the collection so they can be used in any ExecutionPolicy
+        /// </summary>
+        private void AddOutOfTheBoxMetaInstructions()
+        {
+            // Add the out of the box MetaInstruction classes to the MetaInstrumentCollection
+            ContextMetaInstructions contextMetaInstruction = new ContextMetaInstructions();
+            _BREPipelineMetaInstructionCollection.AddMetaInstruction(contextMetaInstruction);
+            HelperMetaInstructions helperMetaInstruction = new HelperMetaInstructions();
+            _BREPipelineMetaInstructionCollection.AddMetaInstruction(helperMetaInstruction);
+            CachingMetaInstructions cachingMetaInstruction = new CachingMetaInstructions();
+            _BREPipelineMetaInstructionCollection.AddMetaInstruction(cachingMetaInstruction);
+
+            // Only add TypedXMLDocumentMetaInstructions if a TypedXMLDocument has been setup
             if (documentWrapper.DocumentCount == 1)
             {
-                XmlDocument doc = (XmlDocument)((TypedXmlDocument)pipelineMetaInstructionFacts[2]).Document;
-                byte[] output = System.Text.Encoding.ASCII.GetBytes(doc.ToString());
-                MemoryStream ms = new MemoryStream();
-                doc.Save(ms);
-                ms.Seek(0, SeekOrigin.Begin);
-                _BREPipelineMetaInstructionCollection.InMsg.BodyPart.Data = ms;
-
-                // Add the new message body part's stream to the Pipeline Context's resource tracker so that it will be disposed off correctly
-                pc.ResourceTracker.AddResource(ms);
+                TypedXMLDocumentMetaInstructions xmlInstructions = new TypedXMLDocumentMetaInstructions(documentWrapper.Document, xmlFactsApplicationStage);
+                _BREPipelineMetaInstructionCollection.AddMetaInstruction(xmlInstructions);
             }
         }
 
         /// <summary>
         /// Setup the ExecutionPolicy with the appropriate facts
         /// </summary>
-        private object[] SetupExecutionPolicyFacts(TypedXMLDocumentWrapper documentWrapper, SQLDataConnectionCollection sqlConnectionCollection)
+        private object[] SetupExecutionPolicyFacts()
         {
             object[] pipelineMetaInstructionFacts = new object[2 + documentWrapper.DocumentCount + sqlConnectionCollection.SQLConnectionCount + _BREPipelineMetaInstructionCollection.GetCount()];
             pipelineMetaInstructionFacts[0] = _ApplicationContext;
@@ -621,21 +776,10 @@ namespace BREPipelineFramework.PipelineComponents
             {
                 pipelineMetaInstructionFacts[i + 1 + documentWrapper.DocumentCount + sqlConnectionCollection.SQLConnectionCount] = _BREPipelineMetaInstructionCollection.GetMetaInstructionByIndex(i - 1);
             }
+
             return pipelineMetaInstructionFacts;
         }
-
-        /// <summary>
-        /// Add out of the box MetaInstructions to the collection so they can be used in any ExecutionPolicy
-        /// </summary>
-        private void AddOutOfTheBoxMetaInstructions()
-        {
-            // Add the out of the box MetaInstruction classes to the MetaInstrumentCollection
-            BREPipelineFramework.SampleInstructions.MetaInstructions.ContextMetaInstructions contextInstruction = new SampleInstructions.MetaInstructions.ContextMetaInstructions();
-            _BREPipelineMetaInstructionCollection.AddMetaInstruction(contextInstruction);
-            BREPipelineFramework.SampleInstructions.MetaInstructions.HelperMetaInstructions helperInstruction = new SampleInstructions.MetaInstructions.HelperMetaInstructions();
-            _BREPipelineMetaInstructionCollection.AddMetaInstruction(helperInstruction);
-        }
-
+        
         #endregion
     }
 }

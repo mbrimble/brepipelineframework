@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
   <vocabulary id="d55d0669-9307-4290-bbe8-a81bd7417c65" name="BREPipelineFramework" uri="" description="">
-    <version major="1" minor="0" description="" modifiedby="johannc" date="2012-11-19T16:07:20.2249862+13:00" />
+    <version major="1" minor="0" description="" modifiedby="jcooper1982" date="2012-11-19T16:07:20.2249862+13:00" />
     <vocabularydefinition id="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" name="ApplicationContext" description="">
       <bindingdefinition>
         <classbindingdefinition>

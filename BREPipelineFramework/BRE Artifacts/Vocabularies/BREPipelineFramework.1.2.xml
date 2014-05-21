@@ -1,31 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
-  <vocabulary id="8039b113-c21c-4115-af4a-d59ad6b3edcf" name="BREPipelineFramework" uri="" description="">
-    <version major="1" minor="1" description="" modifiedby="jcooper1982" date="2014-02-16T14:39:19.5332661+13:00" />
-    <vocabularydefinition id="9ec58792-123f-4a66-914a-9750d885f4ea" name="CheckIfRegexEvaluatesInMessage" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="CheckIfRegexEvaluatesInMessage" type="boolean">
-          <classinfo class="MessageUtility" instance="0">
-            <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
-            <namespace>BREPipelineFramework</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="(The regex {0} finds a match in the message body)" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="afb5853f-bef1-4039-a5f4-9075c4af6ef0" name="GetMessageRootNodeName" description="">
+  <vocabulary id="d892a25c-a516-4db9-b606-13c1f5954575" name="BREPipelineFramework" uri="" description="">
+    <version major="1" minor="2" description="" modifiedby="jcooper1982" date="2014-04-30T21:15:14.3198076+12:00" />
+    <vocabularydefinition id="85e12044-1328-44e2-ad6a-ded87f20270d" name="GetMessageRootNodeName" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="GetMessageRootNodeName" type="string">
           <classinfo class="MessageUtility" instance="0">
@@ -37,7 +14,7 @@
       </bindingdefinition>
       <formatstring language="en-US" string="(The root node name of the current message)" />
     </vocabularydefinition>
-    <vocabularydefinition id="2bdf972d-ee3f-4896-a301-ecdee1f3911a" name="OverrideApplicationContext" description="">
+    <vocabularydefinition id="2c83dfaf-bf7c-4cff-977b-4847f930d3c9" name="OverrideApplicationContext" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="set_ApplicationContextOverride" type="void">
           <classinfo class="BREPipelineMetaInstructionCollection" instance="0">
@@ -60,7 +37,7 @@
         </argument>
       </formatstring>
     </vocabularydefinition>
-    <vocabularydefinition id="b45a898f-6131-498a-a4e1-fcd3d7d28906" name="CheckIfStringExistsInMessage" description="">
+    <vocabularydefinition id="93492412-7205-4358-9184-31743f4d093e" name="CheckIfStringExistsInMessage" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="CheckIfStringExistsInMessage" type="boolean">
           <classinfo class="MessageUtility" instance="0">
@@ -83,7 +60,7 @@
         </argument>
       </formatstring>
     </vocabularydefinition>
-    <vocabularydefinition id="653036a5-b4cd-47b0-88f0-58f941370ec4" name="AddSQLDataConnection" description="">
+    <vocabularydefinition id="dd35e7d5-ab9a-4f86-87d3-7d38f842222d" name="AddSQLDataConnection" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="AddSQLDataConnection" type="void">
           <classinfo class="SQLDataConnectionCollection" instance="0">
@@ -126,7 +103,7 @@
         </argument>
       </formatstring>
     </vocabularydefinition>
-    <vocabularydefinition id="912c0e69-dbce-4c7a-b726-28da57e7ab83" name="GetMessageBodyLength" description="">
+    <vocabularydefinition id="9147229e-883e-4460-bc7c-424cdfbf87be" name="GetMessageBodyLength" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="MessageBodyLength" type="int">
           <classinfo class="MessageUtility" instance="0">
@@ -138,7 +115,7 @@
       </bindingdefinition>
       <formatstring language="en-US" string="(The length of the message body)" />
     </vocabularydefinition>
-    <vocabularydefinition id="f844f38f-dd2d-44ff-a50a-1a28360f8921" name="AddMetaInstruction" description="">
+    <vocabularydefinition id="c2804889-abf7-4040-9319-2bc85399fbcb" name="AddMetaInstruction" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="AddMetaInstruction" type="void">
           <classinfo class="BREPipelineMetaInstructionCollection" instance="0">
@@ -171,7 +148,7 @@
         </argument>
       </formatstring>
     </vocabularydefinition>
-    <vocabularydefinition id="ea07cf2b-6ad1-4924-8b26-90f002b39f43" name="SetTypedXmlDocument" description="">
+    <vocabularydefinition id="152815a7-b99a-465b-b091-46f06524a6bb" name="SetTypedXmlDocument" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="CreateTypedXmlDocument" type="void">
           <classinfo class="TypedXMLDocumentWrapper" instance="0">
@@ -194,7 +171,7 @@
         </argument>
       </formatstring>
     </vocabularydefinition>
-    <vocabularydefinition id="8d645929-23f0-4c91-93ee-da059de60c5f" name="ReturnFirstRegexMatch" description="">
+    <vocabularydefinition id="fd5410b3-f5d5-4f36-bbb5-20b73804d8e3" name="ReturnFirstRegexMatch" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="ReturnFirstRegexMatch" type="string">
           <classinfo class="MessageUtility" instance="0">
@@ -217,7 +194,7 @@
         </argument>
       </formatstring>
     </vocabularydefinition>
-    <vocabularydefinition id="3ba5a947-2b50-4c43-a95b-bb715b5f91b9" name="AddSQLDataConnectionFromSSO" description="">
+    <vocabularydefinition id="3585c1a0-36f4-4e2a-bdba-446b31def4c6" name="AddSQLDataConnectionFromSSO" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="AddSQLDataConnection" type="void">
           <classinfo class="SQLDataConnectionCollection" instance="0">
@@ -270,7 +247,7 @@
         </argument>
       </formatstring>
     </vocabularydefinition>
-    <vocabularydefinition id="3349a8ce-ea88-46eb-8d5d-b43cf2865342" name="GetMessageRootNodeNamespace" description="">
+    <vocabularydefinition id="8371ff53-1ab4-46a5-a051-402db67dcf79" name="GetMessageRootNodeNamespace" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="GetMessageRootNodeNamespace" type="string">
           <classinfo class="MessageUtility" instance="0">
@@ -282,7 +259,26 @@
       </bindingdefinition>
       <formatstring language="en-US" string="(The root node namespace of the current message)" />
     </vocabularydefinition>
-    <vocabularydefinition id="83a0c942-b2df-43c6-94d7-755c0a3b6c71" name="ReturnRegexMatchByIndex" description="">
+    <vocabularydefinition id="783d7130-da3c-46b1-95a3-50d04b956773" name="OverrideXmlFactsApplicationStage" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="set_XmlFactsApplicationStageOverride" type="void">
+          <classinfo class="BREPipelineMetaInstructionCollection" instance="0">
+            <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
+            <namespace>BREPipelineFramework</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="BREPipelineFramework.XMLFactsApplicationStageEnum, BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Override the stage at which XML Facts get applied to {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="BREPipelineFramework.XMLFactsApplicationStageEnum, BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="0e09208d-9fa8-4c7f-af1a-b57fb7b4b51b" name="ReturnRegexMatchByIndex" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="ReturnRegexMatchByIndex" type="string">
           <classinfo class="MessageUtility" instance="0">
@@ -315,7 +311,30 @@
         </argument>
       </formatstring>
     </vocabularydefinition>
-    <vocabularydefinition id="96912b68-8b78-4adb-a1e9-41bd5c8b10f3" name="OverrideExecutionPolicy" description="">
+    <vocabularydefinition id="f867a0df-e68b-43f3-a46f-6f5e899a938a" name="CheckIfRegexEvaluatesInMessage" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="CheckIfRegexEvaluatesInMessage" type="boolean">
+          <classinfo class="MessageUtility" instance="0">
+            <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
+            <namespace>BREPipelineFramework</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The regex {0} finds a match in the message body)" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="66432982-8ee6-4d7f-94be-25e24b62f030" name="OverrideExecutionPolicy" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="set_ExecutionPolicyOverride" type="void">
           <classinfo class="BREPipelineMetaInstructionCollection" instance="0">
@@ -338,7 +357,7 @@
         </argument>
       </formatstring>
     </vocabularydefinition>
-    <vocabularydefinition id="c3cba786-bbea-4b9c-99a4-408d141fbcc6" name="ApplicationContext" description="">
+    <vocabularydefinition id="1ed7c5ef-ddbb-45e6-a655-7992b3b09f8d" name="ApplicationContext" description="">
       <bindingdefinition>
         <classbindingdefinition>
           <classinfo class="String" instance="0">

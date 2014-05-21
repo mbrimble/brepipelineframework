@@ -49,6 +49,8 @@ namespace BREPipelineFramework.SampleInstructions.Instructions
                             case XPathResultTypeEnum.Value:
                                 value = xPathReader.ReadString();
                                 break;
+                            default:
+                                throw new Exception(string.Format("Unexpected xpath result type of {0} encountered", _XPathInstructions.ElementAt(i).XPathResultType.ToString()));
                         }
 
                         try

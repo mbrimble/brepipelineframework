@@ -83,6 +83,19 @@ namespace BREPipelineFramework
             hasBeenSet = true;
         }
 
+        public static void ApplyTypedXMLDocument(TypedXmlDocument document, Microsoft.BizTalk.Message.Interop.IBaseMessage inmsg, Microsoft.BizTalk.Component.Interop.IPipelineContext pc)
+        {
+            XmlDocument doc = (XmlDocument)document.Document;
+            byte[] output = System.Text.Encoding.UTF8.GetBytes(doc.ToString());
+            MemoryStream ms = new MemoryStream();
+            doc.Save(ms);
+            ms.Seek(0, SeekOrigin.Begin);
+            inmsg.BodyPart.Data = ms;
+
+            // Add the new message body part's stream to the Pipeline Context's resource tracker so that it will be disposed off correctly
+            pc.ResourceTracker.AddResource(ms);
+        }
+
         #endregion
     }
 }

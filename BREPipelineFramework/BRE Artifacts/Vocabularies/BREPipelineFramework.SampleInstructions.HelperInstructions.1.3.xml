@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
   <vocabulary id="9db900b5-f910-4f24-90a4-078d2080492e" name="BREPipelineInstructions.SampleInstructions.HelperInstructions" uri="" description="">
-    <version major="1" minor="3" description="Added namespace replacement definitions" modifiedby="DATACOM\johannc" date="2013-09-09T11:45:15.820401+12:00" />
+    <version major="1" minor="3" description="Added namespace replacement definitions" modifiedby="jcooper1982" date="2013-09-09T11:45:15.820401+12:00" />
     <vocabularydefinition id="e06cda78-fac0-44aa-add4-0209415c4aeb" name="GetUppercaseString" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="ReturnUppercaseString" type="string">

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
   <vocabulary id="2a12d282-6c1a-4eaf-a8bf-9d4c510b9b2a" name="BREPipelineFramework.TestSampleInstructions.MetaInstruction" uri="" description="">
-    <version major="1" minor="1" description="" modifiedby="DATACOM\johannc" date="2013-06-03T15:21:43.4803256+12:00" />
-    <version major="1" minor="0" description="" modifiedby="DATACOM\johannc" date="2013-06-03T15:24:01.7727392+12:00" />
+    <version major="1" minor="1" description="" modifiedby="jcooper1982" date="2013-06-03T15:21:43.4803256+12:00" />
+    <version major="1" minor="0" description="" modifiedby="jcooper1982" date="2013-06-03T15:24:01.7727392+12:00" />
     <vocabularydefinition id="adb9cb14-2070-486b-a07c-72764acfbab6" name="GetBREContextProperty" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="GetBREPipelineFrameworkContextProperty" type="string">

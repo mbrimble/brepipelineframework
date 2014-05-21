@@ -47,6 +47,8 @@ namespace BREPipelineFramework.Helpers
                 case TypeEnum.String:
                     o = sourceString.ToString();
                     break;
+                default:
+                    throw new Exception("Unexpected type to cast to of " + type.ToString());
             }
 
             return o;
