@@ -31,7 +31,7 @@ namespace BREPipelineFramework.SampleInstructions.Instructions
 
         public TransformationInstruction(string mapClassName, string mapAssemblyName, bool validate)
         {
-            this.mapName = string.Format("{0}, {1}");
+            this.mapName = string.Format("{0}, {1}", mapClassName, mapAssemblyName);
             this.validate = validate;
         }
 
@@ -54,17 +54,20 @@ namespace BREPipelineFramework.SampleInstructions.Instructions
             SchemaMetadata targetSchemaMetadata = transformMetaData.TargetSchemas[0];
             string messageType = string.Empty;
 
-            if (validate)
+            try
             {
-                try
-                {
-                    messageType = inmsg.Context.Read("MessageType", btsPropertyNamespace).ToString();
-                }
-                catch
+                messageType = inmsg.Context.Read("MessageType", btsPropertyNamespace).ToString();
+            }
+            catch
+            {
+                if (validate)
                 {
                     throw new Exception("Unable to read source messageType");
                 }
+            }
 
+            if (!string.IsNullOrEmpty(messageType))
+            {
                 if (string.Compare(messageType, schemaName, false, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new Exception(String.Format("Transformation mismatch exception for map {0}, was expecting source schema to be {1} but was actually {2}.", mapName, schemaName, messageType));

@@ -1,0 +1,5 @@
+﻿<ns0:Message2 xmlns:ns0="http://BREPipelineFramework.TestProject.Message2">
+  <Test>Test_0</Test>
+  <TEst2>TEst2_0</TEst2>
+  <Test5>Test5_0</Test5>
+</ns0:Message2>

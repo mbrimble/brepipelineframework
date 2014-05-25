@@ -157,11 +157,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Instructions - Setup steps in order to ensure tests can run.txt" />
+    <Content Include="Sample Files\Expected Output FIles\Test_TransformMessageTwice.xml" />
+    <Content Include="Sample Files\Expected Output FIles\Test_TransformMessage.xml" />
+    <Content Include="Sample Files\Expected Output FIles\Test_TransformMessageWithoutValidationTwice.xml" />
+    <Content Include="Sample Files\Expected Output FIles\Test_FindReplaceRegexInMessage.xml" />
+    <Content Include="Sample Files\Expected Output FIles\Test_TransformMessageWithoutValidation.xml" />
+    <Content Include="Sample Files\Input Files\Message2.xml" />
+    <Content Include="Sample Files\Input Files\Message_Transform.xml" />
     <Content Include="Sample Files\Input Files\Test1.xml" />
     <Content Include="Sample Files\Input Files\Message.xml" />
     <Content Include="Sample Files\Input Files\TestEnvelope.xml" />
     <Content Include="Sample Files\Input Files\Test.txt" />
     <Content Include="Sample Files\Input Files\Test.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_TransformMessageNoMessageType Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_TransformMessageWithoutValidationTwice Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_TransformMessageWithoutValidation Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_FindReplaceRegexInMessage Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_FindReplaceStringInMessage Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Get_SFTP_UserName Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_Get_SBMessaging_Label Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_Set_SFTP_UserName Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Set_SBMessaging_Label Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_ReplaceDocumentNamespace Config.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -243,6 +265,7 @@
     <Content Include="Sample Files\Instance Config Files\Test_Set_BTS_DestinationParty Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_Set_WCF_Action Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_Set_FILE_ReceivedFileName Config.xml" />
+    <Content Include="Sample Files\Expected Output FIles\Test_FindReplaceStringInMessage.xml" />
     <Content Include="Sample Files\Party config\Parties.xml">
       <SubType>Designer</SubType>
     </Content>

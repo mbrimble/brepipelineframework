@@ -609,6 +609,151 @@ namespace BREPipelineFramework.UnitTests
             }
         }
 
+        /// <summary>
+        ///Tests that the FindReplaceStringInMessage vocabulary definition fulfills it's function
+        ///</summary>
+        [TestMethod()]
+        public void Test_FindReplaceStringInMessage()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_FindReplaceStringInMessage Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_FindReplaceStringInMessage.xml";
 
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, testContextInstance, ExpectedOutputFileName);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that the FindReplaceRegexInMessage vocabulary definition fulfills it's function
+        ///</summary>
+        [TestMethod()]
+        public void Test_FindReplaceRegexInMessage()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_FindReplaceRegexInMessage Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_FindReplaceRegexInMessage.xml";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, testContextInstance, ExpectedOutputFileName);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that the TransformMessageWithoutValidation vocabulary definition fulfills it's function
+        ///</summary>
+        [TestMethod()]
+        public void Test_TransformMessageWithoutValidation()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_TransformMessageWithoutValidation Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessageWithoutValidation.xml";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, testContextInstance, ExpectedOutputFileName);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that the TransformMessageWithoutValidation vocabulary definition fulfills it's function when chained
+        ///</summary>
+        [TestMethod()]
+        public void Test_TransformMessageWithoutValidationTwice()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_TransformMessageWithoutValidationTwice Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessageWithoutValidationTwice.xml";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, testContextInstance, ExpectedOutputFileName);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that the TransformMessage vocabulary definition fulfills it's function
+        ///</summary>
+        [TestMethod()]
+        public void Test_TransformMessage()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessage.xml";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, "BREPipelineFramework.TestProject.Rcv_TransformMessage", ExpectedOutputFileName);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that the TransformMessage vocabulary definition fulfills it's function when chained
+        ///</summary>
+        [TestMethod()]
+        public void Test_TransformMessageTwice()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessageTwice.xml";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, "BREPipelineFramework.TestProject.Rcv_TransformMessageTwice", ExpectedOutputFileName);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that the TransformMessage vocabulary definition fails if no message type exists on the message (should use TransformMessageWithoutValidation instead)
+        ///</summary>
+        [TestMethod()]
+        public void Test_TransformMessageNoMessageType()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_TransformMessageNoMessageType Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessage.xml";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, testContextInstance, ExpectedOutputFileName);
+
+            try
+            {
+                _BREPipelineFrameworkTest.RunTest();
+            }
+            catch (Exception e)
+            {
+                if (e.InnerException.Message != "Unable to read source messageType")
+                {
+                    Assert.Fail("Was expecting a no messageType error but instead got - " + e.InnerException.Message);
+                }
+            }
+        }
+
+        /// <summary>
+        ///Tests that the TransformMessage vocabulary definition fails if the message type doesn't match that of the map
+        //////</summary>
+        [TestMethod()]
+        public void Test_TransformMessageMessageTypeMismatch()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message2.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessage.xml";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, "BREPipelineFramework.TestProject.Rcv_TransformMessage", ExpectedOutputFileName, "BREPipelineFramework.TestProject.Message2");
+
+            try
+            {
+                _BREPipelineFrameworkTest.RunTest();
+            }
+            catch (Exception e)
+            {
+                if (!e.InnerException.Message.StartsWith("Transformation mismatch exception for map"))
+                {
+                    Assert.Fail("Was expecting a transformation mismatch error but instead got - " + e.InnerException.Message);
+                }
+            }
+        }
     }
 }

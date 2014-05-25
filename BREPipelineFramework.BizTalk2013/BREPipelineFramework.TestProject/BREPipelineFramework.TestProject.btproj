@@ -110,9 +110,7 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BREPipelineFrameworkComponent">
-      <HintPath>..\..\..\Program Files (x86)\Microsoft BizTalk Server 2013\Pipeline Components\BREPipelineFrameworkComponent.dll</HintPath>
-    </Reference>
+    <Reference Include="BREPipelineFrameworkComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System">
       <Name>System</Name>
@@ -193,14 +191,50 @@
     <Pipeline Include="Rcv_BREPipelineFramework1.btp">
       <TypeName>Rcv_BREPipelineFramework1</TypeName>
       <Namespace>BREPipelineFramework.TestProject</Namespace>
-      <SubType>Task</SubType>
     </Pipeline>
   </ItemGroup>
   <ItemGroup>
     <Pipeline Include="Rcv_BREPipelineFramework.btp">
       <TypeName>Rcv_BREPipelineFramework</TypeName>
       <Namespace>BREPipelineFramework.TestProject</Namespace>
-      <SubType>Designer</SubType>
+    </Pipeline>
+  </ItemGroup>
+  <ItemGroup>
+    <Pipeline Include="Rcv_TransformMessage.btp">
+      <TypeName>Rcv_TransformMessage</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="Message2.xsd">
+      <TypeName>Message2</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Message1_To_Message2.btm">
+      <TypeName>Message1_To_Message2</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="Message3.xsd">
+      <TypeName>Message3</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Message2_To_Message3.btm">
+      <TypeName>Message2_To_Message3</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Pipeline Include="Rcv_TransformMessageTwice.btp">
+      <SubType>Task</SubType>
+      <TypeName>Rcv_TransformMessageTwice</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
     </Pipeline>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

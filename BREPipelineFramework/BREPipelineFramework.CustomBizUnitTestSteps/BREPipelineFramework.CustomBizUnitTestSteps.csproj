@@ -78,6 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinaryComparisonTestStep.cs" />
     <Compile Include="BizTalkMessageInfoFactory.cs" />
     <Compile Include="ExecuteReceivePiplineWithNullablePropertyStep.cs" />
     <Compile Include="PersistMessageHelper.cs" />

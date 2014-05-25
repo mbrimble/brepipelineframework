@@ -6,6 +6,7 @@ using b = BizUnit;
 using System.IO;
 using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using BREPipelineFramework.CustomBizUnitTestSteps;
 
 namespace BREPipelineFramework.UnitTests
 {
@@ -14,7 +15,7 @@ namespace BREPipelineFramework.UnitTests
     /// </summary>
     public static class TestHelpers
     {
-        public static b.BizUnit BREPipelineFrameworkReceivePipelineBaseTest(string InputFileName, string InstanceConfigFilePath, XPathCollection contextXPathCollection, XPathCollection bodyXPathCollection, TestContext testContextInstance, int ExpectedNumberOfFiles, string PipelineType)
+        public static b.BizUnit BREPipelineFrameworkReceivePipelineBaseTest(string InputFileName, string InstanceConfigFilePath, XPathCollection contextXPathCollection, XPathCollection bodyXPathCollection, TestContext testContextInstance, int ExpectedNumberOfFiles, string PipelineType, string ExpectedOutputFileName, string inputMessageType)
         {
             var _BREPipelineFrameworkTest = new b.Xaml.TestCase();
 
@@ -26,8 +27,12 @@ namespace BREPipelineFramework.UnitTests
                 DestinationDir = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Output Files",
                 DestinationFileFormat = "Output {0}.txt",
                 OutputContextFileFormat = "Context {0}.xml",
-                InstanceConfigFile = InstanceConfigFilePath,
             };
+
+            if (!string.IsNullOrEmpty(InstanceConfigFilePath))
+            {
+                pipelineTestStep.InstanceConfigFile = InstanceConfigFilePath;
+            }
 
             var docSpecDefinition = new b.TestSteps.BizTalk.Pipeline.DocSpecDefinition();
 
@@ -39,7 +44,7 @@ namespace BREPipelineFramework.UnitTests
             var docSpecDefinition1 = new b.TestSteps.BizTalk.Pipeline.DocSpecDefinition();
 
             docSpecDefinition1.AssemblyPath = @"..\..\..\BREPipelineFramework.TestProject\bin\debug\BREPipelineFramework.TestProject.dll";
-            docSpecDefinition1.TypeName = "BREPipelineFramework.TestProject.Message";
+            docSpecDefinition1.TypeName = inputMessageType;
 
             pipelineTestStep.DocSpecs.Add(docSpecDefinition1);
 
@@ -104,6 +109,13 @@ namespace BREPipelineFramework.UnitTests
 
                     fileReadMultipleStepBody.SubSteps.Add(xmlValidateBodyStep);
                 }
+                if (!String.IsNullOrEmpty(ExpectedOutputFileName))
+                {
+                    var binaryStep = new BinaryComparisonTestStep();
+                    binaryStep.ComparisonDataPath = ExpectedOutputFileName;
+                    fileReadMultipleStepBody.SubSteps.Add(binaryStep);
+                }
+
                 _BREPipelineFrameworkTest.ExecutionSteps.Add(fileReadMultipleStepBody);
             }
             var bizUnit = new b.BizUnit(_BREPipelineFrameworkTest);
@@ -111,7 +123,42 @@ namespace BREPipelineFramework.UnitTests
             return bizUnit;
         }
 
+        public static b.BizUnit BREPipelineFrameworkReceivePipelineBaseTest(string InputFileName, string InstanceConfigFilePath, XPathCollection contextXPathCollection, XPathCollection bodyXPathCollection, TestContext testContextInstance, int ExpectedNumberOfFiles, string PipelineType, string ExpectedOutputFileName)
+        {
+            return BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, contextXPathCollection, bodyXPathCollection, testContextInstance, ExpectedNumberOfFiles, PipelineType, null, "BREPipelineFramework.TestProject.Message");
+        }
+
+        public static b.BizUnit BREPipelineFrameworkReceivePipelineBaseTest(string InputFileName, string InstanceConfigFilePath, XPathCollection contextXPathCollection, XPathCollection bodyXPathCollection, TestContext testContextInstance, int ExpectedNumberOfFiles, string PipelineType)
+        {
+            return BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, contextXPathCollection, bodyXPathCollection, testContextInstance, ExpectedNumberOfFiles, PipelineType, null);
+        }
+
+        public static b.BizUnit BREPipelineFrameworkReceivePipelineBaseTest(string InputFileName, TestContext testContextInstance, string PipelineType, string ExpectedoutputFileName)
+        {
+            return BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, null, null, null, testContextInstance, 1, PipelineType, ExpectedoutputFileName);
+        }
+
+        public static b.BizUnit BREPipelineFrameworkReceivePipelineBaseTest(string InputFileName, TestContext testContextInstance, string PipelineType, string ExpectedoutputFileName, string InputMessageType)
+        {
+            return BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, null, null, null, testContextInstance, 1, PipelineType, ExpectedoutputFileName, InputMessageType);
+        }
+
+        public static b.BizUnit BREPipelineFrameworkReceivePipelineBaseTest(string InputFileName, string InstanceConfigFilePath, TestContext testContextInstance, string ExpectedOutputFileName)
+        {
+            return BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, null, null, testContextInstance, 1, "BREPipelineFramework.TestProject.Rcv_BREPipelineFramework", ExpectedOutputFileName);
+        }
+
+        public static b.BizUnit BREPipelineFrameworkReceivePipelineBaseTest(string InputFileName, string InstanceConfigFilePath, TestContext testContextInstance, string PipelineType, string ExpectedOutputFileName)
+        {
+            return BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, null, null, testContextInstance, 1, PipelineType, ExpectedOutputFileName);
+        }
+
         public static b.BizUnit BREPipelineFrameworkReceivePipelineBaseTest(string InputFileName, string InstanceConfigFilePath, XPathCollection _XPathCollection, TestContext testContextInstance)
+        {
+            return BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, null, testContextInstance, 1, "BREPipelineFramework.TestProject.Rcv_BREPipelineFramework");
+        }
+
+        public static b.BizUnit BREPipelineFrameworkReceivePipelineBaseTest(string InputFileName, string InstanceConfigFilePath, XPathCollection _XPathCollection, string ExpectedOutputFile, TestContext testContextInstance)
         {
             return BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, null, testContextInstance, 1, "BREPipelineFramework.TestProject.Rcv_BREPipelineFramework");
         }

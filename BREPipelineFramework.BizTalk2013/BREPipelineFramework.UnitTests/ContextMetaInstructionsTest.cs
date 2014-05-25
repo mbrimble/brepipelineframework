@@ -290,6 +290,84 @@ namespace BREPipelineFramework.UnitTests
         ///Tests that setting the SMTP.From context property results in the property being successfully written to the context of a message in a receive pipeline
         ///</summary>
         [TestMethod()]
+        public void Test_Set_SBMessaging_Label()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.txt";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_Set_SBMessaging_Label Config.xml";
+            string XPathQuery = "boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='Label'][@Promoted='true'][@Namespace='http://schemas.microsoft.com/BizTalk/2012/Adapter/BrokeredMessage-properties'][@Value='test'])";
+            string ExpectedValue = "True";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+            _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
+            _XPathCollection.XPathQueryList.Add(numberOfPropertiesXPath, "1");
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that setting the SBMessaging.Label context property results in the property being successfully written to the context of a message in a send pipeline
+        ///and then sets the custom context property https://BREPipelineFramework.TestProject.BREPipelineFramework_PropSchema#Property1 to FoundExpectedResult if the property is found
+        ///</summary>
+        [TestMethod()]
+        public void Test_Get_SBMessaging_Label()
+        {
+            string InputFileName = "Test.txt";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_Get_SBMessaging_Label Config.xml";
+            string XPathQuery = "boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='Property1'][@Promoted='false'][@Namespace='https://BREPipelineFramework.TestProject.BREPipelineFramework_PropSchema'][@Value='FoundExpectedResult'])";
+            string ExpectedValue = "True";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+            _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
+            _XPathCollection.XPathQueryList.Add(numberOfPropertiesXPath, "2");
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkSendPipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that setting the SFTP.UserName context property results in the property being successfully written to the context of a message in a receive pipeline
+        ///</summary>
+        [TestMethod()]
+        public void Test_Set_SFTP_UserName()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.txt";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_Set_SFTP_UserName Config.xml";
+            string XPathQuery = "boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='UserName'][@Promoted='true'][@Namespace='http://schemas.microsoft.com/BizTalk/2012/Adapter/sftp-properties'][@Value='test'])";
+            string ExpectedValue = "True";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+            _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
+            _XPathCollection.XPathQueryList.Add(numberOfPropertiesXPath, "1");
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that setting the SFTP.UserName context property results in the property being successfully written to the context of a message in a send pipeline
+        ///and then sets the custom context property https://BREPipelineFramework.TestProject.BREPipelineFramework_PropSchema#Property1 to FoundExpectedResult if the property is found
+        ///</summary>
+        [TestMethod()]
+        public void Test_Get_SFTP_UserName()
+        {
+            string InputFileName = "Test.txt";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_Get_SFTP_UserName Config.xml";
+            string XPathQuery = "boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='Property1'][@Promoted='false'][@Namespace='https://BREPipelineFramework.TestProject.BREPipelineFramework_PropSchema'][@Value='FoundExpectedResult'])";
+            string ExpectedValue = "True";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+            _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
+            _XPathCollection.XPathQueryList.Add(numberOfPropertiesXPath, "2");
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkSendPipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that setting the SMTP.From context property results in the property being successfully written to the context of a message in a receive pipeline
+        ///</summary>
+        [TestMethod()]
         public void Test_Set_SMTP_From()
         {
             string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.txt";
