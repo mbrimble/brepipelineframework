@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using BREPipelineFramework;
-using Microsoft.BizTalk.Message.Interop;
 using BREPipelineFramework.Helpers;
-using System.IO;
-using Microsoft.BizTalk.Streaming;
 using System.Xml;
 using Microsoft.BizTalk.XPath;
-using System.Management;
 using System.Data.SqlClient;
 using System.Data;
 using BREPipelineFramework.SampeInstructions.Instructions;
 using System.Text.RegularExpressions;
+using BREPipelineFramework.SampleInstructions.Instructions;
+using BREPipelineFramework.Helpers.Tracing;
+using System.Collections.Generic;
 
 namespace BREPipelineFramework.SampleInstructions.MetaInstructions
 {
@@ -22,16 +17,16 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
         #region Private Properties
 
         private FindReplaceStringInstruction findReplaceStringInstruction = null;
-        private string bodyString;
+        private MessageModificationInstructions messageModificationInstructions;
 
         public string BodyString
         {
             get 
             {
-                if (string.IsNullOrEmpty(bodyString))
-                {
-                    ExtractBody();
-                }
+                System.IO.StreamReader reader = new System.IO.StreamReader(base.InMsg.BodyPart.GetOriginalDataStream());
+                base.Pc.ResourceTracker.AddResource(reader);
+                string bodyString = reader.ReadToEnd();
+                base.InMsg.BodyPart.Data.Position = 0;
 
                 return bodyString; 
             }
@@ -59,7 +54,7 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
         /// <returns>The string converted to Uppercase</returns>
         public string ReturnUppercaseString(String inputString)
         {
-            return inputString.ToUpper();
+            return inputString.ToUpperInvariant();
         }
 
         /// <summary>
@@ -69,7 +64,7 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
         /// <returns>The string converted to Lowercase</returns>
         public string ReturnLowercaseString(String inputString)
         {
-            return inputString.ToLower();
+            return inputString.ToLowerInvariant();
         }
 
         /// <summary>
@@ -100,14 +95,7 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
         /// <returns>The length of the string</returns>
         public int StringLength(string StringToCheck)
         {
-            try
-            {
-                return StringToCheck.Length;
-            }
-            catch
-            {
-                return 0;
-            }
+            return StringToCheck.Length;
         }
 
         /// <summary>
@@ -181,13 +169,7 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
         /// <returns>The result of an XPath expression on the given message</returns>
         public string GetXPathResult(XPathResultTypeEnum _XPathResultType, string _XPathQuery, bool exceptionIfNotFound)
         {
-            IBaseMessagePart bodyPart = base.InMsg.BodyPart;
-            Stream inboundStream = bodyPart.GetOriginalDataStream();
-
-            VirtualStream virtualStream = new VirtualStream();
-            ReadOnlySeekableStream readOnlySeekableStream = new ReadOnlySeekableStream(inboundStream, virtualStream);
-            XmlTextReader xmlTextReader = new XmlTextReader(readOnlySeekableStream);
-
+            XmlTextReader xmlTextReader = new XmlTextReader(base.InMsg.BodyPart.GetOriginalDataStream());
             XPathCollection xPathCollection = new XPathCollection();
             xPathCollection.Add(_XPathQuery);
 
@@ -220,9 +202,7 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
                 base.SetException(new Exception("No result found for XPath query - " + _XPathQuery));
             }
 
-            readOnlySeekableStream.Position = 0;
-            bodyPart.Data = readOnlySeekableStream;
-
+            base.InMsg.BodyPart.Data.Position = 0;
             return value;
         }
 
@@ -283,56 +263,12 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
         }
 
         /// <summary>
-        /// Add a namespace to the document root node
-        /// </summary>
-        public void AddDocumentNamespace(string Namespace)
-        {
-            NamespaceModificationInstructions instruction = new NamespaceModificationInstructions(Namespace);
-            base.AddInstruction(instruction);
-        }
-
-        /// <summary>
-        /// Add a namespace and namespace prefix to the document root node
-        /// </summary>
-        public void AddDocumentNamespaceAndPrefix(string Namespace, string NamespacePrefix)
-        {
-            NamespaceModificationInstructions instruction = new NamespaceModificationInstructions(Namespace, NamespacePrefix);
-            base.AddInstruction(instruction);
-        }
-
-        /// <summary>
-        /// Replace the namespace on the document root node
-        /// </summary>
-        public void ReplaceDocumentNamespace(string Namespace)
-        {
-            NamespaceModificationInstructions instruction = new NamespaceModificationInstructions(Namespace, true);
-            base.AddInstruction(instruction);
-        }
-
-        /// <summary>
-        /// Replace the namespace and namespace prefix on the document root node
-        /// </summary>
-        public void ReplaceDocumentNamespaceAndPrefix(string Namespace, string NamespacePrefix)
-        {
-            NamespaceModificationInstructions instruction = new NamespaceModificationInstructions(Namespace, NamespacePrefix, true);
-            base.AddInstruction(instruction);
-        }
-
-        /// <summary>
         /// Replace a specific substring in the message body with another string
         /// </summary>
         public void FindReplaceStringInMessage(string stringToBeReplaced, string stringToReplaceWith)
         {
             InstantiateFindReplaceStringInstructionIfNecessary();
-
-            try
-            {
-                findReplaceStringInstruction.AddStringReplace(stringToBeReplaced, stringToReplaceWith);
-            }
-            catch (Exception e)
-            {
-                base.SetException(new Exception("Error while trying to setup a string replace instruction - " + e.Message, e));
-            }
+            findReplaceStringInstruction.AddStringReplace(stringToBeReplaced, stringToReplaceWith);
         }
 
         /// <summary>
@@ -341,15 +277,7 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
         public void FindReplaceRegexInMessage(string regexToBeReplaced, string stringToReplaceWith)
         {
             InstantiateFindReplaceStringInstructionIfNecessary();
-            
-            try
-            {
-                findReplaceStringInstruction.AddRegexReplace(regexToBeReplaced, stringToReplaceWith);
-            }
-            catch (Exception e)
-            {
-                base.SetException(new Exception("Error while trying to setup a regex replace instruction - " + e.Message, e));
-            }
+            findReplaceStringInstruction.AddRegexReplace(regexToBeReplaced, stringToReplaceWith);
         }
 
         /// <summary>
@@ -366,12 +294,18 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
         /// </summary>
         public bool CheckIfStringExistsInMessage(string stringToFind)
         {
-            if (string.IsNullOrEmpty(bodyString))
+            System.IO.StreamReader reader = new System.IO.StreamReader(InMsg.BodyPart.GetOriginalDataStream());
+            Pc.ResourceTracker.AddResource(reader);
+            bool found = false;
+
+            while (!reader.EndOfStream && !found)
             {
-                ExtractBody();
+                string body = reader.ReadLine();
+                found = body.Contains(stringToFind);
             }
 
-            return bodyString.Contains(stringToFind);
+            InMsg.BodyPart.Data.Position = 0;
+            return found;
         }
 
         /// <summary>
@@ -379,13 +313,19 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
         /// </summary>
         public bool CheckIfRegexExistsInMessage(string regexToFind)
         {
-            if (string.IsNullOrEmpty(bodyString))
+            System.IO.StreamReader reader = new System.IO.StreamReader(InMsg.BodyPart.GetOriginalDataStream());
+            Pc.ResourceTracker.AddResource(reader);
+            bool found = false;
+
+            while (!reader.EndOfStream && !found)
             {
-                ExtractBody();
+                string body = reader.ReadLine();
+                Match match = Regex.Match(body, regexToFind);
+                found = match.Success;
             }
 
-            Match match = Regex.Match(bodyString, regexToFind);
-            return match.Success;
+            InMsg.BodyPart.Data.Position = 0;
+            return found;
         }
 
         /// <summary>
@@ -393,19 +333,18 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
         /// </summary>
         public int MessageBodyLength()
         {
-            if (string.IsNullOrEmpty(bodyString))
+            System.IO.StreamReader reader = new System.IO.StreamReader(InMsg.BodyPart.GetOriginalDataStream());
+            Pc.ResourceTracker.AddResource(reader);
+            int length = 0;
+
+            while (!reader.EndOfStream)
             {
-                ExtractBody();
+                string body = reader.ReadLine();
+                length = length + body.Length;
             }
 
-            try
-            {
-                return bodyString.Length;
-            }
-            catch
-            {
-                return 0;
-            }
+            InMsg.BodyPart.Data.Position = 0;
+            return length;
         }
 
         public string ReturnFirstRegexMatch(string regexToFind)
@@ -415,28 +354,29 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
 
         public string ReturnRegexMatchByIndex(string regexToFind, int index)
         {
-            if (string.IsNullOrEmpty(bodyString))
-            {
-                ExtractBody();
-            }
+            System.IO.StreamReader reader = new System.IO.StreamReader(InMsg.BodyPart.GetOriginalDataStream());
+            Pc.ResourceTracker.AddResource(reader);
+            string matchedString = String.Empty;
+            List<string> matchedStrings = new List<string>();
 
-            Match match = Regex.Match(bodyString, regexToFind);
-
-            if (match.Success)
+            while (!reader.EndOfStream && matchedStrings.Count < index + 1)
             {
-                try
+                string body = reader.ReadLine();
+                MatchCollection matchCollection = Regex.Matches(body, regexToFind);
+
+                foreach (Match match in matchCollection)
                 {
-                    return match.Groups[index].Value;
-                }
-                catch
-                {
-                    return "";
+                    matchedStrings.Add(match.Value);
                 }
             }
-            else
+
+            if (matchedStrings.Count >= index + 1)
             {
-                return "";
+                matchedString = matchedStrings[index].ToString();
             }
+            
+            InMsg.BodyPart.Data.Position = 0;
+            return matchedString;           
         }
 
         /// <summary>
@@ -489,15 +429,50 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
             {
                 base.SetException(new Exception("An exception was encountered while looking up a party with an alias name of " + AliasName + ", an alias qualifier of " + AliasQualifier + ", and an alias value of " + AliasValue +
                     ".  This could potentially be a SQL permissions issue on the admsvr_GetPartyByAliasNameValue stored procedure in the BizTalk Management database or possibly lack of WMI permissions." +
-                "See http://social.msdn.microsoft.com/Forums/en-US/e5b00132-8d05-47a0-8a4c-073429b4c8ad/failed-with-exception-syntax-error-or-access-violation for hints.  Exception details - " + ex.Message));
+                "See http://social.msdn.microsoft.com/Forums/en-US/e5b00132-8d05-47a0-8a4c-073429b4c8ad/failed-with-exception-syntax-error-or-access-violation for hints.  Exception details - " + ex.Message, ex));
             }
             catch (Exception e)
             {
-                base.SetException(new Exception("An exception was encountered while looking up a party with an alias name of " + AliasName + ", an alias qualifier of " + AliasQualifier + ", and an alias value of " + AliasValue + " - " + e.Message));
+                base.SetException(new Exception("An exception was encountered while looking up a party with an alias name of " + AliasName + ", an alias qualifier of " + AliasQualifier + ", and an alias value of " + AliasValue + " - " + e.Message, e));
             }
 
 			return party;
 		}
+        
+        /// <summary>
+        /// Transform a message using the specified map class with the specified level of source schema validation
+        /// </summary>
+        public void TransformMessage(string mapClassName, string mapAssemblyName, TransformationSourceSchemaValidation validation)
+        {
+            TransformationInstruction instruction = new TransformationInstruction(mapClassName, mapAssemblyName, validation, CallToken);
+            base.AddInstruction(instruction);
+        }
+
+        public bool TraceInfo(string infoToTrace)
+        {
+            TraceManager.RulesComponent.TraceInfo("{0} - {1}", base.CallToken, infoToTrace);
+            return true;
+        }
+
+        public string ConvertToString(object obj)
+        {
+            return obj.ToString();
+        }
+
+        public int ConvertToInt(object obj)
+        {
+            return (int)TypeCaster.GetTypedObject(obj, TypeEnum.Integer);
+        }
+
+        public bool ConvertToBool(object obj)
+        {
+            return (bool)TypeCaster.GetTypedObject(obj, TypeEnum.Boolean);
+        }
+
+        public DateTime ConvertToDateTime(object obj)
+        {
+            return (DateTime)TypeCaster.GetTypedObject(obj, TypeEnum.DateTime);
+        }
 
         #endregion
 
@@ -512,15 +487,55 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
             }
         }
 
-        private void ExtractBody()
+        #endregion
+
+        #region Deprecated methods - not supported in latest vocabularies but kept for backwards compatibility
+
+        /// <summary>
+        /// Add a namespace to the document root node
+        /// </summary>
+        public void AddDocumentNamespace(string Namespace)
         {
-            VirtualStream newMsgStream = new VirtualStream();
-            base.InMsg.BodyPart.Data.CopyTo(newMsgStream);
-            base.InMsg.BodyPart.Data.Seek(0, SeekOrigin.Begin);
-            newMsgStream.Seek(0, SeekOrigin.Begin);
-            System.IO.StreamReader reader = new System.IO.StreamReader(newMsgStream);
-            bodyString = reader.ReadToEnd();
-            reader.Close();
+            MessageModificationDetails messageModificationInstruction = new MessageModificationDetails(MessageModificationInstructionTypeEnum.AddRootNodeNamespaceAndPrefix, Namespace, prefix: "ns0");
+            AddMessageModificationInstruction(messageModificationInstruction);
+        }
+
+        /// <summary>
+        /// Add a namespace and namespace prefix to the document root node
+        /// </summary>
+        public void AddDocumentNamespaceAndPrefix(string Namespace, string NamespacePrefix)
+        {
+            MessageModificationDetails messageModificationInstruction = new MessageModificationDetails(MessageModificationInstructionTypeEnum.AddRootNodeNamespaceAndPrefix, Namespace, prefix: NamespacePrefix);
+            AddMessageModificationInstruction(messageModificationInstruction);
+        }
+
+        /// <summary>
+        /// Replace the namespace on the document root node
+        /// </summary>
+        public void ReplaceDocumentNamespace(string Namespace)
+        {
+            MessageModificationDetails messageModificationInstruction = new MessageModificationDetails(MessageModificationInstructionTypeEnum.UpdateRootNodeNamespaceAndPrefix, Namespace, prefix: "ns0");
+            AddMessageModificationInstruction(messageModificationInstruction);
+        }
+
+        /// <summary>
+        /// Replace the namespace and namespace prefix on the document root node
+        /// </summary>
+        public void ReplaceDocumentNamespaceAndPrefix(string Namespace, string NamespacePrefix)
+        {
+            MessageModificationDetails messageModificationInstruction = new MessageModificationDetails(MessageModificationInstructionTypeEnum.UpdateRootNodeNamespaceAndPrefix, Namespace, prefix: NamespacePrefix);
+            AddMessageModificationInstruction(messageModificationInstruction);
+        }
+
+        private void AddMessageModificationInstruction(MessageModificationDetails messageModificationInstruction)
+        {
+            if (messageModificationInstructions == null)
+            {
+                messageModificationInstructions = new MessageModificationInstructions(CallToken);
+                base.AddInstruction(messageModificationInstructions);
+            }
+
+            messageModificationInstructions._MessageModificationDetails.Add(messageModificationInstruction);
         }
 
         #endregion

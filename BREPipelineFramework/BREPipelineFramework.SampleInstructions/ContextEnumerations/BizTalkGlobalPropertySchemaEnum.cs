@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace BREPipelineFramework.SampleInstructions
+﻿namespace BREPipelineFramework.SampleInstructions
 {
     /// <summary>
     /// See http://msdn.microsoft.com/en-us/library/ee277239(v=bts.10).aspx for an explanation of the BTS context properties

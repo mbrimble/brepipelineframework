@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
   <vocabulary id="9504f49b-83ad-4a27-87b5-4c8bab3b2638" name="BREPipelineFramework.SampleInstructions.ContextInstructions" uri="" description="">
-    <version major="1" minor="2" description="" modifiedby="DATACOM\johannc" date="2014-02-16T22:50:57.9030034+13:00" />
+    <version major="1" minor="2" description="" modifiedby="jcooper1982" date="2014-02-16T22:50:57.9030034+13:00" />
     <vocabularydefinition id="046f8a90-de4e-49f9-915b-3d35fc72653d" name="SetSQLContextProperty" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="SetSQLContextProperty" type="void">

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Stages>
+    <Stage CategoryId="9d0e4103-4cce-4536-83fa-4a5040674ad6">
+      <Components>
+        <Component Name="BREPipelineFramework.PipelineComponents.BREPipelineFrameworkComponent">
+          <Properties>
+            <Enabled vt="11">true</Enabled>
+            <ApplicationContext vt="8">Test_AddNodeWithNamespace</ApplicationContext>
+            <ExecutionPolicy vt="8">BREPipelineFramework ExecutionPolicy</ExecutionPolicy>
+            <InstructionLoaderPolicy vt="8">BREPipelineFramework InstructionLoaderPolicy</InstructionLoaderPolicy>
+            <RecoverableInterchangeProcessingEnabled vt="11">false</RecoverableInterchangeProcessingEnabled>
+          </Properties>
+        </Component>
+      </Components>
+    </Stage>
+  </Stages>
+</Root>

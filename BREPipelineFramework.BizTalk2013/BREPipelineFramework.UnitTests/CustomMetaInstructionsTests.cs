@@ -5,6 +5,7 @@ using BREPipelineFramework.SampleInstructions;
 using BREPipelineFramework.Helpers;
 using b = BizUnit;
 using System.Collections.Generic;
+using System.Runtime.Caching;
 namespace BREPipelineFramework.UnitTests
 {
     [TestClass]
@@ -30,12 +31,29 @@ namespace BREPipelineFramework.UnitTests
 
         #region Additional test attributes
 
-        //Use TestCleanup to run code after each test has run
+        //Use TestInitialize to clear cache before each test runs
+        [TestInitialize()]
+        public void MyTestSetup()
+        {
+            var oldCache = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache;
+            BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache = new MemoryCache("BREPipelineFramework.Cache", null);
+            oldCache.Dispose();
+        }
+
+        //Use TestCleanup to cleanup output files after each test has run
         [TestCleanup()]
         public void MyTestCleanup()
         {
             string directoryPath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Output Files";
             System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(directoryPath);
+
+            foreach (System.IO.FileInfo file in directory.GetFiles())
+            {
+                file.Delete();
+            }
+
+            directoryPath = @"C:\temp\trackingfolder";
+            directory = new System.IO.DirectoryInfo(directoryPath);
 
             foreach (System.IO.FileInfo file in directory.GetFiles())
             {
@@ -61,7 +79,7 @@ namespace BREPipelineFramework.UnitTests
             XPathCollection _XPathCollection = new XPathCollection();
             _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
 
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection);
             _BREPipelineFrameworkTest.RunTest();
         }
     }

@@ -1,0 +1,5 @@
+﻿<MessageInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ContextInfo PropertiesCount="2">
+    <Property Name="InterchangeID" Namespace="http://schemas.microsoft.com/BizTalk/2003/system-properties" Value="123" Promoted="false" />
+  </ContextInfo>
+</MessageInfo>

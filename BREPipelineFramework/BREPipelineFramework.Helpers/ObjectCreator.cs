@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Reflection.Emit;
 using System.Reflection;
-using Microsoft.BizTalk.Message.Interop;
 
 namespace BREPipelineFramework.Helpers
 {
@@ -17,11 +13,6 @@ namespace BREPipelineFramework.Helpers
         delegate object MethodInvoker();
         MethodInvoker methodHandler = null;
 
-        public ObjectCreator(Type type)
-        {
-            CreateObject(type.GetConstructor(Type.EmptyTypes));
-        }
-
         public ObjectCreator(ConstructorInfo target)
         {
             CreateObject(target);
@@ -29,10 +20,7 @@ namespace BREPipelineFramework.Helpers
 
         void CreateObject(ConstructorInfo target)
         {
-            DynamicMethod dynamic = new DynamicMethod(string.Empty,
-                        typeof(object),
-                        new Type[0],
-                        target.DeclaringType);
+            DynamicMethod dynamic = new DynamicMethod(string.Empty, typeof(object), new Type[0], target.DeclaringType);
             ILGenerator il = dynamic.GetILGenerator();
             il.DeclareLocal(target.DeclaringType);
             il.Emit(OpCodes.Newobj, target);

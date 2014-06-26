@@ -1,0 +1,5 @@
+﻿<MessageInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ContextInfo PropertiesCount="2">
+    <Property Name="Action" Namespace="http://schemas.microsoft.com/BizTalk/2006/01/Adapters/WCF-properties" Value="ExpectedResult" Promoted="true" />
+  </ContextInfo>
+</MessageInfo>

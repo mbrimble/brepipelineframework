@@ -1,0 +1,45 @@
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+	boundary="_FD0601FB-4AC5-4484-9924-462DF6838F2B_"
+
+--_FD0601FB-4AC5-4484-9924-462DF6838F2B_
+MIME-Version: 1.0
+Content-Type: text/xml; charset="UTF-8"
+Content-Transfer-Encoding: base64
+Content-ID: {5463202F-F8EF-4C3C-8679-06DE139D9654}
+Content-Description: body
+
+77u/PG5zMDpIZWxsb1Rlc3QgeG1sbnM6bnMwPSJodHRwOi8vQml6VGFsa19TZXJ2ZXJfUHJvamVj
+dDEuSGVsbG9UZXN0Ij4NCiAgPEJMYWg+QkxhaF8wPC9CTGFoPg0KPC9uczA6SGVsbG9UZXN0Pg==
+
+--_FD0601FB-4AC5-4484-9924-462DF6838F2B_
+MIME-Version: 1.0
+Content-Type: text/xml; charset="UTF-8"
+Content-Transfer-Encoding: base64
+Content-ID: {25CFDE3E-4F3B-48DA-838F-8F2DC10D3E7A}
+Content-Description: Attachment
+Content-Disposition: attachment; filename="=?utf-8?B?QXR0YWNobWVudDF=?="
+
+77u/PG5zMDpIZWxsb1Rlc3QgeG1sbnM6bnMwPSJodHRwOi8vQml6VGFsa19TZXJ2ZXJfUHJvamVj
+dDEuSGVsbG9UZXN0Ij4NCiAgPEJMYWg+QkxhaF8wPC9CTGFoPg0KPC9uczA6SGVsbG9UZXN0Pg==
+
+--_FD0601FB-4AC5-4484-9924-462DF6838F2B_
+MIME-Version: 1.0
+Content-Transfer-Encoding: base64
+Content-ID: {16CEED68-77DB-416D-896E-297362C91C97}
+Content-Description: Hello
+Content-Disposition: attachment; filename="=?utf-8?B?QXR0YWNobWVudDJ=?="
+
+PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8c3RyaW5nPlRlc3Q8L3N0cmluZz4=
+
+--_FD0601FB-4AC5-4484-9924-462DF6838F2B_
+MIME-Version: 1.0
+Content-Transfer-Encoding: base64
+Content-ID: {1B1E5726-1696-49EC-BFDB-49729CBF328C}
+Content-Description: What
+Content-Disposition: attachment; filename="=?utf-8?B?QXR0YWNobWVudDN=?="
+
+PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8ZGF0ZVRpbWU+MjAxNC0wNi0wNVQxMjozNzozNi42NjUx
+MjMyKzEyOjAwPC9kYXRlVGltZT4=
+
+--_FD0601FB-4AC5-4484-9924-462DF6838F2B_--

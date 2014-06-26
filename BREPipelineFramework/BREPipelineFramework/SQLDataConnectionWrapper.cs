@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using Microsoft.RuleEngine;
 
 namespace BREPipelineFramework
@@ -13,21 +9,37 @@ namespace BREPipelineFramework
 
         private SqlConnection sqlConnection;
         private DataConnection dataConnection;
+        private string dbName;
+        private string dbTable;
 
         #endregion
 
         #region Internal properties
 
+        /// <summary>
+        /// The SQLConnection from which the DataConnection is built
+        /// </summary>
         internal SqlConnection SqlConnection
         {
             get { return sqlConnection; }
-            set { sqlConnection = value; }
         }
 
+        internal string DbName
+        {
+            get { return dbName; }
+        }
+
+        internal string DbTable
+        {
+            get { return dbTable; }
+        }
+
+        /// <summary>
+        /// The DataConnection that will be asserted to the ExecutionPolicy
+        /// </summary>
         internal DataConnection DataConnection
         {
             get { return dataConnection; }
-            set { dataConnection = value; }
         }
 
         #endregion
@@ -38,6 +50,8 @@ namespace BREPipelineFramework
         {
             sqlConnection = new SqlConnection(ConnectionString);
             dataConnection = new DataConnection(DBName, DBTable, sqlConnection);
+            this.dbName = DBName;
+            this.dbTable = DBTable;
         }
 
         #endregion

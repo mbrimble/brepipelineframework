@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
   <vocabulary id="255f3729-9aa6-41af-9eea-70f0f70f1baf" name="BREPipelineFramework.SampleInstructions.ContextInstructions" uri="" description="">
-    <version major="1" minor="0" description="" modifiedby="johannc" date="2012-11-27T22:22:31.2485362+13:00" />
+    <version major="1" minor="0" description="" modifiedby="jcooper1982" date="2012-11-27T22:22:31.2485362+13:00" />
     <vocabularydefinition id="5a7ec770-ef3d-4fc8-86f1-752987e78ea8" name="SetCustomContextPropertyFromSSO" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="SetContextPropertyFromSSOConfig" type="void">

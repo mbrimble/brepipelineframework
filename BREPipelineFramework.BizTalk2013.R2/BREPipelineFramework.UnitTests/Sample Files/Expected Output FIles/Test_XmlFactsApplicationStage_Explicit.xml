@@ -1,0 +1,5 @@
+﻿<prefixClash:Message xmlns:ns0="http://BREPipelineFramework" xmlns:prefixClash="http://after">
+  <ns0:Element>Test</ns0:Element>
+  <ns0:TestElement>Hello</ns0:TestElement>
+  <ns0:Element3>Test_XmlFactsApplicationStage</ns0:Element3>
+</prefixClash:Message>

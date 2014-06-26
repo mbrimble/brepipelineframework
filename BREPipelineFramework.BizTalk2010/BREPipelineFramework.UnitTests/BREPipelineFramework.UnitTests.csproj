@@ -36,6 +36,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\BREPipelineFramework.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Without UnitTests|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\Debug Without UnitTests\</OutputPath>
@@ -72,18 +78,21 @@
     <Reference Include="BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="BREPipelineFramework.CustomBizUnitTestSteps, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libs\BREPipelineFramework.CustomBizUnitTestSteps.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\BREPipelineFramework.Helpers\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.Helpers.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BTS.Testing.TraceMonitor.BizUnit4.TestSteps">
+      <HintPath>..\..\Libs\BTS.Testing.TraceMonitor.BizUnit4.TestSteps.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.BizTalk.Edi.BaseArtifacts, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -101,6 +110,7 @@
     <Reference Include="PipelineObjects, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libs\PipelineObjects.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -108,10 +118,12 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Winterdom.BizTalk.PipelineTesting">
-      <HintPath>..\Libs\Winterdom.BizTalk.PipelineTesting.dll</HintPath>
+      <HintPath>..\..\Libs\Winterdom.BizTalk.PipelineTesting.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="xmlunit, Version=0.3.0.0, Culture=neutral, PublicKeyToken=f91c5db14588c7d5, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -124,29 +136,84 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContextMetaInstructionsTest.cs" />
+    <Compile Include="CachingMetaInstructionsTest.cs" />
+    <Compile Include="ContextMetaInstructionsTests.cs" />
     <Compile Include="FrameworkTests.cs" />
     <Compile Include="CustomMetaInstructionsTests.cs" />
     <Compile Include="HelperMetaInstructionsTests.cs" />
+    <Compile Include="MessagePartMetaInstructionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestHelpers.cs" />
+    <Compile Include="TypedXMLDocumentMetaInstructionsTests.cs" />
+    <Compile Include="XMLTranslatorMetaInstructionsTests.cs" />
     <Compile Include="XPathCollection.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Sample Files\Input Context Files\" />
     <Folder Include="Sample Files\Output Files\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Instructions - Setup steps in order to ensure tests can run.txt" />
+    <Content Include="Sample Files\Input Context Files\Base Context.xml" />
+    <Content Include="Sample Files\Input Context Files\Test_AddCustomContextPropertyToCache.xml" />
+    <Content Include="Sample Files\Input Context Files\Test_AddCustomContextPropertyToCache_OverrideContextKey.xml" />
+    <Content Include="Sample Files\Input Context Files\Test_Get_BTS_DestinationParty.xml" />
+    <Content Include="Sample Files\Input Context Files\Test_Get_FILE_ReceivedFileName.xml" />
+    <Content Include="Sample Files\Input Context Files\Test_Get_SBMessaging_Label.xml" />
+    <Content Include="Sample Files\Input Context Files\Test_Get_SFTP_UserName.xml" />
+    <Content Include="Sample Files\Input Context Files\Test_Get_SMTP_From.xml" />
+    <Content Include="Sample Files\Input Context Files\Test_Get_SQL_ConnectionString.xml" />
+    <Content Include="Sample Files\Input Context Files\Test_Get_WCF_Action.xml" />
+    <Content Include="Sample Files\Input Context Files\Test_Get_WSS_Url.xml" />
+    <Content Include="Sample Files\Input Context Files\Test_Get_XMLNORM_PreserveBom.xml" />
+    <Content Include="Sample Files\Input Context Files\Test_ReapplyCachedContext_SMTPFrom.xml" />
+    <Content Include="Sample Files\Input Context Files\Test_ReapplyContextPropertiesFromCache_OverrideContextKey.xml" />
+    <Content Include="Sample Files\Input Files\bretest.txt" />
     <Content Include="Sample Files\Input Files\Message.xml" />
+    <Content Include="Sample Files\Input Files\Message2.xml" />
+    <Content Include="Sample Files\Input Files\Message_Transform.xml" />
+    <Content Include="Sample Files\Input Files\MIMEMessage.txt" />
+    <Content Include="Sample Files\Input Files\Test1.xml" />
+    <Content Include="Sample Files\Input Files\TestCount.txt" />
     <Content Include="Sample Files\Input Files\TestEnvelope.xml" />
     <Content Include="Sample Files\Input Files\Test.txt" />
     <Content Include="Sample Files\Input Files\Test.xml" />
+    <Content Include="Sample Files\Input Files\Test_AddNodeIfNotThere.xml" />
+    <Content Include="Sample Files\Input Files\Test_AddNodeWithNamespaceIfNotThere.xml" />
+    <Content Include="Sample Files\Input Files\Test_RemoveNamespace.xml" />
+    <Content Include="Sample Files\Input Files\Test_ReplaceNamespace.xml" />
+    <Content Include="Sample Files\Input Files\Test_ReplaceNamespaceWithNoPrefix.xml" />
+    <Content Include="Sample Files\Input Files\Test_ReplacePrefixForGivenNamespace.xml" />
+    <Content Include="Sample Files\Input Files\Test_UpdateAttributeDetails.xml" />
+    <Content Include="Sample Files\Input Files\Test_UpdateElementValueByNodeName.xml" />
+    <Content Include="Sample Files\Input Files\Test_UpdateElementValueByNodeNameAndOldValue.xml" />
+    <Content Include="Sample Files\Instance Config Files\Base Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_AddAttribute Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_AddCustomContextPropertyToCache Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_AddCustomContextPropertyToCache_OverrideContextKey Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_AddCustomContextPropertyToCache_OverrideExpiryTime Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_AddDocumentNamespaceAndPrefix_Deprecated Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_AddDocumentNamespace_Deprecated Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_AddNode Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_AddNodeIfNotThere Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_AddNodeWithNamespace Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_AddNodeWithNamespaceAndValue Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_AddNodeWithNamespaceIfNotThere Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_AddNodeWithValue Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_AddStringToCache Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_BadMetaInstruction Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_ChainNamespaceModifications Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Compensate Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_DeleteContextFromCache Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_DeleteContextFromCache_OverrideContextKey Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_DeleteStringFromCache Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_DuplicateHelperMetaInstructions Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_DuplicateContextMetaInstructions Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_CustomMetaInstruction Config.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_ExplicitPolicyVersions Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_FindReplaceRegexInMessage Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_FindReplaceStringInMessage Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_GetCustomContextPropertyFromCache Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_GetPartyNameFromAliasNotFoundNoException Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_GetPartyNameFromAliasNotFoundException Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_GetPartyNameFromAlias Config.xml" />
@@ -156,6 +223,35 @@
     <Content Include="Sample Files\Instance Config Files\Test_AddDocumentNamespace Config.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_GetStringFromCache Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Get_SBMessaging_Label Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Get_SFTP_UserName Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_MIME_GetCharSet Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_MIME_GetContentType Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_MIME_GetPartCount Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_MIME_PartNames Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_NoApplicationContext Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_NullifyMessage Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_NullifyMessageWithTypedXMLDocument Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_OverrideMe Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_OverrideXmlFactsApplicationStage Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_ReapplyCachedContext_SMTPFrom Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_ReapplyContextPropertiesFromCache_OverrideContextKey Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_RemoveNamespace Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_RemoveNamespace_Deprecated Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_ReplaceDocumentNamespace Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_ReplaceDocumentNamespaceAndPrefix Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_ReplaceDocumentNamespaceAndPrefix_Deprecated Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_ReplaceDocumentNamespace_Deprecated Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_ReplaceNamespace Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_ReplaceNamespaceAndPrefix Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_ReplacePrefixForGivenNamespace Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_SetPartDetails Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_SetPartMIMEFileName Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Set_SBMessaging_Label Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_Set_SFTP_UserName Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_SQLConnection Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_SQLConnectionFromSSO Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_ThrowException Config.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -164,6 +260,21 @@
     </Content>
     <Content Include="Sample Files\Instance Config Files\Test_GetStringLength Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_RoundCurrentTime Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_TrackingFolder Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_TrackingFolder_Bad Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_TrackingFolder_NotExist Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_TransformMessageNoMessageType Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_TransformMessageVaildateSourceIfKnown Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_TransformMessageVaildateSourceIfKnownTwice Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_TransformMessageWithoutValidation Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_TransformMessageWithoutValidationTwice Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_UncaughtPolicyException Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_UncaughtPolicyExceptionAfterUpdate Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_UncaughtPolicyExceptionRIP Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_UpdateElementValueByNodeName Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_UpdateElementValueByNodeNameAndNamespace Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_UpdateElementValueByNodeNameAndOldValue Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_UpdateElementValueByNodeNameNamespaceAndOldValue Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_ValidateStringLength_Success Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_ValidateStringLength_Fail Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_ConcatenateString Config.xml" />
@@ -217,9 +328,20 @@
     <Content Include="Sample Files\Instance Config Files\Test_Set_BTS_DestinationParty Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_Set_WCF_Action Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_Set_FILE_ReceivedFileName Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_WrongTypeMetaInstruction Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_XmlFactsApplicationStage_AfterInstructionExecution Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_XmlFactsApplicationStage_BeforeInstructionExecution Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_XmlFactsApplicationStage_Explicit Config.xml" />
     <Content Include="Sample Files\Party config\Parties.xml">
       <SubType>Designer</SubType>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BREPipelineFramework.CustomBizUnitTestSteps\BREPipelineFramework.CustomBizUnitTestSteps.csproj">
+      <Project>{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}</Project>
+      <Name>BREPipelineFramework.CustomBizUnitTestSteps</Name>
+      <Private>False</Private>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

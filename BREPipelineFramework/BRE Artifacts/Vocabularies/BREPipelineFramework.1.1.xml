@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
   <vocabulary id="8039b113-c21c-4115-af4a-d59ad6b3edcf" name="BREPipelineFramework" uri="" description="">
-    <version major="1" minor="1" description="" modifiedby="DATACOM\johannc" date="2014-02-16T14:39:19.5332661+13:00" />
+    <version major="1" minor="1" description="" modifiedby="jcooper1982" date="2014-02-16T14:39:19.5332661+13:00" />
     <vocabularydefinition id="9ec58792-123f-4a66-914a-9750d885f4ea" name="CheckIfRegexEvaluatesInMessage" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="CheckIfRegexEvaluatesInMessage" type="boolean">

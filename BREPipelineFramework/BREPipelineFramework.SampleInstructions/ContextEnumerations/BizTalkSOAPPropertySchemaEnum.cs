@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace BREPipelineFramework.SampleInstructions
+﻿namespace BREPipelineFramework.SampleInstructions
 {
     /// <summary>
     /// See http://technet.microsoft.com/en-us/library/aa578208.aspx for an explanation of the SOAP context properties

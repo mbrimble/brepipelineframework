@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
+  <ruleset name="BREPipelineFramework OverridePolicy">
+    <version major="1" minor="1" description="" modifiedby="jcooper1982" date="2014-06-01T19:25:21.7291256+12:00" />
+    <configuration />
+    <bindings />
+    <rule name="Do nothing" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <reference>
+              <vocabularylink uri="d892a25c-a516-4db9-b606-13c1f5954575" element="1ed7c5ef-ddbb-45e6-a655-7992b3b09f8d" />
+              <classref ref="string" />
+            </reference>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>Test_Override</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <!--No actions were defined for this rule.-->
+      </then>
+    </rule>
+  </ruleset>
+</brl>

@@ -38,7 +38,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\BREPipelineFramework.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\..\BREPipelineFramework.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Without UnitTests|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -81,12 +81,21 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Windows\assembly\GAC_MSIL\Microsoft.BizTalk.XPathReader\3.0.1.0__31bf3856ad364e35\Microsoft.BizTalk.XPathReader.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.RuleEngine, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.RuleEngine\3.0.1.0__31bf3856ad364e35\Microsoft.RuleEngine.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.XLANGs.BaseTypes, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files (x86)\Microsoft BizTalk Server 2010\Microsoft.XLANGs.BaseTypes.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.XLANGs.RuntimeTypes, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.XLANGs.RuntimeTypes\3.0.1.0__31bf3856ad364e35\Microsoft.XLANGs.RuntimeTypes.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -94,39 +103,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContextEnumerations\BizTalkGlobalPropertySchemaEnum.cs" />
-    <Compile Include="ContextEnumerations\BizTalkSFTPPropertySchemaEnum.cs" />
-    <Compile Include="ContextEnumerations\BizTalkWCFPropertySchemaEnum.cs" />
-    <Compile Include="ContextEnumerations\BizTalkFilePropertySchemaEnum.cs" />
+    <Compile Include="ContextEnumerations\BizTalkBTF2PropertySchemaEnum.cs" />
+    <Compile Include="ContextEnumerations\BizTalkEdiIntASPropertySchemaEnum.cs" />
+    <Compile Include="ContextEnumerations\BizTalkEdiOverridePropertySchemaEnum.cs" />
+    <Compile Include="ContextEnumerations\BizTalkEDIPropertySchemaEnum.cs" />
     <Compile Include="ContextEnumerations\BizTalkErrorReportPropertySchemaEnum.cs" />
+    <Compile Include="ContextEnumerations\BizTalkFilePropertySchemaEnum.cs" />
     <Compile Include="ContextEnumerations\BizTalkFTPPropertySchemaEnum.cs" />
+    <Compile Include="ContextEnumerations\BizTalkGlobalPropertySchemaEnum.cs" />
     <Compile Include="ContextEnumerations\BizTalkHTTPPropertySchemaEnum.cs" />
     <Compile Include="ContextEnumerations\BizTalkLegacyPropertySchemaEnum.cs" />
     <Compile Include="ContextEnumerations\BizTalkMessageTrackingPropertySchemaEnum.cs" />
-    <Compile Include="ContextEnumerations\BizTalkXLANGSBTXEngineTrackingPropertySchemaEnum.cs" />
     <Compile Include="ContextEnumerations\BizTalkMIMEPropertySchemaEnum.cs" />
     <Compile Include="ContextEnumerations\BizTalkMSMQTPropertySchemaEnum.cs" />
     <Compile Include="ContextEnumerations\BizTalkPOP3PropertySchemaEnum.cs" />
+    <Compile Include="ContextEnumerations\BizTalkSBMessagingPropertySchemaEnum.cs" />
+    <Compile Include="ContextEnumerations\BizTalkSFTPPropertySchemaEnum.cs" />
     <Compile Include="ContextEnumerations\BizTalkSMTPPropertySchemaEnum.cs" />
     <Compile Include="ContextEnumerations\BizTalkSOAPPropertySchemaEnum.cs" />
     <Compile Include="ContextEnumerations\BizTalkSQLPropertySchemaEnum.cs" />
+    <Compile Include="ContextEnumerations\BizTalkWCFPropertySchemaEnum.cs" />
     <Compile Include="ContextEnumerations\BizTalkWSSPropertySchemaEnum.cs" />
+    <Compile Include="ContextEnumerations\BizTalkXLANGSBTXEngineTrackingPropertySchemaEnum.cs" />
     <Compile Include="ContextEnumerations\BizTalkXMLNORMPropertySchemaEnum.cs" />
-    <Compile Include="ContextEnumerations\BizTalkBTF2PropertySchemaEnum.cs" />
-    <Compile Include="ContextEnumerations\BizTalkEDIPropertySchemaEnum.cs" />
-    <Compile Include="ContextEnumerations\BizTalkEdiIntASPropertySchemaEnum.cs" />
-    <Compile Include="ContextEnumerations\BizTalkEdiOverridePropertySchemaEnum.cs" />
-    <Compile Include="ContextEnumerations\BizTalkSBMessagingPropertySchemaEnum.cs" />
+    <Compile Include="ContextEnumerations\BizTalkESBExceptionPropertySchemaEnum.cs" />
+    <Compile Include="ContextEnumerations\BizTalkESBItineraryPropertySchemaEnum.cs" />
+    <Compile Include="Instructions\ApplyTypedXMLDocumentInstruction.cs" />
+    <Compile Include="Instructions\SetMessageTypeContextProperty.cs" />
+    <Compile Include="Instructions\SetMessagePartDetailsPipelineInstruction.cs" />
+    <Compile Include="Instructions\SetMessagePartPropertyPipelineInstruction.cs" />
     <Compile Include="Instructions\CreateSSOTicketInstruction.cs" />
     <Compile Include="Instructions\FindReplaceStringInstruction.cs" />
-    <Compile Include="Instructions\NamespaceModificationInstructions.cs" />
+    <Compile Include="Instructions\MessageModificationInstructions.cs" />
     <Compile Include="Instructions\NullifyMessageInstruction.cs" />
+    <Compile Include="Instructions\TransformationInstruction.cs" />
+    <Compile Include="MetaInstructions\CachingMetaInstructions.cs" />
+    <Compile Include="MetaInstructions\XMLTranslatorMetaInstructions.cs" />
+    <Compile Include="MetaInstructions\MessagePartMetaInstructions.cs" />
     <Compile Include="MetaInstructions\HelperMetaInstructions.cs" />
     <Compile Include="Instructions\SetContextPropertyFromXPathResultPipelineInstruction.cs" />
     <Compile Include="MetaInstructions\ContextMetaInstructions.cs" />
     <Compile Include="Instructions\SetContextPropertyFromSSOConfigPipelineInstruction.cs" />
     <Compile Include="Instructions\SetContextPropertyPipelineInstruction.cs" />
     <Compile Include="Instructions\RemoveContextPropertyPipelineInstruction.cs" />
+    <Compile Include="MetaInstructions\TypedXMLDocumentMetaInstructions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Management;
 using Microsoft.BizTalk.SSOClient.Interop;
 
 namespace BREPipelineFramework.Helpers
 {
-    public class StaticHelpers
+    public static class StaticHelpers
     {
         /// <summary>
         ///  Looks in the registry to determine the database connection string for the
@@ -37,7 +34,6 @@ namespace BREPipelineFramework.Helpers
                                 Group.Get();
                                 BTSMgmtDBName = Group["MgmtDbName"].ToString();
                                 BTSMgmtDBServerName = Group["MgmtDbServerName"].ToString();
-
                             }
                         }
 

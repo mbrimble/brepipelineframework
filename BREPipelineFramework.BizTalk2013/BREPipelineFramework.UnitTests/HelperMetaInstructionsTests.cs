@@ -5,6 +5,8 @@ using BREPipelineFramework.SampleInstructions;
 using BREPipelineFramework.Helpers;
 using b = BizUnit;
 using System.Collections.Generic;
+using BizUnit.Xaml;
+using System.Runtime.Caching;
 namespace BREPipelineFramework.UnitTests
 {
     [TestClass]
@@ -28,14 +30,32 @@ namespace BREPipelineFramework.UnitTests
             }
         }
 
+
         #region Additional test attributes
 
-        //Use TestCleanup to run code after each test has run
+        //Use TestInitialize to clear cache before each test runs
+        [TestInitialize()]
+        public void MyTestSetup()
+        {
+            var oldCache = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache;
+            BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache = new MemoryCache("BREPipelineFramework.Cache", null);
+            oldCache.Dispose();
+        }
+
+        //Use TestCleanup to cleanup output files after each test has run
         [TestCleanup()]
         public void MyTestCleanup()
         {
             string directoryPath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Output Files";
             System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(directoryPath);
+
+            foreach (System.IO.FileInfo file in directory.GetFiles())
+            {
+                file.Delete();
+            }
+
+            directoryPath = @"C:\temp\trackingfolder";
+            directory = new System.IO.DirectoryInfo(directoryPath);
 
             foreach (System.IO.FileInfo file in directory.GetFiles())
             {
@@ -62,8 +82,7 @@ namespace BREPipelineFramework.UnitTests
             _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
             _XPathCollection.XPathQueryList.Add(numberOfPropertiesXPath, "1");
 
-
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection);
             _BREPipelineFrameworkTest.RunTest();
         }
 
@@ -121,7 +140,6 @@ namespace BREPipelineFramework.UnitTests
 
             xmlValidateContextStep.XPathValidations.Add(xPathDefinitionCountProperties);
 
-
             fileReadMultipleStepContext.SubSteps.Add(xmlValidateContextStep);
 
             _BREPipelineFrameworkTest.ExecutionSteps.Add(fileReadMultipleStepContext);
@@ -152,9 +170,121 @@ namespace BREPipelineFramework.UnitTests
             _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
             _XPathCollection.XPathQueryList.Add(numberOfPropertiesXPath, "1");
 
-
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection);
             _BREPipelineFrameworkTest.RunTest();
+        }
+
+        [TestMethod()]
+        public void Test_ReturnRegexMatchByIndex()
+        {
+            string applicationContext = "Test_ReturnRegexMatchByIndex";
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.xml";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, applicationContext);
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader);
+            _BREPipelineFrameworkTest.RunTest();
+
+            string propertyValue = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["Output"].ToString();
+            Assert.IsTrue(propertyValue == ">BREPipelineFramework ExecutionPolicy<", "Did not find the expected regex match in the message - " + propertyValue);
+        }
+
+        [TestMethod()]
+        public void Test_ReturnFirstRegexMatch()
+        {
+            string applicationContext = "Test_ReturnFirstRegexMatch";
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.xml";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, applicationContext);
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader);
+            _BREPipelineFrameworkTest.RunTest();
+
+            string propertyValue = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["Output"].ToString();
+            Assert.IsTrue(propertyValue == ">true<", "Did not find the expected regex match in the message - " + propertyValue);
+        }
+
+        [TestMethod()]
+        public void Test_ReturnRegexMatchByIndex_NotFound()
+        {
+            string applicationContext = "Test_ReturnRegexMatchByIndex";
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.txt";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, applicationContext);
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader);
+            _BREPipelineFrameworkTest.RunTest();
+
+            string propertyValue = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["Output"].ToString();
+            Assert.IsTrue(propertyValue == "", "Did not find the expected regex match in the message - " + propertyValue);
+        }
+
+        [TestMethod()]
+        public void Test_ReturnFirstRegexMatch_NotFound()
+        {
+            string applicationContext = "Test_ReturnFirstRegexMatch";
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.txt";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, applicationContext);
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader);
+            _BREPipelineFrameworkTest.RunTest();
+
+            string propertyValue = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["Output"].ToString();
+            Assert.IsTrue(propertyValue == "", "Did not find the expected regex match in the message - " + propertyValue);
+        }
+
+
+        [TestMethod()]
+        public void Test_CheckIfRegexExistsInMessage_True()
+        {
+            string applicationContext = "Test_CheckIfRegexExistsInMessage_True";
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.xml";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, applicationContext);
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader);
+            _BREPipelineFrameworkTest.RunTest();
+
+            string propertyValue = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["Output"].ToString();
+            Assert.IsTrue(propertyValue == "ExpectedResult", "Did not find the expected context property value in the message - " + propertyValue);
+        }
+
+        [TestMethod()]
+        public void Test_CheckIfRegexExistsInMessage_False()
+        {
+            string applicationContext = "Test_CheckIfRegexExistsInMessage_False";
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.txt";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, applicationContext);
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader);
+            _BREPipelineFrameworkTest.RunTest();
+
+            string propertyValue = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["Output"].ToString();
+            Assert.IsTrue(propertyValue == "ExpectedResult", "Did not find the expected context property value in the message - " + propertyValue);
+        }
+
+        [TestMethod()]
+        public void Test_CheckIfStringExistsInMessage_True()
+        {
+            string applicationContext = "Test_CheckIfStringExistsInMessage_True";
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.xml";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, applicationContext);
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader);
+            _BREPipelineFrameworkTest.RunTest();
+
+            string propertyValue = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["Output"].ToString();
+            Assert.IsTrue(propertyValue == "ExpectedResult", "Did not find the expected context property value in the message - " + propertyValue);
+        }
+
+        [TestMethod()]
+        public void Test_CheckIfStringExistsInMessage_False()
+        {
+            string applicationContext = "Test_CheckIfStringExistsInMessage_False";
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.txt";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, applicationContext);
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader);
+            _BREPipelineFrameworkTest.RunTest();
+
+            string propertyValue = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["Output"].ToString();
+            Assert.IsTrue(propertyValue == "ExpectedResult", "Did not find the expected context property value in the message - " + propertyValue);
         }
 
         /// <summary>
@@ -173,8 +303,22 @@ namespace BREPipelineFramework.UnitTests
             _XPathCollection.XPathQueryList.Add(numberOfPropertiesXPath, "1");
 
 
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection);
             _BREPipelineFrameworkTest.RunTest();
+        }
+
+        [TestMethod()]
+        public void Test_MessageBodyLength()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\TestCount.txt";
+            string applicationContext = "Test_MessageBodyLength";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, applicationContext);
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader);
+            _BREPipelineFrameworkTest.RunTest();
+
+            string propertyValue = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["TestKey"].ToString();
+            Assert.IsTrue(propertyValue == "20", "Did not find the expected message length in the message - " + propertyValue);
         }
 
         /// <summary>
@@ -193,7 +337,7 @@ namespace BREPipelineFramework.UnitTests
             _XPathCollection.XPathQueryList.Add(numberOfPropertiesXPath, "1");
 
 
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection);
             _BREPipelineFrameworkTest.RunTest();
         }
 
@@ -212,9 +356,89 @@ namespace BREPipelineFramework.UnitTests
             _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
             _XPathCollection.XPathQueryList.Add(numberOfPropertiesXPath, "1");
 
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection);
             _BREPipelineFrameworkTest.RunTest();
         }
+
+        [TestMethod()]
+        public void Test_GetXPathResult_Name()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.xml";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, "Test_GetXPathResult_Name");
+            string XPathQuery = "boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='Property1'][@Promoted='false'][@Namespace='https://BREPipelineFramework.TestProject.BREPipelineFramework_PropSchema'][@Value='ApplicationContext'])";
+            string ExpectedValue = "True";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+            _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
+            _XPathCollection.XPathQueryList.Add(numberOfPropertiesXPath, "1");
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader, contextXPathCollection: _XPathCollection);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        [TestMethod()]
+        public void Test_GetXPathResult_Namespace()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.xml";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, "Test_GetXPathResult_Namespace");
+            string XPathQuery = "boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='Property1'][@Promoted='false'][@Namespace='https://BREPipelineFramework.TestProject.BREPipelineFramework_PropSchema'][@Value='http://www.w3.org/2001/XMLSchema-instance'])";
+            string ExpectedValue = "True";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+            _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
+            _XPathCollection.XPathQueryList.Add(numberOfPropertiesXPath, "1");
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader, contextXPathCollection: _XPathCollection);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        [TestMethod()]
+        public void Test_GetXPathResult_NotFound_Exception()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.xml";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, "Test_GetXPathResult_NotFound_Exception");
+            string XPathQuery = "boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='Property1'][@Promoted='false'][@Namespace='https://BREPipelineFramework.TestProject.BREPipelineFramework_PropSchema'][@Value='Test_Set_BTS_DestinationParty'])";
+            string ExpectedValue = "True";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+            _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
+            _XPathCollection.XPathQueryList.Add(numberOfPropertiesXPath, "1");
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader, contextXPathCollection: _XPathCollection);
+            
+            try
+            {
+                _BREPipelineFrameworkTest.RunTest();
+                Assert.Fail("Was expecting the test to result in an exception but none was raised");
+            }
+            catch (Exception e)
+            {
+                if (e.GetBaseException().Message.Contains("No result found for XPath query"))
+                {
+
+                }
+                else
+                {
+                    Assert.Fail("Unexpected exception was encountered - " + e.GetBaseException().Message);
+                }
+            }
+        }
+
+        [TestMethod()]
+        public void Test_GetXPathResult_NotFound_Ignore()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.xml";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, "Test_GetXPathResult_NotFound_Ignore");
+            string XPathQuery = "boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='Property1'][@Promoted='false'][@Namespace='https://BREPipelineFramework.TestProject.BREPipelineFramework_PropSchema'][@Value=''])";
+            string ExpectedValue = "False";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+            _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
+            
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader, contextXPathCollection: _XPathCollection);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
 
         /// <summary>
         ///Tests that the ReplaceSubstring vocabulary definition fulfills it's function
@@ -231,7 +455,7 @@ namespace BREPipelineFramework.UnitTests
             _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
             _XPathCollection.XPathQueryList.Add(numberOfPropertiesXPath, "1");
 
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection);
             _BREPipelineFrameworkTest.RunTest();
         }
         
@@ -250,7 +474,7 @@ namespace BREPipelineFramework.UnitTests
             _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
             _XPathCollection.XPathQueryList.Add(numberOfPropertiesXPath, "1");
 
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection);
             _BREPipelineFrameworkTest.RunTest();
         }
 
@@ -339,7 +563,7 @@ namespace BREPipelineFramework.UnitTests
             _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
             _XPathCollection.XPathQueryList.Add(numberOfPropertiesXPath, "1");
 
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection);
             _BREPipelineFrameworkTest.RunTest();
         }
 
@@ -358,11 +582,12 @@ namespace BREPipelineFramework.UnitTests
             _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
             _XPathCollection.XPathQueryList.Add(numberOfPropertiesXPath, "1");
 
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection);
 
             try
             {
                 _BREPipelineFrameworkTest.RunTest();
+                Assert.Fail("Was expecting for the pipeline test step to fail");
             }
             catch (Exception e)
             {
@@ -385,7 +610,7 @@ namespace BREPipelineFramework.UnitTests
             _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
             _XPathCollection.XPathQueryList.Add(numberOfPropertiesXPath, "1");
 
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection);
             try
             {
                 _BREPipelineFrameworkTest.RunTest();
@@ -404,16 +629,13 @@ namespace BREPipelineFramework.UnitTests
         ///Tests that the AddDocumentNamespace vocabulary definition adds the namespace to the XML document root node with the ns0 prefix
         ///</summary>
         [TestMethod()]
-        public void Test_AddDocumentNamespace()
+        public void Test_AddDocumentNamespace_Deprecated()
         {
             string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.xml";
-            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_AddDocumentNamespace Config.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_AddDocumentNamespace_Deprecated Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_AddDocumentNamespace.xml";
 
-            XPathCollection _XPathCollection = new XPathCollection();
-            _XPathCollection.XPathQueryList.Add("name(/*)", "ns0:Root");
-            _XPathCollection.XPathQueryList.Add("namespace-uri(/*)", "http://brepipelineframework");
-
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance, 1);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, ExpectedOutputFileName:ExpectedOutputFileName);
             _BREPipelineFrameworkTest.RunTest();
         }
 
@@ -421,16 +643,13 @@ namespace BREPipelineFramework.UnitTests
         ///Tests that the AddDocumentNamespaceWithPrefix vocabulary definition adds the namespace to the XML document root node with the specified prefix
         ///</summary>
         [TestMethod()]
-        public void Test_AddDocumentNamespaceAndPrefix()
+        public void Test_AddDocumentNamespaceAndPrefix_Deprecated()
         {
             string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.xml";
-            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_AddDocumentNamespaceAndPrefix Config.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_AddDocumentNamespaceAndPrefix_Deprecated Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_AddDocumentNamespaceAndPrefix.xml";
 
-            XPathCollection _XPathCollection = new XPathCollection();
-            _XPathCollection.XPathQueryList.Add("name(/*)", "bre:Root");
-            _XPathCollection.XPathQueryList.Add("namespace-uri(/*)", "http://brepipelineframework");
-
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance, 1);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, ExpectedOutputFileName: ExpectedOutputFileName);
             _BREPipelineFrameworkTest.RunTest();
         }
 
@@ -438,16 +657,13 @@ namespace BREPipelineFramework.UnitTests
         ///Tests that the AddDocumentNamespace vocabulary definition doesn't add the namespace to the XML document root node with the ns0 prefix if a root namespace already exists
         ///</summary>
         [TestMethod()]
-        public void Test_AddDocumentNamespaceExistingNamespace()
+        public void Test_AddDocumentNamespaceExistingNamespace_Deprecated()
         {
             string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test1.xml";
-            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_AddDocumentNamespace Config.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_AddDocumentNamespace_Deprecated Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_AddDocumentNamespaceExistingNamespace.xml";
 
-            XPathCollection _XPathCollection = new XPathCollection();
-            _XPathCollection.XPathQueryList.Add("name(/*)", "ns0:Root");
-            _XPathCollection.XPathQueryList.Add("namespace-uri(/*)", "http://www.w3.org/2001/XMLSchema-instance");
-
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance, 1);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, ExpectedOutputFileName: ExpectedOutputFileName);
             _BREPipelineFrameworkTest.RunTest();
         }
 
@@ -455,16 +671,13 @@ namespace BREPipelineFramework.UnitTests
         ///Tests that the AddDocumentNamespaceWithPrefix vocabulary definition doesn't add the namespace to the XML document root node with the specified prefix if a root namespace already exists
         ///</summary>
         [TestMethod()]
-        public void Test_AddDocumentNamespaceAndPrefixExistingNamespace()
+        public void Test_AddDocumentNamespaceAndPrefixExistingNamespace_Deprecated()
         {
             string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test1.xml";
-            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_AddDocumentNamespaceAndPrefix Config.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_AddDocumentNamespaceAndPrefix_Deprecated Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_AddDocumentNamespaceAndPrefixExistingNamespace.xml";
 
-            XPathCollection _XPathCollection = new XPathCollection();
-            _XPathCollection.XPathQueryList.Add("name(/*)", "ns0:Root");
-            _XPathCollection.XPathQueryList.Add("namespace-uri(/*)", "http://www.w3.org/2001/XMLSchema-instance");
-
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance, 1);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, ExpectedOutputFileName: ExpectedOutputFileName);
             _BREPipelineFrameworkTest.RunTest();
         }
 
@@ -472,17 +685,13 @@ namespace BREPipelineFramework.UnitTests
         ///Tests that the ReplaceDocumentNamespace vocabulary definition replaces the current namespace at the XML document root node with the ns0 prefix
         ///</summary>
         [TestMethod()]
-        public void Test_ReplaceDocumentNamespace()
+        public void Test_ReplaceDocumentNamespace_Deprecated()
         {
             string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test1.xml";
-            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_ReplaceDocumentNamespace Config.xml";
-
-
-            XPathCollection _XPathCollection = new XPathCollection();
-            _XPathCollection.XPathQueryList.Add("name(/*)", "prefixClash:Root");
-            _XPathCollection.XPathQueryList.Add("namespace-uri(/*)", "http://brepipelineframework");
-
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance, 1);
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_ReplaceDocumentNamespace_Deprecated Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_ReplaceDocumentNamespace.xml";
+            
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, ExpectedOutputFileName: ExpectedOutputFileName);
             _BREPipelineFrameworkTest.RunTest();
         }
 
@@ -490,16 +699,13 @@ namespace BREPipelineFramework.UnitTests
         ///Tests that the ReplaceDocumentNamespaceWithPrefix vocabulary definition replaces the current namespace at the XML document root node with the specified prefix
         ///</summary>
         [TestMethod()]
-        public void Test_ReplaceDocumentNamespaceAndPrefix()
+        public void Test_ReplaceDocumentNamespaceAndPrefix_Deprecated()
         {
             string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test1.xml";
-            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_ReplaceDocumentNamespaceAndPrefix Config.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_ReplaceDocumentNamespaceAndPrefix_Deprecated Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_ReplaceDocumentNamespaceAndPrefix.xml";
 
-            XPathCollection _XPathCollection = new XPathCollection();
-            _XPathCollection.XPathQueryList.Add("name(/*)", "bre:Root");
-            _XPathCollection.XPathQueryList.Add("namespace-uri(/*)", "http://brepipelineframework");
-
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance, 1);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, ExpectedOutputFileName: ExpectedOutputFileName);
             _BREPipelineFrameworkTest.RunTest();
         }
 
@@ -507,17 +713,14 @@ namespace BREPipelineFramework.UnitTests
         ///Tests that the ReplaceDocumentNamespace vocabulary definition adds the current namespace at the XML document root node with the ns0 prefix if it doesn't currently exists
         ///</summary>
         [TestMethod()]
-        public void Test_ReplaceDocumentNamespaceDoesNotExist()
+        public void Test_ReplaceDocumentNamespaceDoesNotExist_Deprecated()
         {
             string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.xml";
-            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_ReplaceDocumentNamespace Config.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_ReplaceDocumentNamespace_Deprecated Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_ReplaceDocumentNamespaceDoesNotExist.xml";
 
 
-            XPathCollection _XPathCollection = new XPathCollection();
-            _XPathCollection.XPathQueryList.Add("name(/*)", "ns0:Root");
-            _XPathCollection.XPathQueryList.Add("namespace-uri(/*)", "http://brepipelineframework");
-
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance, 1);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, ExpectedOutputFileName: ExpectedOutputFileName);
             _BREPipelineFrameworkTest.RunTest();
         }
 
@@ -525,16 +728,13 @@ namespace BREPipelineFramework.UnitTests
         ///Tests that the ReplaceDocumentNamespaceWithPrefix vocabulary definition adds the current namespace at the XML document root node with the specified prefix if it doesn't currently exists
         ///</summary>
         [TestMethod()]
-        public void Test_ReplaceDocumentNamespaceAndPrefixDoesNotExist()
+        public void Test_ReplaceDocumentNamespaceAndPrefixDoesNotExist_Deprecated()
         {
             string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.xml";
-            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_ReplaceDocumentNamespaceAndPrefix Config.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_ReplaceDocumentNamespaceAndPrefix_Deprecated Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_ReplaceDocumentNamespaceAndPrefixDoesNotExist.xml";
 
-            XPathCollection _XPathCollection = new XPathCollection();
-            _XPathCollection.XPathQueryList.Add("name(/*)", "bre:Root");
-            _XPathCollection.XPathQueryList.Add("namespace-uri(/*)", "http://brepipelineframework");
-
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance, 1);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, ExpectedOutputFileName: ExpectedOutputFileName);
             _BREPipelineFrameworkTest.RunTest();
         }
 
@@ -554,7 +754,7 @@ namespace BREPipelineFramework.UnitTests
             XPathCollection _XPathCollection = new XPathCollection();
             _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
 
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection);
             _BREPipelineFrameworkTest.RunTest();
         }
 
@@ -574,7 +774,7 @@ namespace BREPipelineFramework.UnitTests
             XPathCollection _XPathCollection = new XPathCollection();
             _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
 
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection);
             _BREPipelineFrameworkTest.RunTest();
         }
 
@@ -594,7 +794,7 @@ namespace BREPipelineFramework.UnitTests
             _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
             _XPathCollection.XPathQueryList.Add(numberOfPropertiesXPath, "1");
 
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, testContextInstance);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection);
             try
             {
                 _BREPipelineFrameworkTest.RunTest();
@@ -609,6 +809,180 @@ namespace BREPipelineFramework.UnitTests
             }
         }
 
+        /// <summary>
+        ///Tests that the FindReplaceStringInMessage vocabulary definition fulfills it's function
+        ///</summary>
+        [TestMethod()]
+        public void Test_FindReplaceStringInMessage()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_FindReplaceStringInMessage Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_FindReplaceStringInMessage.xml";
 
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, ExpectedOutputFileName:ExpectedOutputFileName);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that the FindReplaceRegexInMessage vocabulary definition fulfills it's function
+        ///</summary>
+        [TestMethod()]
+        public void Test_FindReplaceRegexInMessage()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_FindReplaceRegexInMessage Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_FindReplaceRegexInMessage.xml";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, ExpectedOutputFileName:ExpectedOutputFileName);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that the TransformMessageWithoutValidation vocabulary definition fulfills it's function
+        ///</summary>
+        [TestMethod()]
+        public void Test_TransformMessageVaildateSourceIfKnown()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_TransformMessageVaildateSourceIfKnown Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessageVaildateSourceIfKnown.xml";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+            string XPathQuery1 = "boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='MessageType'][@Promoted='true'][@Namespace='http://schemas.microsoft.com/BizTalk/2003/system-properties'][@Value='http://BREPipelineFramework.TestProject.Message2#Message2'])";
+            string ExpectedValue1 = "True";
+            _XPathCollection.XPathQueryList.Add(XPathQuery1, ExpectedValue1);
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection, ExpectedOutputFileName:ExpectedOutputFileName);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that the TransformMessageWithoutValidation vocabulary definition fulfills it's function when chained
+        ///</summary>
+        [TestMethod()]
+        public void Test_TransformMessageVaildateSourceIfKnownTwice()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_TransformMessageVaildateSourceIfKnownTwice Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessageVaildateSourceIfKnownTwice.xml";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, ExpectedOutputFileName:ExpectedOutputFileName);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that the TransformMessage vocabulary definition fulfills it's function
+        ///</summary>
+        [TestMethod()]
+        public void Test_TransformMessage()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessage.xml";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, PipelineType:"BREPipelineFramework.TestProject.Rcv_TransformMessage", ExpectedOutputFileName:ExpectedOutputFileName);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that the TransformMessage vocabulary definition fulfills it's function when chained
+        ///</summary>
+        [TestMethod()]
+        public void Test_TransformMessageTwice()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessageTwice.xml";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, PipelineType:"BREPipelineFramework.TestProject.Rcv_TransformMessageTwice", ExpectedOutputFileName:ExpectedOutputFileName);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that the TransformMessage vocabulary definition fails if no message type exists on the message and validation is required
+        ///</summary>
+        [TestMethod()]
+        public void Test_TransformMessageNoMessageType()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_TransformMessageNoMessageType Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessage.xml";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, ExpectedOutputFileName:ExpectedOutputFileName);
+
+            try
+            {
+                _BREPipelineFrameworkTest.RunTest();
+                Assert.Fail("Was expecting for the pipeline test step to fail");
+            }
+            catch (Exception e)
+            {
+                if (!e.InnerException.Message.Contains("Unable to read source messageType while performing transformation"))
+                {
+                    Assert.Fail("Was expecting a no messageType error but instead got - " + e.InnerException.Message);
+                }
+            }
+        }
+
+        /// <summary>
+        ///Tests that the TransformMessage vocabulary definition fails if the message type doesn't match that of the map
+        ///</summary>
+        [TestMethod()]
+        public void Test_TransformMessageMessageTypeMismatch()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message2.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessage.xml";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, PipelineType:"BREPipelineFramework.TestProject.Rcv_TransformMessage", ExpectedOutputFileName:ExpectedOutputFileName, inputMessageType:"BREPipelineFramework.TestProject.Message2");
+
+            try
+            {
+                _BREPipelineFrameworkTest.RunTest();
+                Assert.Fail("Was expecting for the pipeline test step to fail");
+            }
+            catch (Exception e)
+            {
+                if (!e.InnerException.Message.StartsWith("Transformation mismatch exception for map"))
+                {
+                    Assert.Fail("Was expecting a transformation mismatch error but instead got - " + e.InnerException.Message);
+                }
+            }
+        }
+
+        [TestMethod()]
+        public void Test_ConcatenateMultipleStrings()
+        {
+            string applicationContext = "Test_ConcatenateMultipleStrings";
+
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.txt";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, applicationContext);
+            
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader);
+            _BREPipelineFrameworkTest.RunTest();
+
+            string cacheItem2 = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["2"].ToString();
+            string cacheItem3 = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["3"].ToString();
+            string cacheItem4 = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["4"].ToString();
+            string cacheItem5 = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["5"].ToString();
+            string cacheItem6 = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["6"].ToString();
+
+            Assert.IsTrue(cacheItem2 == "12", "Unexpected concatenated value found in cache - " + cacheItem2);
+            Assert.IsTrue(cacheItem3 == "123", "Unexpected concatenated value found in cache - " + cacheItem3);
+            Assert.IsTrue(cacheItem4 == "1234", "Unexpected concatenated value found in cache - " + cacheItem4);
+            Assert.IsTrue(cacheItem5 == "12345", "Unexpected concatenated value found in cache - " + cacheItem5);
+            Assert.IsTrue(cacheItem6 == "123456", "Unexpected concatenated value found in cache - " + cacheItem6);
+        }
     }
 }

@@ -1,0 +1,9 @@
+﻿<ns0:HelloTest xmlns:ns0="http://BizTalk_Server_Project1.HelloTest">
+  <BLah>BLah_0</BLah>
+  <Record>
+    <bre:Hello xmlns:bre="http://brepipelineframework" bre:why="justbecause">ns0:Hello_0</bre:Hello>
+    <bre:Help xmlns:bre="http://brepipelineframework">
+      <bre:Me>ns0:Me_0</bre:Me>
+    </bre:Help>
+  </Record>
+</ns0:HelloTest>

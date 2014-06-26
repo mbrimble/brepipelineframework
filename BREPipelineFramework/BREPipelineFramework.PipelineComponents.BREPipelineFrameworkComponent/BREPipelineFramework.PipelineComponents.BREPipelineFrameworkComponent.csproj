@@ -54,7 +54,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\BREPipelineFramework.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\..\BREPipelineFramework.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -92,6 +92,10 @@
     <EmbeddedResource Include="BREPipelineFrameworkComponent.resx" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BREPipelineFramework.Helpers\BREPipelineFramework.Helpers.csproj">
+      <Project>{C8058EEB-8D38-4DA9-B353-82C0D843D263}</Project>
+      <Name>BREPipelineFramework.Helpers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BREPipelineFramework.SampleInstructions\BREPipelineFramework.SampleInstructions.csproj">
       <Project>{D00C51CC-A0A1-4407-88A0-3D2E7B4C18F6}</Project>
       <Name>BREPipelineFramework.SampleInstructions</Name>

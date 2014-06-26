@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
+  <vocabulary id="717b92e1-b3b8-4fd7-bf41-5eff1eba4b63" name="BREPipelineFramework.SampleInstructions.XMLInstructions" uri="" description="">
+    <version major="1" minor="0" description="" modifiedby="jcooper1982" date="2014-05-20T21:35:05.7649882+12:00" />
+    <vocabularydefinition id="afe88806-17a8-45d4-bcb1-874af3eeac46" name="AddNodeWithValue" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AddNodeWithValue" type="void">
+          <classinfo class="TypedXMLDocumentMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="Microsoft.RuleEngine.TypedXmlDocument, Microsoft.RuleEngine, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="3">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Add a node named {2} with a value of {3} to the TypedXmlDocument {0} at the Xpath location {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="Microsoft.RuleEngine.TypedXmlDocument, Microsoft.RuleEngine, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="3">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="73f238fe-2188-4f1e-8504-35bbe43ddade" name="AddNodeWithNamespaceAndValue" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AddNodeWithNamespaceAndValue" type="void">
+          <classinfo class="TypedXMLDocumentMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="Microsoft.RuleEngine.TypedXmlDocument, Microsoft.RuleEngine, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="3">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="4">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Add a node named {2} with a namespace of {3} and a value of {4} to the TypedXmlDocument {0} at the Xpath location {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="Microsoft.RuleEngine.TypedXmlDocument, Microsoft.RuleEngine, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="3">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="4">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="9121092d-49bc-44cd-9504-7588391fed51" name="AddNode" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AddNode" type="void">
+          <classinfo class="TypedXMLDocumentMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="Microsoft.RuleEngine.TypedXmlDocument, Microsoft.RuleEngine, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Add a node named {2} to the TypedXmlDocument {0} at the Xpath location {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="Microsoft.RuleEngine.TypedXmlDocument, Microsoft.RuleEngine, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="122a9431-3e38-4426-a4d7-e46492894070" name="AddNodeIfNotThere" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AddNodeIfNotThere" type="void">
+          <classinfo class="TypedXMLDocumentMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="Microsoft.RuleEngine.TypedXmlDocument, Microsoft.RuleEngine, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Add a node named {2} to the TypedXmlDocument {0} at the Xpath location {1} if it doesn't already exist" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="Microsoft.RuleEngine.TypedXmlDocument, Microsoft.RuleEngine, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="7811264b-f598-4291-abf1-634d68cd27a0" name="AddNodeWithNamespace" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AddNodeWithNamespace" type="void">
+          <classinfo class="TypedXMLDocumentMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="Microsoft.RuleEngine.TypedXmlDocument, Microsoft.RuleEngine, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="3">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Add a node named {2} with a namespace of {3} to the TypedXmlDocument {0} at the Xpath location {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="Microsoft.RuleEngine.TypedXmlDocument, Microsoft.RuleEngine, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="3">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="cc44927f-d8b8-47d0-8b6e-8d11f66c60fb" name="AddNodeWithNamespaceIfNotThere" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AddNodeWithNamespaceIfNotThere" type="void">
+          <classinfo class="TypedXMLDocumentMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="Microsoft.RuleEngine.TypedXmlDocument, Microsoft.RuleEngine, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="3">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Add a node named {2} with a namespace of {3} to the TypedXmlDocument {0} at the Xpath location {1} if it doesn't already exist" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="Microsoft.RuleEngine.TypedXmlDocument, Microsoft.RuleEngine, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="3">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="60f5ebc3-a9c6-4213-9446-2f086056c39d" name="AddAttribute" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AddAttribute" type="void">
+          <classinfo class="TypedXMLDocumentMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="Microsoft.RuleEngine.TypedXmlDocument, Microsoft.RuleEngine, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="3">
+            <valuedefinitionliteral type="object" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Add an attribute called {2} with a value of {3} to the TypedXmlDocument {0} at the XPath location {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="Microsoft.RuleEngine.TypedXmlDocument, Microsoft.RuleEngine, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="3">
+          <valuedefinitionliteral type="object" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="53f3219a-b3a8-4f33-9786-1e8806b4c25c" name="ApplyTypedXmlDocument" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ApplyTypedXmlDocument" type="void">
+          <classinfo class="TypedXMLDocumentMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Apply the Typed Xml Document to the BizTalk message body" />
+    </vocabularydefinition>
+  </vocabulary>
+</brl>

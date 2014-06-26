@@ -1,0 +1,9 @@
+﻿<ns0:HelloTest xmlns:ns0="http://BizTalk_Server_Project1.HelloTest">
+  <BLah>BLah_0</BLah>
+  <Record>
+    <test:Hello xmlns:test="http://test" test:hello="what">ns0:Hello_0</test:Hello>
+    <test:Help xmlns:test="http://test">
+      <test:Me>ns0:Me_0</test:Me>
+    </test:Help>
+  </Record>
+</ns0:HelloTest>

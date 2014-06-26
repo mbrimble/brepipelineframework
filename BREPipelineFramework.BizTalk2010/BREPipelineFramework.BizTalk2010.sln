@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{20543A14-F5A4-455F-9E0E-415C8F553932}"
 	ProjectSection(SolutionItems) = preProject
-		BREPipelineFramework.snk = BREPipelineFramework.snk
+		..\BREPipelineFramework SSO Password.txt = ..\BREPipelineFramework SSO Password.txt
+		..\BREPipelineFramework.snk = ..\BREPipelineFramework.snk
+		..\BREPipelineFramework.sso = ..\BREPipelineFramework.sso
+		..\BREPipelineFrameworkTest.sql = ..\BREPipelineFrameworkTest.sql
+		..\Instructions - Setup steps in order to ensure tests can run.txt = ..\Instructions - Setup steps in order to ensure tests can run.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BREPipelineFramework.TestProject", "BREPipelineFramework.TestProject\BREPipelineFramework.TestProject.btproj", "{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}"
@@ -12,12 +16,35 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BREPipelineFramework.UnitTe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{8AB1DEFC-1F00-44C2-B457-E1561A6F0F6C}"
 	ProjectSection(SolutionItems) = preProject
-		Libs\BREPipelineFramework.CustomBizUnitTestSteps.dll = Libs\BREPipelineFramework.CustomBizUnitTestSteps.dll
+		..\Libs\BTS.Testing.TraceMonitor.BizUnit4.TestSteps.dll = ..\Libs\BTS.Testing.TraceMonitor.BizUnit4.TestSteps.dll
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BRE Artifacts", "BRE Artifacts", "{1D23B5AF-8FA0-4905-8A63-5F2837F23002}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Policies", "Policies", "{5CDA994A-CB2C-4EB8-B994-B95A2CB9468F}"
+	ProjectSection(SolutionItems) = preProject
+		..\BRE Artifacts\Policies\BREPipelineFramework ExecutionPolicy.1.0.xml = ..\BRE Artifacts\Policies\BREPipelineFramework ExecutionPolicy.1.0.xml
+		..\BRE Artifacts\Policies\BREPipelineFramework ExecutionPolicy.1.1.xml = ..\BRE Artifacts\Policies\BREPipelineFramework ExecutionPolicy.1.1.xml
+		..\BRE Artifacts\Policies\BREPipelineFramework InstructionLoaderPolicy.1.0.xml = ..\BRE Artifacts\Policies\BREPipelineFramework InstructionLoaderPolicy.1.0.xml
+		..\BRE Artifacts\Policies\BREPipelineFramework InstructionLoaderPolicy.1.1.xml = ..\BRE Artifacts\Policies\BREPipelineFramework InstructionLoaderPolicy.1.1.xml
+		..\BRE Artifacts\Policies\BREPipelineFramework OverridePolicy.1.0.xml = ..\BRE Artifacts\Policies\BREPipelineFramework OverridePolicy.1.0.xml
+		..\BRE Artifacts\Policies\BREPipelineFramework OverridePolicy.1.1.xml = ..\BRE Artifacts\Policies\BREPipelineFramework OverridePolicy.1.1.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vocabularies", "Vocabularies", "{C289CC8D-F66D-4DF9-8493-C945C58BF380}"
+	ProjectSection(SolutionItems) = preProject
+		..\BRE Artifacts\Vocabularies\BREPipelineFramework.TestDatabase.1.0.xml = ..\BRE Artifacts\Vocabularies\BREPipelineFramework.TestDatabase.1.0.xml
+		..\BRE Artifacts\Vocabularies\BREPipelineFramework.TestSampleInstructions.MetaInstruction.1.0.xml = ..\BRE Artifacts\Vocabularies\BREPipelineFramework.TestSampleInstructions.MetaInstruction.1.0.xml
+		..\BRE Artifacts\Vocabularies\BREPipelineFramework.TypedXmlDocumentSamples.1.0.xml = ..\BRE Artifacts\Vocabularies\BREPipelineFramework.TypedXmlDocumentSamples.1.0.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BREPipelineFramework.CustomBizUnitTestSteps", "..\BREPipelineFramework.CustomBizUnitTestSteps\BREPipelineFramework.CustomBizUnitTestSteps.csproj", "{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BREPipelineFramework.TestSampleInstructions", "..\BREPipelineFramework.TestSampleInstructions\BREPipelineFramework.TestSampleInstructions.csproj", "{4B694161-3047-4BE1-B4CC-A0ED192E45F7}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
+		SccNumberOfProjects = 5
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs13
 		SccLocalPath0 = .
@@ -27,30 +54,42 @@ Global
 		SccProjectUniqueName2 = BREPipelineFramework.UnitTests\\BREPipelineFramework.UnitTests.csproj
 		SccProjectName2 = BREPipelineFramework.UnitTests
 		SccLocalPath2 = BREPipelineFramework.UnitTests
+		SccProjectUniqueName3 = ..\\BREPipelineFramework.CustomBizUnitTestSteps\\BREPipelineFramework.CustomBizUnitTestSteps.csproj
+		SccProjectName3 = ../BREPipelineFramework.CustomBizUnitTestSteps
+		SccLocalPath3 = ..\\BREPipelineFramework.CustomBizUnitTestSteps
+		SccProjectUniqueName4 = ..\\BREPipelineFramework.TestSampleInstructions\\BREPipelineFramework.TestSampleInstructions.csproj
+		SccProjectName4 = ../BREPipelineFramework.TestSampleInstructions
+		SccLocalPath4 = ..\\BREPipelineFramework.TestSampleInstructions
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug Without UnitTests|Any CPU = Debug Without UnitTests|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}.Debug Without UnitTests|Any CPU.ActiveCfg = Debug Without UnitTests|Any CPU
-		{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}.Debug Without UnitTests|Any CPU.Build.0 = Debug Without UnitTests|Any CPU
-		{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}.Debug Without UnitTests|Any CPU.Deploy.0 = Debug Without UnitTests|Any CPU
 		{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{059BF0C4-CE2F-4F27-A2DB-56A76C2973F7}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{456A6B6A-61C4-48C2-9872-AE30C98029E3}.Debug Without UnitTests|Any CPU.ActiveCfg = Debug Without UnitTests|Any CPU
-		{456A6B6A-61C4-48C2-9872-AE30C98029E3}.Debug Without UnitTests|Any CPU.Build.0 = Debug Without UnitTests|Any CPU
 		{456A6B6A-61C4-48C2-9872-AE30C98029E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{456A6B6A-61C4-48C2-9872-AE30C98029E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{456A6B6A-61C4-48C2-9872-AE30C98029E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{456A6B6A-61C4-48C2-9872-AE30C98029E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5CDA994A-CB2C-4EB8-B994-B95A2CB9468F} = {1D23B5AF-8FA0-4905-8A63-5F2837F23002}
+		{C289CC8D-F66D-4DF9-8493-C945C58BF380} = {1D23B5AF-8FA0-4905-8A63-5F2837F23002}
 	EndGlobalSection
 EndGlobal

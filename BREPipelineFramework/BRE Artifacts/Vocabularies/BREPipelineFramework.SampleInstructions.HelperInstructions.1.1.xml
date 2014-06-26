@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
   <vocabulary id="e994493e-3201-46dd-a2da-3f9434a4b4c6" name="BREPipelineInstructions.SampleInstructions.HelperInstructions" uri="" description="">
-    <version major="1" minor="1" description="" modifiedby="johannc" date="2012-12-21T10:13:48.344923+13:00" />
+    <version major="1" minor="1" description="" modifiedby="jcooper1982" date="2012-12-21T10:13:48.344923+13:00" />
     <vocabularydefinition id="09e5aab7-cacf-4a20-99ad-f9604eab6850" name="GetXPathResult" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="GetXPathResult" type="string">

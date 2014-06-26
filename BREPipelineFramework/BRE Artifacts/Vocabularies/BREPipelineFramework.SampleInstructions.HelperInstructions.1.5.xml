@@ -1,0 +1,983 @@
+<?xml version="1.0" encoding="utf-8"?>
+<brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
+  <vocabulary id="9c187cad-1b2c-4471-80f8-28ad4cfa3e9c" name="BREPipelineInstructions.SampleInstructions.HelperInstructions" uri="" description="">
+    <version major="1" minor="5" description="" modifiedby="jcooper1982" date="2014-06-18T12:52:03.1515348+12:00" />
+    <vocabularydefinition id="258f79e5-c4af-43b3-8a30-8996b826f421" name="ConcatenateThreeStrings" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ConcatenateThreeStrings" type="string">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(Concatenate the strings {0}, {1} and {2})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="8ec67968-dc90-4a24-8e67-022ede90379f" name="ConcatenateSixStrings" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ConcatenateSixStrings" type="string">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="3">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="4">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="5">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(Concatenate the strings {0}, {1}, {2}, {3}, {4} and {5})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="3">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="4">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="5">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="0aa581a2-c4c0-4c6b-80a0-69627c1138bf" name="ConcatenateTwoStrings" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ConcatenateString" type="string">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(Concatenate the strings {0} and {1})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="f17386d3-89df-401c-83e9-8129061ba3db" name="ConcatenateFourStrings" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ConcatenateFourStrings" type="string">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="3">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(Concatenate the strings {0}, {1}, {2} and {3})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="3">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="79910468-b3b5-49cb-b1e5-f281bf9d17c9" name="ValidateStringLength" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ValidateStringLength" type="void">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="int">
+              <int>0</int>
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The length of the string {0} is exactly equal to {1} characters)" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="int">
+            <int>0</int>
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="733e7f6d-c460-4fa0-8033-eaf0863f33ef" name="RoundCurrentTime" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="RoundCurrentTime" type="string">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="int">
+              <int>0</int>
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(Round the current time upto the nearest {0} seconds in the following format - {1})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="int">
+            <int>0</int>
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="c8c2ca28-35e0-486d-8273-8046ff32fea5" name="ResolvePartyFromAlias" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="GetPartyFromAlias" type="string">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="3">
+            <valuedefinitionliteral type="boolean">
+              <boolean>false</boolean>
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Resolve the party name from the alias with a value of {2}, a name of {0}, and a qualifier of {1}. Throw an exception if not found - {3}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="3">
+          <valuedefinitionliteral type="boolean">
+            <boolean>false</boolean>
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="04a924f7-ee4e-4313-a6df-8dc276245ba7" name="FindReplaceStringInMessage" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="FindReplaceStringInMessage" type="void">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Replace the string {0} in the message body with the string {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="85e88fec-1aa4-4ce1-9ba0-fcb61fbb5c0e" name="ConcatenateFiveStrings" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ConcatenateFiveStrings" type="string">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="3">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="4">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(Concatenate the strings {0}, {1}, {2}, {3} and {4})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="3">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="4">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="ed5a94a8-098f-4be2-82c5-ec7d66121112" name="ReplaceSubstring" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ReplaceString" type="string">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(Replace the substring {1} with the value {2} in the string {0})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="8d390f94-2cc9-4f67-8edf-ee4eacce1dee" name="GetMessageBody" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="get_BodyString" type="string">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The message body)" />
+    </vocabularydefinition>
+    <vocabularydefinition id="f8e752a0-5da9-4b60-9382-bdd5b38bb8ec" name="GetCurrentDateTime" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="GetCurrentDateTime" type="string">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The current Date and Time in the following format - {0})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="09bdf21b-ef84-4b69-b602-577f664eea02" name="ReturnFirstRegexMatch" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ReturnFirstRegexMatch" type="string">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The first match for the regex {0} against the message body)" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="b2220584-3376-4c71-bca8-4825e246e540" name="ConvertToString" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ConvertToString" type="string">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="object" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(Convert {0} to a string)" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="object" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="cea004a7-978e-48fd-a11b-abf6a6d74c50" name="GetFileExtension" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ReturnFileExtension" type="string">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The file extension from the following filename - {0})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="a7d1d015-2a53-4e57-9959-5e434c5fee0d" name="StringContains" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="StringContains" type="boolean">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The string {0} contains the substring {1})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="ae0df270-bbbb-497a-b7bc-3fc9e400fcfc" name="GetLowerCaseString" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ReturnLowercaseString" type="string">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(Convert the string {0} to lowercase)" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="a43e4b7f-70d4-470e-831a-290d55ad1322" name="NullifyMessage" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="NullifyMessage" type="void">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Nullify the current message body" />
+    </vocabularydefinition>
+    <vocabularydefinition id="b252fd2c-c950-42d2-9582-8c2812093624" name="GetXPathResult" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="GetXPathResult" type="string">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.XPathResultTypeEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="boolean">
+              <boolean>false</boolean>
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The {0} of the node which is the result of the XPath statement {1}.  Return an exception if the XPath statement doesn't evaluate - {2})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.XPathResultTypeEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="boolean">
+            <boolean>false</boolean>
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="8f26bf64-e0e1-4549-a76a-c2ece1b8149d" name="GenerateGUID" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="GenerateGUIDAsString" type="string">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(A randomly generated GUID)" />
+    </vocabularydefinition>
+    <vocabularydefinition id="dccc32f5-32f7-4f51-958b-e4338f7d5416" name="CheckIfStringExistsInMessage" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="CheckIfStringExistsInMessage" type="boolean">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The substring {0} exists in the message body)" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="452c19a3-3db1-476f-997c-368caeffb7c3" name="GetUppercaseString" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ReturnUppercaseString" type="string">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(Convert the string {0} to uppercase)" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="3944866d-fd5f-4a27-a74e-6f62038af196" name="ReturnRegexMatchByIndex" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ReturnRegexMatchByIndex" type="string">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="int">
+              <int>0</int>
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The match for the regex {0} against the message body with an index number of {1})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="int">
+            <int>0</int>
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="77ec88a2-fc6d-4f03-abee-caa14b52b2d4" name="StringFormat" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="StringFormat" type="string">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(Format the string {0} using the input parameters contained within the string {1} using the seperator {2})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="310a229d-92c8-4e8f-94b3-2c18b71dc6dd" name="FindReplaceRegexInMessage" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="FindReplaceRegexInMessage" type="void">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Replace strings that evaluate to the regular expression {0} in the message body with the string {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="5fb38c13-403b-472c-89e3-a744dbb3ff6f" name="CheckIfRegexEvaluatesInMessage" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="CheckIfRegexExistsInMessage" type="boolean">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The regex {0} finds a match in the message body)" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="c58bad74-584c-4ec2-b72c-e3676ef10d29" name="GetStringLength" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="StringLength" type="int">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The length of the string {0})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="8a31f5f8-ea56-4779-adf6-e81c3e8d0161" name="TraceInfo" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="TraceInfo" type="boolean">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Trace the following info - {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="56f55154-7816-4c98-aed5-a7c0127b8d5a" name="ThrowException" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ThrowException" type="void">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Throw an exception with the detail - {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="a216cfdc-354c-4f23-ba88-bfa4b32303b7" name="GetMessageBodyLength" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="MessageBodyLength" type="int">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The length of the message body)" />
+    </vocabularydefinition>
+    <vocabularydefinition id="d180fc74-6d36-455a-b7e9-f6ba19be3814" name="TransformMessage" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="TransformMessage" type="void">
+          <classinfo class="HelperMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.TransformationSourceSchemaValidation, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Execute the map {0} in fully qualified assembly {1} against the current message - {2}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.TransformationSourceSchemaValidation, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+  </vocabulary>
+</brl>

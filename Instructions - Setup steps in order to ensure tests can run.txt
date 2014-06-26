@@ -1,0 +1,10 @@
+﻿In order to ensure that unit tests can run you must do the below
+-Ensure the framework is installed and ALL vocabularies deployed
+-Ensure BizUnit 4 is GAC'd as well as the BREPipelineFramework.CustomBizUnitTestSteps project 
+-Deploy the BREPipelineFramework.TestProject project in debug build profile
+-Import the BREPipelineFramework.sso file from Solution Items into the SSO Application Configuration MMC (password in the "BREPipelineFramework SSO Password.txt" file)
+-Import and deploy the vocabularies and policies (in that order) contained in BRE Artifacts folder to the Business rules database via the Business Rules Engine Deployment Wizard
+-Run the BREPipelineFrameworkTest.sql in SSMS on the local machine to create the relevant DB
+-Import the party config from the unit test\sample files\party config folder to the BizTalk TPM UIs in admin console
+-Ensure that SSO ticket creation is enabled on the machine by running - "C:\Program Files\Common Files\Enterprise Single Sign-On\ssomanage" "-tickets" "yes" "yes"
+-Create a folder c:\temp\trackingfolder

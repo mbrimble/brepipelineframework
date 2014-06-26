@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.RuleEngine;
+﻿using Microsoft.RuleEngine;
 using System.IO;
 using System.Xml;
 using Microsoft.BizTalk.Streaming;
-using Microsoft.BizTalk.XPath;
+using BREPipelineFramework.Helpers.Tracing;
 
 namespace BREPipelineFramework
 {
@@ -20,6 +16,7 @@ namespace BREPipelineFramework
         private TypedXmlDocument document;
         private Stream documentStream;
         private bool hasBeenSet;
+        private Microsoft.BizTalk.Component.Interop.IPipelineContext pc;
 
         #endregion
 
@@ -59,9 +56,10 @@ namespace BREPipelineFramework
         /// Instantiate the TypedXMLDocumentWrapper passing in the original message body stream
         /// </summary>
         /// <param name="DocumentStream"></param>
-        public TypedXMLDocumentWrapper(Stream DocumentStream)
+        public TypedXMLDocumentWrapper(Stream DocumentStream, Microsoft.BizTalk.Component.Interop.IPipelineContext pc)
         {
             this.documentStream = DocumentStream;
+            this.pc = pc;
             hasBeenSet = false;
         }
 
@@ -75,12 +73,33 @@ namespace BREPipelineFramework
         /// <param name="DocumentType"></param>
         public void CreateTypedXmlDocument(string DocumentType)
         {
-            XmlDocument doc = new XmlDocument();
-            doc.PreserveWhitespace = false;
-            doc.Load(documentStream);
-            document = new TypedXmlDocument(DocumentType, doc);
-            documentStream.Seek(0, SeekOrigin.Begin);
+            XmlTextReader reader = new XmlTextReader(documentStream);
+            document = new TypedXmlDocument(DocumentType, reader);
+            documentStream.Position = 0;
+            pc.ResourceTracker.AddResource(reader);
+
             hasBeenSet = true;
+        }
+
+        /// <summary>
+        /// Static method to apply a TypedXMLDocument to a BizTalk message body
+        /// </summary>
+        /// <param name="document"></param>
+        /// <param name="inmsg"></param>
+        /// <param name="pc"></param>
+        /// <param name="callToken"></param>
+        public static void ApplyTypedXMLDocument(TypedXmlDocument document, Microsoft.BizTalk.Message.Interop.IBaseMessage inmsg, Microsoft.BizTalk.Component.Interop.IPipelineContext pc, string callToken)
+        {
+            TraceManager.PipelineComponent.TraceInfo("{0} - Applying typed XML document (overwriting current message body)", callToken);
+
+            XmlDocument doc = (XmlDocument)document.Document;
+            VirtualStream ms = new VirtualStream();
+            doc.Save(ms);
+            ms.Position = 0;
+            inmsg.BodyPart.Data = ms;
+
+            // Add the new message body part's stream to the Pipeline Context's resource tracker so that it will be disposed off correctly
+            pc.ResourceTracker.AddResource(ms);
         }
 
         #endregion

@@ -3,12 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{560A2D4B-9D24-46D7-8655-FC4A548DA319}"
 	ProjectSection(SolutionItems) = preProject
-		BREPipelineFramework SSO Password.txt = BREPipelineFramework SSO Password.txt
-		BREPipelineFramework.snk = BREPipelineFramework.snk
-		BREPipelineFramework.sso = BREPipelineFramework.sso
-		BREPipelineFramework1.vsmdi = BREPipelineFramework1.vsmdi
-		Local.testsettings = Local.testsettings
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		..\BREPipelineFramework.snk = ..\BREPipelineFramework.snk
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BRE Artifacts", "BRE Artifacts", "{808521DA-26D0-4A05-BD29-C4130FF0149C}"
@@ -17,15 +12,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vocabularies", "Vocabularie
 	ProjectSection(SolutionItems) = preProject
 		BRE Artifacts\Vocabularies\BREPipelineFramework.1.0.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.1.0.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.1.1.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.1.1.xml
+		BRE Artifacts\Vocabularies\BREPipelineFramework.1.2.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.1.2.xml
+		BRE Artifacts\Vocabularies\BREPipelineFramework.AllVocabs.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.AllVocabs.xml
+		BRE Artifacts\Vocabularies\BREPipelineFramework.LatestVocabs.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.LatestVocabs.xml
+		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.CachingInstructions.1.0.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.CachingInstructions.1.0.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.ContextInstructions.1.0.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.ContextInstructions.1.0.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.ContextInstructions.1.1.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.ContextInstructions.1.1.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.ContextInstructions.1.2.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.ContextInstructions.1.2.xml
+		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.ContextInstructions.1.3.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.ContextInstructions.1.3.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.HelperInstructions.1.0.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.HelperInstructions.1.0.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.HelperInstructions.1.1.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.HelperInstructions.1.1.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.HelperInstructions.1.2.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.HelperInstructions.1.2.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.HelperInstructions.1.3.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.HelperInstructions.1.3.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.HelperInstructions.1.4.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.HelperInstructions.1.4.xml
-		BRE Artifacts\Vocabularies\BREPipelineFramework.TestSampleInstructions.MetaInstruction.1.0.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.TestSampleInstructions.MetaInstruction.1.0.xml
+		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.HelperInstructions.1.5.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.HelperInstructions.1.5.xml
+		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.PartInstructions.1.0.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.PartInstructions.1.0.xml
+		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.XMLInstructions.1.0.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.XMLInstructions.1.0.xml
+		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.XMLTranslatorInstructions.1.0.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.XMLTranslatorInstructions.1.0.xml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BREPipelineFramework", "BREPipelineFramework\BREPipelineFramework.csproj", "{F59789A2-DB48-48BE-A971-2E185D406F3B}"
@@ -40,33 +43,9 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BREPipelineFramework.Instal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BREPipelineFramework.SampleInstructions", "BREPipelineFramework.SampleInstructions\BREPipelineFramework.SampleInstructions.csproj", "{D00C51CC-A0A1-4407-88A0-3D2E7B4C18F6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{C2589861-E553-4777-9A13-A8D228CE8F61}"
-	ProjectSection(SolutionItems) = preProject
-		Libs\BizUnit.CoreSteps.dll = Libs\BizUnit.CoreSteps.dll
-		Libs\BizUnit.dll = Libs\BizUnit.dll
-		Libs\BizUnit.TestSteps.BizTalk.dll = Libs\BizUnit.TestSteps.BizTalk.dll
-		Libs\BizUnit.TestSteps.dll = Libs\BizUnit.TestSteps.dll
-		Libs\nunit.framework.dll = Libs\nunit.framework.dll
-		Libs\PipelineObjects.dll = Libs\PipelineObjects.dll
-		Libs\Winterdom.BizTalk.PipelineTesting.dll = Libs\Winterdom.BizTalk.PipelineTesting.dll
-		Libs\xmlunit.dll = Libs\xmlunit.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Tests", "Solution Tests", "{6F79B7C6-34D1-4B3A-8763-BC9BA6AAE49B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Policies", "Policies", "{D826A872-AAFB-443F-B4E3-925BB6622F28}"
-	ProjectSection(SolutionItems) = preProject
-		BRE Artifacts\Policies\BREPipelineFramework ExecutionPolicy.1.0.xml = BRE Artifacts\Policies\BREPipelineFramework ExecutionPolicy.1.0.xml
-		BRE Artifacts\Policies\BREPipelineFramework InstructionLoaderPolicy.1.0.xml = BRE Artifacts\Policies\BREPipelineFramework InstructionLoaderPolicy.1.0.xml
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BREPipelineFramework.TestSampleInstructions", "BREPipelineFramework.TestSampleInstructions\BREPipelineFramework.TestSampleInstructions.csproj", "{4B694161-3047-4BE1-B4CC-A0ED192E45F7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BREPipelineFramework.CustomBizUnitTestSteps", "BREPipelineFramework.CustomBizUnitTestSteps\BREPipelineFramework.CustomBizUnitTestSteps.csproj", "{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}"
-EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 8
+		SccNumberOfProjects = 6
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs13
 		SccLocalPath0 = .
@@ -90,17 +69,6 @@ Global
 		SccProjectTopLevelParentUniqueName5 = BREPipelineFramework.sln
 		SccProjectName5 = BREPipelineFramework.SampleInstructions
 		SccLocalPath5 = BREPipelineFramework.SampleInstructions
-		SccProjectUniqueName6 = BREPipelineFramework.TestSampleInstructions\\BREPipelineFramework.TestSampleInstructions.csproj
-		SccProjectTopLevelParentUniqueName6 = BREPipelineFramework.sln
-		SccProjectName6 = BREPipelineFramework.TestSampleInstructions
-		SccLocalPath6 = BREPipelineFramework.TestSampleInstructions
-		SccProjectUniqueName7 = BREPipelineFramework.CustomBizUnitTestSteps\\BREPipelineFramework.CustomBizUnitTestSteps.csproj
-		SccProjectTopLevelParentUniqueName7 = BREPipelineFramework.sln
-		SccProjectName7 = BREPipelineFramework.CustomBizUnitTestSteps
-		SccLocalPath7 = BREPipelineFramework.CustomBizUnitTestSteps
-	EndGlobalSection
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = BREPipelineFramework1.vsmdi
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug Without UnitTests|Any CPU = Debug Without UnitTests|Any CPU
@@ -195,55 +163,16 @@ Global
 		{D00C51CC-A0A1-4407-88A0-3D2E7B4C18F6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{D00C51CC-A0A1-4407-88A0-3D2E7B4C18F6}.Release|x86.ActiveCfg = Release|Any CPU
 		{D00C51CC-A0A1-4407-88A0-3D2E7B4C18F6}.Release|x86.Build.0 = Release|Any CPU
-		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Debug Without UnitTests|Any CPU.ActiveCfg = Debug|Any CPU
-		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Debug Without UnitTests|Any CPU.Build.0 = Debug|Any CPU
-		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Debug Without UnitTests|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Debug Without UnitTests|Mixed Platforms.Build.0 = Debug|Any CPU
-		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Debug Without UnitTests|x86.ActiveCfg = Debug|Any CPU
-		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Debug Without UnitTests|x86.Build.0 = Debug|Any CPU
-		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Debug|x86.Build.0 = Debug|Any CPU
-		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Release|x86.ActiveCfg = Release|Any CPU
-		{4B694161-3047-4BE1-B4CC-A0ED192E45F7}.Release|x86.Build.0 = Release|Any CPU
-		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Debug Without UnitTests|Any CPU.ActiveCfg = Debug|Any CPU
-		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Debug Without UnitTests|Any CPU.Build.0 = Debug|Any CPU
-		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Debug Without UnitTests|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Debug Without UnitTests|Mixed Platforms.Build.0 = Debug|Any CPU
-		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Debug Without UnitTests|x86.ActiveCfg = Debug|Any CPU
-		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Debug Without UnitTests|x86.Build.0 = Debug|Any CPU
-		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Debug|x86.Build.0 = Debug|Any CPU
-		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Release|x86.ActiveCfg = Release|Any CPU
-		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FD814B15-BD35-4BB2-95BB-480694F646E2} = {808521DA-26D0-4A05-BD29-C4130FF0149C}
-		{D826A872-AAFB-443F-B4E3-925BB6622F28} = {808521DA-26D0-4A05-BD29-C4130FF0149C}
 		{559F4DD6-9B6B-4AC4-AC5A-FE890020FFA5} = {1386FB7A-D1BB-4B4A-98A2-208FCEAD2170}
 		{F59789A2-DB48-48BE-A971-2E185D406F3B} = {1386FB7A-D1BB-4B4A-98A2-208FCEAD2170}
 		{C8058EEB-8D38-4DA9-B353-82C0D843D263} = {1386FB7A-D1BB-4B4A-98A2-208FCEAD2170}
 		{B64322B4-6507-4C07-9F4B-E94FEBFB5D2D} = {1386FB7A-D1BB-4B4A-98A2-208FCEAD2170}
 		{D00C51CC-A0A1-4407-88A0-3D2E7B4C18F6} = {1386FB7A-D1BB-4B4A-98A2-208FCEAD2170}
-		{4B694161-3047-4BE1-B4CC-A0ED192E45F7} = {6F79B7C6-34D1-4B3A-8763-BC9BA6AAE49B}
-		{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE} = {6F79B7C6-34D1-4B3A-8763-BC9BA6AAE49B}
 	EndGlobalSection
 EndGlobal

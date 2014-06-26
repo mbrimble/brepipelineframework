@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
+  <vocabulary id="50ced79a-a989-4640-95cd-1cf144f5a9f3" name="BREPipelineFramework.SampleInstructions.PartInstructions" uri="" description="">
+    <version major="1" minor="0" description="" modifiedby="jcooper1982" date="2014-06-18T15:03:24.1317278+12:00" />
+    <vocabularydefinition id="bbc551f5-7741-4b1b-9b76-8ee25bf7390b" name="GetMessageBodyPartCharSet" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="GetMessageBodyPartCharSet" type="string">
+          <classinfo class="MessagePartMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The character set of the message body part)" />
+    </vocabularydefinition>
+    <vocabularydefinition id="dc435c46-479e-4a4b-959f-75d061136aa1" name="GetMessagePartContentType" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="GetMessagePartContentType" type="string">
+          <classinfo class="MessagePartMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.MessagePartIdentifierType, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The content type of the message part with an identifier of {1} and an identifier type of {0})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.MessagePartIdentifierType, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="8a47a36a-6bc0-4b92-a796-2900196ffddd" name="SetCustomMessagePartProperty" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="SetCustomMessagePartProperty" type="void">
+          <classinfo class="MessagePartMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.MessagePartIdentifierType, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+          <argument position="3">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="4">
+            <valuedefinitionliteral type="object" />
+          </argument>
+          <argument position="5">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.TypeEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Set the value {4} of type {5} to the part property with a property name of {0} and a property namespace of {1} on the message part with an identifier of {3} and an identifier type of {2}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.MessagePartIdentifierType, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+        <argument position="3">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="4">
+          <valuedefinitionliteral type="object" />
+        </argument>
+        <argument position="5">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.TypeEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="883500de-d170-4eb9-b5e2-0c2b80ad5b7f" name="SetCustomMessageBodyPartProperty" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="SetCustomMessageBodyPartProperty" type="void">
+          <classinfo class="MessagePartMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="object" />
+          </argument>
+          <argument position="3">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.TypeEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Set the value {2} of type {3} to the part property with a property name of {0} and a property namespace of {1} on the message body part" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="object" />
+        </argument>
+        <argument position="3">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.TypeEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="db32dd04-a5a8-44ec-a8af-65643d7d4dca" name="GetPartCount" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="GetPartCount" type="int">
+          <classinfo class="MessagePartMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The number of message parts in the current message)" />
+    </vocabularydefinition>
+    <vocabularydefinition id="04bb45ce-0200-4f9b-9a49-0e6c1198b93e" name="SetMIMEFileNameMessagePartProperty" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="SetMIMEFileNameMessagePartProperty" type="void">
+          <classinfo class="MessagePartMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.MessagePartIdentifierType, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Set the value {2} to the MIME.Filename part property on the message part with an identifier of {1} and identifier type of {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.MessagePartIdentifierType, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="0c2b5bf2-02d7-4391-874d-b15223751ea1" name="GetCustomMessageBodyPartProperty" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="GetCustomMessageBodyPartProperty" type="string">
+          <classinfo class="MessagePartMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.FailureActionEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="The part property from the message body with a property name of {0} and a property namespace of {1}, if not found then return {2})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.FailureActionEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="0cac479a-e5fa-4bd0-be65-a4e41df6b031" name="GetMessageBodyPartName" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="GetMessageBodyPartName" type="string">
+          <classinfo class="MessagePartMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The part name of the message body part)" />
+    </vocabularydefinition>
+    <vocabularydefinition id="732d19ec-b0b8-4482-8b21-ba2b007d8260" name="SetMIMEFileNameMessageBodyPartProperty" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="SetMIMEFileNameMessageBodyPartProperty" type="void">
+          <classinfo class="MessagePartMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Set the value {0} to the MIME.Filename part property on the message body part" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="655a0968-bb7b-4e7d-a95f-0ac3893192f6" name="SetMessageBodyPartCharSet" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="SetMessageBodyPartCharSet" type="void">
+          <classinfo class="MessagePartMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Set the character set on the message body part to {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="590cd954-3b9b-456f-b661-33e0cec609b7" name="SetMessageBodyPartContentType" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="SetMessageBodyPartContentType" type="void">
+          <classinfo class="MessagePartMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Set the content type on the message body part to {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="2a24c4b3-2b69-4ea4-ad40-b40f149dca93" name="GetMessagePartCharSet" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="GetMessagePartCharSet" type="string">
+          <classinfo class="MessagePartMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.MessagePartIdentifierType, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The character set of the message part with an identifier of {1} and an identifier type of {0})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.MessagePartIdentifierType, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="39d31369-2e8c-4496-a252-5a49568fb2ba" name="GetMessagePartNameAtIndex" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="GetMessagePartNameAtIndex" type="string">
+          <classinfo class="MessagePartMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="int">
+              <int>0</int>
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The part name of the message part at an index of {0})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="int">
+            <int>0</int>
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="5c8fc2e3-ba43-4cbe-99b0-bcc663681ee1" name="GetMessageBodyPartContentType" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="GetMessageBodyPartContentType" type="string">
+          <classinfo class="MessagePartMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The content type of the message body part)" />
+    </vocabularydefinition>
+    <vocabularydefinition id="92bbde30-dd99-428b-b970-9b37bef097ec" name="GetCustomMessagePartProperty" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="GetCustomMessagePartProperty" type="string">
+          <classinfo class="MessagePartMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.MessagePartIdentifierType, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+          <argument position="3">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="4">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.FailureActionEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The part property from the message part with an identifier of {3}, an identifier type of {2}, with a property name of {0} and a property namespace of {1}, if not found then return {4})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.MessagePartIdentifierType, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+        <argument position="3">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="4">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.FailureActionEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="cfe84290-b227-40fa-be98-78fece86b7aa" name="SetMessagePartCharSet" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="SetMessagePartCharSet" type="void">
+          <classinfo class="MessagePartMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.MessagePartIdentifierType, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Set the character set on the message part with an identifier of {0} and identifier type of {1} to {2}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.MessagePartIdentifierType, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="81a0e52b-26d1-4168-bead-4cbf285587d5" name="SetMessagePartContentType" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="SetMessagePartContentType" type="void">
+          <classinfo class="MessagePartMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.MessagePartIdentifierType, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Set the content type on the message part with an identifier of {0} and identifier type of {1} to {2}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.MessagePartIdentifierType, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+  </vocabulary>
+</brl>

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace BREPipelineFramework.SampleInstructions
+﻿namespace BREPipelineFramework.SampleInstructions
 {
     /// <summary>
     /// See http://msdn.microsoft.com/en-us/library/aa561250(v=bts.10).aspx for an explanation of the BizTalk Framework context properties

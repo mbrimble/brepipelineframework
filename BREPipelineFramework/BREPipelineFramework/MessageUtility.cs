@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
+﻿using System.IO;
 using Microsoft.BizTalk.Streaming;
 using System.Xml;
 using Microsoft.BizTalk.XPath;
 using System.Text.RegularExpressions;
+using Microsoft.BizTalk.Component.Interop;
+using System;
+using System.Collections.Generic;
 
 namespace BREPipelineFramework
 {
@@ -19,18 +18,20 @@ namespace BREPipelineFramework
         private string rootNodeName;
         private string rootNodeNamespace;
         private bool messageTypePropertiesSet;
+        private IPipelineContext pc;
 
         #endregion
 
         #region Constructors
 
-        public MessageUtility(Stream DocumentStream)
+        public MessageUtility(Stream DocumentStream, IPipelineContext pc)
         {
             this.documentStream = DocumentStream;
             this.messageTypePropertiesSet = false;
+            this.pc = pc;
         }
 
-        public MessageUtility(Stream DocumentStream, string messageType)
+        public MessageUtility(Stream DocumentStream, string messageType, IPipelineContext pc)
         {
             this.documentStream = DocumentStream;
             char[] delimiters = {'#'};
@@ -38,61 +39,88 @@ namespace BREPipelineFramework
             this.rootNodeNamespace = messageTypeArray[0];
             this.rootNodeName = messageTypeArray[1];
             this.messageTypePropertiesSet = true;
+            this.pc = pc;
         }
 
         #endregion
 
         #region Public methods
 
+        /// <summary>
+        /// Check if a string exists in the message body
+        /// </summary>
         public bool CheckIfStringExistsInMessage(string stringToFind)
         {
-            if (string.IsNullOrEmpty(bodyString))
+            System.IO.StreamReader reader = new System.IO.StreamReader(documentStream);
+            pc.ResourceTracker.AddResource(reader);
+            bool found = false;
+
+            while (!reader.EndOfStream && !found)
             {
-                ExtractBody();
+                string body = reader.ReadLine();
+                found = body.Contains(stringToFind);
             }
 
-            return bodyString.Contains(stringToFind);
+            documentStream.Position = 0;
+            return found;
         }
 
+        /// <summary>
+        /// Check if a regex finds a match in the message body
+        /// </summary>
         public bool CheckIfRegexEvaluatesInMessage(string regexToFind)
         {
-            if (string.IsNullOrEmpty(bodyString))
+            System.IO.StreamReader reader = new System.IO.StreamReader(documentStream);
+            pc.ResourceTracker.AddResource(reader);
+            bool found = false;
+
+            while (!reader.EndOfStream && !found)
             {
-                ExtractBody();
+                string body = reader.ReadLine();
+                Match match = Regex.Match(body, regexToFind);
+                found = match.Success;
             }
 
-            return Regex.IsMatch(bodyString, regexToFind);
+            documentStream.Position = 0;
+            return found;
         }
 
+        /// <summary>
+        /// Returns the first regex match from the message body
+        /// </summary>
         public string ReturnFirstRegexMatch(string regexToFind)
         {
             return ReturnRegexMatchByIndex(regexToFind, 0);
         }
 
+        /// <summary>
+        /// Returns a regex match from the message body by index
+        /// </summary>
         public string ReturnRegexMatchByIndex(string regexToFind, int index)
         {
-            if (string.IsNullOrEmpty(bodyString))
-            {
-                ExtractBody();
-            }
+            System.IO.StreamReader reader = new System.IO.StreamReader(documentStream);
+            pc.ResourceTracker.AddResource(reader);
+            string matchedString = String.Empty;
+            List<string> matchedStrings = new List<string>();
 
-            Match match = Regex.Match(bodyString, regexToFind);
-
-            if (match.Success)
+            while (!reader.EndOfStream && matchedStrings.Count < index + 1)
             {
-                try
+                string body = reader.ReadLine();
+                MatchCollection matchCollection = Regex.Matches(body, regexToFind);
+
+                foreach (Match match in matchCollection)
                 {
-                    return match.Groups[index].Value;
-                }
-                catch
-                {
-                    return "";
+                    matchedStrings.Add(match.Value);
                 }
             }
-            else
+
+            if (matchedStrings.Count >= index + 1)
             {
-                return "";
+                matchedString = matchedStrings[index].ToString();
             }
+
+            documentStream.Position = 0;
+            return matchedString;           
         }
 
         /// <summary>
@@ -100,19 +128,18 @@ namespace BREPipelineFramework
         /// </summary>
         public int MessageBodyLength()
         {
-            if (string.IsNullOrEmpty(bodyString))
+            System.IO.StreamReader reader = new System.IO.StreamReader(documentStream);
+            pc.ResourceTracker.AddResource(reader);
+            int length = 0;
+
+            while (!reader.EndOfStream)
             {
-                ExtractBody();
+                string body = reader.ReadLine();
+                length = length + body.Length;
             }
 
-            try
-            {
-                return bodyString.Length;
-            }
-            catch
-            {
-                return 0;
-            }
+            documentStream.Position = 0;
+            return length;
         }
 
         /// <summary>
@@ -156,12 +183,10 @@ namespace BREPipelineFramework
         private void SetMessageTypeVariables()
         {
             string _XPathQuery = "/*";
-            VirtualStream virtualStream = new VirtualStream();
-            ReadOnlySeekableStream readOnlySeekableStream = new ReadOnlySeekableStream(documentStream, virtualStream);
-
+            
             try
             {
-                XmlTextReader xmlTextReader = new XmlTextReader(readOnlySeekableStream);
+                XmlTextReader xmlTextReader = new XmlTextReader(documentStream);
                 XPathCollection xPathCollection = new XPathCollection();
                 xPathCollection.Add(_XPathQuery);
 
@@ -185,18 +210,7 @@ namespace BREPipelineFramework
                 messageTypePropertiesSet = true;
             }
 
-            documentStream.Seek(0, SeekOrigin.Begin);
-        }
-
-        private void ExtractBody()
-        {
-            VirtualStream newMsgStream = new VirtualStream();
-            documentStream.CopyTo(newMsgStream);
-            documentStream.Seek(0, SeekOrigin.Begin);
-            newMsgStream.Seek(0, SeekOrigin.Begin);
-            System.IO.StreamReader reader = new System.IO.StreamReader(newMsgStream);
-            bodyString = reader.ReadToEnd();
-            reader.Close();
+            documentStream.Position = 0;
         }
 
         #endregion

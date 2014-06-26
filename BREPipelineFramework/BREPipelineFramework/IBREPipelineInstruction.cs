@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.BizTalk.Message.Interop;
+﻿using Microsoft.BizTalk.Message.Interop;
 using Microsoft.BizTalk.Component.Interop;
 
 namespace BREPipelineFramework

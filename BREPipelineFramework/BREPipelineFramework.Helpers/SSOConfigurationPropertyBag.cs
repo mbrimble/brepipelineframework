@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.BizTalk.SSOClient.Interop;
+﻿using Microsoft.BizTalk.SSOClient.Interop;
 using System.Collections.Specialized;
+using System.Diagnostics.CodeAnalysis;
 
 namespace BREPipelineFramework.Helpers
 {
@@ -25,10 +22,14 @@ namespace BREPipelineFramework.Helpers
         {
             properties.Add(propName, ptrVar);
         }
+
+        [ExcludeFromCodeCoverage]
         public bool Contains(string key)
         {
             return properties.Contains(key);
         }
+
+        [ExcludeFromCodeCoverage]
         public void Remove(string key)
         {
             properties.Remove(key);

@@ -6,6 +6,9 @@ using b = BizUnit;
 using System.IO;
 using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using BREPipelineFramework.CustomBizUnitTestSteps;
+using BTS.Testing.TraceMonitor.BizUnit4.TestSteps;
+using BizUnit.Xaml;
 
 namespace BREPipelineFramework.UnitTests
 {
@@ -14,7 +17,10 @@ namespace BREPipelineFramework.UnitTests
     /// </summary>
     public static class TestHelpers
     {
-        public static b.BizUnit BREPipelineFrameworkReceivePipelineBaseTest(string InputFileName, string InstanceConfigFilePath, XPathCollection contextXPathCollection, XPathCollection bodyXPathCollection, TestContext testContextInstance, int ExpectedNumberOfFiles, string PipelineType)
+        public static b.BizUnit BREPipelineFrameworkReceivePipelineBaseTest(string InputFileName, TestContext testContextInstance, string InstanceConfigFilePath = null, 
+            XPathCollection contextXPathCollection = null, XPathCollection bodyXPathCollection = null, int ExpectedNumberOfFiles = 1, 
+            string PipelineType = "BREPipelineFramework.TestProject.Rcv_BREPipelineFramework", string ExpectedOutputFileName = null,
+            string inputMessageType = "BREPipelineFramework.TestProject.Message", string InputContextFileName = null, DataLoaderBase instanceConfigLoader = null, DataLoaderBase inputContextLoader = null)
         {
             var _BREPipelineFrameworkTest = new b.Xaml.TestCase();
 
@@ -26,8 +32,27 @@ namespace BREPipelineFramework.UnitTests
                 DestinationDir = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Output Files",
                 DestinationFileFormat = "Output {0}.txt",
                 OutputContextFileFormat = "Context {0}.xml",
-                InstanceConfigFile = InstanceConfigFilePath,
             };
+
+            if (!string.IsNullOrEmpty(InstanceConfigFilePath))
+            {
+                pipelineTestStep.InstanceConfigFile = InstanceConfigFilePath;
+            }
+
+            if (instanceConfigLoader != null)
+            {
+                pipelineTestStep.InstanceConfigLoader = instanceConfigLoader;
+            }
+
+            if (!string.IsNullOrEmpty(InputContextFileName))
+            {
+                pipelineTestStep.InputContextFile = InputContextFileName;
+            }
+
+            if (inputContextLoader != null)
+            {
+                pipelineTestStep.InputContextLoader = inputContextLoader;
+            }
 
             var docSpecDefinition = new b.TestSteps.BizTalk.Pipeline.DocSpecDefinition();
 
@@ -39,23 +64,23 @@ namespace BREPipelineFramework.UnitTests
             var docSpecDefinition1 = new b.TestSteps.BizTalk.Pipeline.DocSpecDefinition();
 
             docSpecDefinition1.AssemblyPath = @"..\..\..\BREPipelineFramework.TestProject\bin\debug\BREPipelineFramework.TestProject.dll";
-            docSpecDefinition1.TypeName = "BREPipelineFramework.TestProject.Message";
+            docSpecDefinition1.TypeName = inputMessageType;
 
             pipelineTestStep.DocSpecs.Add(docSpecDefinition1);
-
+            
             _BREPipelineFrameworkTest.ExecutionSteps.Add(pipelineTestStep);
+
+            var fileReadMultipleStepContext = new BREPipelineFramework.CustomBizUnitTestSteps.FileReadMultipleStep
+            {
+                ExpectedNumberOfFiles = ExpectedNumberOfFiles,
+                DeleteFiles = false,
+                DirectoryPath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Output Files",
+                SearchPattern = "Context*.xml",
+                Timeout = 5000
+            };
 
             if (ExpectedNumberOfFiles > 0)
             {
-                var fileReadMultipleStepContext = new b.TestSteps.File.FileReadMultipleStep
-                {
-                    ExpectedNumberOfFiles = ExpectedNumberOfFiles,
-                    DeleteFiles = false,
-                    DirectoryPath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Output Files",
-                    SearchPattern = "Context*.xml",
-                    Timeout = 5000
-                };
-
                 if (contextXPathCollection != null)
                 {
                     var xmlValidateContextStep = new BREPipelineFramework.CustomBizUnitTestSteps.XmlValidationStep();
@@ -74,18 +99,21 @@ namespace BREPipelineFramework.UnitTests
 
                     fileReadMultipleStepContext.SubSteps.Add(xmlValidateContextStep);
                 }
+            }
 
-                _BREPipelineFrameworkTest.ExecutionSteps.Add(fileReadMultipleStepContext);
+            _BREPipelineFrameworkTest.ExecutionSteps.Add(fileReadMultipleStepContext);
 
-                var fileReadMultipleStepBody = new b.TestSteps.File.FileReadMultipleStep
-                {
-                    ExpectedNumberOfFiles = ExpectedNumberOfFiles,
-                    DeleteFiles = false,
-                    DirectoryPath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Output Files",
-                    SearchPattern = "Output*.txt",
-                    Timeout = 5000
-                };
+            var fileReadMultipleStepBody = new BREPipelineFramework.CustomBizUnitTestSteps.FileReadMultipleStep
+            {
+                ExpectedNumberOfFiles = ExpectedNumberOfFiles,
+                DeleteFiles = false,
+                DirectoryPath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Output Files",
+                SearchPattern = "Output*.txt",
+                Timeout = 5000
+            };
 
+            if (ExpectedNumberOfFiles > 0)
+            {
                 if (bodyXPathCollection != null)
                 {
                     var xmlValidateBodyStep = new BREPipelineFramework.CustomBizUnitTestSteps.XmlValidationStep();
@@ -104,21 +132,20 @@ namespace BREPipelineFramework.UnitTests
 
                     fileReadMultipleStepBody.SubSteps.Add(xmlValidateBodyStep);
                 }
-                _BREPipelineFrameworkTest.ExecutionSteps.Add(fileReadMultipleStepBody);
+                if (!String.IsNullOrEmpty(ExpectedOutputFileName))
+                {
+                    var binaryStep = new BinaryComparisonTestStep();
+                    binaryStep.ComparisonDataPath = ExpectedOutputFileName;
+                    //binaryStep.CompareAsUTF8 = true;
+                    fileReadMultipleStepBody.SubSteps.Add(binaryStep);
+                }
             }
+
+            _BREPipelineFrameworkTest.ExecutionSteps.Add(fileReadMultipleStepBody);
+            
             var bizUnit = new b.BizUnit(_BREPipelineFrameworkTest);
 
             return bizUnit;
-        }
-
-        public static b.BizUnit BREPipelineFrameworkReceivePipelineBaseTest(string InputFileName, string InstanceConfigFilePath, XPathCollection _XPathCollection, TestContext testContextInstance)
-        {
-            return BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, _XPathCollection, null, testContextInstance, 1, "BREPipelineFramework.TestProject.Rcv_BREPipelineFramework");
-        }
-
-        public static b.BizUnit BREPipelineFrameworkReceivePipelineBaseTest(string InputFileName, string InstanceConfigFilePath, XPathCollection _XPathCollection, TestContext testContextInstance, int ExpectedNumberOfFiles)
-        {
-            return BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, InstanceConfigFilePath, null, _XPathCollection, testContextInstance, 1, "BREPipelineFramework.TestProject.Rcv_BREPipelineFramework");
         }
 
         public static b.BizUnit BREPipelineFrameworkSendPipelineBaseTest(string InputFileName, string InstanceConfigFilePath, XPathCollection _XPathCollection, TestContext testContextInstance)
@@ -165,15 +192,45 @@ namespace BREPipelineFramework.UnitTests
 
             _BREPipelineFrameworkTest.ExecutionSteps.Add(fileReadMultipleStepContext);
 
-            var deleteStep = new b.TestSteps.File.DeleteStep();
-            deleteStep.FilePathsToDelete = new System.Collections.ObjectModel.Collection<string>();
-            deleteStep.FilePathsToDelete.Add(testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Output Files\Output.txt");
-            deleteStep.FilePathsToDelete.Add(testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Output Files\Context.xml");
-            _BREPipelineFrameworkTest.CleanupSteps.Add(deleteStep);
-
             var bizUnit = new b.BizUnit(_BREPipelineFrameworkTest);
 
             return bizUnit;
+        }
+
+        public static DataLoaderBase CreateInstanceConfig(TestContext testContextInstance, string applicationContext = null)
+        {
+            var xdl = new b.TestSteps.DataLoaders.Xml.XmlDataLoader();
+            xdl.FilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Base Config.xml"; ;
+            xdl.UpdateXml = new System.Collections.ObjectModel.Collection<b.TestSteps.Common.XPathDefinition>();
+
+            if (applicationContext != null)
+            {
+                xdl.UpdateXml.Add(new b.TestSteps.Common.XPathDefinition { XPath = "/*[local-name()='Root' and namespace-uri()='']/*[local-name()='Stages' and namespace-uri()='']/*[local-name()='Stage' and namespace-uri()='']/*[local-name()='Components' and namespace-uri()='']/*[local-name()='Component' and namespace-uri()='']/*[local-name()='Properties' and namespace-uri()='']/*[local-name()='ApplicationContext' and namespace-uri()='']", Value = applicationContext });
+            }
+
+            return xdl;
+        }
+
+        public static DataLoaderBase CreateInputContext(TestContext testContextInstance, string propertyName, string propertyNamespace, string value = "ExpectedResult", bool promoted = false)
+        {
+            var xdl = new b.TestSteps.DataLoaders.Xml.XmlDataLoader();
+            xdl.FilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Context Files\Base Context.xml"; ;
+            xdl.UpdateXml = new System.Collections.ObjectModel.Collection<b.TestSteps.Common.XPathDefinition>();
+
+            xdl.UpdateXml.Add(new b.TestSteps.Common.XPathDefinition { XPath = "/*[local-name()='MessageInfo' and namespace-uri()='']/*[local-name()='ContextInfo' and namespace-uri()='']/*[local-name()='Property' and namespace-uri()='']/@*[local-name()='Name' and namespace-uri()='']", Value = propertyName });
+            xdl.UpdateXml.Add(new b.TestSteps.Common.XPathDefinition { XPath = "/*[local-name()='MessageInfo' and namespace-uri()='']/*[local-name()='ContextInfo' and namespace-uri()='']/*[local-name()='Property' and namespace-uri()='']/@*[local-name()='Namespace' and namespace-uri()='']", Value = propertyNamespace });
+            xdl.UpdateXml.Add(new b.TestSteps.Common.XPathDefinition { XPath = "/*[local-name()='MessageInfo' and namespace-uri()='']/*[local-name()='ContextInfo' and namespace-uri()='']/*[local-name()='Property' and namespace-uri()='']/@*[local-name()='Value' and namespace-uri()='']", Value = value });
+            
+            if (promoted)
+            {
+                xdl.UpdateXml.Add(new b.TestSteps.Common.XPathDefinition { XPath = "/*[local-name()='MessageInfo' and namespace-uri()='']/*[local-name()='ContextInfo' and namespace-uri()='']/*[local-name()='Property' and namespace-uri()='']/@*[local-name()='Promoted' and namespace-uri()='']", Value = "true" });
+            }
+            else 
+            {
+                xdl.UpdateXml.Add(new b.TestSteps.Common.XPathDefinition { XPath = "/*[local-name()='MessageInfo' and namespace-uri()='']/*[local-name()='ContextInfo' and namespace-uri()='']/*[local-name()='Property' and namespace-uri()='']/@*[local-name()='Promoted' and namespace-uri()='']", Value = "false" });
+            }
+
+            return xdl;
         }
     }
 }

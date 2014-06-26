@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.BizTalk.XPath;
-
-namespace BREPipelineFramework.Helpers
+﻿namespace BREPipelineFramework.Helpers
 {
     /// <summary>
     /// Class that represents an Instruction to execute an XPath Query against a message and write the result to the context of a message
@@ -32,7 +26,6 @@ namespace BREPipelineFramework.Helpers
         public string XPathQuery
         {
             get { return _XPathQuery; }
-            set { _XPathQuery = value; }
         }
 
         /// <summary>
@@ -41,7 +34,6 @@ namespace BREPipelineFramework.Helpers
         public ContextInstructionTypeEnum Promotion
         {
             get { return promotion; }
-            set { promotion = value; }
         }
 
         /// <summary>
@@ -50,7 +42,6 @@ namespace BREPipelineFramework.Helpers
         public XPathResultTypeEnum XPathResultType
         {
             get { return _XPathResultType; }
-            set { _XPathResultType = value; }
         }
 
         /// <summary>
@@ -59,7 +50,6 @@ namespace BREPipelineFramework.Helpers
         public string PropertyName
         {
             get { return propertyName; }
-            set { propertyName = value; }
         }
 
         /// <summary>
@@ -68,7 +58,6 @@ namespace BREPipelineFramework.Helpers
         public string PropertyNamespace
         {
             get { return propertyNamespace; }
-            set { propertyNamespace = value; }
         }
 
         /// <summary>
@@ -77,7 +66,6 @@ namespace BREPipelineFramework.Helpers
         public TypeEnum Type
         {
             get { return type; }
-            set { type = value; }
         }
         
         /// <summary>
@@ -88,14 +76,10 @@ namespace BREPipelineFramework.Helpers
             get { return isFound; }
             set { isFound = value; }
         }
-        
-        /// <summary>
-        /// Specifies whether an exception should thrown if the XPath Query does not succesfully evaluate
-        /// </summary>
+
         public bool ExceptionIfNotFound
         {
             get { return exceptionIfNotFound; }
-            set { exceptionIfNotFound = value; }
         }
 
         #endregion

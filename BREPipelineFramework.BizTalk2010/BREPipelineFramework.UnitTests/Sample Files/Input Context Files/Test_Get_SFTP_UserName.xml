@@ -1,0 +1,5 @@
+﻿<MessageInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ContextInfo PropertiesCount="2">
+    <Property Name="UserName" Namespace="http://schemas.microsoft.com/BizTalk/2012/Adapter/sftp-properties" Value="ExpectedResult" Promoted="true" />
+  </ContextInfo>
+</MessageInfo>

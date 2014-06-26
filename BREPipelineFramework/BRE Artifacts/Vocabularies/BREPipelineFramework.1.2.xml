@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
+  <vocabulary id="d892a25c-a516-4db9-b606-13c1f5954575" name="BREPipelineFramework" uri="" description="">
+    <version major="1" minor="2" description="" modifiedby="jcooper1982" date="2014-05-31T23:09:08.0001328+12:00" />
+    <vocabularydefinition id="f867a0df-e68b-43f3-a46f-6f5e899a938a" name="CheckIfRegexEvaluatesInMessage" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="CheckIfRegexEvaluatesInMessage" type="boolean">
+          <classinfo class="MessageUtility" instance="0">
+            <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
+            <namespace>BREPipelineFramework</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The regex {0} finds a match in the message body)" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="85e12044-1328-44e2-ad6a-ded87f20270d" name="GetMessageRootNodeName" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="GetMessageRootNodeName" type="string">
+          <classinfo class="MessageUtility" instance="0">
+            <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
+            <namespace>BREPipelineFramework</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The root node name of the current message)" />
+    </vocabularydefinition>
+    <vocabularydefinition id="2c83dfaf-bf7c-4cff-977b-4847f930d3c9" name="OverrideApplicationContext" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="set_ApplicationContextOverride" type="void">
+          <classinfo class="BREPipelineMetaInstructionCollection" instance="0">
+            <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
+            <namespace>BREPipelineFramework</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Override the default ApplicationContext that will be used by the ExecutionPolicy with a value of {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="93492412-7205-4358-9184-31743f4d093e" name="CheckIfStringExistsInMessage" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="CheckIfStringExistsInMessage" type="boolean">
+          <classinfo class="MessageUtility" instance="0">
+            <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
+            <namespace>BREPipelineFramework</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The substring {0} exists in the message body)" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="dd35e7d5-ab9a-4f86-87d3-7d38f842222d" name="AddSQLDataConnection" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AddSQLDataConnection" type="void">
+          <classinfo class="SQLDataConnectionCollection" instance="0">
+            <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
+            <namespace>BREPipelineFramework</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Assert a SQL Data Connection to the ExecutionPolicy with a connection string of {0}, a database name of {1} and a database table of {2}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="9147229e-883e-4460-bc7c-424cdfbf87be" name="GetMessageBodyLength" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="MessageBodyLength" type="int">
+          <classinfo class="MessageUtility" instance="0">
+            <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
+            <namespace>BREPipelineFramework</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The length of the message body)" />
+    </vocabularydefinition>
+    <vocabularydefinition id="c2804889-abf7-4040-9319-2bc85399fbcb" name="AddMetaInstruction" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AddMetaInstruction" type="void">
+          <classinfo class="BREPipelineMetaInstructionCollection" instance="0">
+            <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
+            <namespace>BREPipelineFramework</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Instantiate and load a MetaInstruction object with a fully qualified class name of {0} and a fully qualified assembly name of {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="152815a7-b99a-465b-b091-46f06524a6bb" name="SetTypedXmlDocument" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="CreateTypedXmlDocument" type="void">
+          <classinfo class="TypedXMLDocumentWrapper" instance="0">
+            <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
+            <namespace>BREPipelineFramework</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Treat the current message's body part as a TypedXmlDocument of type {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="fd5410b3-f5d5-4f36-bbb5-20b73804d8e3" name="ReturnFirstRegexMatch" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ReturnFirstRegexMatch" type="string">
+          <classinfo class="MessageUtility" instance="0">
+            <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
+            <namespace>BREPipelineFramework</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The first match for the regex {0} against the message body)" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="3585c1a0-36f4-4e2a-bdba-446b31def4c6" name="AddSQLDataConnectionFromSSO" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AddSQLDataConnection" type="void">
+          <classinfo class="SQLDataConnectionCollection" instance="0">
+            <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
+            <namespace>BREPipelineFramework</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="3">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Assert a SQL Data Connection to the ExecutionPolicy with a connection string from SSO Application {0} and SSO Key {1} with a database name of {2} and a database table of {3}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="3">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="8371ff53-1ab4-46a5-a051-402db67dcf79" name="GetMessageRootNodeNamespace" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="GetMessageRootNodeNamespace" type="string">
+          <classinfo class="MessageUtility" instance="0">
+            <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
+            <namespace>BREPipelineFramework</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The root node namespace of the current message)" />
+    </vocabularydefinition>
+    <vocabularydefinition id="783d7130-da3c-46b1-95a3-50d04b956773" name="OverrideXmlFactsApplicationStage" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="set_XmlFactsApplicationStageOverride" type="void">
+          <classinfo class="BREPipelineMetaInstructionCollection" instance="0">
+            <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
+            <namespace>BREPipelineFramework</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="BREPipelineFramework.XMLFactsApplicationStageEnum, BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Override the stage at which XML Facts get applied to {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="BREPipelineFramework.XMLFactsApplicationStageEnum, BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="0e09208d-9fa8-4c7f-af1a-b57fb7b4b51b" name="ReturnRegexMatchByIndex" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ReturnRegexMatchByIndex" type="string">
+          <classinfo class="MessageUtility" instance="0">
+            <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
+            <namespace>BREPipelineFramework</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="int">
+              <int>0</int>
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The match for the regex {0} against the message body with an index number of {1})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="int">
+            <int>0</int>
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="66432982-8ee6-4d7f-94be-25e24b62f030" name="OverrideExecutionPolicy" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="set_ExecutionPolicyOverride" type="void">
+          <classinfo class="BREPipelineMetaInstructionCollection" instance="0">
+            <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
+            <namespace>BREPipelineFramework</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Override the default ExecutionPolicy with another one named {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="1ed7c5ef-ddbb-45e6-a655-7992b3b09f8d" name="ApplicationContext" description="">
+      <bindingdefinition>
+        <classbindingdefinition>
+          <classinfo class="String" instance="0">
+            <assembly>mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</assembly>
+            <!--C:\Windows\Microsoft.NET\Framework\v4.0.30319\mscorlib.dll-->
+            <namespace>System</namespace>
+          </classinfo>
+        </classbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="The context or name of the calling application (pipeline / orchestration / class etc...)" />
+    </vocabularydefinition>
+    <vocabularydefinition id="5db2c6f9-a495-4c49-9ca6-512b7070c926" name="OverrideExecutionPolicyVersion" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="set_ExecutionPolicyVersionOverride" type="void">
+          <classinfo class="BREPipelineMetaInstructionCollection" instance="0">
+            <assembly>BREPipelineFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.dll-->
+            <namespace>BREPipelineFramework</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Override the default Execution Policy version that will be used with a value of {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+  </vocabulary>
+</brl>

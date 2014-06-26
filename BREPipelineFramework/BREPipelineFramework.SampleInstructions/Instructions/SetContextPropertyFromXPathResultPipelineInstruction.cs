@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.IO;
 using System.Xml;
-using System.Xml.XPath;
 using Microsoft.BizTalk.Streaming;
 using Microsoft.BizTalk.Message.Interop;
 using Microsoft.BizTalk.XPath;
@@ -19,13 +17,7 @@ namespace BREPipelineFramework.SampleInstructions.Instructions
 
         public void Execute(ref IBaseMessage inmsg, IPipelineContext pc)
         {
-            IBaseMessagePart bodyPart = inmsg.BodyPart;
-            Stream inboundStream = bodyPart.GetOriginalDataStream();
-
-            VirtualStream virtualStream = new VirtualStream();
-            ReadOnlySeekableStream readOnlySeekableStream = new ReadOnlySeekableStream(inboundStream, virtualStream);
-            XmlTextReader xmlTextReader = new XmlTextReader(readOnlySeekableStream);
-
+            XmlTextReader xmlTextReader = new XmlTextReader(inmsg.BodyPart.GetOriginalDataStream());
             XPathCollection xPathCollection = GetXPathCollection();
             XPathReader xPathReader = new XPathReader(xmlTextReader, xPathCollection);
 
@@ -51,23 +43,13 @@ namespace BREPipelineFramework.SampleInstructions.Instructions
                                 break;
                         }
 
-                        try
+                        if (_XPathInstructions.ElementAt(i).Promotion == ContextInstructionTypeEnum.Promote)
                         {
-                            if (_XPathInstructions.ElementAt(i).Promotion == ContextInstructionTypeEnum.Promote)
-                            {
-                                inmsg.Context.Promote(_XPathInstructions.ElementAt(i).PropertyName, _XPathInstructions.ElementAt(i).PropertyNamespace, TypeCaster.GetTypedObject(value, _XPathInstructions.ElementAt(i).Type));
-                            }
-                            else
-                            {
-                                inmsg.Context.Write(_XPathInstructions.ElementAt(i).PropertyName, _XPathInstructions.ElementAt(i).PropertyNamespace, TypeCaster.GetTypedObject(value, _XPathInstructions.ElementAt(i).Type));
-                            }
+                            inmsg.Context.Promote(_XPathInstructions.ElementAt(i).PropertyName, _XPathInstructions.ElementAt(i).PropertyNamespace, TypeCaster.GetTypedObject(value, _XPathInstructions.ElementAt(i).Type));
                         }
-                        catch (Exception e)
+                        else
                         {
-                            if (_XPathInstructions.ElementAt(i).ExceptionIfNotFound == true)
-                            {
-                                throw new Exception("Unable to set context property " + _XPathInstructions.ElementAt(i).PropertyNamespace + "#" + _XPathInstructions.ElementAt(i).PropertyName + " from XPath Query application " + _XPathInstructions.ElementAt(i).XPathQuery + ". Encountered error - " + e.ToString());
-                            }
+                            inmsg.Context.Write(_XPathInstructions.ElementAt(i).PropertyName, _XPathInstructions.ElementAt(i).PropertyNamespace, TypeCaster.GetTypedObject(value, _XPathInstructions.ElementAt(i).Type));
                         }
                     }                
                 }
@@ -81,8 +63,7 @@ namespace BREPipelineFramework.SampleInstructions.Instructions
                 }
             }
 
-            readOnlySeekableStream.Position = 0;
-            bodyPart.Data = readOnlySeekableStream;
+            inmsg.BodyPart.Data.Position = 0;
         }
 
         public void AddXPathInstruction(XPathInstruction _XPathInstruction)

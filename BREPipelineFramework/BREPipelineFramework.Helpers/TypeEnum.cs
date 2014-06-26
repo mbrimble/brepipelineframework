@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace BREPipelineFramework.Helpers
+﻿namespace BREPipelineFramework.Helpers
 {
     /// <summary>
     /// An enumeration that contains types that you might want to cast your context property values to
@@ -13,6 +8,7 @@ namespace BREPipelineFramework.Helpers
         String,
         Integer,
         Boolean,
-        DateTime
+        DateTime,
+        NoCastRequired
     }
 }

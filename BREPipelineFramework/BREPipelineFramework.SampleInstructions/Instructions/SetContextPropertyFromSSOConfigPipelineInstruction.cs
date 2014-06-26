@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.BizTalk.SSOClient.Interop;
-using System.Collections.Specialized;
 using BREPipelineFramework.Helpers;
 using Microsoft.BizTalk.Message.Interop;
 using Microsoft.BizTalk.Component.Interop;
-using BREPipelineFramework.Helpers;
 
 namespace BREPipelineFramework.SampleInstructions.Instructions
 {

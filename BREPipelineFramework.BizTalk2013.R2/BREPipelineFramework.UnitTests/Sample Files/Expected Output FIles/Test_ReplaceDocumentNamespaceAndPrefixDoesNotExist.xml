@@ -1,0 +1,17 @@
+﻿
+<bre:Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bre="http://brepipelineframework">
+  <Stages>
+    <Stage CategoryId="9d0e4103-4cce-4536-83fa-4a5040674ad6">
+      <Components>
+        <Component Name="BREPipelineFramework.PipelineComponents.BREPipelineFrameworkComponent">
+          <Properties>
+            <Enabled vt="11">true</Enabled>
+            <xsi:ApplicationContext vt="8">Test_Set_BTS_DestinationParty</xsi:ApplicationContext>
+            <ExecutionPolicy vt="8">BREPipelineFramework ExecutionPolicy</ExecutionPolicy>
+            <InstructionLoaderPolicy vt="8"></InstructionLoaderPolicy>
+          </Properties>
+        </Component>
+      </Components>
+    </Stage>
+  </Stages>
+</bre:Root>

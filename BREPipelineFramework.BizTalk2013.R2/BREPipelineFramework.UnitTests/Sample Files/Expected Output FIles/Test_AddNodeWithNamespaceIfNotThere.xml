@@ -1,0 +1,6 @@
+﻿<ns0:Message xmlns:ns0="http://BREPipelineFramework">
+  <ns0:Element>Test</ns0:Element>
+  <ns0:TestElement>Hello</ns0:TestElement>
+  <ns0:Element3>Hi</ns0:Element3>
+  <test xmlns="http://testbre" />
+</ns0:Message>

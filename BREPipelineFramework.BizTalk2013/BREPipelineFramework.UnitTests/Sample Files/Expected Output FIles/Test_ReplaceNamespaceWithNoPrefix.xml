@@ -1,0 +1,9 @@
+﻿<HelloTest xmlns="bleh">
+  <BLah>BLah_0</BLah>
+  <Record>
+    <ns1:Hello xmlns:ns1="http://test">ns0:Hello_0</ns1:Hello>
+    <ns1:Help xmlns:ns1="http://test">
+      <ns1:Me>ns0:Me_0</ns1:Me>
+    </ns1:Help>
+  </Record>
+</HelloTest>

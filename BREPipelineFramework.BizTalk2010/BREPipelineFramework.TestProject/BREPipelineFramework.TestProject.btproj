@@ -42,7 +42,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\BREPipelineFramework.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\..\BREPipelineFramework.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Without UnitTests|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -130,6 +130,72 @@
       <TypeName>Message</TypeName>
       <Namespace>BREPipelineFramework.TestProject</Namespace>
     </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Message1_To_Message2.btm">
+      <TypeName>Message1_To_Message2</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+    </Map>
+    <Map Include="Message2_To_Message3.btm">
+      <TypeName>Message2_To_Message3</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+    </Map>
+    <Pipeline Include="Rcv_BREPipelineFramework1.btp">
+      <TypeName>Rcv_BREPipelineFramework1</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+    </Pipeline>
+    <Pipeline Include="Rcv_TransformMessage.btp">
+      <TypeName>Rcv_TransformMessage</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+    </Pipeline>
+    <Pipeline Include="Rcv_TransformMessageTwice.btp">
+      <TypeName>Rcv_TransformMessageTwice</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+    </Pipeline>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="Message2.xsd">
+      <TypeName>Message2</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+    </Schema>
+    <Schema Include="Message3.xsd">
+      <TypeName>Message3</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Pipeline Include="Rcv_BREPipelineFrameworkMIME.btp">
+      <TypeName>Rcv_BREPipelineFrameworkMIME</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+    </Pipeline>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="BRETest.xsd">
+      <TypeName>BRETest</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Pipeline Include="Rcv_BREPipelineFrameworkXML.btp">
+      <TypeName>Rcv_BREPipelineFrameworkXML</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+    </Pipeline>
+    <Pipeline Include="Rcv_BREPipelineFrameworkXMLRIP.btp">
+      <TypeName>Rcv_BREPipelineFrameworkXMLRIP</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+    </Pipeline>
+    <Pipeline Include="Rcv_BREPipelineFrameworkXML_NoReadStream.btp">
+      <TypeName>Rcv_BREPipelineFrameworkXML_NoReadStream</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+    </Pipeline>
+    <Pipeline Include="Rcv_BRETestFF.btp">
+      <TypeName>Rcv_BRETestFF</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+    </Pipeline>
+    <Pipeline Include="Rcv_BRETestFFNoStream.btp">
+      <TypeName>Rcv_BRETestFFNoStream</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+    </Pipeline>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />

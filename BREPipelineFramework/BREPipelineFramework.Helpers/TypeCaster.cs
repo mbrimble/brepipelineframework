@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace BREPipelineFramework.Helpers
 {
@@ -39,13 +36,15 @@ namespace BREPipelineFramework.Helpers
                     o = Boolean.Parse(sourceString.ToString());
                     break;
                 case TypeEnum.DateTime:
-                    o = DateTime.Parse(sourceString.ToString());
+                        o = DateTime.Parse(sourceString.ToString());
                     break;
                 case TypeEnum.Integer:
                     o = int.Parse(sourceString.ToString());
                     break;
                 case TypeEnum.String:
                     o = sourceString.ToString();
+                    break;
+                case TypeEnum.NoCastRequired:
                     break;
             }
 
