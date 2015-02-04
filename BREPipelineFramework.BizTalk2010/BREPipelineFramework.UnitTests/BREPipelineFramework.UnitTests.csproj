@@ -171,6 +171,7 @@
     <Content Include="Sample Files\Input Files\Message2.xml" />
     <Content Include="Sample Files\Input Files\Message_Transform.xml" />
     <Content Include="Sample Files\Input Files\MIMEMessage.txt" />
+    <Content Include="Sample Files\Input Files\NoNamespace.xml" />
     <Content Include="Sample Files\Input Files\Test1.xml" />
     <Content Include="Sample Files\Input Files\TestCount.txt" />
     <Content Include="Sample Files\Input Files\TestEnvelope.xml" />
@@ -186,6 +187,8 @@
     <Content Include="Sample Files\Input Files\Test_UpdateElementValueByNodeName.xml" />
     <Content Include="Sample Files\Input Files\Test_UpdateElementValueByNodeNameAndOldValue.xml" />
     <Content Include="Sample Files\Instance Config Files\Base Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_AddCustomContextPropertyToCache_OverrideExpiryTimeSetPriorityDefault Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_AddCustomContextPropertyToCache_OverrideExpiryTimeSetPriorityNotRemovable Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_AddAttribute Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_AddCustomContextPropertyToCache Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_AddCustomContextPropertyToCache_OverrideContextKey Config.xml" />

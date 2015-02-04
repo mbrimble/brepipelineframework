@@ -391,6 +391,88 @@ namespace BREPipelineFramework.UnitTests
         }
 
         [TestMethod()]
+        public void Test_AddCustomContextPropertyToCache_OverrideExpiryTimeSetPriorityDefault()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.txt";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_AddCustomContextPropertyToCache_OverrideExpiryTimeSetPriorityDefault Config.xml";
+            string InputContextFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Context Files\Test_AddCustomContextPropertyToCache.xml";
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, InputContextFileName: InputContextFileName);
+            _BREPipelineFrameworkTest.RunTest();
+
+            object cacheItemsObj = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["http://schemas.microsoft.com/BizTalk/2003/system-properties#TransmitWorkID = 123"];
+
+            if (cacheItemsObj != null)
+            {
+                Dictionary<string, object> cacheItems = (Dictionary<string, object>)cacheItemsObj;
+                object _SMTPFromObj = cacheItems["http://schemas.microsoft.com/BizTalk/2003/smtp-properties#From"];
+
+                if (_SMTPFromObj != null)
+                {
+                    Assert.IsTrue(_SMTPFromObj.ToString() == "jcooper1982@aitm.com", "Unexpected SMTP.From value of " + _SMTPFromObj.ToString() + " found in cache.");
+                }
+                else
+                {
+                    Assert.Fail("Cache did not contain a value for SMTP.From");
+                }
+            }
+            else
+            {
+                Assert.Fail("Cache did not contain a context property dictionary from BTS.TransmitWorkID of 123.");
+            }
+
+            Thread.Sleep(7000);
+
+            cacheItemsObj = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["http://schemas.microsoft.com/BizTalk/2003/system-properties#TransmitWorkID = 123"];
+
+            if (cacheItemsObj != null)
+            {
+                Assert.Fail("Cached context for message with BTS.TransmitWorkID value of 123 should have expired but didn't.");
+            }
+        }
+
+        [TestMethod()]
+        public void Test_AddCustomContextPropertyToCache_OverrideExpiryTimeSetPriorityNotRemovable()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.txt";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_AddCustomContextPropertyToCache_OverrideExpiryTimeSetPriorityNotRemovable Config.xml";
+            string InputContextFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Context Files\Test_AddCustomContextPropertyToCache.xml";
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, InputContextFileName: InputContextFileName);
+            _BREPipelineFrameworkTest.RunTest();
+
+            object cacheItemsObj = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["http://schemas.microsoft.com/BizTalk/2003/system-properties#TransmitWorkID = 123"];
+
+            if (cacheItemsObj != null)
+            {
+                Dictionary<string, object> cacheItems = (Dictionary<string, object>)cacheItemsObj;
+                object _SMTPFromObj = cacheItems["http://schemas.microsoft.com/BizTalk/2003/smtp-properties#From"];
+
+                if (_SMTPFromObj != null)
+                {
+                    Assert.IsTrue(_SMTPFromObj.ToString() == "jcooper1982@aitm.com", "Unexpected SMTP.From value of " + _SMTPFromObj.ToString() + " found in cache.");
+                }
+                else
+                {
+                    Assert.Fail("Cache did not contain a value for SMTP.From");
+                }
+            }
+            else
+            {
+                Assert.Fail("Cache did not contain a context property dictionary from BTS.TransmitWorkID of 123.");
+            }
+
+            Thread.Sleep(7000);
+
+            cacheItemsObj = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["http://schemas.microsoft.com/BizTalk/2003/system-properties#TransmitWorkID = 123"];
+
+            if (cacheItemsObj != null)
+            {
+                Assert.Fail("Cached context for message with BTS.TransmitWorkID value of 123 should have expired but didn't.");
+            }
+        }
+
+        [TestMethod()]
         public void Test_AddCustomContextPropertyToCache_OverrideContextKey()
         {
             string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.txt";

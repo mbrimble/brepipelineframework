@@ -16,6 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vocabularies", "Vocabularie
 		BRE Artifacts\Vocabularies\BREPipelineFramework.AllVocabs.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.AllVocabs.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.LatestVocabs.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.LatestVocabs.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.CachingInstructions.1.0.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.CachingInstructions.1.0.xml
+		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.CachingInstructions.1.1.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.CachingInstructions.1.1.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.ContextInstructions.1.0.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.ContextInstructions.1.0.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.ContextInstructions.1.1.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.ContextInstructions.1.1.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.ContextInstructions.1.2.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.ContextInstructions.1.2.xml

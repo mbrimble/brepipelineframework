@@ -24,6 +24,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{3734CB7F-B
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BRE Artifacts", "BRE Artifacts", "{4D2DA409-B5E3-4BAF-8FA7-8418934799F6}"
+	ProjectSection(SolutionItems) = preProject
+		..\BRE Artifacts\All Test Artifacts.xml = ..\BRE Artifacts\All Test Artifacts.xml
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vocabularies", "Vocabularies", "{C2BB5D8F-0A76-4B8A-B1B5-6C60B49F506F}"
 	ProjectSection(SolutionItems) = preProject

@@ -9,7 +9,7 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
 {
     public class CachingMetaInstructions : BREPipelineMetaInstructionBase
     {
-        #region Private fields
+        #region Private fields / Public properties
 
         internal static MemoryCache cache = new MemoryCache("BREPipelineFramework.Cache", null);
         private Dictionary<string, object> cacheItems = new Dictionary<string, object>();
@@ -21,6 +21,12 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
         private string contextKeyName = BizTalkGlobalPropertySchemaEnum.TransmitWorkID.ToString();
         private string contextKeyNamespace = ContextPropertyNamespaces._BTSPropertyNamespace.ToString();
         private string contextKey;
+        private CacheItemPriority priority = CacheItemPriority.Default;
+
+        public CacheItemPriority Priority
+        {
+            set { priority = value; }
+        }
 
         #endregion
 
@@ -148,7 +154,20 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
             {
                 string[] contextPropertyType = kp.Key.Split('#');
 
-                SetContextPropertyPipelineInstruction instruction = new SetContextPropertyPipelineInstruction(contextPropertyType[1], contextPropertyType[0], kp.Value, promotion);
+                string propertyName = string.Empty;
+                string propertyNamespace = string.Empty;
+
+                if (contextPropertyType.Length == 2)
+                {
+                    propertyNamespace = contextPropertyType[0];
+                    propertyName = contextPropertyType[1];
+                }
+                else
+                {
+                    propertyName = contextPropertyType[0];
+                }
+
+                SetContextPropertyPipelineInstruction instruction = new SetContextPropertyPipelineInstruction(propertyName, propertyNamespace, kp.Value, promotion);
                 base.AddInstruction(instruction);
             }
         }
@@ -167,7 +186,7 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
             }
 
             TraceManager.PipelineComponent.TraceInfo("{0} - Adding string value {1} to the cache with a key of {2}", CallToken, value, key);
-            AddToCache(key, value, expiryTime, expiryTimeUnits);
+            AddToCache(key, value, expiryTime, expiryTimeUnits, priority);
         }
 
         public string GetCustomStringFromCache(string key, FailureActionEnum failureAction)
@@ -231,10 +250,11 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
 
         #region Private methods
 
-        private static void AddToCache(string key, object value, int expiryTime, TimeEnum expiryUnits)
+        private static void AddToCache(string key, object value, int expiryTime, TimeEnum expiryUnits, CacheItemPriority priority)
         {
             CacheItemPolicy policy = new CacheItemPolicy();
             policy.AbsoluteExpiration = DateTime.Now.AddMilliseconds(TimeHelper.GetTimeInMilliseconds(expiryTime, expiryUnits));
+            policy.Priority = priority;
 
             cache.Set(key, value, policy, null);
         }
@@ -284,7 +304,7 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
             {
                 SetContextKey();
                 TraceManager.PipelineComponent.TraceInfo("{0} - Added context properties in collection to the cache with a key of {1}", CallToken, contextKey);
-                AddToCache(contextKey, cacheItems, contextExpiryTime, contextExpiryUnits);
+                AddToCache(contextKey, cacheItems, contextExpiryTime, contextExpiryUnits, priority);
             }
         }
 

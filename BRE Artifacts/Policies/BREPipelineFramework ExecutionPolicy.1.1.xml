@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
   <ruleset name="BREPipelineFramework ExecutionPolicy">
-    <version major="1" minor="2" description="" modifiedby="jcooper1982" date="2014-06-16T12:51:07.2471774+12:00" />
-    <version major="1" minor="1" description="" modifiedby="jcooper1982" date="2014-06-25T21:10:17.3678602+12:00" />
+    <version major="1" minor="2" description="" modifiedby="jcooper1982" date="2015-01-13T15:59:14.5545748+13:00" />
+    <version major="1" minor="1" description="" modifiedby="jcooper1982" date="2015-01-13T15:59:27.6108433+13:00" />
     <configuration />
     <bindings>
       <class ref="MetaInstruction" class="MetaInstruction" instance="0" instances="16" selectivity="1">
@@ -10,7 +10,7 @@
         <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.TestSampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.TestSampleInstructions.dll-->
         <namespace>BREPipelineFramework.TestSampleInstructions</namespace>
       </class>
-      <datarow ref="db_73" server="JC-BT2013VM\BREPipelineFrameworkTest" dataset="BREPipelineFrameworkTest" table="Test" instances="16" selectivity="1" isdataconnection="true" instance="0" />
+      <datarow ref="db_74" server="JC-BT2013VM\BREPipelineFrameworkTest" dataset="BREPipelineFrameworkTest" table="Test" instances="16" selectivity="1" isdataconnection="true" instance="0" />
       <class ref="BizTalkXLANGSBTXEnginePropertySchemaEnum" class="BizTalkXLANGSBTXEnginePropertySchemaEnum">
         <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
         <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
@@ -145,11 +145,6 @@
         <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
         <namespace>BREPipelineFramework.SampleInstructions</namespace>
       </class>
-      <class ref="TypedXMLDocumentMetaInstructions" class="TypedXMLDocumentMetaInstructions" instance="0" instances="16" selectivity="1">
-        <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-        <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-        <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-      </class>
       <class ref="BizTalkMIMEPropertySchemaEnum" class="BizTalkMIMEPropertySchemaEnum">
         <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
         <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
@@ -170,10 +165,20 @@
         <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
         <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
       </class>
+      <class ref="BizTalkESBExceptionPropertySchemaEnum" class="BizTalkESBExceptionPropertySchemaEnum">
+        <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+        <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+        <namespace>BREPipelineFramework.SampleInstructions</namespace>
+      </class>
       <class ref="BizTalkEdiOverridePropertySchemaEnum" class="BizTalkEdiOverridePropertySchemaEnum">
         <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
         <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
         <namespace>BREPipelineFramework.SampleInstructions</namespace>
+      </class>
+      <class ref="CacheItemPriority" class="CacheItemPriority">
+        <assembly>System.Runtime.Caching, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</assembly>
+        <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Caching\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Runtime.Caching.dll-->
+        <namespace>System.Runtime.Caching</namespace>
       </class>
       <class ref="BizTalkESBItineraryPropertySchemaEnum" class="BizTalkESBItineraryPropertySchemaEnum">
         <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
@@ -210,10 +215,10 @@
         <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
         <namespace>BREPipelineFramework.SampleInstructions</namespace>
       </class>
-      <class ref="BizTalkESBExceptionPropertySchemaEnum" class="BizTalkESBExceptionPropertySchemaEnum">
+      <class ref="TypedXMLDocumentMetaInstructions" class="TypedXMLDocumentMetaInstructions" instance="0" instances="16" selectivity="1">
         <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
         <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-        <namespace>BREPipelineFramework.SampleInstructions</namespace>
+        <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
       </class>
     </bindings>
     <rule name="Test_UpdateAttributeValueByNameAndOldValue" priority="-2" active="true">
@@ -427,42 +432,6 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_AddDocumentNamespaceAndPrefix_Deprecated" priority="0" active="true">
-      <if>
-        <compare operator="equal">
-          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
-          <lhs>
-            <reference>
-              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
-              <classref ref="string" />
-            </reference>
-          </lhs>
-          <rhs>
-            <constant>
-              <string>Test_AddDocumentNamespaceAndPrefix_Deprecated</string>
-            </constant>
-          </rhs>
-        </compare>
-      </if>
-      <then>
-        <function>
-          <vocabularylink uri="40289094-a071-4bb4-b928-f02dc17e2ce1" element="7f0aa6a6-5973-4d04-b8f4-1bbad0335e36" />
-          <classmember member="AddDocumentNamespaceAndPrefix" sideeffects="true">
-            <classref ref="HelperMetaInstructions" />
-            <argument>
-              <constant>
-                <string>http://brepipelineframework</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>bre</string>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-      </then>
-    </rule>
     <rule name="Test_Get_SFTP_UserName" priority="0" active="true">
       <if>
         <compare operator="equal">
@@ -562,37 +531,6 @@
             <argument>
               <constant>
                 <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-      </then>
-    </rule>
-    <rule name="Test_FFDisassemblerPropertiesNoStream" priority="0" active="true">
-      <if>
-        <compare operator="equal">
-          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
-          <lhs>
-            <reference>
-              <vocabularylink uri="d892a25c-a516-4db9-b606-13c1f5954575" element="1ed7c5ef-ddbb-45e6-a655-7992b3b09f8d" />
-              <classref ref="string" />
-            </reference>
-          </lhs>
-          <rhs>
-            <constant>
-              <string>Test_FFDisassemblerPropertiesNoStream</string>
-            </constant>
-          </rhs>
-        </compare>
-      </if>
-      <then>
-        <function>
-          <vocabularylink uri="9c187cad-1b2c-4471-80f8-28ad4cfa3e9c" element="8a31f5f8-ea56-4779-adf6-e81c3e8d0161" />
-          <classmember member="TraceInfo" sideeffects="true">
-            <classref ref="HelperMetaInstructions" />
-            <argument>
-              <constant>
-                <string>Don't need to do anything here but let's trace some info anyways</string>
               </constant>
             </argument>
           </classmember>
@@ -915,37 +853,6 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_ThrowException" priority="0" active="true">
-      <if>
-        <compare operator="equal">
-          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
-          <lhs>
-            <reference>
-              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
-              <classref ref="string" />
-            </reference>
-          </lhs>
-          <rhs>
-            <constant>
-              <string>Test_ThrowException</string>
-            </constant>
-          </rhs>
-        </compare>
-      </if>
-      <then>
-        <function>
-          <vocabularylink uri="40289094-a071-4bb4-b928-f02dc17e2ce1" element="55591f3f-5647-42ce-bafb-13c915e350ac" />
-          <classmember member="ThrowException" sideeffects="true">
-            <classref ref="HelperMetaInstructions" />
-            <argument>
-              <constant>
-                <string>Testing that an exception was thrown</string>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-      </then>
-    </rule>
     <rule name="Test_Get_POP3_DispositionNotificationTo" priority="0" active="true">
       <if>
         <compare operator="equal">
@@ -1069,7 +976,7 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_FindReplaceRegexInMessage" priority="0" active="true">
+    <rule name="Test_AddCustomContextPropertyToCache_OverrideExpiryTimeSetPriorityNotRemovable" priority="-2" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
@@ -1081,24 +988,56 @@
           </lhs>
           <rhs>
             <constant>
-              <string>Test_FindReplaceRegexInMessage</string>
+              <string>Test_AddCustomContextPropertyToCache_OverrideExpiryTimeSetPriorityNotRemovable</string>
             </constant>
           </rhs>
         </compare>
       </if>
       <then>
         <function>
-          <vocabularylink uri="9c187cad-1b2c-4471-80f8-28ad4cfa3e9c" element="310a229d-92c8-4e8f-94b3-2c18b71dc6dd" />
-          <classmember member="FindReplaceRegexInMessage" sideeffects="true">
-            <classref ref="HelperMetaInstructions" />
+          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="161bbdcd-76dc-4e0c-ab5e-6ab93ff09e89" />
+          <classmember member="AddCustomContextPropertyToCache" sideeffects="true">
+            <classref ref="CachingMetaInstructions" />
             <argument>
               <constant>
-                <string>(?&lt;=&lt;Enabled vt="11"&gt;)(?:(?!&lt;\/([a-z0-9]+:)?Enabled&gt;).)*</string>
+                <string>From</string>
               </constant>
             </argument>
             <argument>
               <constant>
-                <string>hello</string>
+                <string>http://schemas.microsoft.com/BizTalk/2003/smtp-properties</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="CacheFailureEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuQ2FjaGVGYWlsdXJlRW51bQEAAAAHdmFsdWVfXwAIAgAAAAAAAAAL</object>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="e46a0629-51ff-48a5-8a80-bc0143e3d322" />
+          <classmember member="UpdateCacheExpiryTime" sideeffects="true">
+            <classref ref="CachingMetaInstructions" />
+            <argument>
+              <constant>
+                <int>6000</int>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="25351883-b801-4c75-a65c-56f891c2959d" element="1bdeb629-c270-42e7-9db7-011c927edf31" />
+          <classmember member="set_Priority" sideeffects="true">
+            <classref ref="CachingMetaInstructions" />
+            <argument>
+              <constant>
+                <object classref="CacheItemPriority" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAFlTeXN0ZW0uUnVudGltZS5DYWNoaW5nLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49YjAzZjVmN2YxMWQ1MGEzYQUBAAAAKFN5c3RlbS5SdW50aW1lLkNhY2hpbmcuQ2FjaGVJdGVtUHJpb3JpdHkBAAAAB3ZhbHVlX18ACAIAAAABAAAACw==</object>
               </constant>
             </argument>
           </classmember>
@@ -1142,6 +1081,74 @@
                 <object classref="TransformationSourceSchemaValidation" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAQUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHJhbnNmb3JtYXRpb25Tb3VyY2VTY2hlbWFWYWxpZGF0aW9uAQAAAAd2YWx1ZV9fAAgCAAAAAgAAAAs=</object>
               </constant>
             </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="Test_UncaughtPolicyExceptionAfterUpdate" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <reference>
+              <vocabularylink uri="d892a25c-a516-4db9-b606-13c1f5954575" element="1ed7c5ef-ddbb-45e6-a655-7992b3b09f8d" />
+              <classref ref="string" />
+            </reference>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>Test_UncaughtPolicyExceptionAfterUpdate</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="9c187cad-1b2c-4471-80f8-28ad4cfa3e9c" element="04a924f7-ee4e-4313-a6df-8dc276245ba7" />
+          <classmember member="FindReplaceStringInMessage" sideeffects="true">
+            <classref ref="HelperMetaInstructions" />
+            <argument>
+              <constant>
+                <string>Hello</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>Duh</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="f3fb93a9-fb39-4ae6-858e-b9a36b66d4f4" element="808ae11e-cfc4-47f1-a305-85064f895b4d" />
+          <classmember member="SetFTPContextProperty" sideeffects="true">
+            <classref ref="ContextMetaInstructions" />
+            <argument>
+              <constant>
+                <object classref="BizTalkFTPPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABEQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtGVFBQcm9wZXJ0eVNjaGVtYUVudW0BAAAAB3ZhbHVlX18ACAIAAAAIAAAACw==</object>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>Test</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="ContextInstructionTypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAN0JSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuQ29udGV4dEluc3RydWN0aW9uVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAEAAAACw==</object>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="2a12d282-6c1a-4eaf-a8bf-9d4c510b9b2a" element="44d0f69e-16b2-4282-bb75-5b2610203401" />
+          <classmember member="ThrowAnInstructionException" sideeffects="true">
+            <classref ref="MetaInstruction" />
           </classmember>
         </function>
       </then>
@@ -2002,37 +2009,22 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_CheckIfStringExistsInMessage_False" priority="0" active="true">
+    <rule name="Test_Get_Legacy_DestinationQualifier" priority="0" active="true">
       <if>
-        <and>
-          <compare operator="equal">
-            <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
-            <lhs>
-              <reference>
-                <vocabularylink uri="d892a25c-a516-4db9-b606-13c1f5954575" element="1ed7c5ef-ddbb-45e6-a655-7992b3b09f8d" />
-                <classref ref="string" />
-              </reference>
-            </lhs>
-            <rhs>
-              <constant>
-                <string>Test_CheckIfStringExistsInMessage_False</string>
-              </constant>
-            </rhs>
-          </compare>
-          <not>
-            <predicate>
-              <vocabularylink uri="9c187cad-1b2c-4471-80f8-28ad4cfa3e9c" element="dccc32f5-32f7-4f51-958b-e4338f7d5416" />
-              <classmember member="CheckIfStringExistsInMessage" sideeffects="true">
-                <classref ref="HelperMetaInstructions" />
-                <argument>
-                  <constant>
-                    <string>InstructionLoaderPolicy</string>
-                  </constant>
-                </argument>
-              </classmember>
-            </predicate>
-          </not>
-        </and>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <reference>
+              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
+              <classref ref="string" />
+            </reference>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>Test_Get_Legacy_DestinationQualifier</string>
+            </constant>
+          </rhs>
+        </compare>
       </if>
       <then>
         <function>
@@ -2045,9 +2037,81 @@
               </constant>
             </argument>
             <argument>
+              <function>
+                <vocabularylink uri="9504f49b-83ad-4a27-87b5-4c8bab3b2638" element="fe128666-9b22-40eb-90b2-9b4ab2c9c5e5" />
+                <classmember member="GetLEGACYPropertySchemasContextProperty" sideeffects="true">
+                  <classref ref="ContextMetaInstructions" />
+                  <argument>
+                    <constant>
+                      <object classref="BizTalkLegacyPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABHQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtMZWdhY3lQcm9wZXJ0eVNjaGVtYUVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
+                    </constant>
+                  </argument>
+                  <argument>
+                    <constant>
+                      <object classref="FailureActionEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuRmFpbHVyZUFjdGlvbkVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+                    </constant>
+                  </argument>
+                </classmember>
+              </function>
+            </argument>
+            <argument>
               <constant>
-                <string>ExpectedResult</string>
+                <int>1</int>
               </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="Test_Get_XLANGS_SendingOrchestrationType" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <reference>
+              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
+              <classref ref="string" />
+            </reference>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>Test_Get_XLANGS_SendingOrchestrationType</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="01ead4ac-d272-4669-8582-3ec4c158d919" />
+          <classmember member="AddCustomStringToCache" sideeffects="true">
+            <classref ref="CachingMetaInstructions" />
+            <argument>
+              <constant>
+                <string>Output</string>
+              </constant>
+            </argument>
+            <argument>
+              <function>
+                <vocabularylink uri="9504f49b-83ad-4a27-87b5-4c8bab3b2638" element="988c06f9-4049-4cd2-a928-54adf5ad7127" />
+                <classmember member="GetXLANGSBTXEnginePropertySchemasContextProperty" sideeffects="true">
+                  <classref ref="ContextMetaInstructions" />
+                  <argument>
+                    <constant>
+                      <object classref="BizTalkXLANGSBTXEnginePropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABQQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtYTEFOR1NCVFhFbmdpbmVQcm9wZXJ0eVNjaGVtYUVudW0BAAAAB3ZhbHVlX18ACAIAAAAEAAAACw==</object>
+                    </constant>
+                  </argument>
+                  <argument>
+                    <constant>
+                      <object classref="FailureActionEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuRmFpbHVyZUFjdGlvbkVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+                    </constant>
+                  </argument>
+                </classmember>
+              </function>
             </argument>
             <argument>
               <constant>
@@ -2333,6 +2397,52 @@
         </function>
       </then>
     </rule>
+    <rule name="Test_AddStringToCache" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <reference>
+              <vocabularylink uri="d892a25c-a516-4db9-b606-13c1f5954575" element="1ed7c5ef-ddbb-45e6-a655-7992b3b09f8d" />
+              <classref ref="string" />
+            </reference>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>Test_AddStringToCache</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="01ead4ac-d272-4669-8582-3ec4c158d919" />
+          <classmember member="AddCustomStringToCache" sideeffects="true">
+            <classref ref="CachingMetaInstructions" />
+            <argument>
+              <constant>
+                <string>TestKey</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>TestCache</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <int>5</int>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAABAAAACw==</object>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
     <rule name="Test_UpdateAttributeValueByNameAndNamespace" priority="-2" active="true">
       <if>
         <compare operator="equal">
@@ -2484,28 +2594,38 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_UncaughtPolicyException" priority="0" active="true">
+    <rule name="Test_FindReplaceRegexInMessage" priority="0" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
           <lhs>
             <reference>
-              <vocabularylink uri="d892a25c-a516-4db9-b606-13c1f5954575" element="1ed7c5ef-ddbb-45e6-a655-7992b3b09f8d" />
+              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
               <classref ref="string" />
             </reference>
           </lhs>
           <rhs>
             <constant>
-              <string>Test_UncaughtPolicyException</string>
+              <string>Test_FindReplaceRegexInMessage</string>
             </constant>
           </rhs>
         </compare>
       </if>
       <then>
         <function>
-          <vocabularylink uri="2a12d282-6c1a-4eaf-a8bf-9d4c510b9b2a" element="40ca2ca5-05aa-4350-935f-24e024642c1b" />
-          <classmember member="ThrowAnException" sideeffects="true">
-            <classref ref="MetaInstruction" />
+          <vocabularylink uri="9c187cad-1b2c-4471-80f8-28ad4cfa3e9c" element="310a229d-92c8-4e8f-94b3-2c18b71dc6dd" />
+          <classmember member="FindReplaceRegexInMessage" sideeffects="true">
+            <classref ref="HelperMetaInstructions" />
+            <argument>
+              <constant>
+                <string>(?&lt;=&lt;Enabled vt="11"&gt;)(?:(?!&lt;\/([a-z0-9]+:)?Enabled&gt;).)*</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>hello</string>
+              </constant>
+            </argument>
           </classmember>
         </function>
       </then>
@@ -2729,65 +2849,6 @@
                   <argument>
                     <constant>
                       <object classref="FailureActionEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuRmFpbHVyZUFjdGlvbkVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
-                    </constant>
-                  </argument>
-                </classmember>
-              </function>
-            </argument>
-            <argument>
-              <constant>
-                <int>1</int>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-      </then>
-    </rule>
-    <rule name="Test_Get_WSS_Url" priority="0" active="true">
-      <if>
-        <compare operator="equal">
-          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
-          <lhs>
-            <reference>
-              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
-              <classref ref="string" />
-            </reference>
-          </lhs>
-          <rhs>
-            <constant>
-              <string>Test_Get_WSS_Url</string>
-            </constant>
-          </rhs>
-        </compare>
-      </if>
-      <then>
-        <function>
-          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="01ead4ac-d272-4669-8582-3ec4c158d919" />
-          <classmember member="AddCustomStringToCache" sideeffects="true">
-            <classref ref="CachingMetaInstructions" />
-            <argument>
-              <constant>
-                <string>Output</string>
-              </constant>
-            </argument>
-            <argument>
-              <function>
-                <vocabularylink uri="9504f49b-83ad-4a27-87b5-4c8bab3b2638" element="a281f210-2275-4d87-881d-54c77dcbc926" />
-                <classmember member="GetWSSPropertySchemasContextProperty" sideeffects="true">
-                  <classref ref="ContextMetaInstructions" />
-                  <argument>
-                    <constant>
-                      <object classref="BizTalkWSSPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABEQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtXU1NQcm9wZXJ0eVNjaGVtYUVudW0BAAAAB3ZhbHVlX18ACAIAAAAZAAAACw==</object>
-                    </constant>
-                  </argument>
-                  <argument>
-                    <constant>
-                      <object classref="FailureActionEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuRmFpbHVyZUFjdGlvbkVudW0BAAAAB3ZhbHVlX18ACAIAAAABAAAACw==</object>
                     </constant>
                   </argument>
                 </classmember>
@@ -3092,6 +3153,32 @@
         </function>
       </then>
     </rule>
+    <rule name="Test_SetMessageType" priority="-2" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <reference>
+              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
+              <classref ref="string" />
+            </reference>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>Test_SetMessageType</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="f3fb93a9-fb39-4ae6-858e-b9a36b66d4f4" element="7d76678e-22d7-4d98-a335-82ddeda311b4" />
+          <classmember member="SetMessageTypeContextPropertyOnXMLMessage" sideeffects="true">
+            <classref ref="ContextMetaInstructions" />
+          </classmember>
+        </function>
+      </then>
+    </rule>
     <rule name="Test_Get_SBMessaging_Label" priority="0" active="true">
       <if>
         <compare operator="equal">
@@ -3181,6 +3268,74 @@
             <argument>
               <constant>
                 <string>Me</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="Test_AddCustomContextPropertyToCache_OverrideExpiryTimeSetPriorityDefault" priority="-2" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <reference>
+              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
+              <classref ref="string" />
+            </reference>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>Test_AddCustomContextPropertyToCache_OverrideExpiryTimeSetPriorityDefault</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="161bbdcd-76dc-4e0c-ab5e-6ab93ff09e89" />
+          <classmember member="AddCustomContextPropertyToCache" sideeffects="true">
+            <classref ref="CachingMetaInstructions" />
+            <argument>
+              <constant>
+                <string>From</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>http://schemas.microsoft.com/BizTalk/2003/smtp-properties</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="CacheFailureEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuQ2FjaGVGYWlsdXJlRW51bQEAAAAHdmFsdWVfXwAIAgAAAAAAAAAL</object>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="e46a0629-51ff-48a5-8a80-bc0143e3d322" />
+          <classmember member="UpdateCacheExpiryTime" sideeffects="true">
+            <classref ref="CachingMetaInstructions" />
+            <argument>
+              <constant>
+                <int>6000</int>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="25351883-b801-4c75-a65c-56f891c2959d" element="1bdeb629-c270-42e7-9db7-011c927edf31" />
+          <classmember member="set_Priority" sideeffects="true">
+            <classref ref="CachingMetaInstructions" />
+            <argument>
+              <constant>
+                <object classref="CacheItemPriority" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAFlTeXN0ZW0uUnVudGltZS5DYWNoaW5nLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49YjAzZjVmN2YxMWQ1MGEzYQUBAAAAKFN5c3RlbS5SdW50aW1lLkNhY2hpbmcuQ2FjaGVJdGVtUHJpb3JpdHkBAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
               </constant>
             </argument>
           </classmember>
@@ -3391,47 +3546,6 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_AddCustomContextPropertyToCache_NotFound_IgnoreCarryOn" priority="-2" active="true">
-      <if>
-        <compare operator="equal">
-          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
-          <lhs>
-            <reference>
-              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
-              <classref ref="string" />
-            </reference>
-          </lhs>
-          <rhs>
-            <constant>
-              <string>Test_AddCustomContextPropertyToCache_NotFound_IgnoreCarryOn</string>
-            </constant>
-          </rhs>
-        </compare>
-      </if>
-      <then>
-        <function>
-          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="161bbdcd-76dc-4e0c-ab5e-6ab93ff09e89" />
-          <classmember member="AddCustomContextPropertyToCache" sideeffects="true">
-            <classref ref="CachingMetaInstructions" />
-            <argument>
-              <constant>
-                <string>From</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>http://schemas.microsoft.com/BizTalk/2003/smtp-properties</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="CacheFailureEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuQ2FjaGVGYWlsdXJlRW51bQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAL</object>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-      </then>
-    </rule>
     <rule name="Test_Get_WCF_Action" priority="0" active="true">
       <if>
         <compare operator="equal">
@@ -3522,70 +3636,6 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_FFDisassemblerProperties" priority="0" active="true">
-      <if>
-        <compare operator="equal">
-          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
-          <lhs>
-            <reference>
-              <vocabularylink uri="d892a25c-a516-4db9-b606-13c1f5954575" element="1ed7c5ef-ddbb-45e6-a655-7992b3b09f8d" />
-              <classref ref="string" />
-            </reference>
-          </lhs>
-          <rhs>
-            <constant>
-              <string>Test_FFDisassemblerProperties</string>
-            </constant>
-          </rhs>
-        </compare>
-      </if>
-      <then>
-        <function>
-          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="01ead4ac-d272-4669-8582-3ec4c158d919" />
-          <classmember member="AddCustomStringToCache" sideeffects="true">
-            <classref ref="CachingMetaInstructions" />
-            <argument>
-              <constant>
-                <string>TestKey</string>
-              </constant>
-            </argument>
-            <argument>
-              <function>
-                <vocabularylink uri="9504f49b-83ad-4a27-87b5-4c8bab3b2638" element="e6fc9356-d319-438a-a93f-3b99c1393f4e" />
-                <classmember member="GetContextProperty" sideeffects="true">
-                  <classref ref="ContextMetaInstructions" />
-                  <argument>
-                    <constant>
-                      <string>Element</string>
-                    </constant>
-                  </argument>
-                  <argument>
-                    <constant>
-                      <string>https://BREPipelineFramework.TestProject.BREPipelineFramework_PropSchema</string>
-                    </constant>
-                  </argument>
-                  <argument>
-                    <constant>
-                      <object classref="FailureActionEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuRmFpbHVyZUFjdGlvbkVudW0BAAAAB3ZhbHVlX18ACAIAAAABAAAACw==</object>
-                    </constant>
-                  </argument>
-                </classmember>
-              </function>
-            </argument>
-            <argument>
-              <constant>
-                <int>5</int>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAABAAAACw==</object>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-      </then>
-    </rule>
     <rule name="Test_Set_XMLNORM.PreserveBom" priority="0" active="true">
       <if>
         <compare operator="equal">
@@ -3626,6 +3676,230 @@
             <argument>
               <constant>
                 <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="Test_SetPartDetails" priority="-2" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <reference>
+              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
+              <classref ref="string" />
+            </reference>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>Test_SetPartDetails</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="50ced79a-a989-4640-95cd-1cf144f5a9f3" element="655a0968-bb7b-4e7d-a95f-0ac3893192f6" />
+          <classmember member="SetMessageBodyPartCharSet" sideeffects="true">
+            <classref ref="MessagePartMetaInstructions" />
+            <argument>
+              <constant>
+                <string>test</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="50ced79a-a989-4640-95cd-1cf144f5a9f3" element="590cd954-3b9b-456f-b661-33e0cec609b7" />
+          <classmember member="SetMessageBodyPartContentType" sideeffects="true">
+            <classref ref="MessagePartMetaInstructions" />
+            <argument>
+              <constant>
+                <string>test</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="50ced79a-a989-4640-95cd-1cf144f5a9f3" element="883500de-d170-4eb9-b5e2-0c2b80ad5b7f" />
+          <classmember member="SetCustomMessageBodyPartProperty" sideeffects="true">
+            <classref ref="MessagePartMetaInstructions" />
+            <argument>
+              <constant>
+                <string>test</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>http://test</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>test</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="50ced79a-a989-4640-95cd-1cf144f5a9f3" element="8a47a36a-6bc0-4b92-a796-2900196ffddd" />
+          <classmember member="SetCustomMessagePartProperty" sideeffects="true">
+            <classref ref="MessagePartMetaInstructions" />
+            <argument>
+              <constant>
+                <string>test</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>http://test</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="MessagePartIdentifierType" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAANkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuTWVzc2FnZVBhcnRJZGVudGlmaWVyVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAAAAAAL</object>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>Hello</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>test</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="50ced79a-a989-4640-95cd-1cf144f5a9f3" element="8a47a36a-6bc0-4b92-a796-2900196ffddd" />
+          <classmember member="SetCustomMessagePartProperty" sideeffects="true">
+            <classref ref="MessagePartMetaInstructions" />
+            <argument>
+              <constant>
+                <string>test</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>http://test</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="MessagePartIdentifierType" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAANkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuTWVzc2FnZVBhcnRJZGVudGlmaWVyVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAL</object>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>3</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>test</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="50ced79a-a989-4640-95cd-1cf144f5a9f3" element="cfe84290-b227-40fa-be98-78fece86b7aa" />
+          <classmember member="SetMessagePartCharSet" sideeffects="true">
+            <classref ref="MessagePartMetaInstructions" />
+            <argument>
+              <constant>
+                <object classref="MessagePartIdentifierType" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAANkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuTWVzc2FnZVBhcnRJZGVudGlmaWVyVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAAAAAAL</object>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>Hello</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>test</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="50ced79a-a989-4640-95cd-1cf144f5a9f3" element="cfe84290-b227-40fa-be98-78fece86b7aa" />
+          <classmember member="SetMessagePartCharSet" sideeffects="true">
+            <classref ref="MessagePartMetaInstructions" />
+            <argument>
+              <constant>
+                <object classref="MessagePartIdentifierType" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAANkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuTWVzc2FnZVBhcnRJZGVudGlmaWVyVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAL</object>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>3</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>test</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="50ced79a-a989-4640-95cd-1cf144f5a9f3" element="81a0e52b-26d1-4168-bead-4cbf285587d5" />
+          <classmember member="SetMessagePartContentType" sideeffects="true">
+            <classref ref="MessagePartMetaInstructions" />
+            <argument>
+              <constant>
+                <object classref="MessagePartIdentifierType" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAANkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuTWVzc2FnZVBhcnRJZGVudGlmaWVyVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAAAAAAL</object>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>Hello</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>test</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="50ced79a-a989-4640-95cd-1cf144f5a9f3" element="81a0e52b-26d1-4168-bead-4cbf285587d5" />
+          <classmember member="SetMessagePartContentType" sideeffects="true">
+            <classref ref="MessagePartMetaInstructions" />
+            <argument>
+              <constant>
+                <object classref="MessagePartIdentifierType" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAANkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuTWVzc2FnZVBhcnRJZGVudGlmaWVyVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAL</object>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>3</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>test</string>
               </constant>
             </argument>
           </classmember>
@@ -4362,37 +4636,6 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_DuplicateHelperMetaInstructions" priority="0" active="true">
-      <if>
-        <compare operator="equal">
-          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
-          <lhs>
-            <reference>
-              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
-              <classref ref="string" />
-            </reference>
-          </lhs>
-          <rhs>
-            <constant>
-              <string>Test_DuplicateHelperMetaInstructions</string>
-            </constant>
-          </rhs>
-        </compare>
-      </if>
-      <then>
-        <function>
-          <vocabularylink uri="40289094-a071-4bb4-b928-f02dc17e2ce1" element="55591f3f-5647-42ce-bafb-13c915e350ac" />
-          <classmember member="ThrowException" sideeffects="true">
-            <classref ref="HelperMetaInstructions" />
-            <argument>
-              <constant>
-                <string>Duplicate throw exception helper worked as expected</string>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-      </then>
-    </rule>
     <rule name="Test_Set_XPath_Name" priority="0" active="true">
       <if>
         <compare operator="equal">
@@ -4649,7 +4892,7 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_RemoveNamespaceWithNoPrefix" priority="0" active="true">
+    <rule name="Test_UpdateElementValueByNodeNameAndNamespace" priority="0" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
@@ -4661,78 +4904,29 @@
           </lhs>
           <rhs>
             <constant>
-              <string>Test_RemoveNamespaceWithNoPrefix</string>
+              <string>Test_UpdateElementValueByNodeNameAndNamespace</string>
             </constant>
           </rhs>
         </compare>
       </if>
       <then>
         <function>
-          <vocabularylink uri="f989dde8-420a-45fb-858b-18590cdeb77e" element="e173d4fe-3f54-42ed-bad2-5b3bcb7634c6" />
-          <classmember member="RemoveNamespace" sideeffects="true">
+          <vocabularylink uri="f989dde8-420a-45fb-858b-18590cdeb77e" element="bbfb179d-9861-4991-a200-48bd7bbb90ea" />
+          <classmember member="UpdateElementValueByNodeNameAndNamespace" sideeffects="true">
             <classref ref="XMLTranslatorMetaInstructions" />
             <argument>
               <constant>
-                <string>http://BizTalk_Server_Project1.HelloTest</string>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-      </then>
-    </rule>
-    <rule name="Test_GetFileExtension" priority="0" active="true">
-      <if>
-        <compare operator="equal">
-          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
-          <lhs>
-            <reference>
-              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
-              <classref ref="string" />
-            </reference>
-          </lhs>
-          <rhs>
-            <constant>
-              <string>Test_GetFileExtension</string>
-            </constant>
-          </rhs>
-        </compare>
-      </if>
-      <then>
-        <function>
-          <vocabularylink uri="41fe4405-2959-4048-a518-1625c455d750" element="a39564ac-1e28-4033-86d2-adcc7097a437" />
-          <classmember member="SetCustomContextProperty" sideeffects="true">
-            <classref ref="ContextMetaInstructions" />
-            <argument>
-              <constant>
-                <string>Property1</string>
+                <string>Me</string>
               </constant>
             </argument>
             <argument>
               <constant>
-                <string>https://BREPipelineFramework.TestProject.BREPipelineFramework_PropSchema</string>
-              </constant>
-            </argument>
-            <argument>
-              <function>
-                <vocabularylink uri="e994493e-3201-46dd-a2da-3f9434a4b4c6" element="7125affe-789a-4002-be2c-14237c45a0f6" />
-                <classmember member="ReturnFileExtension" sideeffects="true">
-                  <classref ref="HelperMetaInstructions" />
-                  <argument>
-                    <constant>
-                      <string>test.xml</string>
-                    </constant>
-                  </argument>
-                </classmember>
-              </function>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="ContextInstructionTypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAN0JSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuQ29udGV4dEluc3RydWN0aW9uVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+                <string>bleh</string>
               </constant>
             </argument>
             <argument>
               <constant>
-                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+                <string>Test</string>
               </constant>
             </argument>
           </classmember>
@@ -4777,65 +4971,6 @@
           <vocabularylink uri="9c187cad-1b2c-4471-80f8-28ad4cfa3e9c" element="a43e4b7f-70d4-470e-831a-290d55ad1322" />
           <classmember member="NullifyMessage" sideeffects="true">
             <classref ref="HelperMetaInstructions" />
-          </classmember>
-        </function>
-      </then>
-    </rule>
-    <rule name="Test_Get_XMLNORM_PreserverBom" priority="0" active="true">
-      <if>
-        <compare operator="equal">
-          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
-          <lhs>
-            <reference>
-              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
-              <classref ref="string" />
-            </reference>
-          </lhs>
-          <rhs>
-            <constant>
-              <string>Test_Get_XMLNORM_PreserveBom</string>
-            </constant>
-          </rhs>
-        </compare>
-      </if>
-      <then>
-        <function>
-          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="01ead4ac-d272-4669-8582-3ec4c158d919" />
-          <classmember member="AddCustomStringToCache" sideeffects="true">
-            <classref ref="CachingMetaInstructions" />
-            <argument>
-              <constant>
-                <string>Output</string>
-              </constant>
-            </argument>
-            <argument>
-              <function>
-                <vocabularylink uri="9504f49b-83ad-4a27-87b5-4c8bab3b2638" element="f3ad2516-2ac0-491d-8aa5-d9ac9f403222" />
-                <classmember member="GetXMLNORMPropertySchemasContextProperty" sideeffects="true">
-                  <classref ref="ContextMetaInstructions" />
-                  <argument>
-                    <constant>
-                      <object classref="BizTalkXMLNORMPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABIQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtYTUxOT1JNUHJvcGVydHlTY2hlbWFFbnVtAQAAAAd2YWx1ZV9fAAgCAAAACAAAAAs=</object>
-                    </constant>
-                  </argument>
-                  <argument>
-                    <constant>
-                      <object classref="FailureActionEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuRmFpbHVyZUFjdGlvbkVudW0BAAAAB3ZhbHVlX18ACAIAAAABAAAACw==</object>
-                    </constant>
-                  </argument>
-                </classmember>
-              </function>
-            </argument>
-            <argument>
-              <constant>
-                <int>1</int>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
-              </constant>
-            </argument>
           </classmember>
         </function>
       </then>
@@ -4944,6 +5079,52 @@
             <argument>
               <constant>
                 <object classref="CacheFailureEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuQ2FjaGVGYWlsdXJlRW51bQEAAAAHdmFsdWVfXwAIAgAAAAAAAAAL</object>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="Test_Set_BTS_DestinationParty" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <reference>
+              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
+              <classref ref="string" />
+            </reference>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>Test_Set_BTS_DestinationParty</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="41fe4405-2959-4048-a518-1625c455d750" element="150a1cc7-66ca-4d3e-b728-031a8218d428" />
+          <classmember member="SetGlobalPropertySchemasContextProperty" sideeffects="true">
+            <classref ref="ContextMetaInstructions" />
+            <argument>
+              <constant>
+                <object classref="BizTalkGlobalPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABHQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtHbG9iYWxQcm9wZXJ0eVNjaGVtYUVudW0BAAAAB3ZhbHVlX18ACAIAAAAYAAAACw==</object>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>ExpectedResult</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="ContextInstructionTypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAN0JSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuQ29udGV4dEluc3RydWN0aW9uVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAABAAAACw==</object>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
               </constant>
             </argument>
           </classmember>
@@ -5330,57 +5511,6 @@
             <argument>
               <constant>
                 <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-      </then>
-    </rule>
-    <rule name="Test_Set_CustomProperty_DateTime" priority="0" active="true">
-      <if>
-        <compare operator="equal">
-          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
-          <lhs>
-            <reference>
-              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
-              <classref ref="string" />
-            </reference>
-          </lhs>
-          <rhs>
-            <constant>
-              <string>Test_Set_CustomProperty_DateTime</string>
-            </constant>
-          </rhs>
-        </compare>
-      </if>
-      <then>
-        <function>
-          <vocabularylink uri="41fe4405-2959-4048-a518-1625c455d750" element="a39564ac-1e28-4033-86d2-adcc7097a437" />
-          <classmember member="SetCustomContextProperty" sideeffects="true">
-            <classref ref="ContextMetaInstructions" />
-            <argument>
-              <constant>
-                <string>Property4</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>https://BREPipelineFramework.TestProject.BREPipelineFramework_PropSchema</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>2002-05-30T09:00:00</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="ContextInstructionTypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAN0JSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuQ29udGV4dEluc3RydWN0aW9uVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAADAAAACw==</object>
               </constant>
             </argument>
           </classmember>
@@ -5801,7 +5931,7 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_ReturnFirstRegexMatch" priority="0" active="true">
+    <rule name="Test_Get_ContextPropertyFromCacheNotFound_Exception" priority="0" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
@@ -5813,7 +5943,7 @@
           </lhs>
           <rhs>
             <constant>
-              <string>Test_ReturnFirstRegexMatch</string>
+              <string>Test_Get_ContextPropertyFromCacheNotFound_Exception</string>
             </constant>
           </rhs>
         </compare>
@@ -5830,12 +5960,22 @@
             </argument>
             <argument>
               <function>
-                <vocabularylink uri="9c187cad-1b2c-4471-80f8-28ad4cfa3e9c" element="09bdf21b-ef84-4b69-b602-577f664eea02" />
-                <classmember member="ReturnFirstRegexMatch" sideeffects="true">
-                  <classref ref="HelperMetaInstructions" />
+                <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="06ffd43f-f10c-4f6c-b5f3-82c07e3a1511" />
+                <classmember member="GetCustomContextPropertyFromCache" sideeffects="true">
+                  <classref ref="CachingMetaInstructions" />
                   <argument>
                     <constant>
-                      <string>&gt;(.+?)&lt;</string>
+                      <string>test</string>
+                    </constant>
+                  </argument>
+                  <argument>
+                    <constant>
+                      <string>test</string>
+                    </constant>
+                  </argument>
+                  <argument>
+                    <constant>
+                      <object classref="FailureActionEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuRmFpbHVyZUFjdGlvbkVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
                     </constant>
                   </argument>
                 </classmember>
@@ -6434,6 +6574,67 @@
         </function>
       </then>
     </rule>
+    <rule name="Test_CheckIfStringExistsInMessage_False" priority="0" active="true">
+      <if>
+        <and>
+          <compare operator="equal">
+            <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+            <lhs>
+              <reference>
+                <vocabularylink uri="d892a25c-a516-4db9-b606-13c1f5954575" element="1ed7c5ef-ddbb-45e6-a655-7992b3b09f8d" />
+                <classref ref="string" />
+              </reference>
+            </lhs>
+            <rhs>
+              <constant>
+                <string>Test_CheckIfStringExistsInMessage_False</string>
+              </constant>
+            </rhs>
+          </compare>
+          <not>
+            <predicate>
+              <vocabularylink uri="9c187cad-1b2c-4471-80f8-28ad4cfa3e9c" element="dccc32f5-32f7-4f51-958b-e4338f7d5416" />
+              <classmember member="CheckIfStringExistsInMessage" sideeffects="true">
+                <classref ref="HelperMetaInstructions" />
+                <argument>
+                  <constant>
+                    <string>InstructionLoaderPolicy</string>
+                  </constant>
+                </argument>
+              </classmember>
+            </predicate>
+          </not>
+        </and>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="01ead4ac-d272-4669-8582-3ec4c158d919" />
+          <classmember member="AddCustomStringToCache" sideeffects="true">
+            <classref ref="CachingMetaInstructions" />
+            <argument>
+              <constant>
+                <string>Output</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>ExpectedResult</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <int>1</int>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
     <rule name="Test_ReplaceDocumentNamespace" priority="0" active="true">
       <if>
         <compare operator="equal">
@@ -6561,32 +6762,6 @@
                 <string>You</string>
               </constant>
             </argument>
-          </classmember>
-        </function>
-      </then>
-    </rule>
-    <rule name="Test_AddAllContextPropertiesToCache" priority="-2" active="true">
-      <if>
-        <compare operator="equal">
-          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
-          <lhs>
-            <reference>
-              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
-              <classref ref="string" />
-            </reference>
-          </lhs>
-          <rhs>
-            <constant>
-              <string>Test_AddAllContextPropertiesToCache</string>
-            </constant>
-          </rhs>
-        </compare>
-      </if>
-      <then>
-        <function>
-          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="41db7b33-59a9-4598-b14e-1d53751c1093" />
-          <classmember member="CacheAllContextProperties" sideeffects="true">
-            <classref ref="CachingMetaInstructions" />
           </classmember>
         </function>
       </then>
@@ -6926,6 +7101,48 @@
                 <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
               </constant>
             </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="Test_DeleteContextFromCache_OverrideContextKey" priority="-2" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <reference>
+              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
+              <classref ref="string" />
+            </reference>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>Test_DeleteContextFromCache_OverrideContextKey</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="1bdecb3b-a226-42b7-8f2e-300a864703af" />
+          <classmember member="ChangeKeyContextProperty" sideeffects="true">
+            <classref ref="CachingMetaInstructions" />
+            <argument>
+              <constant>
+                <string>InterchangeID</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>http://schemas.microsoft.com/BizTalk/2003/system-properties</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="b033a2a1-d027-4a30-8ee9-99b12cf8c1a3" />
+          <classmember member="DeleteContextFromCacheIfItStillExists" sideeffects="true">
+            <classref ref="CachingMetaInstructions" />
           </classmember>
         </function>
       </then>
@@ -7316,7 +7533,7 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_Get_ErrorReport_ErrorType" priority="0" active="true">
+    <rule name="Test_GetPartyNameFromAlias" priority="0" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
@@ -7328,34 +7545,44 @@
           </lhs>
           <rhs>
             <constant>
-              <string>Test_Get_ErrorReport_ErrorType</string>
+              <string>Test_GetPartyNameFromAlias</string>
             </constant>
           </rhs>
         </compare>
       </if>
       <then>
         <function>
-          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="01ead4ac-d272-4669-8582-3ec4c158d919" />
-          <classmember member="AddCustomStringToCache" sideeffects="true">
-            <classref ref="CachingMetaInstructions" />
+          <vocabularylink uri="41fe4405-2959-4048-a518-1625c455d750" element="150a1cc7-66ca-4d3e-b728-031a8218d428" />
+          <classmember member="SetGlobalPropertySchemasContextProperty" sideeffects="true">
+            <classref ref="ContextMetaInstructions" />
             <argument>
               <constant>
-                <string>Output</string>
+                <object classref="BizTalkGlobalPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABHQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtHbG9iYWxQcm9wZXJ0eVNjaGVtYUVudW0BAAAAB3ZhbHVlX18ACAIAAAAYAAAACw==</object>
               </constant>
             </argument>
             <argument>
               <function>
-                <vocabularylink uri="9504f49b-83ad-4a27-87b5-4c8bab3b2638" element="dd0f1bc6-9c5d-4460-a6bb-1a175ecd3a56" />
-                <classmember member="GetErrorReportPropertySchemasContextProperty" sideeffects="true">
-                  <classref ref="ContextMetaInstructions" />
+                <vocabularylink uri="40289094-a071-4bb4-b928-f02dc17e2ce1" element="ad23f525-8c11-45c9-b7df-ac08ad153109" />
+                <classmember member="GetPartyFromAlias" sideeffects="true">
+                  <classref ref="HelperMetaInstructions" />
                   <argument>
                     <constant>
-                      <object classref="BizTalkErrorReportPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABMQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtFcnJvclJlcG9ydFByb3BlcnR5U2NoZW1hRW51bQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAL</object>
+                      <string>SourceControlRepository</string>
                     </constant>
                   </argument>
                   <argument>
                     <constant>
-                      <object classref="FailureActionEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuRmFpbHVyZUFjdGlvbkVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+                      <string>TFS</string>
+                    </constant>
+                  </argument>
+                  <argument>
+                    <constant>
+                      <string>Codeplex</string>
+                    </constant>
+                  </argument>
+                  <argument>
+                    <constant>
+                      <boolean>true</boolean>
                     </constant>
                   </argument>
                 </classmember>
@@ -7363,73 +7590,40 @@
             </argument>
             <argument>
               <constant>
-                <int>1</int>
+                <object classref="ContextInstructionTypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAN0JSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuQ29udGV4dEluc3RydWN0aW9uVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
               </constant>
             </argument>
             <argument>
               <constant>
-                <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
+                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
               </constant>
             </argument>
           </classmember>
         </function>
       </then>
     </rule>
-    <rule name="Test_Get_ESBItinerary_ServiceName'" priority="0" active="true">
+    <rule name="Test_UncaughtPolicyException" priority="0" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
           <lhs>
             <reference>
-              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
+              <vocabularylink uri="d892a25c-a516-4db9-b606-13c1f5954575" element="1ed7c5ef-ddbb-45e6-a655-7992b3b09f8d" />
               <classref ref="string" />
             </reference>
           </lhs>
           <rhs>
             <constant>
-              <string>Test_Get_ESBItinerary_ServiceName</string>
+              <string>Test_UncaughtPolicyException</string>
             </constant>
           </rhs>
         </compare>
       </if>
       <then>
         <function>
-          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="01ead4ac-d272-4669-8582-3ec4c158d919" />
-          <classmember member="AddCustomStringToCache" sideeffects="true">
-            <classref ref="CachingMetaInstructions" />
-            <argument>
-              <constant>
-                <string>Output</string>
-              </constant>
-            </argument>
-            <argument>
-              <function>
-                <vocabularylink uri="f3fb93a9-fb39-4ae6-858e-b9a36b66d4f4" element="4d4edbdc-407c-4b5f-b830-31e1162061ec" />
-                <classmember member="GetESBItineraryPropertySchemasContextProperty" sideeffects="true">
-                  <classref ref="ContextMetaInstructions" />
-                  <argument>
-                    <constant>
-                      <object classref="BizTalkESBItineraryPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABNQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtFU0JJdGluZXJhcnlQcm9wZXJ0eVNjaGVtYUVudW0BAAAAB3ZhbHVlX18ACAIAAAAGAAAACw==</object>
-                    </constant>
-                  </argument>
-                  <argument>
-                    <constant>
-                      <object classref="FailureActionEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuRmFpbHVyZUFjdGlvbkVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
-                    </constant>
-                  </argument>
-                </classmember>
-              </function>
-            </argument>
-            <argument>
-              <constant>
-                <int>1</int>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
-              </constant>
-            </argument>
+          <vocabularylink uri="2a12d282-6c1a-4eaf-a8bf-9d4c510b9b2a" element="40ca2ca5-05aa-4350-935f-24e024642c1b" />
+          <classmember member="ThrowAnException" sideeffects="true">
+            <classref ref="MetaInstruction" />
           </classmember>
         </function>
       </then>
@@ -7488,7 +7682,7 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_Get_Legacy_DestinationQualifier" priority="0" active="true">
+    <rule name="Test_Get_WSS_Url" priority="0" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
@@ -7500,7 +7694,7 @@
           </lhs>
           <rhs>
             <constant>
-              <string>Test_Get_Legacy_DestinationQualifier</string>
+              <string>Test_Get_WSS_Url</string>
             </constant>
           </rhs>
         </compare>
@@ -7517,17 +7711,17 @@
             </argument>
             <argument>
               <function>
-                <vocabularylink uri="9504f49b-83ad-4a27-87b5-4c8bab3b2638" element="fe128666-9b22-40eb-90b2-9b4ab2c9c5e5" />
-                <classmember member="GetLEGACYPropertySchemasContextProperty" sideeffects="true">
+                <vocabularylink uri="9504f49b-83ad-4a27-87b5-4c8bab3b2638" element="a281f210-2275-4d87-881d-54c77dcbc926" />
+                <classmember member="GetWSSPropertySchemasContextProperty" sideeffects="true">
                   <classref ref="ContextMetaInstructions" />
                   <argument>
                     <constant>
-                      <object classref="BizTalkLegacyPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABHQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtMZWdhY3lQcm9wZXJ0eVNjaGVtYUVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
+                      <object classref="BizTalkWSSPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABEQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtXU1NQcm9wZXJ0eVNjaGVtYUVudW0BAAAAB3ZhbHVlX18ACAIAAAAZAAAACw==</object>
                     </constant>
                   </argument>
                   <argument>
                     <constant>
-                      <object classref="FailureActionEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuRmFpbHVyZUFjdGlvbkVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+                      <object classref="FailureActionEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuRmFpbHVyZUFjdGlvbkVudW0BAAAAB3ZhbHVlX18ACAIAAAABAAAACw==</object>
                     </constant>
                   </argument>
                 </classmember>
@@ -8051,7 +8245,7 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_Set_BTS_DestinationParty" priority="0" active="true">
+    <rule name="Test_Get_ErrorReport_ErrorType" priority="0" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
@@ -8063,34 +8257,47 @@
           </lhs>
           <rhs>
             <constant>
-              <string>Test_Set_BTS_DestinationParty</string>
+              <string>Test_Get_ErrorReport_ErrorType</string>
             </constant>
           </rhs>
         </compare>
       </if>
       <then>
         <function>
-          <vocabularylink uri="41fe4405-2959-4048-a518-1625c455d750" element="150a1cc7-66ca-4d3e-b728-031a8218d428" />
-          <classmember member="SetGlobalPropertySchemasContextProperty" sideeffects="true">
-            <classref ref="ContextMetaInstructions" />
+          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="01ead4ac-d272-4669-8582-3ec4c158d919" />
+          <classmember member="AddCustomStringToCache" sideeffects="true">
+            <classref ref="CachingMetaInstructions" />
             <argument>
               <constant>
-                <object classref="BizTalkGlobalPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABHQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtHbG9iYWxQcm9wZXJ0eVNjaGVtYUVudW0BAAAAB3ZhbHVlX18ACAIAAAAYAAAACw==</object>
+                <string>Output</string>
+              </constant>
+            </argument>
+            <argument>
+              <function>
+                <vocabularylink uri="9504f49b-83ad-4a27-87b5-4c8bab3b2638" element="dd0f1bc6-9c5d-4460-a6bb-1a175ecd3a56" />
+                <classmember member="GetErrorReportPropertySchemasContextProperty" sideeffects="true">
+                  <classref ref="ContextMetaInstructions" />
+                  <argument>
+                    <constant>
+                      <object classref="BizTalkErrorReportPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABMQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtFcnJvclJlcG9ydFByb3BlcnR5U2NoZW1hRW51bQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAL</object>
+                    </constant>
+                  </argument>
+                  <argument>
+                    <constant>
+                      <object classref="FailureActionEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuRmFpbHVyZUFjdGlvbkVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+                    </constant>
+                  </argument>
+                </classmember>
+              </function>
+            </argument>
+            <argument>
+              <constant>
+                <int>1</int>
               </constant>
             </argument>
             <argument>
               <constant>
-                <string>ExpectedResult</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="ContextInstructionTypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAN0JSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuQ29udGV4dEluc3RydWN0aW9uVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAABAAAACw==</object>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+                <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
               </constant>
             </argument>
           </classmember>
@@ -8192,64 +8399,41 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_XMLDisassemblerProperties" priority="0" active="true">
+    <rule name="Test_ReplaceNamespaceAndPrefixNoCurrentPrefix" priority="-2" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
           <lhs>
             <reference>
-              <vocabularylink uri="d892a25c-a516-4db9-b606-13c1f5954575" element="1ed7c5ef-ddbb-45e6-a655-7992b3b09f8d" />
+              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
               <classref ref="string" />
             </reference>
           </lhs>
           <rhs>
             <constant>
-              <string>Test_XMLDisassemblerProperties</string>
+              <string>Test_ReplaceNamespaceAndPrefixNoCurrentPrefix</string>
             </constant>
           </rhs>
         </compare>
       </if>
       <then>
         <function>
-          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="01ead4ac-d272-4669-8582-3ec4c158d919" />
-          <classmember member="AddCustomStringToCache" sideeffects="true">
-            <classref ref="CachingMetaInstructions" />
+          <vocabularylink uri="f989dde8-420a-45fb-858b-18590cdeb77e" element="555ff4bb-2235-4f23-a5bb-9725df1d99d1" />
+          <classmember member="ReplaceNamespaceAndPrefix" sideeffects="true">
+            <classref ref="XMLTranslatorMetaInstructions" />
             <argument>
               <constant>
-                <string>TestKey</string>
-              </constant>
-            </argument>
-            <argument>
-              <function>
-                <vocabularylink uri="9504f49b-83ad-4a27-87b5-4c8bab3b2638" element="e6fc9356-d319-438a-a93f-3b99c1393f4e" />
-                <classmember member="GetContextProperty" sideeffects="true">
-                  <classref ref="ContextMetaInstructions" />
-                  <argument>
-                    <constant>
-                      <string>Element</string>
-                    </constant>
-                  </argument>
-                  <argument>
-                    <constant>
-                      <string>https://BREPipelineFramework.TestProject.BREPipelineFramework_PropSchema</string>
-                    </constant>
-                  </argument>
-                  <argument>
-                    <constant>
-                      <object classref="FailureActionEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuRmFpbHVyZUFjdGlvbkVudW0BAAAAB3ZhbHVlX18ACAIAAAABAAAACw==</object>
-                    </constant>
-                  </argument>
-                </classmember>
-              </function>
-            </argument>
-            <argument>
-              <constant>
-                <int>5</int>
+                <string>http://BizTalk_Server_Project1.HelloTest</string>
               </constant>
             </argument>
             <argument>
               <constant>
-                <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAABAAAACw==</object>
+                <string>bleh</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>bre</string>
               </constant>
             </argument>
           </classmember>
@@ -8732,7 +8916,7 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_Get_XLANGS_SendingOrchestrationType" priority="0" active="true">
+    <rule name="Test_GetCustomContextPropertyFromCache" priority="-2" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
@@ -8744,34 +8928,39 @@
           </lhs>
           <rhs>
             <constant>
-              <string>Test_Get_XLANGS_SendingOrchestrationType</string>
+              <string>Test_GetCustomContextPropertyFromCache</string>
             </constant>
           </rhs>
         </compare>
       </if>
       <then>
         <function>
-          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="01ead4ac-d272-4669-8582-3ec4c158d919" />
-          <classmember member="AddCustomStringToCache" sideeffects="true">
-            <classref ref="CachingMetaInstructions" />
+          <vocabularylink uri="9504f49b-83ad-4a27-87b5-4c8bab3b2638" element="8aab5fa7-05ac-495a-bd23-0e7ca1d77326" />
+          <classmember member="SetHTTPContextProperty" sideeffects="true">
+            <classref ref="ContextMetaInstructions" />
             <argument>
               <constant>
-                <string>Output</string>
+                <object classref="BizTalkHTTPPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABFQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtIVFRQUHJvcGVydHlTY2hlbWFFbnVtAQAAAAd2YWx1ZV9fAAgCAAAACQAAAAs=</object>
               </constant>
             </argument>
             <argument>
               <function>
-                <vocabularylink uri="9504f49b-83ad-4a27-87b5-4c8bab3b2638" element="988c06f9-4049-4cd2-a928-54adf5ad7127" />
-                <classmember member="GetXLANGSBTXEnginePropertySchemasContextProperty" sideeffects="true">
-                  <classref ref="ContextMetaInstructions" />
+                <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="06ffd43f-f10c-4f6c-b5f3-82c07e3a1511" />
+                <classmember member="GetCustomContextPropertyFromCache" sideeffects="true">
+                  <classref ref="CachingMetaInstructions" />
                   <argument>
                     <constant>
-                      <object classref="BizTalkXLANGSBTXEnginePropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABQQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtYTEFOR1NCVFhFbmdpbmVQcm9wZXJ0eVNjaGVtYUVudW0BAAAAB3ZhbHVlX18ACAIAAAAEAAAACw==</object>
+                      <string>From</string>
                     </constant>
                   </argument>
                   <argument>
                     <constant>
-                      <object classref="FailureActionEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuRmFpbHVyZUFjdGlvbkVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+                      <string>http://schemas.microsoft.com/BizTalk/2003/smtp-properties</string>
+                    </constant>
+                  </argument>
+                  <argument>
+                    <constant>
+                      <object classref="FailureActionEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuRmFpbHVyZUFjdGlvbkVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
                     </constant>
                   </argument>
                 </classmember>
@@ -8779,12 +8968,71 @@
             </argument>
             <argument>
               <constant>
-                <int>1</int>
+                <object classref="ContextInstructionTypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAN0JSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuQ29udGV4dEluc3RydWN0aW9uVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
               </constant>
             </argument>
             <argument>
               <constant>
-                <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
+                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="Test_GetFileExtension" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <reference>
+              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
+              <classref ref="string" />
+            </reference>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>Test_GetFileExtension</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="41fe4405-2959-4048-a518-1625c455d750" element="a39564ac-1e28-4033-86d2-adcc7097a437" />
+          <classmember member="SetCustomContextProperty" sideeffects="true">
+            <classref ref="ContextMetaInstructions" />
+            <argument>
+              <constant>
+                <string>Property1</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>https://BREPipelineFramework.TestProject.BREPipelineFramework_PropSchema</string>
+              </constant>
+            </argument>
+            <argument>
+              <function>
+                <vocabularylink uri="e994493e-3201-46dd-a2da-3f9434a4b4c6" element="7125affe-789a-4002-be2c-14237c45a0f6" />
+                <classmember member="ReturnFileExtension" sideeffects="true">
+                  <classref ref="HelperMetaInstructions" />
+                  <argument>
+                    <constant>
+                      <string>test.xml</string>
+                    </constant>
+                  </argument>
+                </classmember>
+              </function>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="ContextInstructionTypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAN0JSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuQ29udGV4dEluc3RydWN0aW9uVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
               </constant>
             </argument>
           </classmember>
@@ -9012,7 +9260,7 @@
             <lhs>
               <function>
                 <vocabularylink uri="5ceb14c8-d51a-4e53-9cb1-fdce3580c980" element="feff4404-9aed-40fb-b8d4-e2082852229a" />
-                <datarowmember datarowref="db_73" column="Column1" type="string" sideeffects="false" />
+                <datarowmember datarowref="db_74" column="Column1" type="string" sideeffects="false" />
               </function>
             </lhs>
             <rhs>
@@ -9036,7 +9284,7 @@
             <argument>
               <function>
                 <vocabularylink uri="5ceb14c8-d51a-4e53-9cb1-fdce3580c980" element="6b79f2e4-d1ab-43ca-8989-c5520e9c9d85" />
-                <datarowmember datarowref="db_73" column="Column2" type="string" sideeffects="false" />
+                <datarowmember datarowref="db_74" column="Column2" type="string" sideeffects="false" />
               </function>
             </argument>
             <argument>
@@ -9312,47 +9560,6 @@
             <argument>
               <constant>
                 <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-      </then>
-    </rule>
-    <rule name="Test_ReplaceNamespaceAndPrefixNoCurrentPrefix" priority="-2" active="true">
-      <if>
-        <compare operator="equal">
-          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
-          <lhs>
-            <reference>
-              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
-              <classref ref="string" />
-            </reference>
-          </lhs>
-          <rhs>
-            <constant>
-              <string>Test_ReplaceNamespaceAndPrefixNoCurrentPrefix</string>
-            </constant>
-          </rhs>
-        </compare>
-      </if>
-      <then>
-        <function>
-          <vocabularylink uri="f989dde8-420a-45fb-858b-18590cdeb77e" element="555ff4bb-2235-4f23-a5bb-9725df1d99d1" />
-          <classmember member="ReplaceNamespaceAndPrefix" sideeffects="true">
-            <classref ref="XMLTranslatorMetaInstructions" />
-            <argument>
-              <constant>
-                <string>http://BizTalk_Server_Project1.HelloTest</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>bleh</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>bre</string>
               </constant>
             </argument>
           </classmember>
@@ -9931,7 +10138,7 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_GetCustomContextPropertyFromCache" priority="-2" active="true">
+    <rule name="Test_Set_CustomProperty_DateTime" priority="0" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
@@ -9943,43 +10150,30 @@
           </lhs>
           <rhs>
             <constant>
-              <string>Test_GetCustomContextPropertyFromCache</string>
+              <string>Test_Set_CustomProperty_DateTime</string>
             </constant>
           </rhs>
         </compare>
       </if>
       <then>
         <function>
-          <vocabularylink uri="9504f49b-83ad-4a27-87b5-4c8bab3b2638" element="8aab5fa7-05ac-495a-bd23-0e7ca1d77326" />
-          <classmember member="SetHTTPContextProperty" sideeffects="true">
+          <vocabularylink uri="41fe4405-2959-4048-a518-1625c455d750" element="a39564ac-1e28-4033-86d2-adcc7097a437" />
+          <classmember member="SetCustomContextProperty" sideeffects="true">
             <classref ref="ContextMetaInstructions" />
             <argument>
               <constant>
-                <object classref="BizTalkHTTPPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABFQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtIVFRQUHJvcGVydHlTY2hlbWFFbnVtAQAAAAd2YWx1ZV9fAAgCAAAACQAAAAs=</object>
+                <string>Property4</string>
               </constant>
             </argument>
             <argument>
-              <function>
-                <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="06ffd43f-f10c-4f6c-b5f3-82c07e3a1511" />
-                <classmember member="GetCustomContextPropertyFromCache" sideeffects="true">
-                  <classref ref="CachingMetaInstructions" />
-                  <argument>
-                    <constant>
-                      <string>From</string>
-                    </constant>
-                  </argument>
-                  <argument>
-                    <constant>
-                      <string>http://schemas.microsoft.com/BizTalk/2003/smtp-properties</string>
-                    </constant>
-                  </argument>
-                  <argument>
-                    <constant>
-                      <object classref="FailureActionEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuRmFpbHVyZUFjdGlvbkVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
-                    </constant>
-                  </argument>
-                </classmember>
-              </function>
+              <constant>
+                <string>https://BREPipelineFramework.TestProject.BREPipelineFramework_PropSchema</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>2002-05-30T09:00:00</string>
+              </constant>
             </argument>
             <argument>
               <constant>
@@ -9988,7 +10182,7 @@
             </argument>
             <argument>
               <constant>
-                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAADAAAACw==</object>
               </constant>
             </argument>
           </classmember>
@@ -10041,7 +10235,7 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_GetPartyNameFromAlias" priority="0" active="true">
+    <rule name="Test_AddDocumentNamespaceAndPrefix_Deprecated" priority="0" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
@@ -10053,57 +10247,24 @@
           </lhs>
           <rhs>
             <constant>
-              <string>Test_GetPartyNameFromAlias</string>
+              <string>Test_AddDocumentNamespaceAndPrefix_Deprecated</string>
             </constant>
           </rhs>
         </compare>
       </if>
       <then>
         <function>
-          <vocabularylink uri="41fe4405-2959-4048-a518-1625c455d750" element="150a1cc7-66ca-4d3e-b728-031a8218d428" />
-          <classmember member="SetGlobalPropertySchemasContextProperty" sideeffects="true">
-            <classref ref="ContextMetaInstructions" />
+          <vocabularylink uri="40289094-a071-4bb4-b928-f02dc17e2ce1" element="7f0aa6a6-5973-4d04-b8f4-1bbad0335e36" />
+          <classmember member="AddDocumentNamespaceAndPrefix" sideeffects="true">
+            <classref ref="HelperMetaInstructions" />
             <argument>
               <constant>
-                <object classref="BizTalkGlobalPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABHQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtHbG9iYWxQcm9wZXJ0eVNjaGVtYUVudW0BAAAAB3ZhbHVlX18ACAIAAAAYAAAACw==</object>
-              </constant>
-            </argument>
-            <argument>
-              <function>
-                <vocabularylink uri="40289094-a071-4bb4-b928-f02dc17e2ce1" element="ad23f525-8c11-45c9-b7df-ac08ad153109" />
-                <classmember member="GetPartyFromAlias" sideeffects="true">
-                  <classref ref="HelperMetaInstructions" />
-                  <argument>
-                    <constant>
-                      <string>SourceControlRepository</string>
-                    </constant>
-                  </argument>
-                  <argument>
-                    <constant>
-                      <string>TFS</string>
-                    </constant>
-                  </argument>
-                  <argument>
-                    <constant>
-                      <string>Codeplex</string>
-                    </constant>
-                  </argument>
-                  <argument>
-                    <constant>
-                      <boolean>true</boolean>
-                    </constant>
-                  </argument>
-                </classmember>
-              </function>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="ContextInstructionTypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAN0JSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuQ29udGV4dEluc3RydWN0aW9uVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+                <string>http://brepipelineframework</string>
               </constant>
             </argument>
             <argument>
               <constant>
-                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+                <string>bre</string>
               </constant>
             </argument>
           </classmember>
@@ -10167,31 +10328,59 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_XMLDisassemblerPropertiesNoStream" priority="0" active="true">
+    <rule name="Test_Get_XMLNORM_PreserverBom" priority="0" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
           <lhs>
             <reference>
-              <vocabularylink uri="d892a25c-a516-4db9-b606-13c1f5954575" element="1ed7c5ef-ddbb-45e6-a655-7992b3b09f8d" />
+              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
               <classref ref="string" />
             </reference>
           </lhs>
           <rhs>
             <constant>
-              <string>Test_XMLDisassemblerPropertiesNoStream</string>
+              <string>Test_Get_XMLNORM_PreserveBom</string>
             </constant>
           </rhs>
         </compare>
       </if>
       <then>
         <function>
-          <vocabularylink uri="9c187cad-1b2c-4471-80f8-28ad4cfa3e9c" element="8a31f5f8-ea56-4779-adf6-e81c3e8d0161" />
-          <classmember member="TraceInfo" sideeffects="true">
-            <classref ref="HelperMetaInstructions" />
+          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="01ead4ac-d272-4669-8582-3ec4c158d919" />
+          <classmember member="AddCustomStringToCache" sideeffects="true">
+            <classref ref="CachingMetaInstructions" />
             <argument>
               <constant>
-                <string>Don't need to do anything here but let's trace some info anyways</string>
+                <string>Output</string>
+              </constant>
+            </argument>
+            <argument>
+              <function>
+                <vocabularylink uri="9504f49b-83ad-4a27-87b5-4c8bab3b2638" element="f3ad2516-2ac0-491d-8aa5-d9ac9f403222" />
+                <classmember member="GetXMLNORMPropertySchemasContextProperty" sideeffects="true">
+                  <classref ref="ContextMetaInstructions" />
+                  <argument>
+                    <constant>
+                      <object classref="BizTalkXMLNORMPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABIQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtYTUxOT1JNUHJvcGVydHlTY2hlbWFFbnVtAQAAAAd2YWx1ZV9fAAgCAAAACAAAAAs=</object>
+                    </constant>
+                  </argument>
+                  <argument>
+                    <constant>
+                      <object classref="FailureActionEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuRmFpbHVyZUFjdGlvbkVudW0BAAAAB3ZhbHVlX18ACAIAAAABAAAACw==</object>
+                    </constant>
+                  </argument>
+                </classmember>
+              </function>
+            </argument>
+            <argument>
+              <constant>
+                <int>1</int>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
               </constant>
             </argument>
           </classmember>
@@ -10685,7 +10874,7 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_DeleteContextFromCache_OverrideContextKey" priority="-2" active="true">
+    <rule name="Test_Get_ESBItinerary_ServiceName'" priority="0" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
@@ -10697,32 +10886,49 @@
           </lhs>
           <rhs>
             <constant>
-              <string>Test_DeleteContextFromCache_OverrideContextKey</string>
+              <string>Test_Get_ESBItinerary_ServiceName</string>
             </constant>
           </rhs>
         </compare>
       </if>
       <then>
         <function>
-          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="1bdecb3b-a226-42b7-8f2e-300a864703af" />
-          <classmember member="ChangeKeyContextProperty" sideeffects="true">
+          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="01ead4ac-d272-4669-8582-3ec4c158d919" />
+          <classmember member="AddCustomStringToCache" sideeffects="true">
             <classref ref="CachingMetaInstructions" />
             <argument>
               <constant>
-                <string>InterchangeID</string>
+                <string>Output</string>
+              </constant>
+            </argument>
+            <argument>
+              <function>
+                <vocabularylink uri="f3fb93a9-fb39-4ae6-858e-b9a36b66d4f4" element="4d4edbdc-407c-4b5f-b830-31e1162061ec" />
+                <classmember member="GetESBItineraryPropertySchemasContextProperty" sideeffects="true">
+                  <classref ref="ContextMetaInstructions" />
+                  <argument>
+                    <constant>
+                      <object classref="BizTalkESBItineraryPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABNQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtFU0JJdGluZXJhcnlQcm9wZXJ0eVNjaGVtYUVudW0BAAAAB3ZhbHVlX18ACAIAAAAGAAAACw==</object>
+                    </constant>
+                  </argument>
+                  <argument>
+                    <constant>
+                      <object classref="FailureActionEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuRmFpbHVyZUFjdGlvbkVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
+                    </constant>
+                  </argument>
+                </classmember>
+              </function>
+            </argument>
+            <argument>
+              <constant>
+                <int>1</int>
               </constant>
             </argument>
             <argument>
               <constant>
-                <string>http://schemas.microsoft.com/BizTalk/2003/system-properties</string>
+                <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
               </constant>
             </argument>
-          </classmember>
-        </function>
-        <function>
-          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="b033a2a1-d027-4a30-8ee9-99b12cf8c1a3" />
-          <classmember member="DeleteContextFromCacheIfItStillExists" sideeffects="true">
-            <classref ref="CachingMetaInstructions" />
           </classmember>
         </function>
       </then>
@@ -10763,7 +10969,7 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_AddStringToCache" priority="0" active="true">
+    <rule name="Test_ReturnFirstRegexMatch" priority="0" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
@@ -10775,7 +10981,7 @@
           </lhs>
           <rhs>
             <constant>
-              <string>Test_AddStringToCache</string>
+              <string>Test_ReturnFirstRegexMatch</string>
             </constant>
           </rhs>
         </compare>
@@ -10787,92 +10993,73 @@
             <classref ref="CachingMetaInstructions" />
             <argument>
               <constant>
-                <string>TestKey</string>
+                <string>Output</string>
+              </constant>
+            </argument>
+            <argument>
+              <function>
+                <vocabularylink uri="9c187cad-1b2c-4471-80f8-28ad4cfa3e9c" element="09bdf21b-ef84-4b69-b602-577f664eea02" />
+                <classmember member="ReturnFirstRegexMatch" sideeffects="true">
+                  <classref ref="HelperMetaInstructions" />
+                  <argument>
+                    <constant>
+                      <string>&gt;(.+?)&lt;</string>
+                    </constant>
+                  </argument>
+                </classmember>
+              </function>
+            </argument>
+            <argument>
+              <constant>
+                <int>1</int>
               </constant>
             </argument>
             <argument>
               <constant>
-                <string>TestCache</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <int>5</int>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAABAAAACw==</object>
+                <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
               </constant>
             </argument>
           </classmember>
         </function>
       </then>
     </rule>
-    <rule name="Test_UncaughtPolicyExceptionAfterUpdate" priority="0" active="true">
+    <rule name="Test_AddCustomContextPropertyToCache_NotFound_IgnoreCarryOn" priority="-2" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
           <lhs>
             <reference>
-              <vocabularylink uri="d892a25c-a516-4db9-b606-13c1f5954575" element="1ed7c5ef-ddbb-45e6-a655-7992b3b09f8d" />
+              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
               <classref ref="string" />
             </reference>
           </lhs>
           <rhs>
             <constant>
-              <string>Test_UncaughtPolicyExceptionAfterUpdate</string>
+              <string>Test_AddCustomContextPropertyToCache_NotFound_IgnoreCarryOn</string>
             </constant>
           </rhs>
         </compare>
       </if>
       <then>
         <function>
-          <vocabularylink uri="9c187cad-1b2c-4471-80f8-28ad4cfa3e9c" element="04a924f7-ee4e-4313-a6df-8dc276245ba7" />
-          <classmember member="FindReplaceStringInMessage" sideeffects="true">
-            <classref ref="HelperMetaInstructions" />
+          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="161bbdcd-76dc-4e0c-ab5e-6ab93ff09e89" />
+          <classmember member="AddCustomContextPropertyToCache" sideeffects="true">
+            <classref ref="CachingMetaInstructions" />
             <argument>
               <constant>
-                <string>Hello</string>
+                <string>From</string>
               </constant>
             </argument>
             <argument>
               <constant>
-                <string>Duh</string>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-        <function>
-          <vocabularylink uri="f3fb93a9-fb39-4ae6-858e-b9a36b66d4f4" element="808ae11e-cfc4-47f1-a305-85064f895b4d" />
-          <classmember member="SetFTPContextProperty" sideeffects="true">
-            <classref ref="ContextMetaInstructions" />
-            <argument>
-              <constant>
-                <object classref="BizTalkFTPPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABEQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtGVFBQcm9wZXJ0eVNjaGVtYUVudW0BAAAAB3ZhbHVlX18ACAIAAAAIAAAACw==</object>
+                <string>http://schemas.microsoft.com/BizTalk/2003/smtp-properties</string>
               </constant>
             </argument>
             <argument>
               <constant>
-                <string>Test</string>
+                <object classref="CacheFailureEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuQ2FjaGVGYWlsdXJlRW51bQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAL</object>
               </constant>
             </argument>
-            <argument>
-              <constant>
-                <object classref="ContextInstructionTypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAN0JSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuQ29udGV4dEluc3RydWN0aW9uVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAEAAAACw==</object>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-        <function>
-          <vocabularylink uri="2a12d282-6c1a-4eaf-a8bf-9d4c510b9b2a" element="44d0f69e-16b2-4282-bb75-5b2610203401" />
-          <classmember member="ThrowAnInstructionException" sideeffects="true">
-            <classref ref="MetaInstruction" />
           </classmember>
         </function>
       </then>
@@ -10936,7 +11123,7 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_SetPartDetails" priority="-2" active="true">
+    <rule name="Test_AddAllContextPropertiesToCache" priority="-2" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
@@ -10948,214 +11135,16 @@
           </lhs>
           <rhs>
             <constant>
-              <string>Test_SetPartDetails</string>
+              <string>Test_AddAllContextPropertiesToCache</string>
             </constant>
           </rhs>
         </compare>
       </if>
       <then>
         <function>
-          <vocabularylink uri="50ced79a-a989-4640-95cd-1cf144f5a9f3" element="655a0968-bb7b-4e7d-a95f-0ac3893192f6" />
-          <classmember member="SetMessageBodyPartCharSet" sideeffects="true">
-            <classref ref="MessagePartMetaInstructions" />
-            <argument>
-              <constant>
-                <string>test</string>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-        <function>
-          <vocabularylink uri="50ced79a-a989-4640-95cd-1cf144f5a9f3" element="590cd954-3b9b-456f-b661-33e0cec609b7" />
-          <classmember member="SetMessageBodyPartContentType" sideeffects="true">
-            <classref ref="MessagePartMetaInstructions" />
-            <argument>
-              <constant>
-                <string>test</string>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-        <function>
-          <vocabularylink uri="50ced79a-a989-4640-95cd-1cf144f5a9f3" element="883500de-d170-4eb9-b5e2-0c2b80ad5b7f" />
-          <classmember member="SetCustomMessageBodyPartProperty" sideeffects="true">
-            <classref ref="MessagePartMetaInstructions" />
-            <argument>
-              <constant>
-                <string>test</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>http://test</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>test</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-        <function>
-          <vocabularylink uri="50ced79a-a989-4640-95cd-1cf144f5a9f3" element="8a47a36a-6bc0-4b92-a796-2900196ffddd" />
-          <classmember member="SetCustomMessagePartProperty" sideeffects="true">
-            <classref ref="MessagePartMetaInstructions" />
-            <argument>
-              <constant>
-                <string>test</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>http://test</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="MessagePartIdentifierType" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAANkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuTWVzc2FnZVBhcnRJZGVudGlmaWVyVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAAAAAAL</object>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>Hello</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>test</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-        <function>
-          <vocabularylink uri="50ced79a-a989-4640-95cd-1cf144f5a9f3" element="8a47a36a-6bc0-4b92-a796-2900196ffddd" />
-          <classmember member="SetCustomMessagePartProperty" sideeffects="true">
-            <classref ref="MessagePartMetaInstructions" />
-            <argument>
-              <constant>
-                <string>test</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>http://test</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="MessagePartIdentifierType" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAANkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuTWVzc2FnZVBhcnRJZGVudGlmaWVyVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAL</object>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>3</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>test</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-        <function>
-          <vocabularylink uri="50ced79a-a989-4640-95cd-1cf144f5a9f3" element="cfe84290-b227-40fa-be98-78fece86b7aa" />
-          <classmember member="SetMessagePartCharSet" sideeffects="true">
-            <classref ref="MessagePartMetaInstructions" />
-            <argument>
-              <constant>
-                <object classref="MessagePartIdentifierType" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAANkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuTWVzc2FnZVBhcnRJZGVudGlmaWVyVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAAAAAAL</object>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>Hello</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>test</string>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-        <function>
-          <vocabularylink uri="50ced79a-a989-4640-95cd-1cf144f5a9f3" element="cfe84290-b227-40fa-be98-78fece86b7aa" />
-          <classmember member="SetMessagePartCharSet" sideeffects="true">
-            <classref ref="MessagePartMetaInstructions" />
-            <argument>
-              <constant>
-                <object classref="MessagePartIdentifierType" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAANkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuTWVzc2FnZVBhcnRJZGVudGlmaWVyVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAL</object>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>3</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>test</string>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-        <function>
-          <vocabularylink uri="50ced79a-a989-4640-95cd-1cf144f5a9f3" element="81a0e52b-26d1-4168-bead-4cbf285587d5" />
-          <classmember member="SetMessagePartContentType" sideeffects="true">
-            <classref ref="MessagePartMetaInstructions" />
-            <argument>
-              <constant>
-                <object classref="MessagePartIdentifierType" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAANkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuTWVzc2FnZVBhcnRJZGVudGlmaWVyVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAAAAAAL</object>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>Hello</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>test</string>
-              </constant>
-            </argument>
-          </classmember>
-        </function>
-        <function>
-          <vocabularylink uri="50ced79a-a989-4640-95cd-1cf144f5a9f3" element="81a0e52b-26d1-4168-bead-4cbf285587d5" />
-          <classmember member="SetMessagePartContentType" sideeffects="true">
-            <classref ref="MessagePartMetaInstructions" />
-            <argument>
-              <constant>
-                <object classref="MessagePartIdentifierType" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAANkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuTWVzc2FnZVBhcnRJZGVudGlmaWVyVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAL</object>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>3</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>test</string>
-              </constant>
-            </argument>
+          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="41db7b33-59a9-4598-b14e-1d53751c1093" />
+          <classmember member="CacheAllContextProperties" sideeffects="true">
+            <classref ref="CachingMetaInstructions" />
           </classmember>
         </function>
       </then>
@@ -11283,64 +11272,31 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_Get_ContextPropertyFromCacheNotFound_Exception" priority="0" active="true">
+    <rule name="Test_DuplicateHelperMetaInstructions" priority="0" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
           <lhs>
             <reference>
-              <vocabularylink uri="d892a25c-a516-4db9-b606-13c1f5954575" element="1ed7c5ef-ddbb-45e6-a655-7992b3b09f8d" />
+              <vocabularylink uri="d55d0669-9307-4290-bbe8-a81bd7417c65" element="572f8c2d-9af2-4410-8577-5ab87ce5d6fb" />
               <classref ref="string" />
             </reference>
           </lhs>
           <rhs>
             <constant>
-              <string>Test_Get_ContextPropertyFromCacheNotFound_Exception</string>
+              <string>Test_DuplicateHelperMetaInstructions</string>
             </constant>
           </rhs>
         </compare>
       </if>
       <then>
         <function>
-          <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="01ead4ac-d272-4669-8582-3ec4c158d919" />
-          <classmember member="AddCustomStringToCache" sideeffects="true">
-            <classref ref="CachingMetaInstructions" />
+          <vocabularylink uri="40289094-a071-4bb4-b928-f02dc17e2ce1" element="55591f3f-5647-42ce-bafb-13c915e350ac" />
+          <classmember member="ThrowException" sideeffects="true">
+            <classref ref="HelperMetaInstructions" />
             <argument>
               <constant>
-                <string>Output</string>
-              </constant>
-            </argument>
-            <argument>
-              <function>
-                <vocabularylink uri="103ed595-5191-4164-849e-fec17bad6283" element="06ffd43f-f10c-4f6c-b5f3-82c07e3a1511" />
-                <classmember member="GetCustomContextPropertyFromCache" sideeffects="true">
-                  <classref ref="CachingMetaInstructions" />
-                  <argument>
-                    <constant>
-                      <string>test</string>
-                    </constant>
-                  </argument>
-                  <argument>
-                    <constant>
-                      <string>test</string>
-                    </constant>
-                  </argument>
-                  <argument>
-                    <constant>
-                      <object classref="FailureActionEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAALkJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuRmFpbHVyZUFjdGlvbkVudW0BAAAAB3ZhbHVlX18ACAIAAAAAAAAACw==</object>
-                    </constant>
-                  </argument>
-                </classmember>
-              </function>
-            </argument>
-            <argument>
-              <constant>
-                <int>1</int>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="TimeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVGltZUVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
+                <string>Duplicate throw exception helper worked as expected</string>
               </constant>
             </argument>
           </classmember>
@@ -11465,7 +11421,7 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_UpdateElementValueByNodeNameAndNamespace" priority="0" active="true">
+    <rule name="Test_ThrowException" priority="0" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
@@ -11477,29 +11433,19 @@
           </lhs>
           <rhs>
             <constant>
-              <string>Test_UpdateElementValueByNodeNameAndNamespace</string>
+              <string>Test_ThrowException</string>
             </constant>
           </rhs>
         </compare>
       </if>
       <then>
         <function>
-          <vocabularylink uri="f989dde8-420a-45fb-858b-18590cdeb77e" element="bbfb179d-9861-4991-a200-48bd7bbb90ea" />
-          <classmember member="UpdateElementValueByNodeNameAndNamespace" sideeffects="true">
-            <classref ref="XMLTranslatorMetaInstructions" />
+          <vocabularylink uri="40289094-a071-4bb4-b928-f02dc17e2ce1" element="55591f3f-5647-42ce-bafb-13c915e350ac" />
+          <classmember member="ThrowException" sideeffects="true">
+            <classref ref="HelperMetaInstructions" />
             <argument>
               <constant>
-                <string>Me</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>bleh</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>Test</string>
+                <string>Testing that an exception was thrown</string>
               </constant>
             </argument>
           </classmember>
@@ -11552,7 +11498,7 @@
         </function>
       </then>
     </rule>
-    <rule name="Test_SetMessageType" priority="-2" active="true">
+    <rule name="Test_RemoveNamespaceWithNoPrefix" priority="0" active="true">
       <if>
         <compare operator="equal">
           <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
@@ -11564,16 +11510,21 @@
           </lhs>
           <rhs>
             <constant>
-              <string>Test_SetMessageType</string>
+              <string>Test_RemoveNamespaceWithNoPrefix</string>
             </constant>
           </rhs>
         </compare>
       </if>
       <then>
         <function>
-          <vocabularylink uri="f3fb93a9-fb39-4ae6-858e-b9a36b66d4f4" element="7d76678e-22d7-4d98-a335-82ddeda311b4" />
-          <classmember member="SetMessageTypeContextPropertyOnXMLMessage" sideeffects="true">
-            <classref ref="ContextMetaInstructions" />
+          <vocabularylink uri="f989dde8-420a-45fb-858b-18590cdeb77e" element="e173d4fe-3f54-42ed-bad2-5b3bcb7634c6" />
+          <classmember member="RemoveNamespace" sideeffects="true">
+            <classref ref="XMLTranslatorMetaInstructions" />
+            <argument>
+              <constant>
+                <string>http://BizTalk_Server_Project1.HelloTest</string>
+              </constant>
+            </argument>
           </classmember>
         </function>
       </then>

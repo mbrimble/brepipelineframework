@@ -36,8 +36,18 @@ namespace BREPipelineFramework
             this.documentStream = DocumentStream;
             char[] delimiters = {'#'};
             string[] messageTypeArray = messageType.Split(delimiters, 2);
-            this.rootNodeNamespace = messageTypeArray[0];
-            this.rootNodeName = messageTypeArray[1];
+
+            if (messageTypeArray.Length == 2)
+            {
+                this.rootNodeNamespace = messageTypeArray[0];
+                this.rootNodeName = messageTypeArray[1];
+            }
+            else
+            {
+                this.rootNodeName = messageTypeArray[0];
+                this.rootNodeNamespace = string.Empty;
+            }
+
             this.messageTypePropertiesSet = true;
             this.pc = pc;
         }

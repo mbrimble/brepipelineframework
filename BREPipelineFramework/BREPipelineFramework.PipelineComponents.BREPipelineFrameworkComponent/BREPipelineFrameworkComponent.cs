@@ -705,6 +705,9 @@ namespace BREPipelineFramework.PipelineComponents
                 originalStream = inmsg.BodyPart.GetOriginalDataStream();
             }
 
+            //Explicitly set the stream position to 0 in case the position was shifted while referencing it
+            originalStream.Position = 0;
+
             pc.ResourceTracker.AddResource(originalStream);
             copiedBodyPart.Data = originalStream;
             ReadStreamIfNecessary(pc, inmsg, copiedBodyPart, streamType);
@@ -735,6 +738,7 @@ namespace BREPipelineFramework.PipelineComponents
                 {
                     TraceManager.PipelineComponent.TraceInfo("{0} - Reading stream to ensure it's read logic get's executed prior to pipeline component execution", callToken);
                     StreamReader reader = new StreamReader(copiedBodyPart.Data);
+                    reader.Read();
                     pc.ResourceTracker.AddResource(reader);
                     copiedBodyPart.Data.Position = 0;
                 }
@@ -754,6 +758,9 @@ namespace BREPipelineFramework.PipelineComponents
         /// </summary>
         private void CopyMessageParts(IBaseMessage sourceMessage, IBaseMessage destinationMessage, IBaseMessagePart newBodyPart)
         {
+            //Explicitly clear the collection in case this has gone through a disassembler with multiple messages and there are leftovers from the last time
+            partNames.Clear();
+            
             string bodyPartName = sourceMessage.BodyPartName;
             for (int partCounter = 0; partCounter < sourceMessage.PartCount; ++partCounter)
             {

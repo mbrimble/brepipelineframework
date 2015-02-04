@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
+  <vocabulary id="25351883-b801-4c75-a65c-56f891c2959d" name="BREPipelineFramework.SampleInstructions.CachingInstructions" uri="" description="">
+    <version major="1" minor="1" description="" modifiedby="jcooper1982" date="2015-01-13T13:37:27.0083699+13:00" />
+    <vocabularydefinition id="315cbd6e-4e3a-4e7d-8078-2dacdeac595d" name="DeleteCustomStringFromCache" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="DeleteCustomStringFromCache" type="void">
+          <classinfo class="CachingMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Delete the custom string value in the cache with a key value of {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="e7575b39-77ea-4377-8cf9-9179c7e237ab" name="GetCustomContextPropertyFromCache" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="GetCustomContextPropertyFromCache" type="string">
+          <classinfo class="CachingMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.FailureActionEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The value of the cached context property with a name of {0} and a namespace of {1}.  If not found then return {2})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.FailureActionEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="8512d66e-867c-47d1-883e-df8f845a918d" name="AddCustomStringToCache" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AddCustomStringToCache" type="void">
+          <classinfo class="CachingMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="int">
+              <int>0</int>
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="3">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.TimeEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Add the string {1} to the cache using {0} as the key, the cached entry will expire in {2} {3}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="int">
+            <int>0</int>
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="3">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.TimeEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="6045e99a-5764-425b-a644-db3ee29f43e1" name="ReapplyAllCachedContextProperties" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ReapplyAllCachedContextProperties" type="void">
+          <classinfo class="CachingMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.ContextInstructionTypeEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="{0} all of the cached context properties for the current message" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.ContextInstructionTypeEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="c714e099-8ed7-479a-98df-e4e55d3bca9a" name="AddCustomContextPropertyToCache" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AddCustomContextPropertyToCache" type="void">
+          <classinfo class="CachingMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.CacheFailureEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Add a custom context property with a name of {0} and a namespace of {1} to the context cache.  If property not found then {2}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.CacheFailureEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="6b80d265-d8e3-4e34-824e-8c7b6d72451a" name="ChangeCacheKeyContextProperty" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ChangeKeyContextProperty" type="void">
+          <classinfo class="CachingMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Change the context property that is used as the cache correlation key to {1}#{0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="3c3e2fcf-5c4c-4c86-829e-489d3eeed390" name="UpdateCacheExpiryTime" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="UpdateCacheExpiryTime" type="void">
+          <classinfo class="CachingMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="int">
+              <int>0</int>
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.TimeEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Set the expiry time for cached context properties to  {0} {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="int">
+            <int>0</int>
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.TimeEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="dc3c1e9d-36f6-49f5-97bc-764ae875cfd2" name="DeleteContextFromCacheIfItStillExists" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="DeleteContextFromCacheIfItStillExists" type="void">
+          <classinfo class="CachingMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Delete all cached context properties for the current service instance after all current reads have been completed" />
+    </vocabularydefinition>
+    <vocabularydefinition id="d7a7ffac-3751-4546-968f-858ce2a13cb1" name="GetCustomStringFromCache" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="GetCustomStringFromCache" type="string">
+          <classinfo class="CachingMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.FailureActionEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Get a cached string which was stored with the key {0}, if not found then return {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.FailureActionEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="1bdeb629-c270-42e7-9db7-011c927edf31" name="SetCachingPriority" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="set_Priority" type="void">
+          <classinfo class="CachingMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="System.Runtime.Caching.CacheItemPriority, System.Runtime.Caching, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Set the caching priority level to {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="System.Runtime.Caching.CacheItemPriority, System.Runtime.Caching, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="5d4f062e-4f4e-4a08-94cd-35c4501b2980" name="CacheAllContextProperties" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="CacheAllContextProperties" type="void">
+          <classinfo class="CachingMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Add all context properties on the current message to the cache" />
+    </vocabularydefinition>
+    <vocabularydefinition id="c26679ec-0e88-40cb-9a99-dee7608ea9f7" name="ReapplyCachedContextProperty" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ReapplyCachedContextProperty" type="void">
+          <classinfo class="CachingMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.ContextInstructionTypeEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+          <argument position="3">
+            <valuedefinitionliteral type="BREPipelineFramework.Helpers.CacheFailureEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="{2} the cached context property with a name of {0} and a namespace of {1} to the current message, if not found in the cache then {3}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.ContextInstructionTypeEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+        <argument position="3">
+          <valuedefinitionliteral type="BREPipelineFramework.Helpers.CacheFailureEnum, BREPipelineFramework.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+  </vocabulary>
+</brl>

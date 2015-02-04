@@ -45,6 +45,7 @@ namespace BREPipelineFramework.Helpers
                     o = sourceString.ToString();
                     break;
                 case TypeEnum.NoCastRequired:
+                    o = sourceString;
                     break;
             }
 
