@@ -64,6 +64,19 @@
         TransportProtectionLevel = 56,
         UserName = 57,
         UseSourceJournal = 58,
-        UseSSO = 59
+        UseSSO = 59,
+        HttpHeaders = 59,
+        HttpMethodAndUrl = 60,
+        InboundHttpHeaders = 61,
+        InboundHttpMethod = 62,
+        InboundHttpStatusCode = 63,
+        InboundHttpStatusDescription = 64,
+        IssuerName = 65,
+        IssuerSecret = 66,
+        OutboundHttpStatusCode = 67,
+        OutboundHttpStatusDescription = 68,
+        StsUri = 69,
+        SuppressMessageBodyForHttpVerbs = 70,
+        VariablePropertyMapping = 71
     }
 }
