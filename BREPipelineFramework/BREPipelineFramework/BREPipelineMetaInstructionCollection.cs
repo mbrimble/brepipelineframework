@@ -131,6 +131,7 @@ namespace BREPipelineFramework
                     {
                         //If the instantiated object isn't null then add it to the MetaInstructionCollection
                         BREPipelineMetaInstructionBase metaInstruction = (BREPipelineMetaInstructionBase)o;
+                        metaInstruction.CallToken = callToken;
                         AddMetaInstruction(metaInstruction);
                     }
                     else
