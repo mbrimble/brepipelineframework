@@ -845,6 +845,27 @@ namespace BREPipelineFramework.UnitTests
         ///Tests that the TransformMessageWithoutValidation vocabulary definition fulfills it's function
         ///</summary>
         [TestMethod()]
+        public void Test_TransformMessageVaildateSourceIfKnownWithDisassemble()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_TransformMessageVaildateSourceIfKnown Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessageVaildateSourceIfKnown.xml";
+
+            string message2Type = "BREPipelineFramework.TestProject.Message2";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+            string XPathQuery1 = "boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='MessageType'][@Promoted='true'][@Namespace='http://schemas.microsoft.com/BizTalk/2003/system-properties'][@Value='http://BREPipelineFramework.TestProject.Message2#Message2'])";
+            string ExpectedValue1 = "True";
+            _XPathCollection.XPathQueryList.Add(XPathQuery1, ExpectedValue1);
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection, ExpectedOutputFileName:ExpectedOutputFileName, additionalInputType: message2Type);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that the TransformMessageWithoutValidation vocabulary definition fulfills it's function
+        ///</summary>
+        [TestMethod()]
         public void Test_TransformMessageVaildateSourceIfKnown()
         {
             string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
@@ -856,7 +877,7 @@ namespace BREPipelineFramework.UnitTests
             string ExpectedValue1 = "True";
             _XPathCollection.XPathQueryList.Add(XPathQuery1, ExpectedValue1);
 
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection, ExpectedOutputFileName:ExpectedOutputFileName);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection, ExpectedOutputFileName: ExpectedOutputFileName);
             _BREPipelineFrameworkTest.RunTest();
         }
 
@@ -877,6 +898,25 @@ namespace BREPipelineFramework.UnitTests
         }
 
         /// <summary>
+        ///Tests that the TransformMessageWithoutValidation vocabulary definition fulfills it's function when chained
+        ///</summary>
+        [TestMethod()]
+        public void Test_TransformMessageVaildateSourceIfKnownTwiceWithDisassemble()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_TransformMessageVaildateSourceIfKnownTwice Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessageVaildateSourceIfKnownTwice.xml";
+
+            string message2Type = "BREPipelineFramework.TestProject.Message2";
+            string message3Type = "BREPipelineFramework.TestProject.Message3";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, ExpectedOutputFileName: ExpectedOutputFileName, additionalInputType: message2Type, yetAnotherInputType: message3Type);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
         ///Tests that the TransformMessage vocabulary definition fulfills it's function
         ///</summary>
         [TestMethod()]
@@ -884,10 +924,27 @@ namespace BREPipelineFramework.UnitTests
         {
             string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
             string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessage.xml";
-
+            
             XPathCollection _XPathCollection = new XPathCollection();
 
             var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, PipelineType:"BREPipelineFramework.TestProject.Rcv_TransformMessage", ExpectedOutputFileName:ExpectedOutputFileName);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that the TransformMessage vocabulary definition fulfills it's function
+        ///</summary>
+        [TestMethod()]
+        public void Test_TransformMessageWithDisassemble()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessage.xml";
+
+            string message2Type = "BREPipelineFramework.TestProject.Message2";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, PipelineType: "BREPipelineFramework.TestProject.Rcv_TransformMessage", ExpectedOutputFileName: ExpectedOutputFileName, additionalInputType: message2Type);
             _BREPipelineFrameworkTest.RunTest();
         }
 
@@ -903,6 +960,24 @@ namespace BREPipelineFramework.UnitTests
             XPathCollection _XPathCollection = new XPathCollection();
 
             var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, PipelineType:"BREPipelineFramework.TestProject.Rcv_TransformMessageTwice", ExpectedOutputFileName:ExpectedOutputFileName);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that the TransformMessage vocabulary definition fulfills it's function when chained
+        ///</summary>
+        [TestMethod()]
+        public void Test_TransformMessageTwiceWithDisassembles()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessageTwice.xml";
+
+            string message2Type = "BREPipelineFramework.TestProject.Message2";
+            string message3Type = "BREPipelineFramework.TestProject.Message3";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, PipelineType: "BREPipelineFramework.TestProject.Rcv_TransformMessageTwice", ExpectedOutputFileName: ExpectedOutputFileName, additionalInputType: message2Type, yetAnotherInputType: message3Type);
             _BREPipelineFrameworkTest.RunTest();
         }
 

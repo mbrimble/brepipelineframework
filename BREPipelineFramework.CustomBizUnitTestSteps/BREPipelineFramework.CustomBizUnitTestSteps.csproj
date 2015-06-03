@@ -61,10 +61,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PublicAssemblies\Microsoft.BizTalk.Pipeline.dll</HintPath>
     </Reference>
-    <Reference Include="PipelineObjects, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libs\PipelineObjects.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="PipelineObjects">
+      <HintPath>..\..\..\Program Files (x86)\Microsoft BizTalk Server 2013\SDK\Utilities\PipelineTools\PipelineObjects.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

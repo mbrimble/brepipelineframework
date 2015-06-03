@@ -7,7 +7,6 @@ using System.IO;
 using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BREPipelineFramework.CustomBizUnitTestSteps;
-using BTS.Testing.TraceMonitor.BizUnit4.TestSteps;
 using BizUnit.Xaml;
 
 namespace BREPipelineFramework.UnitTests
@@ -20,7 +19,8 @@ namespace BREPipelineFramework.UnitTests
         public static b.BizUnit BREPipelineFrameworkReceivePipelineBaseTest(string InputFileName, TestContext testContextInstance, string InstanceConfigFilePath = null, 
             XPathCollection contextXPathCollection = null, XPathCollection bodyXPathCollection = null, int ExpectedNumberOfFiles = 1, 
             string PipelineType = "BREPipelineFramework.TestProject.Rcv_BREPipelineFramework", string ExpectedOutputFileName = null,
-            string inputMessageType = "BREPipelineFramework.TestProject.Message", string InputContextFileName = null, DataLoaderBase instanceConfigLoader = null, DataLoaderBase inputContextLoader = null)
+            string inputMessageType = "BREPipelineFramework.TestProject.Message", string InputContextFileName = null, DataLoaderBase instanceConfigLoader = null, 
+            DataLoaderBase inputContextLoader = null, string additionalInputType = null, string yetAnotherInputType = null)
         {
             var _BREPipelineFrameworkTest = new b.Xaml.TestCase();
 
@@ -67,7 +67,27 @@ namespace BREPipelineFramework.UnitTests
             docSpecDefinition1.TypeName = inputMessageType;
 
             pipelineTestStep.DocSpecs.Add(docSpecDefinition1);
-            
+
+            if (!string.IsNullOrEmpty(additionalInputType))
+            {
+                var docSpecDefinition2 = new b.TestSteps.BizTalk.Pipeline.DocSpecDefinition();
+
+                docSpecDefinition2.AssemblyPath = @"..\..\..\BREPipelineFramework.TestProject\bin\debug\BREPipelineFramework.TestProject.dll";
+                docSpecDefinition2.TypeName = additionalInputType;
+
+                pipelineTestStep.DocSpecs.Add(docSpecDefinition2);
+            }
+
+            if (!string.IsNullOrEmpty(yetAnotherInputType))
+            {
+                var docSpecDefinition3 = new b.TestSteps.BizTalk.Pipeline.DocSpecDefinition();
+
+                docSpecDefinition3.AssemblyPath = @"..\..\..\BREPipelineFramework.TestProject\bin\debug\BREPipelineFramework.TestProject.dll";
+                docSpecDefinition3.TypeName = yetAnotherInputType;
+
+                pipelineTestStep.DocSpecs.Add(docSpecDefinition3);
+            }
+
             _BREPipelineFrameworkTest.ExecutionSteps.Add(pipelineTestStep);
 
             var fileReadMultipleStepContext = new BREPipelineFramework.CustomBizUnitTestSteps.FileReadMultipleStep

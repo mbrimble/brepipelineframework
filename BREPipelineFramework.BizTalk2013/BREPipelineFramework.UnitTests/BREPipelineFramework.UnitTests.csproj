@@ -40,7 +40,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>..\..\BREPipelineFramework.snk</AssemblyOriginatorKeyFile>
@@ -125,9 +125,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\BREPipelineFrameworkComponent\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFrameworkComponent.dll</HintPath>
       <Private>False</Private>
-    </Reference>
-    <Reference Include="BTS.Testing.TraceMonitor.BizUnit4.TestSteps">
-      <HintPath>..\Libs\BTS.Testing.TraceMonitor.BizUnit4.TestSteps.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.BizTalk.Edi.BaseArtifacts, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />

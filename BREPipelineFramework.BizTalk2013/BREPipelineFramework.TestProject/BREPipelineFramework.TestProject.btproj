@@ -233,26 +233,22 @@
     <Pipeline Include="Rcv_BREPipelineFrameworkMIME.btp">
       <TypeName>Rcv_BREPipelineFrameworkMIME</TypeName>
       <Namespace>BREPipelineFramework.TestProject</Namespace>
-      <SubType>Designer</SubType>
     </Pipeline>
   </ItemGroup>
   <ItemGroup>
     <Pipeline Include="Rcv_BREPipelineFrameworkXML.btp">
       <TypeName>Rcv_BREPipelineFrameworkXML</TypeName>
       <Namespace>BREPipelineFramework.TestProject</Namespace>
-      <SubType>Task</SubType>
     </Pipeline>
   </ItemGroup>
   <ItemGroup>
     <Pipeline Include="Rcv_BREPipelineFrameworkXMLRIP.btp">
-      <SubType>Task</SubType>
       <TypeName>Rcv_BREPipelineFrameworkXMLRIP</TypeName>
       <Namespace>BREPipelineFramework.TestProject</Namespace>
     </Pipeline>
   </ItemGroup>
   <ItemGroup>
     <Pipeline Include="Rcv_BREPipelineFrameworkXML_NoReadStream.btp">
-      <SubType>Task</SubType>
       <TypeName>Rcv_BREPipelineFrameworkXML_NoReadStream</TypeName>
       <Namespace>BREPipelineFramework.TestProject</Namespace>
     </Pipeline>
@@ -261,19 +257,16 @@
     <Schema Include="BRETest.xsd">
       <TypeName>BRETest</TypeName>
       <Namespace>BREPipelineFramework.TestProject</Namespace>
-      <SubType>Task</SubType>
     </Schema>
   </ItemGroup>
   <ItemGroup>
     <Pipeline Include="Rcv_BRETestFF.btp">
       <TypeName>Rcv_BRETestFF</TypeName>
       <Namespace>BREPipelineFramework.TestProject</Namespace>
-      <SubType>Task</SubType>
     </Pipeline>
   </ItemGroup>
   <ItemGroup>
     <Pipeline Include="Rcv_BRETestFFNoStream.btp">
-      <SubType>Task</SubType>
       <TypeName>Rcv_BRETestFFNoStream</TypeName>
       <Namespace>BREPipelineFramework.TestProject</Namespace>
     </Pipeline>
@@ -282,7 +275,6 @@
     <Schema Include="MessageWithNoNamespace.xsd">
       <TypeName>MessageWithNoNamespace</TypeName>
       <Namespace>BREPipelineFramework.TestProject</Namespace>
-      <SubType>Task</SubType>
     </Schema>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
