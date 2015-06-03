@@ -44,6 +44,8 @@ namespace BREPipelineFramework.PipelineComponents
         private Dictionary<int, string> partNames = new Dictionary<int, string>();
         private string streamsToReadBeforeExecution = "Microsoft.BizTalk.Component.XmlDasmStreamWrapper";
         private Stream originalStream;
+        private string customMetaInstructionSeparatedList = string.Empty;
+        private List<string> customMetaInstructionList;
 
         #endregion
 
@@ -156,6 +158,22 @@ namespace BREPipelineFramework.PipelineComponents
                 {
                     trackingFolder = value;
                 }
+            }
+        }
+
+        /// <summary>
+        /// List of custom MetaInstructions to be instantiated and asserted to the execution policy, bypassing the instruction loader policy
+        /// </summary>
+        [ExcludeFromCodeCoverage]
+        public string CustomMetaInstructionSeparatedList
+        {
+            get 
+            { 
+                return customMetaInstructionSeparatedList; 
+            }
+            set 
+            { 
+                customMetaInstructionSeparatedList = value; 
             }
         }
 
@@ -378,6 +396,11 @@ namespace BREPipelineFramework.PipelineComponents
             {
                 this.streamsToReadBeforeExecution = ((string)(val));
             }
+            val = this.ReadPropertyBag(pb, "CustomMetaInstructionSeparatedList");
+            if ((val != null))
+            {
+                this.customMetaInstructionSeparatedList = ((string)(val));
+            }
         }
         
         /// <summary>
@@ -400,6 +423,7 @@ namespace BREPipelineFramework.PipelineComponents
             this.WritePropertyBag(pb, "ExecutionPolicyVersion", this.executionPolicyVersion);
             this.WritePropertyBag(pb, "InstructionLoaderPolicyVersion", this.instructionLoaderPolicyVersion);
             this.WritePropertyBag(pb, "StreamsToReadBeforeExecution", this.streamsToReadBeforeExecution);
+            this.WritePropertyBag(pb, "CustomMetaInstructionSeparatedList", this.customMetaInstructionSeparatedList);
         }
         
         #region utility functionality
@@ -528,8 +552,10 @@ namespace BREPipelineFramework.PipelineComponents
                     // Override the default ExecutionPolicy name and version, ApplicationContext, and XMLFactsApplicationStage if an override instruction was set by the InstructionLoaderPolicy
                     ApplyOverrides();
 
-                    // Add out of the box MetaInstructions to the collection so they can be used in any ExecutionPolicy
+                    // Add out of the box MetaInstructions and custom MetaInstructions set on the pipeline component parameters
+                    // to the collection so they can be used in any ExecutionPolicy
                     AddOutOfTheBoxMetaInstructions();
+                    AddMetaInstructionsFromPipelineComponentParameters();
 
                     // Execute the ExecutionPolicy using the instantiated MetaInstructions as facts and passing in the TypedXMLDocument from within the wrapper if properly setup
                     // as well as any DataConnections that were setup in the InstructionLoaderPolicy
@@ -799,6 +825,16 @@ namespace BREPipelineFramework.PipelineComponents
             }
         }
 
+        private void AddMetaInstructionsFromPipelineComponentParameters()
+        {
+            customMetaInstructionList = new List<string>(customMetaInstructionSeparatedList.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries));
+
+            foreach (string customMetaInstruction in customMetaInstructionList)
+            {
+                _BREPipelineMetaInstructionCollection.AddMetaInstruction(customMetaInstruction);
+            }
+        }
+
         /// <summary>
         /// Execute the policy in question, utilizing the DebutTrackingInspector if a TrackingFolder has been specified, and applying specific policy versions 
         /// if they have been specified
@@ -958,12 +994,14 @@ namespace BREPipelineFramework.PipelineComponents
         /// </summary>
         private void AddOutOfTheBoxMetaInstructions()
         {
-            // Add the out of the box MetaInstruction classes to the 
+            // Add the out of the box MetaInstruction classes to the collection
             _BREPipelineMetaInstructionCollection.AddMetaInstruction(new ContextMetaInstructions());
             _BREPipelineMetaInstructionCollection.AddMetaInstruction(new HelperMetaInstructions());
             _BREPipelineMetaInstructionCollection.AddMetaInstruction(new CachingMetaInstructions());
             _BREPipelineMetaInstructionCollection.AddMetaInstruction(new MessagePartMetaInstructions());
             _BREPipelineMetaInstructionCollection.AddMetaInstruction(new XMLTranslatorMetaInstructions());
+            _BREPipelineMetaInstructionCollection.AddMetaInstruction(new HttpHeadersMetaInstructions());
+            _BREPipelineMetaInstructionCollection.AddMetaInstruction(new FlatFileMetaInstructions());
 
             // Only add TypedXMLDocumentMetaInstructions if a TypedXMLDocument has been setup
             if (documentWrapper.DocumentCount == 1)

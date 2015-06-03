@@ -83,7 +83,7 @@ namespace BREPipelineFramework
             get { return xmlFactsApplicationStageOverride; }
             set { xmlFactsApplicationStageOverride = value; }
         }
-        
+
         /// <summary>
         /// Exposes exceptions that were handled during execution of the InstructionLoaderPolicy
         /// </summary>
@@ -115,41 +115,35 @@ namespace BREPipelineFramework
         /// <param name="MetaInstructionAssembly"></param>
         public void AddMetaInstruction(string MetaInstructionClass, string MetaInstructionAssembly)
         {
+            string fullyQualifiedClass = MetaInstructionClass + "," + MetaInstructionAssembly;
+            AddMetaInstruction(fullyQualifiedClass);
+        }
+
+        public void AddMetaInstruction(string fullyQualifiedClass)
+        {
             try
             {
-                //Instantiate the MetaInstruction
-                Type t = Type.GetType(MetaInstructionClass + "," + MetaInstructionAssembly);
+                //Resolve the metaInstructionType based on the fully qualified class/assembly name, and then create an instance
+                //of the metaInstruction
+                Type metaInstructionType = ObjectCreator.ResolveType(fullyQualifiedClass);
+                object o = ObjectCreator.CreateConstructorlessInstance(metaInstructionType);
 
-                if (t != null)
+                if (o != null)
                 {
-                    ConstructorInfo info = t.GetConstructor(Type.EmptyTypes);
-                    ObjectCreator inv = new ObjectCreator(info);
-                    object o = null;
-                    o = inv.CreateInstance();
-
-                    if (o != null)
-                    {
-                        //If the instantiated object isn't null then add it to the MetaInstructionCollection
-                        BREPipelineMetaInstructionBase metaInstruction = (BREPipelineMetaInstructionBase)o;
-                        metaInstruction.CallToken = callToken;
-                        AddMetaInstruction(metaInstruction);
-                    }
-                    else
-                    {
-                        //If the instantiated object is null then set _BREException which will be thrown by the pipeline component
-                        _BREException = new Exception("Unable to instantiate MetaInstruction - " + MetaInstructionClass + "," + MetaInstructionAssembly);
-                    }
+                    //If the instantiated object isn't null then add it to the MetaInstructionCollection
+                    BREPipelineMetaInstructionBase metaInstruction = (BREPipelineMetaInstructionBase)o;
+                    AddMetaInstruction(metaInstruction);
                 }
                 else
                 {
-                    //If the type is null then set _BREException which will be thrown by the pipeline component
-                    _BREException = new Exception("Unable to instantiate MetaInstruction - " + MetaInstructionClass + "," + MetaInstructionAssembly);
+                    //If the instantiated object is null then set _BREException which will be thrown by the pipeline component
+                    _BREException = new Exception("Unable to instantiate MetaInstruction - " + fullyQualifiedClass);
                 }
             }
             catch (Exception e)
             {
                 //Set any caught exceptions to _BREException which will be thrown by the pipeline component
-                _BREException = new Exception("Unable to instantiate MetaInstruction - " + MetaInstructionClass + "," + MetaInstructionAssembly 
+                _BREException = new Exception("Unable to instantiate MetaInstruction - " + fullyQualifiedClass
                     + ", exception encountered - " + e.Message);
             }
         }
@@ -203,7 +197,7 @@ namespace BREPipelineFramework
         public void Execute()
         {
             TraceManager.PipelineComponent.TraceInfo("{0} - Starting to execute all MetaInstructions.", callToken);
-            
+
             foreach (var metaInstruction in metaInstructionCollection)
             {
                 metaInstruction.Value.ExecutionPreProcessing();
@@ -213,7 +207,7 @@ namespace BREPipelineFramework
                     metaInstruction.Value.ExecuteAllBREPipelineInstructions(ref inMsg, pc);
                 }
             }
-            
+
             if (instructionExecutionOrder == InstructionExecutionOrderEnum.RulesExecution)
             {
                 foreach (var instruction in orderedInstructionList)

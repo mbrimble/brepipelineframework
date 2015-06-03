@@ -281,6 +281,33 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
         }
 
         /// <summary>
+        /// Return the first Regex match in a given string
+        /// </summary>
+        public string ReturnFirstRegexMatchInString(string regexToFind, string inputString)
+        {
+            return ReturnRegexMatchInStringByIndex(regexToFind, inputString, 0);
+        }
+
+        /// <summary>
+        /// Return the Regex match at a given index in a string 
+        /// </summary>
+        public string ReturnRegexMatchInStringByIndex(string regexToFind, string inputString, int index)
+        {
+            TraceManager.CustomComponent.TraceIn(CallToken);
+            string matchedString = String.Empty;
+
+            MatchCollection matchedStrings = Regex.Matches(inputString, regexToFind);
+
+            if (matchedStrings.Count >= index + 1)
+            {
+                matchedString = matchedStrings[index].Value;
+            }
+
+            TraceManager.CustomComponent.TraceOut(CallToken);
+            return matchedString;
+        }
+
+        /// <summary>
         /// Set the message body part to null
         /// </summary>
         public void NullifyMessage()
@@ -448,6 +475,15 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
             base.AddInstruction(instruction);
         }
 
+        /// <summary>
+        /// Transform a message using the specified map class with the specified level of source schema validation and with property promotion on the target message
+        /// </summary>
+        public void TransformMessageWithPromotion(string mapClassName, string mapAssemblyName, TransformationSourceSchemaValidation validation)
+        {
+            TransformationInstruction instruction = new TransformationInstruction(mapClassName, mapAssemblyName, validation, CallToken, true);
+            base.AddInstruction(instruction);
+        }
+
         public bool TraceInfo(string infoToTrace)
         {
             TraceManager.RulesComponent.TraceInfo("{0} - {1}", base.CallToken, infoToTrace);
@@ -472,6 +508,22 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
         public DateTime ConvertToDateTime(object obj)
         {
             return (DateTime)TypeCaster.GetTypedObject(obj, TypeEnum.DateTime);
+        }
+
+        public string GetValueFromSSOConfigStore(string applicationName, string key, FailureActionEnum failureAction)
+        {
+            string value = null;
+
+            try
+            {
+                value = StaticHelpers.ReadFromSSO(applicationName, key, failureAction, value);
+            }
+            catch (Exception e)
+            {
+                base.SetException(e);
+            }
+
+            return value;
         }
 
         #endregion

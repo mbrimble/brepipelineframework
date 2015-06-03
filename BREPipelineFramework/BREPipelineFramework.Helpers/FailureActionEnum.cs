@@ -6,7 +6,7 @@
     public enum FailureActionEnum
     {
         Exception = 0,
-        DefaultForType = 1,
+        BlankOrDefaultValue = 1,
         Null = 2
     }
 }

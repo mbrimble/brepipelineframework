@@ -1,6 +1,7 @@
 ﻿using System;
 using BREPipelineFramework.Helpers;
 using BREPipelineFramework.SampleInstructions.Instructions;
+using BREPipelineFramework.Helpers.Tracing;
 
 namespace BREPipelineFramework.SampleInstructions.MetaInstructions
 {
@@ -386,15 +387,18 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
             if (property != null)
             {
                 propertyValue = property.ToString();
+                TraceManager.PipelineComponent.TraceInfo("{0} - Got value {1} for context property {2}#{3}", CallToken, propertyValue, Namespace, Name);
             }
             else
             {
+                TraceManager.PipelineComponent.TraceInfo("{0} - Context property {1}#{2} not found", CallToken, Namespace, Name, propertyValue);
+                
                 if (failureAction == FailureActionEnum.Exception)
                 {
                     Exception exc = new Exception("Unable to get context property " + Name + " in namespace " + Namespace + ".");
                     base.SetException(exc);
                 }
-                else if (failureAction == FailureActionEnum.DefaultForType)
+                else if (failureAction == FailureActionEnum.BlankOrDefaultValue)
                 {
                     propertyValue = string.Empty;
                 }

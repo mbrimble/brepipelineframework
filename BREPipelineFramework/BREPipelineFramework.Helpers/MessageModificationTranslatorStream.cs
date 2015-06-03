@@ -18,6 +18,7 @@ namespace BREPipelineFramework.Helpers
         private bool skipWhiteSpace = false;
         private string callToken;
         private Stream inputStream;
+        private bool skippingChildElements = false;
         
         public MessageModificationTranslatorStream(Stream stream, List<MessageModificationDetails> messageModificationInstructions, string callToken)
             : base(XmlReader.Create(stream))
@@ -208,8 +209,6 @@ namespace BREPipelineFramework.Helpers
                     }
                     case MessageModificationInstructionTypeEnum.RemoveElement:
                     {
-                        TraceManager.PipelineComponent.TraceInfo(lastNodeName + " - " + lastNodeNamespace);
-
                         if (messageModificationInstruction.Name != null)
                         {
                             if (messageModificationInstruction.Name != lastNodeName)
@@ -271,7 +270,7 @@ namespace BREPipelineFramework.Helpers
                 }
             }
 
-            if (!skipElementTranslation)
+            if (!skipElementTranslation && !skippingChildElements)
             {
                 base.TranslateEndElement(full);
             }

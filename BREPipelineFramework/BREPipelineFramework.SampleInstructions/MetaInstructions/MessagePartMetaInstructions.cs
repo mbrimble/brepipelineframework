@@ -54,7 +54,7 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
                     Exception exc = new Exception("Unable to get part property " + propertyName + " in namespace " + propertyNamespace + " on part named " + identifier + ".");
                     base.SetException(exc);
                 }
-                else if (failureAction == FailureActionEnum.DefaultForType)
+                else if (failureAction == FailureActionEnum.BlankOrDefaultValue)
                 {
                     propertyValue = string.Empty;
                 }

@@ -57,6 +57,10 @@
     <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.BizTalk.Component.Utilities, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.BizTalk.Component.Utilities\3.0.1.0__31bf3856ad364e35\Microsoft.BizTalk.Component.Utilities.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.BizTalk.Edi.BaseArtifacts, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files (x86)\Microsoft BizTalk Server 2010\Microsoft.BizTalk.Edi.BaseArtifacts.dll</HintPath>
@@ -72,6 +76,10 @@
     <Reference Include="Microsoft.BizTalk.Pipeline, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PublicAssemblies\Microsoft.BizTalk.Pipeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Microsoft BizTalk Server 2013\Pipeline Components\Microsoft.BizTalk.Pipeline.Components.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.BizTalk.Streaming, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -128,7 +136,10 @@
     <Compile Include="ContextEnumerations\BizTalkXMLNORMPropertySchemaEnum.cs" />
     <Compile Include="ContextEnumerations\BizTalkESBExceptionPropertySchemaEnum.cs" />
     <Compile Include="ContextEnumerations\BizTalkESBItineraryPropertySchemaEnum.cs" />
+    <Compile Include="Instructions\ApplyFlatFileDisassemblerInstruction.cs" />
     <Compile Include="Instructions\ApplyTypedXMLDocumentInstruction.cs" />
+    <Compile Include="Instructions\ApplyFlatFileAssemblerInstruction.cs" />
+    <Compile Include="Instructions\SetHttpHeadersInstructions.cs" />
     <Compile Include="Instructions\SetMessageTypeContextProperty.cs" />
     <Compile Include="Instructions\SetMessagePartDetailsPipelineInstruction.cs" />
     <Compile Include="Instructions\SetMessagePartPropertyPipelineInstruction.cs" />
@@ -138,6 +149,8 @@
     <Compile Include="Instructions\NullifyMessageInstruction.cs" />
     <Compile Include="Instructions\TransformationInstruction.cs" />
     <Compile Include="MetaInstructions\CachingMetaInstructions.cs" />
+    <Compile Include="MetaInstructions\FlatFileMetaInstructions.cs" />
+    <Compile Include="MetaInstructions\HttpHeadersMetaInstructions.cs" />
     <Compile Include="MetaInstructions\XMLTranslatorMetaInstructions.cs" />
     <Compile Include="MetaInstructions\MessagePartMetaInstructions.cs" />
     <Compile Include="MetaInstructions\HelperMetaInstructions.cs" />

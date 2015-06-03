@@ -11,7 +11,7 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
     {
         #region Private fields / Public properties
 
-        internal static MemoryCache cache = new MemoryCache("BREPipelineFramework.Cache", null);
+        public static MemoryCache cache = MemoryCache.Default;
         private Dictionary<string, object> cacheItems = new Dictionary<string, object>();
         private TimeEnum contextExpiryUnits = TimeEnum.Minutes;
         private int contextExpiryTime = 30;
@@ -90,7 +90,7 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
                     Exception exc = new Exception("Unable to find cached context property " + propertyName + " in namespace " + propertyNamespace);
                     base.SetException(exc);
                 }
-                else if (failureAction == FailureActionEnum.DefaultForType)
+                else if (failureAction == FailureActionEnum.BlankOrDefaultValue)
                 {
                     property = string.Empty;
                 }
@@ -203,7 +203,7 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
                     Exception exc = new Exception(string.Format("Unable to fetch item from cache with a key of {0}.", key));
                     base.SetException(exc);
                 }
-                else if (failureAction == FailureActionEnum.DefaultForType)
+                else if (failureAction == FailureActionEnum.BlankOrDefaultValue)
                 {
                     value = string.Empty;
                 }
@@ -223,6 +223,39 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
         public void DeleteCustomStringFromCache(string key)
         {
             cache.Remove(key, null);
+        }
+
+        public string GetCachedValueFromSSOConfigStore(string applicationName, string key, int expiryTime, TimeEnum expiryTimeUnits, FailureActionEnum failureAction)
+        {
+            string value = null;
+            object obj = null;
+            string cacheKey = String.Format("BRE Pipeline Framework SSO Cache - {0} - {1}", applicationName, key);
+
+            obj = cache.Get(cacheKey);
+
+            if (obj != null)
+            {
+                value = obj.ToString();
+                return value;
+            }
+            else
+            {
+                try
+                {
+                    value = StaticHelpers.ReadFromSSO(applicationName, key, failureAction, value);
+
+                    if (!string.IsNullOrEmpty(value))
+                    {
+                        AddToCache(cacheKey, value, expiryTime, expiryTimeUnits, priority);
+                    }
+                }
+                catch (Exception e)
+                {
+                    base.SetException(e);
+                }
+
+                return value;
+            }
         }
 
         #endregion

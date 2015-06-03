@@ -63,5 +63,45 @@ namespace BREPipelineFramework.Helpers
             appMgmtBag.Read(propName, out propertyValue, 0);
             return (string)propertyValue;
         }
+
+        public static string ReadFromSSO(string applicationName, string key, FailureActionEnum failureAction, string value)
+        {
+            try
+            {
+                value = ReadFromSSO(applicationName, key);
+            }
+            catch (Exception e)
+            {
+                if (failureAction == FailureActionEnum.Exception)
+                {
+                    throw new Exception("Unable to read SSO key " + key + " from application " + applicationName + ".", e);
+                }
+                else if (failureAction == FailureActionEnum.BlankOrDefaultValue)
+                {
+                    value = string.Empty;
+                }
+                else if (failureAction == FailureActionEnum.Null)
+                {
+                    // Do nothing, leave as null
+                }
+            }
+
+            if (string.IsNullOrEmpty(value))
+            {
+                if (failureAction == FailureActionEnum.Exception)
+                {
+                    throw new Exception("Unable to read SSO key " + key + " from application " + applicationName + ".");
+                }
+                else if (failureAction == FailureActionEnum.BlankOrDefaultValue)
+                {
+                    value = string.Empty;
+                }
+                else if (failureAction == FailureActionEnum.Null)
+                {
+                    // Do nothing, leave as null
+                }
+            }
+            return value;
+        }
     }
 }
