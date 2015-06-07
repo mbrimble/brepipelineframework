@@ -1001,7 +1001,7 @@ namespace BREPipelineFramework.PipelineComponents
             _BREPipelineMetaInstructionCollection.AddMetaInstruction(new MessagePartMetaInstructions());
             _BREPipelineMetaInstructionCollection.AddMetaInstruction(new XMLTranslatorMetaInstructions());
             _BREPipelineMetaInstructionCollection.AddMetaInstruction(new HttpHeadersMetaInstructions());
-            _BREPipelineMetaInstructionCollection.AddMetaInstruction(new FlatFileMetaInstructions());
+            _BREPipelineMetaInstructionCollection.AddMetaInstruction(new PipelineMetaInstructions());
 
             // Only add TypedXMLDocumentMetaInstructions if a TypedXMLDocument has been setup
             if (documentWrapper.DocumentCount == 1)

@@ -27,7 +27,7 @@ namespace BREPipelineFramework.SampleInstructions.Instructions
         
         public void Execute(ref Microsoft.BizTalk.Message.Interop.IBaseMessage inmsg, Microsoft.BizTalk.Component.Interop.IPipelineContext pc)
         {
-            PipelineExecutionHelper.Assemble(assembler, inmsg, pc);
+            inmsg = PipelineExecutionHelper.Assemble(assembler, inmsg, pc);
         }
     }
 }

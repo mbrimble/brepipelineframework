@@ -139,6 +139,9 @@
     <Compile Include="Instructions\ApplyFlatFileDisassemblerInstruction.cs" />
     <Compile Include="Instructions\ApplyTypedXMLDocumentInstruction.cs" />
     <Compile Include="Instructions\ApplyFlatFileAssemblerInstruction.cs" />
+    <Compile Include="Instructions\ApplyXmlValidatorInstruction.cs" />
+    <Compile Include="Instructions\ApplyXmlAssemblerInstruction.cs" />
+    <Compile Include="Instructions\ApplyXmlDisassemblerInstruction.cs" />
     <Compile Include="Instructions\SetHttpHeadersInstructions.cs" />
     <Compile Include="Instructions\SetMessageTypeContextProperty.cs" />
     <Compile Include="Instructions\SetMessagePartDetailsPipelineInstruction.cs" />
@@ -149,7 +152,7 @@
     <Compile Include="Instructions\NullifyMessageInstruction.cs" />
     <Compile Include="Instructions\TransformationInstruction.cs" />
     <Compile Include="MetaInstructions\CachingMetaInstructions.cs" />
-    <Compile Include="MetaInstructions\FlatFileMetaInstructions.cs" />
+    <Compile Include="MetaInstructions\PipelineMetaInstructions.cs" />
     <Compile Include="MetaInstructions\HttpHeadersMetaInstructions.cs" />
     <Compile Include="MetaInstructions\XMLTranslatorMetaInstructions.cs" />
     <Compile Include="MetaInstructions\MessagePartMetaInstructions.cs" />

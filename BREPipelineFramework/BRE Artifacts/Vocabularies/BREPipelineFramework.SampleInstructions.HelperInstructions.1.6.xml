@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
   <vocabulary id="3bfa0376-dbba-4734-8c1e-216a57f11188" name="BREPipelineInstructions.SampleInstructions.HelperInstructions" uri="" description="">
-    <version major="1" minor="6" description="" modifiedby="DATACOM-NZ\JohannC" date="2015-06-03T21:45:33.4443101+12:00" />
+    <version major="1" minor="6" description="" modifiedby="jcooper1982" date="2015-06-03T21:45:33.4443101+12:00" />
     <vocabularydefinition id="7543d883-e35d-4dd4-a739-1af6910e02ca" name="GetValueFromSSOConfigStore" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="GetValueFromSSOConfigStore" type="string">

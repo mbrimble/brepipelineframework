@@ -480,7 +480,10 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
         /// </summary>
         public void TransformMessageWithPromotion(string mapClassName, string mapAssemblyName, TransformationSourceSchemaValidation validation)
         {
-            TransformationInstruction instruction = new TransformationInstruction(mapClassName, mapAssemblyName, validation, CallToken, true);
+            TransformationInstruction instruction = new TransformationInstruction(mapClassName, mapAssemblyName, validation, CallToken);
+            base.AddInstruction(instruction);
+
+            ApplyXmlDisassemblerInstruction promotionInstruction = new ApplyXmlDisassemblerInstruction();
             base.AddInstruction(instruction);
         }
 

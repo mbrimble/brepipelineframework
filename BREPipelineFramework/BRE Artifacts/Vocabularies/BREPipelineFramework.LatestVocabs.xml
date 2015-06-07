@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
   <vocabulary id="4d528e72-5661-4efe-b508-6cf9b4d22d72" name="BREPipelineFramework.SampleInstructions.CachingInstructions" uri="" description="">
-    <version major="1" minor="2" description="" modifiedby="DATACOM-NZ\JohannC" date="2015-06-03T21:52:34.7678745+12:00" />
+    <version major="1" minor="2" description="" modifiedby="jcooper1982" date="2015-06-03T21:52:34.7678745+12:00" />
     <vocabularydefinition id="95a15a80-df11-4127-802a-486190e95362" name="ChangeCacheKeyContextProperty" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="ChangeKeyContextProperty" type="void">
@@ -407,7 +407,7 @@
     </vocabularydefinition>
   </vocabulary>
   <vocabulary id="cefcbb36-74f0-40b9-bb96-3c82b13ac9b8" name="BREPipelineFramework.SampleInstructions.HttpHeaderInstructions" uri="" description="">
-    <version major="1" minor="0" description="" modifiedby="DATACOM-NZ\JohannC" date="2015-06-03T15:09:22.0306725+12:00" />
+    <version major="1" minor="0" description="" modifiedby="jcooper1982" date="2015-06-03T15:09:22.0306725+12:00" />
     <vocabularydefinition id="ec122dc2-420b-4827-b2f3-a4118b55e610" name="CopyInboundToOutboundHTTPHeader" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="CopyInboundToOutboundHTTPHeader" type="void">
@@ -501,7 +501,7 @@
     </vocabularydefinition>
   </vocabulary>
   <vocabulary id="98de3974-1805-40e0-82f2-d52df100812b" name="BREPipelineFramework.SampleInstructions.FlatFileInstructions" uri="" description="">
-    <version major="1" minor="0" description="" modifiedby="DATACOM-NZ\JohannC" date="2015-06-03T20:06:54.5452517+12:00" />
+    <version major="1" minor="0" description="" modifiedby="jcooper1982" date="2015-06-03T20:06:54.5452517+12:00" />
     <vocabularydefinition id="9cf429b7-4006-4652-9353-6f1de3665c15" name="DisassembleFlatFileWithHeaderAndTrailer" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="DisassembleFlatFileWithHeaderAndTrailer" type="void">
@@ -4255,7 +4255,7 @@
     </vocabularydefinition>
   </vocabulary>
   <vocabulary id="3bfa0376-dbba-4734-8c1e-216a57f11188" name="BREPipelineInstructions.SampleInstructions.HelperInstructions" uri="" description="">
-    <version major="1" minor="6" description="" modifiedby="DATACOM-NZ\JohannC" date="2015-06-03T21:45:33.4443101+12:00" />
+    <version major="1" minor="6" description="" modifiedby="jcooper1982" date="2015-06-03T21:45:33.4443101+12:00" />
     <vocabularydefinition id="7543d883-e35d-4dd4-a739-1af6910e02ca" name="GetValueFromSSOConfigStore" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="GetValueFromSSOConfigStore" type="string">

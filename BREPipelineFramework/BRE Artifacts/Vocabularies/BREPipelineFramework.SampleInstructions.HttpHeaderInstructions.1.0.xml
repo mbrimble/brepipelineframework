@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
   <vocabulary id="cefcbb36-74f0-40b9-bb96-3c82b13ac9b8" name="BREPipelineFramework.SampleInstructions.HttpHeaderInstructions" uri="" description="">
-    <version major="1" minor="0" description="" modifiedby="DATACOM-NZ\JohannC" date="2015-06-03T15:09:22.0306725+12:00" />
+    <version major="1" minor="0" description="" modifiedby="jcooper1982" date="2015-06-03T15:09:22.0306725+12:00" />
     <vocabularydefinition id="ec122dc2-420b-4827-b2f3-a4118b55e610" name="CopyInboundToOutboundHTTPHeader" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="CopyInboundToOutboundHTTPHeader" type="void">

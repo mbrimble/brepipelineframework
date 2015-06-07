@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
   <vocabulary id="98de3974-1805-40e0-82f2-d52df100812b" name="BREPipelineFramework.SampleInstructions.FlatFileInstructions" uri="" description="">
-    <version major="1" minor="0" description="" modifiedby="DATACOM-NZ\JohannC" date="2015-06-03T20:06:54.5452517+12:00" />
+    <version major="1" minor="0" description="" modifiedby="jcooper1982" date="2015-06-03T20:06:54.5452517+12:00" />
     <vocabularydefinition id="9cf429b7-4006-4652-9353-6f1de3665c15" name="DisassembleFlatFileWithHeaderAndTrailer" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="DisassembleFlatFileWithHeaderAndTrailer" type="void">
-          <classinfo class="FlatFileMetaInstructions" instance="0">
+          <classinfo class="PipelineMetaInstructions" instance="0">
             <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
             <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
             <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
@@ -58,7 +58,7 @@
     <vocabularydefinition id="133329f7-8c75-4b92-9216-720103ea8e37" name="DisassembleFlatFileWithTrailer" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="DisassembleFlatFileWithTrailer" type="void">
-          <classinfo class="FlatFileMetaInstructions" instance="0">
+          <classinfo class="PipelineMetaInstructions" instance="0">
             <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
             <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
             <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
@@ -91,7 +91,7 @@
     <vocabularydefinition id="6bc86a19-6de3-4c4e-a420-2b1a48f595dd" name="DisassembleFlatFileWithHeader" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="DisassembleFlatFileWithHeader" type="void">
-          <classinfo class="FlatFileMetaInstructions" instance="0">
+          <classinfo class="PipelineMetaInstructions" instance="0">
             <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
             <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
             <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
@@ -134,7 +134,7 @@
     <vocabularydefinition id="37a848f0-15bd-4e3b-8813-bbf45f6479af" name="AssembleFlatFileWithHeader" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="AssembleFlatFileWithHeader" type="void">
-          <classinfo class="FlatFileMetaInstructions" instance="0">
+          <classinfo class="PipelineMetaInstructions" instance="0">
             <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
             <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
             <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
@@ -157,7 +157,7 @@
     <vocabularydefinition id="2745a0d0-1d9b-4f6c-8591-f3e0a854ebf1" name="AssembleFlatFile" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="AssembleFlatFile" type="void">
-          <classinfo class="FlatFileMetaInstructions" instance="0">
+          <classinfo class="PipelineMetaInstructions" instance="0">
             <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
             <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
             <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
@@ -169,7 +169,7 @@
     <vocabularydefinition id="351bcf58-ae5f-4fdf-893f-22f43c2ae93f" name="DisassembleFlatFile" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="DisassembleFlatFile" type="void">
-          <classinfo class="FlatFileMetaInstructions" instance="0">
+          <classinfo class="PipelineMetaInstructions" instance="0">
             <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
             <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
             <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
@@ -192,7 +192,7 @@
     <vocabularydefinition id="45b51a8a-50ac-421b-8f23-9f4bf8e61e82" name="AssembleFlatFileWithHeaderAndTrailer" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="AssembleFlatFileWithHeaderAndTrailer" type="void">
-          <classinfo class="FlatFileMetaInstructions" instance="0">
+          <classinfo class="PipelineMetaInstructions" instance="0">
             <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
             <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
             <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
@@ -225,7 +225,7 @@
     <vocabularydefinition id="ff06e771-d0e0-4e5d-bdee-a39176bfc9e5" name="AssembleFlatFileWithTrailer" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="AssembleFlatFileWithTrailer" type="void">
-          <classinfo class="FlatFileMetaInstructions" instance="0">
+          <classinfo class="PipelineMetaInstructions" instance="0">
             <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
             <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
             <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>

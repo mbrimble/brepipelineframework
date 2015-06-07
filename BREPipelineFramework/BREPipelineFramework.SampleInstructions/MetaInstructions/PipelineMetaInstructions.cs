@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using BREPipelineFramework.SampleInstructions.Instructions;
+using BREPipelineFramework.Helpers;
 
 namespace BREPipelineFramework.SampleInstructions.MetaInstructions
 {
-    public class FlatFileMetaInstructions : BREPipelineMetaInstructionBase
+    public class PipelineMetaInstructions : BREPipelineMetaInstructionBase
     {
         public void DisassembleFlatFile(string documentSpecName)
         {
@@ -54,6 +55,34 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
         {
             ApplyFlatFileAssemblerInstruction instruction = new ApplyFlatFileAssemblerInstruction(trailerSpecName: trailerSpecName);
             base.AddInstruction(instruction);
+        }
+
+        public void ValidateMessage()
+        {
+            ApplyXmlValidatorInstruction instruction = new ApplyXmlValidatorInstruction();
+            base.AddInstruction(instruction);
+        }
+
+        public void AssembleXMLMessageWithEnvelope(string envelopeSpecName)
+        {
+            ApplyXmlAssemblerInstruction instruction = new ApplyXmlAssemblerInstruction(envelopeSpecName);
+            base.AddInstruction(instruction);
+        }
+
+        public void DisassembleXMLMessage()
+        {
+            ApplyXmlDisassemblerInstruction instruction = new ApplyXmlDisassemblerInstruction();
+            base.AddInstruction(instruction);
+        }
+
+        public void DisassembleXMLMessagePropertyPromotionOnly()
+        {
+            SetContextPropertyPipelineInstruction instruction = new SetContextPropertyPipelineInstruction(BizTalkXMLNORMPropertySchemaEnum.PromotePropertiesOnly.ToString(),
+                ContextPropertyNamespaces._XMLNormPropertyNamespace, true, ContextInstructionTypeEnum.Write);
+            base.AddInstruction(instruction);
+
+            ApplyXmlDisassemblerInstruction disassemblyInstruction = new ApplyXmlDisassemblerInstruction();
+            base.AddInstruction(disassemblyInstruction);
         }
     }
 }

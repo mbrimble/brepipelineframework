@@ -19,7 +19,6 @@ namespace BREPipelineFramework.SampleInstructions.Instructions
         private Type mapType;
         private TransformationSourceSchemaValidation validateSourceSchema;
         private string callToken;
-        private bool disassemble = false;
 
         #endregion
 
@@ -31,21 +30,6 @@ namespace BREPipelineFramework.SampleInstructions.Instructions
             this.validateSourceSchema = validateSourceSchema;
             mapType = ObjectCreator.ResolveType(mapName);
             this.callToken = callToken;
-            disassemble = false;
-
-            if (mapType == null)
-            {
-                throw new Exception("Unable to load map with name - " + mapName);
-            }
-        }
-
-        public TransformationInstruction(string mapClassName, string mapAssemblyName, TransformationSourceSchemaValidation validateSourceSchema, string callToken, bool disassemble)
-        {
-            this.mapName = string.Format("{0}, {1}", mapClassName, mapAssemblyName);
-            this.validateSourceSchema = validateSourceSchema;
-            mapType = ObjectCreator.ResolveType(mapName);
-            this.callToken = callToken;
-            this.disassemble = disassemble;
 
             if (mapType == null)
             {
@@ -116,19 +100,8 @@ namespace BREPipelineFramework.SampleInstructions.Instructions
                 pc.ResourceTracker.AddResource(output);
 
                 inmsg.BodyPart.Data = output;
-
-                if (disassemble)
-                {
-                    var disassembler = new XmlDasmComp();
-                    disassembler.AllowUnrecognizedMessage = false;
-                    disassembler.ValidateDocument = false;
-                    PipelineExecutionHelper.Disassemble(disassembler, inmsg, pc);
-                }
-                else
-                {
-                    inmsg.Context.Write(BizTalkGlobalPropertySchemaEnum.SchemaStrongName.ToString(), ContextPropertyNamespaces._BTSPropertyNamespace, null);
-                    inmsg.Context.Promote(BizTalkGlobalPropertySchemaEnum.MessageType.ToString(), ContextPropertyNamespaces._BTSPropertyNamespace, targetSchemaMetadata.SchemaName);
-                }
+                inmsg.Context.Write(BizTalkGlobalPropertySchemaEnum.SchemaStrongName.ToString(), ContextPropertyNamespaces._BTSPropertyNamespace, null);
+                inmsg.Context.Promote(BizTalkGlobalPropertySchemaEnum.MessageType.ToString(), ContextPropertyNamespaces._BTSPropertyNamespace, targetSchemaMetadata.SchemaName);
             }
             catch (Exception e)
             {

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using Microsoft.BizTalk.Component;
 using BREPipelineFramework.Helpers;
+using System.IO;
+using Microsoft.BizTalk.Streaming;
 
 namespace BREPipelineFramework.SampleInstructions.Instructions
 {
@@ -32,7 +34,7 @@ namespace BREPipelineFramework.SampleInstructions.Instructions
         
         public void Execute(ref Microsoft.BizTalk.Message.Interop.IBaseMessage inmsg, Microsoft.BizTalk.Component.Interop.IPipelineContext pc)
         {
-            PipelineExecutionHelper.Disassemble(disassembler, inmsg, pc);
+            inmsg = PipelineExecutionHelper.Disassemble(disassembler, inmsg, pc);
         }
     }
 }

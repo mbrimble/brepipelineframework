@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
   <vocabulary id="4d528e72-5661-4efe-b508-6cf9b4d22d72" name="BREPipelineFramework.SampleInstructions.CachingInstructions" uri="" description="">
-    <version major="1" minor="2" description="" modifiedby="DATACOM-NZ\JohannC" date="2015-06-03T21:52:34.7678745+12:00" />
+    <version major="1" minor="2" description="" modifiedby="jcooper1982" date="2015-06-03T21:52:34.7678745+12:00" />
     <vocabularydefinition id="95a15a80-df11-4127-802a-486190e95362" name="ChangeCacheKeyContextProperty" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="ChangeKeyContextProperty" type="void">
