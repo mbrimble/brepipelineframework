@@ -37,7 +37,7 @@ namespace BREPipelineFramework.UnitTests
         public void MyTestSetup()
         {
             var oldCache = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache;
-            BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache = new MemoryCache("BREPipelineFramework.Cache", null);
+            BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache = MemoryCache.Default;
             oldCache.Dispose();
         }
 
