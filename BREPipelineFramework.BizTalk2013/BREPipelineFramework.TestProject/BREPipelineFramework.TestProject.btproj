@@ -233,6 +233,7 @@
     <Pipeline Include="Rcv_BREPipelineFrameworkMIME.btp">
       <TypeName>Rcv_BREPipelineFrameworkMIME</TypeName>
       <Namespace>BREPipelineFramework.TestProject</Namespace>
+      <SubType>Designer</SubType>
     </Pipeline>
   </ItemGroup>
   <ItemGroup>
@@ -297,6 +298,13 @@
       <TypeName>Sample_FF_Footer</TypeName>
       <Namespace>BREPipelineFramework.TestProject</Namespace>
     </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Pipeline Include="Snd_BREPipelineFramewrok2.btp">
+      <TypeName>Snd_BREPipelineFramewrok2</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />

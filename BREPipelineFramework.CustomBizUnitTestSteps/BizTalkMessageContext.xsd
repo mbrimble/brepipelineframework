@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MessageInfo" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MessageInfo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="MessageInfo" msprop:Generator_UserDSName="MessageInfo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ContextInfo" msprop:Generator_TableClassName="ContextInfoDataTable" msprop:Generator_TableVarName="tableContextInfo" msprop:Generator_TablePropName="ContextInfo" msprop:Generator_RowDeletingName="ContextInfoRowDeleting" msprop:Generator_RowChangingName="ContextInfoRowChanging" msprop:Generator_RowEvHandlerName="ContextInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="ContextInfoRowDeleted" msprop:Generator_UserTableName="ContextInfo" msprop:Generator_RowChangedName="ContextInfoRowChanged" msprop:Generator_RowEvArgName="ContextInfoRowChangeEvent" msprop:Generator_RowClassName="ContextInfoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Property" msprop:Generator_TableClassName="PropertyDataTable" msprop:Generator_TableVarName="tableProperty" msprop:Generator_TablePropName="Property" msprop:Generator_RowDeletingName="PropertyRowDeleting" msprop:Generator_RowChangingName="PropertyRowChanging" msprop:Generator_RowEvHandlerName="PropertyRowChangeEventHandler" msprop:Generator_RowDeletedName="PropertyRowDeleted" msprop:Generator_UserTableName="Property" msprop:Generator_RowChangedName="PropertyRowChanged" msprop:Generator_RowEvArgName="PropertyRowChangeEvent" msprop:Generator_RowClassName="PropertyRow" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" />
+                  <xs:attribute name="Namespace" msprop:Generator_ColumnVarNameInTable="columnNamespace" msprop:Generator_ColumnPropNameInRow="Namespace" msprop:Generator_ColumnPropNameInTable="NamespaceColumn" msprop:Generator_UserColumnName="Namespace" type="xs:string" />
+                  <xs:attribute name="Value" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnPropNameInTable="ValueColumn" msprop:Generator_UserColumnName="Value" type="xs:string" />
+                  <xs:attribute name="Promoted" msprop:Generator_ColumnVarNameInTable="columnPromoted" msprop:Generator_ColumnPropNameInRow="Promoted" msprop:Generator_ColumnPropNameInTable="PromotedColumn" msprop:Generator_UserColumnName="Promoted" type="xs:boolean" />
+                  <xs:attribute name="ContextInfo_Id" msprop:Generator_ColumnVarNameInTable="columnContextInfo_Id" msprop:Generator_ColumnPropNameInRow="ContextInfo_Id" msprop:Generator_ColumnPropNameInTable="ContextInfo_IdColumn" msprop:Generator_UserColumnName="ContextInfo_Id" type="xs:int" use="prohibited" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ArrayProperty" msprop:Generator_TableClassName="ArrayPropertyDataTable" msprop:Generator_TableVarName="tableArrayProperty" msprop:Generator_TablePropName="ArrayProperty" msprop:Generator_RowDeletingName="ArrayPropertyRowDeleting" msprop:Generator_RowChangingName="ArrayPropertyRowChanging" msprop:Generator_RowEvHandlerName="ArrayPropertyRowChangeEventHandler" msprop:Generator_RowDeletedName="ArrayPropertyRowDeleted" msprop:Generator_UserTableName="ArrayProperty" msprop:Generator_RowChangedName="ArrayPropertyRowChanged" msprop:Generator_RowEvArgName="ArrayPropertyRowChangeEvent" msprop:Generator_RowClassName="ArrayPropertyRow" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ArrayElement1" msprop:Generator_TableClassName="ArrayElement1DataTable" msprop:Generator_TableVarName="tableArrayElement1" msprop:Generator_TablePropName="ArrayElement1" msprop:Generator_RowDeletingName="ArrayElement1RowDeleting" msprop:Generator_RowChangingName="ArrayElement1RowChanging" msprop:Generator_RowEvHandlerName="ArrayElement1RowChangeEventHandler" msprop:Generator_RowDeletedName="ArrayElement1RowDeleted" msprop:Generator_UserTableName="ArrayElement1" msprop:Generator_RowChangedName="ArrayElement1RowChanged" msprop:Generator_RowEvArgName="ArrayElement1RowChangeEvent" msprop:Generator_RowClassName="ArrayElement1Row" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Value" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnPropNameInTable="ValueColumn" msprop:Generator_UserColumnName="Value" type="xs:string" />
+                        <xs:attribute name="ArrayProperty_Id" msprop:Generator_ColumnVarNameInTable="columnArrayProperty_Id" msprop:Generator_ColumnPropNameInRow="ArrayProperty_Id" msprop:Generator_ColumnPropNameInTable="ArrayProperty_IdColumn" msprop:Generator_UserColumnName="ArrayProperty_Id" type="xs:int" use="prohibited" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" />
+                  <xs:attribute name="Namespace" msprop:Generator_ColumnVarNameInTable="columnNamespace" msprop:Generator_ColumnPropNameInRow="Namespace" msprop:Generator_ColumnPropNameInTable="NamespaceColumn" msprop:Generator_UserColumnName="Namespace" type="xs:string" />
+                  <xs:attribute name="ArrayProperty_Id" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnArrayProperty_Id" msprop:Generator_ColumnPropNameInRow="ArrayProperty_Id" msprop:Generator_ColumnPropNameInTable="ArrayProperty_IdColumn" msprop:Generator_UserColumnName="ArrayProperty_Id" type="xs:int" msdata:AllowDBNull="false" use="prohibited" />
+                  <xs:attribute name="ContextInfo_Id" msprop:Generator_ColumnVarNameInTable="columnContextInfo_Id" msprop:Generator_ColumnPropNameInRow="ContextInfo_Id" msprop:Generator_ColumnPropNameInTable="ContextInfo_IdColumn" msprop:Generator_UserColumnName="ContextInfo_Id" type="xs:int" use="prohibited" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="PropertiesCount" msprop:Generator_ColumnVarNameInTable="columnPropertiesCount" msprop:Generator_ColumnPropNameInRow="PropertiesCount" msprop:Generator_ColumnPropNameInTable="PropertiesCountColumn" msprop:Generator_UserColumnName="PropertiesCount" type="xs:string" />
+            <xs:attribute name="ContextInfo_Id" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnContextInfo_Id" msprop:Generator_ColumnPropNameInRow="ContextInfo_Id" msprop:Generator_ColumnPropNameInTable="ContextInfo_IdColumn" msprop:Generator_UserColumnName="ContextInfo_Id" type="xs:int" msdata:AllowDBNull="false" use="prohibited" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PartInfo" msprop:Generator_TableClassName="PartInfoDataTable" msprop:Generator_TableVarName="tablePartInfo" msprop:Generator_TablePropName="PartInfo" msprop:Generator_RowDeletingName="PartInfoRowDeleting" msprop:Generator_RowChangingName="PartInfoRowChanging" msprop:Generator_RowEvHandlerName="PartInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="PartInfoRowDeleted" msprop:Generator_UserTableName="PartInfo" msprop:Generator_RowChangedName="PartInfoRowChanged" msprop:Generator_RowEvArgName="PartInfoRowChangeEvent" msprop:Generator_RowClassName="PartInfoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MessagePart" msprop:Generator_TableClassName="MessagePartDataTable" msprop:Generator_TableVarName="tableMessagePart" msprop:Generator_TablePropName="MessagePart" msprop:Generator_RowDeletingName="MessagePartRowDeleting" msprop:Generator_RowChangingName="MessagePartRowChanging" msprop:Generator_RowEvHandlerName="MessagePartRowChangeEventHandler" msprop:Generator_RowDeletedName="MessagePartRowDeleted" msprop:Generator_UserTableName="MessagePart" msprop:Generator_RowChangedName="MessagePartRowChanged" msprop:Generator_RowEvArgName="MessagePartRowChangeEvent" msprop:Generator_RowClassName="MessagePartRow" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" />
+                  <xs:attribute name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" />
+                  <xs:attribute name="FileName" msprop:Generator_ColumnVarNameInTable="columnFileName" msprop:Generator_ColumnPropNameInRow="FileName" msprop:Generator_ColumnPropNameInTable="FileNameColumn" msprop:Generator_UserColumnName="FileName" type="xs:string" />
+                  <xs:attribute name="Charset" msprop:Generator_ColumnVarNameInTable="columnCharset" msprop:Generator_ColumnPropNameInRow="Charset" msprop:Generator_ColumnPropNameInTable="CharsetColumn" msprop:Generator_UserColumnName="Charset" type="xs:string" />
+                  <xs:attribute name="ContentType" msprop:Generator_ColumnVarNameInTable="columnContentType" msprop:Generator_ColumnPropNameInRow="ContentType" msprop:Generator_ColumnPropNameInTable="ContentTypeColumn" msprop:Generator_UserColumnName="ContentType" type="xs:string" />
+                  <xs:attribute name="PartInfo_Id" msprop:Generator_ColumnVarNameInTable="columnPartInfo_Id" msprop:Generator_ColumnPropNameInRow="PartInfo_Id" msprop:Generator_ColumnPropNameInTable="PartInfo_IdColumn" msprop:Generator_UserColumnName="PartInfo_Id" type="xs:int" use="prohibited" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="PartsCount" msprop:Generator_ColumnVarNameInTable="columnPartsCount" msprop:Generator_ColumnPropNameInRow="PartsCount" msprop:Generator_ColumnPropNameInTable="PartsCountColumn" msprop:Generator_UserColumnName="PartsCount" type="xs:string" />
+            <xs:attribute name="PartInfo_Id" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnPartInfo_Id" msprop:Generator_ColumnPropNameInRow="PartInfo_Id" msprop:Generator_ColumnPropNameInTable="PartInfo_IdColumn" msprop:Generator_UserColumnName="PartInfo_Id" type="xs:int" msdata:AllowDBNull="false" use="prohibited" />
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="ArrayProperty_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//ArrayProperty" />
+      <xs:field xpath="@ArrayProperty_Id" />
+    </xs:unique>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//ContextInfo" />
+      <xs:field xpath="@ContextInfo_Id" />
+    </xs:unique>
+    <xs:unique name="PartInfo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//PartInfo" />
+      <xs:field xpath="@PartInfo_Id" />
+    </xs:unique>
+    <xs:keyref name="PartInfo_MessagePart" refer="PartInfo_Constraint1" msdata:IsNested="true" msprop:rel_Generator_UserChildTable="MessagePart" msprop:rel_Generator_ChildPropName="GetMessagePartRows" msprop:rel_Generator_UserRelationName="PartInfo_MessagePart" msprop:rel_Generator_ParentPropName="PartInfoRow" msprop:rel_Generator_RelationVarName="relationPartInfo_MessagePart" msprop:rel_Generator_UserParentTable="PartInfo">
+      <xs:selector xpath=".//MessagePart" />
+      <xs:field xpath="@PartInfo_Id" />
+    </xs:keyref>
+    <xs:keyref name="ContextInfo_ArrayProperty" refer="Constraint1" msdata:IsNested="true" msprop:rel_Generator_UserChildTable="ArrayProperty" msprop:rel_Generator_ChildPropName="GetArrayPropertyRows" msprop:rel_Generator_UserRelationName="ContextInfo_ArrayProperty" msprop:rel_Generator_ParentPropName="ContextInfoRow" msprop:rel_Generator_RelationVarName="relationContextInfo_ArrayProperty" msprop:rel_Generator_UserParentTable="ContextInfo">
+      <xs:selector xpath=".//ArrayProperty" />
+      <xs:field xpath="@ContextInfo_Id" />
+    </xs:keyref>
+    <xs:keyref name="ArrayProperty_ArrayElement1" refer="ArrayProperty_Constraint1" msdata:IsNested="true" msprop:rel_Generator_UserChildTable="ArrayElement1" msprop:rel_Generator_ChildPropName="GetArrayElement1Rows" msprop:rel_Generator_UserRelationName="ArrayProperty_ArrayElement1" msprop:rel_Generator_ParentPropName="ArrayPropertyRow" msprop:rel_Generator_RelationVarName="relationArrayProperty_ArrayElement1" msprop:rel_Generator_UserParentTable="ArrayProperty">
+      <xs:selector xpath=".//ArrayElement1" />
+      <xs:field xpath="@ArrayProperty_Id" />
+    </xs:keyref>
+    <xs:keyref name="ContextInfo_Property" refer="Constraint1" msdata:IsNested="true" msprop:rel_Generator_UserChildTable="Property" msprop:rel_Generator_ChildPropName="GetPropertyRows" msprop:rel_Generator_UserRelationName="ContextInfo_Property" msprop:rel_Generator_ParentPropName="ContextInfoRow" msprop:rel_Generator_RelationVarName="relationContextInfo_Property" msprop:rel_Generator_UserParentTable="ContextInfo">
+      <xs:selector xpath=".//Property" />
+      <xs:field xpath="@ContextInfo_Id" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

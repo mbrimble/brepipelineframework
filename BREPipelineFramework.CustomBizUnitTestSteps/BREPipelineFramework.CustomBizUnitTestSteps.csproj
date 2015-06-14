@@ -79,13 +79,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinaryComparisonTestStep.cs" />
+    <Compile Include="BizTalkMessageContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BizTalkMessageContext.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BizTalkMessageInfoFactory.cs" />
     <Compile Include="ExecuteReceivePiplineWithNullablePropertyStep.cs" />
+    <Compile Include="ExecuteSendPipelineWithNullablePropertyStep.cs" />
     <Compile Include="FileReadMultipleTestStep.cs" />
+    <Compile Include="MessageInfo.cs" />
     <Compile Include="PersistMessageHelper.cs" />
     <Compile Include="XmlValidationStep.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XPathDefinition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BizTalkMessageContext.xsc">
+      <DependentUpon>BizTalkMessageContext.xsd</DependentUpon>
+    </None>
+    <None Include="BizTalkMessageContext.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BizTalkMessageContext.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BizTalkMessageContext.xss">
+      <DependentUpon>BizTalkMessageContext.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

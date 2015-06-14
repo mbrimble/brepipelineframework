@@ -38,9 +38,10 @@ namespace BREPipelineFramework.UnitTests
         [TestInitialize()]
         public void MyTestSetup()
         {
-            var oldCache = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache;
-            BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache = MemoryCache.Default;
-            oldCache.Dispose();
+            foreach (var element in MemoryCache.Default)
+            {
+                MemoryCache.Default.Remove(element.Key);
+            }
         }
 
         //Use TestCleanup to cleanup output files after each test has run

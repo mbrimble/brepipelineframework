@@ -37,9 +37,10 @@ namespace BREPipelineFramework.UnitTests
         [TestInitialize()]
         public void MyTestSetup()
         {
-            var oldCache = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache;
-            BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache = MemoryCache.Default;
-            oldCache.Dispose();
+            foreach (var element in MemoryCache.Default)
+            {
+                MemoryCache.Default.Remove(element.Key);
+            }
         }
 
         //Use TestCleanup to cleanup output files after each test has run
@@ -224,7 +225,7 @@ namespace BREPipelineFramework.UnitTests
             string inputMessageType = "BREPipelineFramework.TestProject.Message";
             string envelopeType = "BREPipelineFramework.TestProject.Envelope";
 
-            string expectedOutput = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_DisassembleXMLxml";
+            string expectedOutput = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_DisassembleXML.xml";
 
             XPathCollection _XPathCollection = new XPathCollection();
             _XPathCollection.XPathQueryList.Add("boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='MessageType'][@Promoted='true'][@Namespace='http://schemas.microsoft.com/BizTalk/2003/system-properties'][@Value='http://BREPipelineFramework#Message'])",
@@ -254,6 +255,25 @@ namespace BREPipelineFramework.UnitTests
 
             var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader, inputMessageType: inputMessageType,
                 ExpectedOutputFileName: expectedOutput, yetAnotherInputType: envelopeType, contextXPathCollection: _XPathCollection);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        [TestMethod()]
+        public void Test_AssembleXML()
+        {
+            string applicationContext = "Test_AssembleXML";
+
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test_DisassembleXML.xml";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, applicationContext, "Base Config No InstructionLoader.xml");
+
+            string inputMessageType = "BREPipelineFramework.TestProject.Message";
+
+            string expectedOutput = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\TestEnvelope.xml";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader, inputMessageType: inputMessageType,
+                ExpectedOutputFileName: expectedOutput, contextXPathCollection: _XPathCollection);
             _BREPipelineFrameworkTest.RunTest();
         }
     }
