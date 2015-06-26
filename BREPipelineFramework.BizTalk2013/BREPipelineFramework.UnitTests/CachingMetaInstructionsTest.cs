@@ -682,5 +682,21 @@ namespace BREPipelineFramework.UnitTests
             string propertyValue = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["Output"].ToString();
             Assert.IsTrue(propertyValue == "ExpectedResult", "Did not find the expected context property value in the message - " + propertyValue);
         }
+
+        [TestMethod()]
+        public void Test_GetCachedValueFromSSO()
+        {
+            string applicationContext = "Test_GetCachedValueFromSSO";
+
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.txt";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, applicationContext);
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader);
+            _BREPipelineFrameworkTest.RunTest();
+
+            string cacheItem2 = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["BRE Pipeline Framework SSO Cache - BREPipelineFramework - Key"].ToString();
+
+            Assert.IsTrue(cacheItem2 == "TestSSO", "Unexpected concatenated value found in cache - " + cacheItem2);
+        }
     }
 }

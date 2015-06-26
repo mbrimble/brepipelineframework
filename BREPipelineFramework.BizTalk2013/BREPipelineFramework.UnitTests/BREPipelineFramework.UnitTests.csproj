@@ -153,6 +153,7 @@
   <ItemGroup>
     <Compile Include="ContextMetaInstructionsTests.cs" />
     <Compile Include="CachingMetaInstructionsTest.cs" />
+    <Compile Include="HttpHeaderInstructionsTests.cs" />
     <Compile Include="PipelineMetaInstructionsTests.cs" />
     <Compile Include="XMLTranslatorMetaInstructionsTests.cs" />
     <Compile Include="MessagePartMetaInstructionsTests.cs" />
@@ -168,6 +169,9 @@
     <Folder Include="Sample Files\Output Files\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Sample Files\Expected Output FIles\Test_RemoveElementAndChildrenByNameAndNamespace.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Sample Files\Expected Output FIles\Sample_FF_Footer_output.txt" />
     <Content Include="Sample Files\Expected Output FIles\Sample_FF_HeaderAndTrailer_output.txt" />
     <Content Include="Sample Files\Expected Output FIles\Sample_FF_Header_output.txt" />
@@ -191,6 +195,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Sample Files\Expected Output FIles\Test_UpdateAttributeDetails.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Expected Output FIles\Test_RemoveElementAndChildrenByName.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Sample Files\Expected Output FIles\Test_UpdateAttributeValueByNameAndOldValue.xml">
@@ -313,6 +320,11 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Sample Files\Input Files\bretest.txt" />
+    <Content Include="Sample Files\Input Context Files\HTTPHeaders_Input.xml" />
+    <Content Include="Sample Files\Input Files\TestEnvelope1.xml" />
+    <Content Include="Sample Files\Input Files\Test_UpdateAttributeDetails2.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Sample Files\Input Files\NoNamespace.xml" />
     <Content Include="Sample Files\Input Files\Sample_FF_Footer_output.txt" />
     <Content Include="Sample Files\Input Files\Sample_FF_HeaderAndTrailer_output.txt" />
@@ -356,6 +368,10 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Sample Files\Instance Config Files\Base Config No InstructionLoader.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_TransformMessageWithDisassemble Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_CustomMetaInstructionNoInstructionLoader Config.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Sample Files\Instance Config Files\Test_AddCustomContextPropertyToCache_OverrideExpiryTimeSetPriorityDefault Config.xml" />

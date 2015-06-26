@@ -1,0 +1,8 @@
+﻿<MessageInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ContextInfo PropertiesCount="2">
+    <Property Name="Operation" Value="Test" Namespace="http://schemas.microsoft.com/BizTalk/2003/system-properties"  Promoted="true" />
+    <Property Name="InboundHttpMethod" Value="POST" Namespace="http://schemas.microsoft.com/BizTalk/2006/01/Adapters/WCF-properties" Promoted="false" />
+    <Property Name="TransmitWorkID" Value="{388AE01A-17A6-4ECD-B2CB-A8FCB2E4CB43}" Namespace="http://schemas.microsoft.com/BizTalk/2003/system-properties" Promoted="false" />
+    <Property Name="InboundHttpHeaders" Value="Test: 32d6f253-de53-4cf3-b559-1ec34ac1ad28&#xD;&#xA;Important_User: True&#xD;&#xA;Content-Length: 328&#xD;&#xA;Content-Type: application/x-www-form-urlencoded&#xD;&#xA;Expect: 100-continue&#xD;&#xA;Host: servicebusrelaytest.servicebus.windows.net&#xD;&#xA;Authorized_Token: 32d6f253-de53-4cf3-b559-1ec34ac1ad28" Namespace="http://schemas.microsoft.com/BizTalk/2006/01/Adapters/WCF-properties" Promoted="false" />
+  </ContextInfo>
+</MessageInfo>

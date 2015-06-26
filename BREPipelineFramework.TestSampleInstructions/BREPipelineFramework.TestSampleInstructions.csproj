@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BPFEnum.cs" />
+    <Compile Include="MetaInstructionCopy.cs" />
     <Compile Include="Instruction.cs" />
     <Compile Include="MetaInstruction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

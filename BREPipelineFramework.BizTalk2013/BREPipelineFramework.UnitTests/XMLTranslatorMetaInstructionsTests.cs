@@ -52,7 +52,7 @@ namespace BREPipelineFramework.UnitTests
 
             foreach (System.IO.FileInfo file in directory.GetFiles())
             {
-                file.Delete();
+                //file.Delete();
             }
 
             directoryPath = @"C:\temp\trackingfolder";
@@ -383,6 +383,28 @@ namespace BREPipelineFramework.UnitTests
             string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test_UpdateAttributeDetails.xml";
             DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, "Test_RemoveElementByNameAndNamespace");
             string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_RemoveElementByNameAndNamespace.xml";
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader, ExpectedOutputFileName: ExpectedOutputFileName);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        [TestMethod()]
+        public void Test_RemoveElementAndChildrenByName()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test_UpdateAttributeDetails2.xml";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, "Test_RemoveElementAndChildrenByName");
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_RemoveElementAndChildrenByName.xml";
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader, ExpectedOutputFileName: ExpectedOutputFileName);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        [TestMethod()]
+        public void Test_RemoveElementAndChildrenByNameAndNamespace()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test_UpdateAttributeDetails2.xml";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, "Test_RemoveElementAndChildrenByNameAndNamespace");
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_RemoveElementAndChildrenByNameAndNamespace.xml";
 
             var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader, ExpectedOutputFileName: ExpectedOutputFileName);
             _BREPipelineFrameworkTest.RunTest();
