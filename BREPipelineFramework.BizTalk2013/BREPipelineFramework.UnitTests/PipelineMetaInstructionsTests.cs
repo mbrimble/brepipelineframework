@@ -314,7 +314,7 @@ namespace BREPipelineFramework.UnitTests
             }
             catch (Exception e)
             {
-                if (e.InnerException.GetType().ToString() != "Microsoft.BizTalk.Component.XmlValidatorException")
+                if (e.InnerException.GetType().ToString() != "Microsoft.BizTalk.Component.XmlValidatorException" && e.InnerException.GetType().ToString() != "System.Xml.Schema.XmlSchemaValidationException")
                 {
                     Assert.Fail("Was expecting an XMLValidationFailure but instead got an exception of type - " + e.InnerException.GetType().ToString());
                 }
