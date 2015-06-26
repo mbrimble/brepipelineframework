@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Stages>
+    <Stage CategoryId="9d0e4103-4cce-4536-83fa-4a5040674ad6">
+      <Components>
+        <Component Name="BREPipelineFramework.PipelineComponents.BREPipelineFrameworkComponent">
+          <Properties>
+            <Enabled vt="11">true</Enabled>
+            <ApplicationContext vt="8">Test_CustomMetaInstructionNoInstructionLoader</ApplicationContext>
+            <CustomMetaInstructionSeparatedList vt="8">BREPipelineFramework.TestSampleInstructions.MetaInstruction, BREPipelineFramework.TestSampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc; BREPipelineFramework.TestSampleInstructions.MetaInstructionCopy, BREPipelineFramework.TestSampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</CustomMetaInstructionSeparatedList>
+            <ExecutionPolicy vt="8">BREPipelineFramework ExecutionPolicy</ExecutionPolicy>
+            <RecoverableInterchangeProcessingEnabled vt="11">false</RecoverableInterchangeProcessingEnabled>
+          </Properties>
+        </Component>
+      </Components>
+    </Stage>
+  </Stages>
+</Root>

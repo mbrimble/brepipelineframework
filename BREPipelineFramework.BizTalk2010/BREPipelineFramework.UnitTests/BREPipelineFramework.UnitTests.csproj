@@ -37,7 +37,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>..\..\BREPipelineFramework.snk</AssemblyOriginatorKeyFile>
@@ -141,7 +141,9 @@
     <Compile Include="FrameworkTests.cs" />
     <Compile Include="CustomMetaInstructionsTests.cs" />
     <Compile Include="HelperMetaInstructionsTests.cs" />
+    <Compile Include="HttpHeaderInstructionsTests.cs" />
     <Compile Include="MessagePartMetaInstructionsTests.cs" />
+    <Compile Include="PipelineMetaInstructionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestHelpers.cs" />
     <Compile Include="TypedXMLDocumentMetaInstructionsTests.cs" />
@@ -153,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Sample Files\Input Context Files\Base Context.xml" />
+    <Content Include="Sample Files\Input Context Files\HTTPHeaders_Input.xml" />
     <Content Include="Sample Files\Input Context Files\Test_AddCustomContextPropertyToCache.xml" />
     <Content Include="Sample Files\Input Context Files\Test_AddCustomContextPropertyToCache_OverrideContextKey.xml" />
     <Content Include="Sample Files\Input Context Files\Test_Get_BTS_DestinationParty.xml" />
@@ -172,20 +175,29 @@
     <Content Include="Sample Files\Input Files\Message_Transform.xml" />
     <Content Include="Sample Files\Input Files\MIMEMessage.txt" />
     <Content Include="Sample Files\Input Files\NoNamespace.xml" />
+    <Content Include="Sample Files\Input Files\Sample_FF_Footer_output.txt" />
+    <Content Include="Sample Files\Input Files\Sample_FF_HeaderAndTrailer_output.txt" />
+    <Content Include="Sample Files\Input Files\Sample_FF_Header_output.txt" />
+    <Content Include="Sample Files\Input Files\Sample_FF_output.txt" />
+    <Content Include="Sample Files\Input Files\Sample_FF_output.xml" />
     <Content Include="Sample Files\Input Files\Test1.xml" />
     <Content Include="Sample Files\Input Files\TestCount.txt" />
     <Content Include="Sample Files\Input Files\TestEnvelope.xml" />
     <Content Include="Sample Files\Input Files\Test.txt" />
     <Content Include="Sample Files\Input Files\Test.xml" />
+    <Content Include="Sample Files\Input Files\TestEnvelope1.xml" />
     <Content Include="Sample Files\Input Files\Test_AddNodeIfNotThere.xml" />
     <Content Include="Sample Files\Input Files\Test_AddNodeWithNamespaceIfNotThere.xml" />
+    <Content Include="Sample Files\Input Files\Test_DisassembleXML.xml" />
     <Content Include="Sample Files\Input Files\Test_RemoveNamespace.xml" />
     <Content Include="Sample Files\Input Files\Test_ReplaceNamespace.xml" />
     <Content Include="Sample Files\Input Files\Test_ReplaceNamespaceWithNoPrefix.xml" />
     <Content Include="Sample Files\Input Files\Test_ReplacePrefixForGivenNamespace.xml" />
     <Content Include="Sample Files\Input Files\Test_UpdateAttributeDetails.xml" />
+    <Content Include="Sample Files\Input Files\Test_UpdateAttributeDetails2.xml" />
     <Content Include="Sample Files\Input Files\Test_UpdateElementValueByNodeName.xml" />
     <Content Include="Sample Files\Input Files\Test_UpdateElementValueByNodeNameAndOldValue.xml" />
+    <Content Include="Sample Files\Instance Config Files\Base Config No InstructionLoader.xml" />
     <Content Include="Sample Files\Instance Config Files\Base Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_AddCustomContextPropertyToCache_OverrideExpiryTimeSetPriorityDefault Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_AddCustomContextPropertyToCache_OverrideExpiryTimeSetPriorityNotRemovable Config.xml" />
@@ -205,6 +217,7 @@
     <Content Include="Sample Files\Instance Config Files\Test_BadMetaInstruction Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_ChainNamespaceModifications Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_Compensate Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_CustomMetaInstructionNoInstructionLoader Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_DeleteContextFromCache Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_DeleteContextFromCache_OverrideContextKey Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_DeleteStringFromCache Config.xml" />
@@ -269,6 +282,7 @@
     <Content Include="Sample Files\Instance Config Files\Test_TransformMessageNoMessageType Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_TransformMessageVaildateSourceIfKnown Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_TransformMessageVaildateSourceIfKnownTwice Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_TransformMessageWithDisassemble Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_TransformMessageWithoutValidation Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_TransformMessageWithoutValidationTwice Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_UncaughtPolicyException Config.xml" />

@@ -24,23 +24,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BRE Artifacts", "BRE Artifa
 		..\BRE Artifacts\All Test Artifacts.xml = ..\BRE Artifacts\All Test Artifacts.xml
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Policies", "Policies", "{5CDA994A-CB2C-4EB8-B994-B95A2CB9468F}"
-	ProjectSection(SolutionItems) = preProject
-		..\BRE Artifacts\Policies\BREPipelineFramework ExecutionPolicy.1.0.xml = ..\BRE Artifacts\Policies\BREPipelineFramework ExecutionPolicy.1.0.xml
-		..\BRE Artifacts\Policies\BREPipelineFramework ExecutionPolicy.1.1.xml = ..\BRE Artifacts\Policies\BREPipelineFramework ExecutionPolicy.1.1.xml
-		..\BRE Artifacts\Policies\BREPipelineFramework InstructionLoaderPolicy.1.0.xml = ..\BRE Artifacts\Policies\BREPipelineFramework InstructionLoaderPolicy.1.0.xml
-		..\BRE Artifacts\Policies\BREPipelineFramework InstructionLoaderPolicy.1.1.xml = ..\BRE Artifacts\Policies\BREPipelineFramework InstructionLoaderPolicy.1.1.xml
-		..\BRE Artifacts\Policies\BREPipelineFramework OverridePolicy.1.0.xml = ..\BRE Artifacts\Policies\BREPipelineFramework OverridePolicy.1.0.xml
-		..\BRE Artifacts\Policies\BREPipelineFramework OverridePolicy.1.1.xml = ..\BRE Artifacts\Policies\BREPipelineFramework OverridePolicy.1.1.xml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vocabularies", "Vocabularies", "{C289CC8D-F66D-4DF9-8493-C945C58BF380}"
-	ProjectSection(SolutionItems) = preProject
-		..\BRE Artifacts\Vocabularies\BREPipelineFramework.TestDatabase.1.0.xml = ..\BRE Artifacts\Vocabularies\BREPipelineFramework.TestDatabase.1.0.xml
-		..\BRE Artifacts\Vocabularies\BREPipelineFramework.TestSampleInstructions.MetaInstruction.1.0.xml = ..\BRE Artifacts\Vocabularies\BREPipelineFramework.TestSampleInstructions.MetaInstruction.1.0.xml
-		..\BRE Artifacts\Vocabularies\BREPipelineFramework.TypedXmlDocumentSamples.1.0.xml = ..\BRE Artifacts\Vocabularies\BREPipelineFramework.TypedXmlDocumentSamples.1.0.xml
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BREPipelineFramework.CustomBizUnitTestSteps", "..\BREPipelineFramework.CustomBizUnitTestSteps\BREPipelineFramework.CustomBizUnitTestSteps.csproj", "{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BREPipelineFramework.TestSampleInstructions", "..\BREPipelineFramework.TestSampleInstructions\BREPipelineFramework.TestSampleInstructions.csproj", "{4B694161-3047-4BE1-B4CC-A0ED192E45F7}"
@@ -90,9 +73,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{5CDA994A-CB2C-4EB8-B994-B95A2CB9468F} = {1D23B5AF-8FA0-4905-8A63-5F2837F23002}
-		{C289CC8D-F66D-4DF9-8493-C945C58BF380} = {1D23B5AF-8FA0-4905-8A63-5F2837F23002}
 	EndGlobalSection
 EndGlobal

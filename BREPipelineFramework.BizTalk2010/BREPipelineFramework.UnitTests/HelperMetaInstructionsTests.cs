@@ -37,9 +37,10 @@ namespace BREPipelineFramework.UnitTests
         [TestInitialize()]
         public void MyTestSetup()
         {
-            var oldCache = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache;
-            BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache = new MemoryCache("BREPipelineFramework.Cache", null);
-            oldCache.Dispose();
+            foreach (var element in MemoryCache.Default)
+            {
+                MemoryCache.Default.Remove(element.Key);
+            }
         }
 
         //Use TestCleanup to cleanup output files after each test has run
@@ -845,6 +846,27 @@ namespace BREPipelineFramework.UnitTests
         ///Tests that the TransformMessageWithoutValidation vocabulary definition fulfills it's function
         ///</summary>
         [TestMethod()]
+        public void Test_TransformMessageVaildateSourceIfKnownWithDisassemble()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_TransformMessageVaildateSourceIfKnown Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessageVaildateSourceIfKnown.xml";
+
+            string message2Type = "BREPipelineFramework.TestProject.Message2";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+            string XPathQuery1 = "boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='MessageType'][@Promoted='true'][@Namespace='http://schemas.microsoft.com/BizTalk/2003/system-properties'][@Value='http://BREPipelineFramework.TestProject.Message2#Message2'])";
+            string ExpectedValue1 = "True";
+            _XPathCollection.XPathQueryList.Add(XPathQuery1, ExpectedValue1);
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection, ExpectedOutputFileName:ExpectedOutputFileName, additionalInputType: message2Type);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that the TransformMessageWithoutValidation vocabulary definition fulfills it's function
+        ///</summary>
+        [TestMethod()]
         public void Test_TransformMessageVaildateSourceIfKnown()
         {
             string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
@@ -856,7 +878,7 @@ namespace BREPipelineFramework.UnitTests
             string ExpectedValue1 = "True";
             _XPathCollection.XPathQueryList.Add(XPathQuery1, ExpectedValue1);
 
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection, ExpectedOutputFileName:ExpectedOutputFileName);
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection, ExpectedOutputFileName: ExpectedOutputFileName);
             _BREPipelineFrameworkTest.RunTest();
         }
 
@@ -876,6 +898,25 @@ namespace BREPipelineFramework.UnitTests
             _BREPipelineFrameworkTest.RunTest();
         }
 
+        [TestMethod()]
+        public void Test_TransformMessageWithDisassemble()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_TransformMessageWithDisassemble Config.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessage.xml";
+
+            string message2Type = "BREPipelineFramework.TestProject.Message2";
+
+            string XPathQuery = "boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='NewProp'][@Promoted='true'][@Namespace='https://BREPipelineFramework.TestProject.BREPipelineFramework_PropSchema'][@Value='Hi'])";
+            string ExpectedValue = "True";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+            _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, ExpectedOutputFileName: ExpectedOutputFileName, additionalInputType: message2Type, contextXPathCollection: _XPathCollection);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
         /// <summary>
         ///Tests that the TransformMessage vocabulary definition fulfills it's function
         ///</summary>
@@ -884,7 +925,7 @@ namespace BREPipelineFramework.UnitTests
         {
             string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
             string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\Test_TransformMessage.xml";
-
+            
             XPathCollection _XPathCollection = new XPathCollection();
 
             var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, PipelineType:"BREPipelineFramework.TestProject.Rcv_TransformMessage", ExpectedOutputFileName:ExpectedOutputFileName);
@@ -983,6 +1024,38 @@ namespace BREPipelineFramework.UnitTests
             Assert.IsTrue(cacheItem4 == "1234", "Unexpected concatenated value found in cache - " + cacheItem4);
             Assert.IsTrue(cacheItem5 == "12345", "Unexpected concatenated value found in cache - " + cacheItem5);
             Assert.IsTrue(cacheItem6 == "123456", "Unexpected concatenated value found in cache - " + cacheItem6);
+        }
+
+        [TestMethod()]
+        public void Test_ReturnFirstRegexMatchInString()
+        {
+            string applicationContext = "Test_ReturnFirstRegexMatchInString";
+
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.txt";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, applicationContext);
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader);
+            _BREPipelineFrameworkTest.RunTest();
+
+            string cacheItem2 = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["2"].ToString();
+
+            Assert.IsTrue(cacheItem2 == "34Test", "Unexpected concatenated value found in cache - " + cacheItem2);
+        }
+
+        [TestMethod()]
+        public void Test_GetValueFromSSO()
+        {
+            string applicationContext = "Test_GetValueFromSSO";
+
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.txt";
+            DataLoaderBase InstanceConfigLoader = TestHelpers.CreateInstanceConfig(testContextInstance, applicationContext);
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, instanceConfigLoader: InstanceConfigLoader);
+            _BREPipelineFrameworkTest.RunTest();
+
+            string cacheItem2 = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["2"].ToString();
+
+            Assert.IsTrue(cacheItem2 == "TestSSO", "Unexpected concatenated value found in cache - " + cacheItem2);
         }
     }
 }
