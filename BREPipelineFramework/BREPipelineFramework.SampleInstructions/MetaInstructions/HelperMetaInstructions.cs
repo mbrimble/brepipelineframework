@@ -480,11 +480,15 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
         /// </summary>
         public void TransformMessageWithPromotion(string mapClassName, string mapAssemblyName, TransformationSourceSchemaValidation validation)
         {
+            SetContextPropertyPipelineInstruction noDebatchInstruction = new SetContextPropertyPipelineInstruction(BizTalkXMLNORMPropertySchemaEnum.PromotePropertiesOnly.ToString(),
+    ContextPropertyNamespaces._XMLNormPropertyNamespace, true, ContextInstructionTypeEnum.Write);
+            base.AddInstruction(noDebatchInstruction);
+
             TransformationInstruction instruction = new TransformationInstruction(mapClassName, mapAssemblyName, validation, CallToken);
             base.AddInstruction(instruction);
 
             ApplyXmlDisassemblerInstruction promotionInstruction = new ApplyXmlDisassemblerInstruction();
-            base.AddInstruction(instruction);
+            base.AddInstruction(promotionInstruction);
         }
 
         public bool TraceInfo(string infoToTrace)

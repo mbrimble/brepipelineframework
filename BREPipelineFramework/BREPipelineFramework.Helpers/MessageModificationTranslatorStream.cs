@@ -19,6 +19,8 @@ namespace BREPipelineFramework.Helpers
         private string callToken;
         private Stream inputStream;
         private bool skippingChildElements = false;
+        private string nameOfCurrentlySkippedChildElement = string.Empty;
+        private string namespaceOfCurrentlySkippedChildElement = string.Empty;
         
         public MessageModificationTranslatorStream(Stream stream, List<MessageModificationDetails> messageModificationInstructions, string callToken)
             : base(XmlReader.Create(stream))
@@ -60,10 +62,33 @@ namespace BREPipelineFramework.Helpers
                         skipElementTranslation = true;
                         break;
                     }
+                    case MessageModificationInstructionTypeEnum.RemoveElementAndChildElements:
+                    {
+                        if (messageModificationInstruction.Name != null)
+                        {
+                            if (messageModificationInstruction.Name != m_reader.LocalName)
+                            {
+                                break;
+                            }
+                        }
+
+                        if (messageModificationInstruction.Namespace != null)
+                        {
+                            if (messageModificationInstruction.Namespace != m_reader.NamespaceURI)
+                            {
+                                break;
+                            }
+                        }
+
+                        skippingChildElements = true;
+                        nameOfCurrentlySkippedChildElement = messageModificationInstruction.Name;
+                        namespaceOfCurrentlySkippedChildElement = messageModificationInstruction.Namespace;
+                        break;
+                    }
                 }
             }
 
-            if (!skipElementTranslation)
+            if (!skipElementTranslation && !skippingChildElements)
             {
                 base.TranslateElement();
             }
@@ -167,7 +192,10 @@ namespace BREPipelineFramework.Helpers
                 }
             }
 
-            base.TranslateStartElement(prefix, localName, nsURI);
+            if (!skippingChildElements)
+            {
+                base.TranslateStartElement(prefix, localName, nsURI);
+            }
         }
 
         protected override void TranslateText(string value)
@@ -228,10 +256,31 @@ namespace BREPipelineFramework.Helpers
                         skipTranslateText = true;
                         break;
                     }
+                    case MessageModificationInstructionTypeEnum.RemoveElementAndChildElements:
+                    {
+                        if (messageModificationInstruction.Name != null)
+                        {
+                            if (messageModificationInstruction.Name != lastNodeName)
+                            {
+                                break;
+                            }
+                        }
+
+                        if (messageModificationInstruction.Namespace != null)
+                        {
+                            if (messageModificationInstruction.Namespace != lastNodeNamespace)
+                            {
+                                break;
+                            }
+                        }
+
+                        skipTranslateText = true;
+                        break;
+                    }
                 }
             }
 
-            if (!skipTranslateText)
+            if (!skipTranslateText && !skippingChildElements)
             {
                 base.TranslateText(value);
             }
@@ -241,6 +290,7 @@ namespace BREPipelineFramework.Helpers
         {
             skipWhiteSpace = false;
             bool skipElementTranslation = false;
+            bool finalSkippingChildElement = false;
 
             foreach (MessageModificationDetails messageModificationInstruction in messageModificationInstructions)
             {
@@ -267,22 +317,54 @@ namespace BREPipelineFramework.Helpers
                         skipElementTranslation = true;
                         break;
                     }
+                    case MessageModificationInstructionTypeEnum.RemoveElementAndChildElements:
+                    {
+                        if (skippingChildElements)
+                        {
+                            if (messageModificationInstruction.Name != null)
+                            {
+                                if (messageModificationInstruction.Name != m_reader.LocalName)
+                                {
+                                    break;
+                                }
+                            }
+
+                            if (messageModificationInstruction.Namespace != null)
+                            {
+                                if (messageModificationInstruction.Namespace != m_reader.NamespaceURI)
+                                {
+                                    break;
+                                }
+                            }
+
+                            finalSkippingChildElement = true;
+                        }
+
+                        break;
+                    }
                 }
             }
 
-            if (!skipElementTranslation && !skippingChildElements)
+            if (!skipElementTranslation && !skippingChildElements && !skippingChildElements)
             {
                 base.TranslateEndElement(full);
             }
             else
             {
                 skipWhiteSpace = true;
+
+                if (skippingChildElements && finalSkippingChildElement)
+                {
+                    skippingChildElements = false;
+                    nameOfCurrentlySkippedChildElement = string.Empty;
+                    namespaceOfCurrentlySkippedChildElement = string.Empty;
+                }
             }
         }
 
         protected override void TranslateWhitespace(string space)
         {
-            if (!skipWhiteSpace)
+            if (!skipWhiteSpace && !skippingChildElements)
             {
                 base.TranslateWhitespace(space);
             }
@@ -333,7 +415,7 @@ namespace BREPipelineFramework.Helpers
                 }
             }
 
-            if (!skipAttributeTranslation)
+            if (!skipAttributeTranslation && !skippingChildElements)
             {
                 base.TranslateAttribute();
             }

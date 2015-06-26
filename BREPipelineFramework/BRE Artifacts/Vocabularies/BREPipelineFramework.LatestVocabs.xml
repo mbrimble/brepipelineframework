@@ -500,252 +500,6 @@
       </formatstring>
     </vocabularydefinition>
   </vocabulary>
-  <vocabulary id="98de3974-1805-40e0-82f2-d52df100812b" name="BREPipelineFramework.SampleInstructions.FlatFileInstructions" uri="" description="">
-    <version major="1" minor="0" description="" modifiedby="jcooper1982" date="2015-06-03T20:06:54.5452517+12:00" />
-    <vocabularydefinition id="9cf429b7-4006-4652-9353-6f1de3665c15" name="DisassembleFlatFileWithHeaderAndTrailer" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="DisassembleFlatFileWithHeaderAndTrailer" type="void">
-          <classinfo class="FlatFileMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="2">
-            <valuedefinitionliteral type="boolean">
-              <boolean>false</boolean>
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="3">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Run the flat file assembler against the current message with document schema {0}, header schema {1} and trailer schema {3}.  Preserve headers = {2}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="2">
-          <valuedefinitionliteral type="boolean">
-            <boolean>false</boolean>
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="3">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="133329f7-8c75-4b92-9216-720103ea8e37" name="DisassembleFlatFileWithTrailer" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="DisassembleFlatFileWithTrailer" type="void">
-          <classinfo class="FlatFileMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Run the flat file assembler against the current message with document schema {0} and trailer schema {1}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="6bc86a19-6de3-4c4e-a420-2b1a48f595dd" name="DisassembleFlatFileWithHeader" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="DisassembleFlatFileWithHeader" type="void">
-          <classinfo class="FlatFileMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="2">
-            <valuedefinitionliteral type="boolean">
-              <boolean>false</boolean>
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Run the flat file assembler against the current message with document schema {0} and header schema {1}.  Preserve headers = {2}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="2">
-          <valuedefinitionliteral type="boolean">
-            <boolean>false</boolean>
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="37a848f0-15bd-4e3b-8813-bbf45f6479af" name="AssembleFlatFileWithHeader" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="AssembleFlatFileWithHeader" type="void">
-          <classinfo class="FlatFileMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Run the flat file assembler against the current message with header schema {0}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="2745a0d0-1d9b-4f6c-8591-f3e0a854ebf1" name="AssembleFlatFile" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="AssembleFlatFile" type="void">
-          <classinfo class="FlatFileMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Run the flat file assembler against the current message" />
-    </vocabularydefinition>
-    <vocabularydefinition id="351bcf58-ae5f-4fdf-893f-22f43c2ae93f" name="DisassembleFlatFile" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="DisassembleFlatFile" type="void">
-          <classinfo class="FlatFileMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Run the flat file assembler against the current message with document schema {0}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="45b51a8a-50ac-421b-8f23-9f4bf8e61e82" name="AssembleFlatFileWithHeaderAndTrailer" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="AssembleFlatFileWithHeaderAndTrailer" type="void">
-          <classinfo class="FlatFileMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Run the flat file assembler against the current message with header schema {0} and trailer schema {1}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="ff06e771-d0e0-4e5d-bdee-a39176bfc9e5" name="AssembleFlatFileWithTrailer" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="AssembleFlatFileWithTrailer" type="void">
-          <classinfo class="FlatFileMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Run the flat file assembler against the current message with trailer schema {0}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-  </vocabulary>
   <vocabulary id="d892a25c-a516-4db9-b606-13c1f5954575" name="BREPipelineFramework" uri="" description="">
     <version major="1" minor="2" description="" modifiedby="DATACOM\johannc" date="2014-05-31T23:09:08.0001328+12:00" />
     <vocabularydefinition id="f867a0df-e68b-43f3-a46f-6f5e899a938a" name="CheckIfRegexEvaluatesInMessage" description="">
@@ -1139,6 +893,1214 @@
       </formatstring>
     </vocabularydefinition>
   </vocabulary>
+  <vocabulary id="bdaf5a15-ee56-48f9-a75b-c0ee8bc372ad" name="BREPipelineFramework.SampleInstructions.PipelineInstructions" uri="" description="">
+    <version major="1" minor="0" description="" modifiedby="jcooper1982" date="2015-06-07T20:46:40.4826343+12:00" />
+    <vocabularydefinition id="b6f23734-60d3-4c0f-92e1-a2c37866c96f" name="DisassembleFlatFileWithHeaderAndTrailer" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="DisassembleFlatFileWithHeaderAndTrailer" type="void">
+          <classinfo class="PipelineMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="boolean">
+              <boolean>false</boolean>
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="3">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Run the flat file disassembler against the current message with document schema {0}, header schema {1} and trailer schema {3}.  Preserve headers = {2}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="boolean">
+            <boolean>false</boolean>
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="3">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="cf1d640b-2adc-47b2-aa3d-a757629eb512" name="DisassembleFlatFileWithTrailer" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="DisassembleFlatFileWithTrailer" type="void">
+          <classinfo class="PipelineMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Run the flat file disassembler against the current message with document schema {0} and trailer schema {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="5512b016-beb6-4bca-9b89-6bb373b25ff2" name="DisassembleFlatFileWithHeader" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="DisassembleFlatFileWithHeader" type="void">
+          <classinfo class="PipelineMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="boolean">
+              <boolean>false</boolean>
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Run the flat file disassembler against the current message with document schema {0} and header schema {1}.  Preserve headers = {2}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="boolean">
+            <boolean>false</boolean>
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="1e1aec81-fdf9-454d-9f7a-9a026486fff8" name="AssembleXMLMessageWithEnvelope" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AssembleXMLMessageWithEnvelope" type="void">
+          <classinfo class="PipelineMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Run the XML assembler against the message with an envelope schema of {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="0b67ee39-eeee-47d3-a09e-c21dbe205bef" name="AssembleFlatFileWithHeader" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AssembleFlatFileWithHeader" type="void">
+          <classinfo class="PipelineMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Run the flat file assembler against the current message with header schema {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="879ac65b-8a34-4ca2-8a07-73861c32bf98" name="ValidateMessage" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ValidateMessage" type="void">
+          <classinfo class="PipelineMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Run the XML validator against the message" />
+    </vocabularydefinition>
+    <vocabularydefinition id="8f84b5aa-dff6-4210-a433-de59f9aad3f1" name="AssembleFlatFile" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AssembleFlatFile" type="void">
+          <classinfo class="PipelineMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Run the flat file assembler against the current message" />
+    </vocabularydefinition>
+    <vocabularydefinition id="d115793f-a341-43fe-b60e-5fe46c48cdda" name="DisassembleXMLMessagePropertyPromotionOnly" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="DisassembleXMLMessagePropertyPromotionOnly" type="void">
+          <classinfo class="PipelineMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Run the XML disassembler against the message with property promotion only" />
+    </vocabularydefinition>
+    <vocabularydefinition id="42b721a2-34d6-42e0-88f3-c7710aacbad2" name="DisassembleXMLMessage" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="DisassembleXMLMessage" type="void">
+          <classinfo class="PipelineMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Run the XML disassembler against the message" />
+    </vocabularydefinition>
+    <vocabularydefinition id="471d941c-9217-4bde-956e-396851ee63d9" name="DisassembleFlatFile" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="DisassembleFlatFile" type="void">
+          <classinfo class="PipelineMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Run the flat file disassembler against the current message with document schema {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="99deb997-6fb3-408f-8c42-9df0c089ed46" name="AssembleFlatFileWithHeaderAndTrailer" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AssembleFlatFileWithHeaderAndTrailer" type="void">
+          <classinfo class="PipelineMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Run the flat file assembler against the current message with header schema {0} and trailer schema {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="ab7d0636-caee-42a9-b83b-bfffa16efcd5" name="AssembleFlatFileWithTrailer" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AssembleFlatFileWithTrailer" type="void">
+          <classinfo class="PipelineMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Run the flat file assembler against the current message with trailer schema {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+  </vocabulary>
+  <vocabulary id="e9c25d78-6754-4cb3-8d3e-73f8ad91df31" name="BREPipelineFramework.SampleInstructions.XMLTranslatorInstructions" uri="" description="">
+    <version major="1" minor="1" description="" modifiedby="jcooper1982" date="2015-06-22T21:58:58.8564233+12:00" />
+    <vocabularydefinition id="38a1b09e-3fec-476f-9d5b-bad458f72a73" name="SetMessageModificationInstructionPriority" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="SetMessageModificationInstructionPriority" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Set the instruction priority for the MessageModificationTranslatorStream such that it's corresponding instruction gets moved to the back of the current instruction queue" />
+    </vocabularydefinition>
+    <vocabularydefinition id="35db1ff5-9c8c-4c28-9a10-1439dfa2d140" name="RemoveElementByName" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="RemoveElementByName" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Remove all elements with a name of {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="1c9e3ed7-fe94-4fca-a187-edfcdaf54a48" name="ReplaceRootNodeNamespace" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ReplaceRootNodeNamespace" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Replace the current target namespace at the root node of the XML message with {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="0c889212-147b-404b-94da-4effbefee008" name="AddRootNodeNamespaceIfNoneExists" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AddRootNodeNamespace" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Add the target namespace {0} to the root node of the XML message if one doesn't already exist" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="2821a6af-2e16-4597-8a07-c6651c10c112" name="UpdateElementNameByOldNameAndNamespace" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="UpdateElementNameByOldNameAndNamespace" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Update all element names to {2} where they are currently named {0} and have a namespace of {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="28eb6ee5-9e7d-4cb6-9831-bee59b8357fc" name="UpdateElementValueByNodeNameAndOldValue" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="UpdateElementValueByNodeNameAndOldValue" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Update all element values to {2} where they are currently named {0} and have a value of {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="4b3c7ea0-2d21-479d-badd-8123eafe1742" name="UpdateAttributeValueByName" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="UpdateAttributeValueByName" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Update all attribute values to {1} where they are currently named {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="0c1c290f-69df-40e7-827f-95e723e47994" name="UpdateElementValueByNodeNameNamespaceAndOldValue" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="UpdateElementValueByNodeNameNamespaceAndOldValue" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="3">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Update all element values to {3} where they are currently named {0} with a namespace of {1} and have a value of {2}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="3">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="caa7c16d-0248-43ad-95d1-aeb4fc297b29" name="ReplaceNamespace" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ReplaceNamespace" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Replace the namespace {0} with {1} in the XML message" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="efdeb206-9551-4d4a-8526-506edac85329" name="RemoveNamespace" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="RemoveNamespace" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Remove the namespace {0} from the XML message" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="e7abe3fc-1eca-4f4a-a754-16f6d8f23139" name="ReplaceRootNodeNamespaceAndPrefix" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ReplaceRootNodeNamespaceAndPrefix" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Replace the target namespace and the prefix at the root node of the XML document with {0} and {1} respectively" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="e1bb5740-3844-40a7-bab1-e0667931bdb8" name="UpdateElementNameByOldName" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="UpdateElementNameByOldName" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Update all element names to {1} where they are currently named {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="71749c1c-483f-480c-bd0d-c3feaf045703" name="UpdateElementValueByNodeName" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="UpdateElementValueByNodeName" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Update all element values to {1} where they are currently named {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="a68c5007-dd49-49d7-b18f-5d455ce1b222" name="RemoveElementAndChildrenByName" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="RemoveElementAndChildrenByName" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Remove all elements (and contained children) with a name of {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="198f5ef1-fe0b-492c-a38c-604906e52a13" name="UpdateElementValueByOldValue" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="UpdateElementValueByOldValue" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Update all element values to {1} where they currently have a value of {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="0ff55040-cc60-468f-9572-38fa36e61a5a" name="ReplacePrefixForGivenNamespace" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ReplacePrefixForGivenNamespace" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Replace the namespace prefix for the namespace {0} with {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="14cb9147-839f-4b7d-afd7-d54f48cd67ab" name="RemoveElementByNameAndNamespace" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="RemoveElementByNameAndNamespace" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Remove all elements with a name of {1} and a namespace of {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="cc433f71-d7a1-4e7f-bee9-57e836c1f3e5" name="UpdateAttributeNameByOldName" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="UpdateAttributeNameByName" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Update all attribute names to {1} where they are currently named {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="e6e5120f-2458-4f75-9cbb-e6d2c1215ac8" name="RemoveElementAndChildrenByNameAndNamespace" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="RemoveElementAndChildrenByNameAndNamespace" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Remove all elements (and contained children) with a name of {1} and a namespace of {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="ec668bee-7a25-4802-918c-b49affcd059a" name="AddRootNodeNamespaceAndPrefixIfNoneExists" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AddRootNodeNamespaceAndPrefix" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Add the target namespace {0} with the prefix {1} to the root node of the XML message if one doesn't already exist" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="26ad8291-1d9c-4237-b808-01d922445d67" name="UpdateAttributeValueByNameAndNamespace" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="UpdateAttributeValueByNameAndNamespace" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Update all attribute values to {2} where they are currently named {0} and have a namespace of {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="04a19bb6-992a-4daf-ba17-80046a443cb6" name="UpdateAttributeValueByNameAndOldValue" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="UpdateAttributeValueByNameAndOldValue" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Update all attribute values to {2} where they are currently named {1} and have a value of {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="17b33d57-b4a3-4bc4-a4bb-fe63044b322c" name="ReplaceNamespaceAndPrefix" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ReplaceNamespaceAndPrefix" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Replace the namespace {0} with {1} in the XML message and update it's prefix to {2}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="651d3362-4558-47f0-8d6b-cb920e98d904" name="RemoveAttributeByNameAndNamespace" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="RemoveAttributeByNameAndNamespace" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Remove all attributes with a name of {0} and a namespace of {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="c65e0df5-75dc-415f-8f7b-a81cc674b5c6" name="UpdateElementValueByNodeNameAndNamespace" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="UpdateElementValueByNodeNameAndNamespace" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Update all element values to {2} where they are currently named {0} and have a namespace of {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="a999b016-b0f2-409b-96d7-d60e581d1393" name="RemoveAttributeByName" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="RemoveAttributeByName" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Remove all attributes with a name of {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="afae7832-e3ef-4687-91f2-ea664c9209f4" name="UpdateAttributeNameByNameAndNamespace" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="UpdateAttributeNameByNameAndNamespace" type="void">
+          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
+            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
+            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="2">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Update all attribute names to {1} where they are currently named {0} and have a namespace of {2}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="2">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+  </vocabulary>
   <vocabulary id="717b92e1-b3b8-4fd7-bf41-5eff1eba4b63" name="BREPipelineFramework.SampleInstructions.XMLInstructions" uri="" description="">
     <version major="1" minor="0" description="" modifiedby="DATACOM\johannc" date="2014-05-20T21:35:05.7649882+12:00" />
     <vocabularydefinition id="afe88806-17a8-45d4-bcb1-874af3eeac46" name="AddNodeWithValue" description="">
@@ -1481,853 +2443,6 @@
         </classmemberbindingdefinition>
       </bindingdefinition>
       <formatstring language="en-US" string="Apply the Typed Xml Document to the BizTalk message body" />
-    </vocabularydefinition>
-  </vocabulary>
-  <vocabulary id="f989dde8-420a-45fb-858b-18590cdeb77e" name="BREPipelineFramework.SampleInstructions.XMLTranslatorInstructions" uri="" description="">
-    <version major="1" minor="0" description="" modifiedby="DATACOM\JohannC" date="2014-06-23T16:23:53.4856933+12:00" />
-    <vocabularydefinition id="b2887423-4d1f-469e-97b3-f5b19535545e" name="ReplaceNamespace" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="ReplaceNamespace" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Replace the namespace {0} with {1} in the XML message" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="e22fd1a6-f2d3-476b-9c67-6381df938a44" name="UpdateAttributeValueByName" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="UpdateAttributeValueByName" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Update all attribute values to {1} where they are currently named {0}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="47b71ec9-7e0a-4c9e-b62f-a531db790183" name="UpdateAttributeNameByOldName" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="UpdateAttributeNameByName" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Update all attribute names to {1} where they are currently named {0}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="e2ee8e82-aabd-415c-b02d-9a1eb134adc2" name="SetMessageModificationInstructionPriority" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="SetMessageModificationInstructionPriority" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Set the instruction priority for the MessageModificationTranslatorStream such that it's corresponding instruction gets moved to the back of the current instruction queue" />
-    </vocabularydefinition>
-    <vocabularydefinition id="e1f09600-3f87-4cf6-a8b3-96c0b5cc9942" name="ReplacePrefixForGivenNamespace" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="ReplacePrefixForGivenNamespace" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Replace the namespace prefix for the namespace {0} with {1}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="3152feab-9940-4904-99ea-afcf465e0e6e" name="UpdateElementValueByOldValue" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="UpdateElementValueByOldValue" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Update all element values to {1} where they currently have a value of {0}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="29ab1de6-a788-4bc3-9f43-26e46e725d2c" name="UpdateElementNameByOldName" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="UpdateElementNameByOldName" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Update all element names to {1} where they are currently named {0}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="bd2ea6f5-e79a-44ac-848b-d62d760df42e" name="AddRootNodeNamespaceAndPrefixIfNoneExists" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="AddRootNodeNamespaceAndPrefix" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Add the target namespace {0} with the prefix {1} to the root node of the XML message if one doesn't already exist" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="1bb9a299-0a9c-4b6e-b6fe-3e8d2214398d" name="UpdateElementValueByNodeName" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="UpdateElementValueByNodeName" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Update all element values to {1} where they are currently named {0}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="1602e4fa-5530-49c5-9f44-d2f320266564" name="UpdateAttributeNameByNameAndNamespace" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="UpdateAttributeNameByNameAndNamespace" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="2">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Update all attribute names to {1} where they are currently named {0} and have a namespace of {2}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="2">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="ed3f1100-026d-4481-b11e-c50556ad1f5a" name="RemoveElementByName" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="RemoveElementByName" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Remove all elements with a name of {0}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="e173d4fe-3f54-42ed-bad2-5b3bcb7634c6" name="RemoveNamespace" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="RemoveNamespace" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Remove the namespace {0} from the XML message" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="9cc0b6f5-2c97-4209-8b7c-c8ab620e3cab" name="UpdateAttributeValueByNameAndNamespace" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="UpdateAttributeValueByNameAndNamespace" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="2">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Update all attribute values to {2} where they are currently named {0} and have a namespace of {1}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="2">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="76f18486-3af9-4881-acce-51aa760a25a6" name="RemoveAttributeByName" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="RemoveAttributeByName" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Remove all attributes with a name of {0}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="fba5633a-0a29-4882-92a0-ebce19d5c57b" name="UpdateElementValueByNodeNameAndOldValue" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="UpdateElementValueByNodeNameAndOldValue" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="2">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Update all element values to {2} where they are currently named {0} and have a value of {1}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="2">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="0db4590f-6359-4459-a2d7-6d29a9e5eaa1" name="UpdateElementValueByNodeNameNamespaceAndOldValue" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="UpdateElementValueByNodeNameNamespaceAndOldValue" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="2">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="3">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Update all element values to {3} where they are currently named {0} with a namespace of {1} and have a value of {2}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="2">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="3">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="10a3918f-22b1-42c6-9f02-45111b94ab07" name="ReplaceRootNodeNamespace" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="ReplaceRootNodeNamespace" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Replace the current target namespace at the root node of the XML message with {0}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="71e8185b-88ea-4ab5-a997-acf85bbb792e" name="UpdateAttributeValueByNameAndOldValue" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="UpdateAttributeValueByNameAndOldValue" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="2">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Update all attribute values to {2} where they are currently named {1} and have a value of {0}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="2">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="9bace7e8-33ae-4ca8-b132-37e69070f793" name="AddRootNodeNamespaceIfNoneExists" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="AddRootNodeNamespace" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Add the target namespace {0} to the root node of the XML message if one doesn't already exist" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="e250246b-2713-4e0c-bb81-b8d303a45c3e" name="UpdateElementNameByOldNameAndNamespace" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="UpdateElementNameByOldNameAndNamespace" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="2">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Update all element names to {2} where they are currently named {0} and have a namespace of {1}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="2">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="bbfb179d-9861-4991-a200-48bd7bbb90ea" name="UpdateElementValueByNodeNameAndNamespace" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="UpdateElementValueByNodeNameAndNamespace" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="2">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Update all element values to {2} where they are currently named {0} and have a namespace of {1}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="2">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="bd1ece72-c39d-429b-b1c5-b6d7d49ed2ab" name="RemoveAttributeByNameAndNamespace" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="RemoveAttributeByNameAndNamespace" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Remove all attributes with a name of {0} and a namespace of {1}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="555ff4bb-2235-4f23-a5bb-9725df1d99d1" name="ReplaceNamespaceAndPrefix" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="ReplaceNamespaceAndPrefix" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="2">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Replace the namespace {0} with {1} in the XML message and update it's prefix to {2}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="2">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="3c028f31-2147-47c2-a83c-7ab431979351" name="RemoveElementByNameAndNamespace" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="RemoveElementByNameAndNamespace" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Remove all elements with a name of {1} and a namespace of {0}" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
-    </vocabularydefinition>
-    <vocabularydefinition id="2c8ea78f-7826-497c-83d1-883cf1ca00fa" name="ReplaceRootNodeNamespaceAndPrefix" description="">
-      <bindingdefinition>
-        <classmemberbindingdefinition member="ReplaceRootNodeNamespaceAndPrefix" type="void">
-          <classinfo class="XMLTranslatorMetaInstructions" instance="0">
-            <assembly>BREPipelineFramework.SampleInstructions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
-            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.SampleInstructions\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.SampleInstructions.dll-->
-            <namespace>BREPipelineFramework.SampleInstructions.MetaInstructions</namespace>
-          </classinfo>
-          <argument position="0">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-          <argument position="1">
-            <valuedefinitionliteral type="string">
-              <string />
-            </valuedefinitionliteral>
-          </argument>
-        </classmemberbindingdefinition>
-      </bindingdefinition>
-      <formatstring language="en-US" string="Replace the target namespace and the prefix at the root node of the XML document with {0} and {1} respectively" delimiter="{[0-9]+}">
-        <argument position="0">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-        <argument position="1">
-          <valuedefinitionliteral type="string">
-            <string />
-          </valuedefinitionliteral>
-        </argument>
-      </formatstring>
     </vocabularydefinition>
   </vocabulary>
   <vocabulary id="f3fb93a9-fb39-4ae6-858e-b9a36b66d4f4" name="BREPipelineFramework.SampleInstructions.ContextInstructions" uri="" description="">

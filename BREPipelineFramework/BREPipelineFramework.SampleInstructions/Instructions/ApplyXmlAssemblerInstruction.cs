@@ -15,6 +15,7 @@ namespace BREPipelineFramework.SampleInstructions.Instructions
         {
             assembler.EnvelopeDocSpecNames = new Microsoft.BizTalk.Component.Utilities.SchemaList();
             assembler.EnvelopeDocSpecNames.Add(new Microsoft.BizTalk.Component.Utilities.Schema(envelopeSpecName));
+            assembler.AddXMLDeclaration = false;
         }
 
         public void Execute(ref Microsoft.BizTalk.Message.Interop.IBaseMessage inmsg, Microsoft.BizTalk.Component.Interop.IPipelineContext pc)

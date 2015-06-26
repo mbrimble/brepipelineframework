@@ -14,6 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vocabularies", "Vocabularie
 		BRE Artifacts\Vocabularies\BREPipelineFramework.1.1.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.1.1.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.1.2.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.1.2.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.AllVocabs.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.AllVocabs.xml
+		BRE Artifacts\Vocabularies\BREPipelineFramework.LatestVocabs.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.LatestVocabs.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.CachingInstructions.1.0.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.CachingInstructions.1.0.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.CachingInstructions.1.1.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.CachingInstructions.1.1.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.CachingInstructions.1.2.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.CachingInstructions.1.2.xml
@@ -31,8 +32,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vocabularies", "Vocabularie
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.HelperInstructions.1.6.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.HelperInstructions.1.6.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.HttpHeaderInstructions.1.0.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.HttpHeaderInstructions.1.0.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.PartInstructions.1.0.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.PartInstructions.1.0.xml
+		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.PipelineInstructions.1.0.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.PipelineInstructions.1.0.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.XMLInstructions.1.0.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.XMLInstructions.1.0.xml
 		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.XMLTranslatorInstructions.1.0.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.XMLTranslatorInstructions.1.0.xml
+		BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.XMLTranslatorInstructions.1.1.xml = BRE Artifacts\Vocabularies\BREPipelineFramework.SampleInstructions.XMLTranslatorInstructions.1.1.xml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BREPipelineFramework", "BREPipelineFramework\BREPipelineFramework.csproj", "{F59789A2-DB48-48BE-A971-2E185D406F3B}"

@@ -173,7 +173,19 @@ namespace BREPipelineFramework.SampleInstructions.MetaInstructions
 
         public void RemoveElementByNameAndNamespace(string _namespace, string name)
         {
-            MessageModificationDetails messageModificationInstruction = new MessageModificationDetails(MessageModificationInstructionTypeEnum.RemoveElement, name: name, _namespace:_namespace);
+            MessageModificationDetails messageModificationInstruction = new MessageModificationDetails(MessageModificationInstructionTypeEnum.RemoveElement, name: name, _namespace: _namespace);
+            AddMessageModificationInstruction(messageModificationInstruction);
+        }
+
+        public void RemoveElementAndChildrenByNameAndNamespace(string _namespace, string name)
+        {
+            MessageModificationDetails messageModificationInstruction = new MessageModificationDetails(MessageModificationInstructionTypeEnum.RemoveElementAndChildElements, name: name, _namespace:_namespace);
+            AddMessageModificationInstruction(messageModificationInstruction);
+        }
+
+        public void RemoveElementAndChildrenByName(string name)
+        {
+            MessageModificationDetails messageModificationInstruction = new MessageModificationDetails(MessageModificationInstructionTypeEnum.RemoveElementAndChildElements, name: name);
             AddMessageModificationInstruction(messageModificationInstruction);
         }
 

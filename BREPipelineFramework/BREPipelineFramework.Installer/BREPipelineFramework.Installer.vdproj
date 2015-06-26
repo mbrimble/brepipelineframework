@@ -249,6 +249,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_33D6BA98C8674549814CD477A27115E7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_4996017CC792E31CBE8E4179CC6ED999"
         "OwnerKey" = "8:_28C9460270364816BB4A28C591A59E9E"
         "MsmSig" = "8:_UNDEFINED"
@@ -334,12 +340,6 @@
         "Entry"
         {
         "MsmKey" = "8:_4BA62C45956D47E1BBD6A6A0EE4812CD"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4F3132BBDDCD490BB7DBF48E77DE9133"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1318,6 +1318,12 @@
         "Entry"
         {
         "MsmKey" = "8:_9BCE9E36EBAD4E20827B6E963C1D19E5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9F13829821B6429BA1620929A1FB3A83"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2687,6 +2693,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_33D6BA98C8674549814CD477A27115E7"
+            {
+            "SourcePath" = "8:..\\BRE Artifacts\\Vocabularies\\BREPipelineFramework.SampleInstructions.PipelineInstructions.1.0.xml"
+            "TargetName" = "8:BREPipelineFramework.SampleInstructions.PipelineInstructions.1.0.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_72567DAD514A420197767EFAAA8FDC2C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4996017CC792E31CBE8E4179CC6ED999"
             {
             "AssemblyRegister" = "3:1"
@@ -2722,26 +2748,6 @@
             {
             "SourcePath" = "8:..\\BRE Artifacts\\Vocabularies\\BREPipelineFramework.SampleInstructions.XMLTranslatorInstructions.1.0.xml"
             "TargetName" = "8:BREPipelineFramework.SampleInstructions.XMLTranslatorInstructions.1.0.xml"
-            "Tag" = "8:"
-            "Folder" = "8:_72567DAD514A420197767EFAAA8FDC2C"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4F3132BBDDCD490BB7DBF48E77DE9133"
-            {
-            "SourcePath" = "8:..\\BRE Artifacts\\Vocabularies\\BREPipelineFramework.SampleInstructions.FlatFileInstructions.1.0.xml"
-            "TargetName" = "8:BREPipelineFramework.SampleInstructions.FlatFileInstructions.1.0.xml"
             "Tag" = "8:"
             "Folder" = "8:_72567DAD514A420197767EFAAA8FDC2C"
             "Condition" = "8:"
@@ -3263,6 +3269,26 @@
             {
             "SourcePath" = "8:..\\BRE Artifacts\\Vocabularies\\BREPipelineFramework.1.0.xml"
             "TargetName" = "8:BREPipelineFramework.1.0.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_72567DAD514A420197767EFAAA8FDC2C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9F13829821B6429BA1620929A1FB3A83"
+            {
+            "SourcePath" = "8:..\\BRE Artifacts\\Vocabularies\\BREPipelineFramework.SampleInstructions.XMLTranslatorInstructions.1.1.xml"
+            "TargetName" = "8:BREPipelineFramework.SampleInstructions.XMLTranslatorInstructions.1.1.xml"
             "Tag" = "8:"
             "Folder" = "8:_72567DAD514A420197767EFAAA8FDC2C"
             "Condition" = "8:"
@@ -3922,7 +3948,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:BizTalk Business Rules Engine Pipeline Framework"
         "ProductCode" = "8:{93B665E4-5402-4B11-845B-98B13CBC52DC}"
-        "PackageCode" = "8:{5B6AC491-E51C-4566-A43A-72C1B4A0C341}"
+        "PackageCode" = "8:{0387045F-2BC7-4609-B69A-4CEEC0AABE32}"
         "UpgradeCode" = "8:{87F5CF6F-1C19-4083-AF24-988EC285D744}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -4443,7 +4469,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_28C9460270364816BB4A28C591A59E9E"
             {
-            "SourcePath" = "8:..\\BREPipelineFramework.SampleInstructions\\obj\\Debug\\BREPipelineFramework.SampleInstructions.dll"
+            "SourcePath" = "8:..\\BREPipelineFramework.SampleInstructions\\obj\\Release\\BREPipelineFramework.SampleInstructions.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1E1E54684044486B87DC32898EA19297"
@@ -4471,7 +4497,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_4BA62C45956D47E1BBD6A6A0EE4812CD"
             {
-            "SourcePath" = "8:..\\BREPipelineFramework.PipelineComponents.BREPipelineFrameworkComponent\\obj\\Debug\\BREPipelineFrameworkComponent.dll"
+            "SourcePath" = "8:..\\BREPipelineFramework.PipelineComponents.BREPipelineFrameworkComponent\\obj\\Release\\BREPipelineFrameworkComponent.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1E1E54684044486B87DC32898EA19297"
@@ -4499,7 +4525,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_5D5C04ED6CC54E0082DD11CD8951BE4B"
             {
-            "SourcePath" = "8:..\\BREPipelineFramework.PipelineComponents.BREPipelineFrameworkComponent\\obj\\Debug\\BREPipelineFrameworkComponent.dll"
+            "SourcePath" = "8:..\\BREPipelineFramework.PipelineComponents.BREPipelineFrameworkComponent\\obj\\Release\\BREPipelineFrameworkComponent.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_87B5100C0F384260AA5A7E0551EE506F"
@@ -4527,7 +4553,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_63CA8DF160B246FD80816CB8C991405D"
             {
-            "SourcePath" = "8:..\\BREPipelineFramework.SampleInstructions\\obj\\Debug\\BREPipelineFramework.SampleInstructions.dll"
+            "SourcePath" = "8:..\\BREPipelineFramework.SampleInstructions\\obj\\Release\\BREPipelineFramework.SampleInstructions.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_87B5100C0F384260AA5A7E0551EE506F"
@@ -4555,7 +4581,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_6B8BE437563D436B887F15E629668CA1"
             {
-            "SourcePath" = "8:..\\BREPipelineFramework.PipelineComponents.BREPipelineFrameworkComponent\\obj\\Debug\\BREPipelineFrameworkComponent.dll"
+            "SourcePath" = "8:..\\BREPipelineFramework.PipelineComponents.BREPipelineFrameworkComponent\\obj\\Release\\BREPipelineFrameworkComponent.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_393985F866D24049B4E6C2E6E659F36B"
@@ -4583,7 +4609,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_81C3F34F912641C089D5C8F5A254DF74"
             {
-            "SourcePath" = "8:..\\BREPipelineFramework.Helpers\\obj\\Debug\\BREPipelineFramework.Helpers.dll"
+            "SourcePath" = "8:..\\BREPipelineFramework.Helpers\\obj\\Release\\BREPipelineFramework.Helpers.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_87B5100C0F384260AA5A7E0551EE506F"
@@ -4611,7 +4637,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_88AA248BD7D1458BA2DE61BF9759097C"
             {
-            "SourcePath" = "8:..\\BREPipelineFramework.PipelineComponents.BREPipelineFrameworkComponent\\obj\\Debug\\BREPipelineFrameworkComponent.dll"
+            "SourcePath" = "8:..\\BREPipelineFramework.PipelineComponents.BREPipelineFrameworkComponent\\obj\\Release\\BREPipelineFrameworkComponent.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_FDCAFFBCB3E24FC5BA99D1B22F7640CE"
@@ -4639,7 +4665,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A8D5E072CD9F4A3D839DCA5180BE92A5"
             {
-            "SourcePath" = "8:..\\BREPipelineFramework.Helpers\\obj\\Debug\\BREPipelineFramework.Helpers.dll"
+            "SourcePath" = "8:..\\BREPipelineFramework.Helpers\\obj\\Release\\BREPipelineFramework.Helpers.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1E1E54684044486B87DC32898EA19297"
@@ -4667,7 +4693,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A9B074EED619485FB67AB9116006233B"
             {
-            "SourcePath" = "8:..\\BREPipelineFramework\\obj\\Debug\\BREPipelineFramework.dll"
+            "SourcePath" = "8:..\\BREPipelineFramework\\obj\\Release\\BREPipelineFramework.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1E1E54684044486B87DC32898EA19297"
@@ -4695,7 +4721,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_B7A6006E5D9B4F2182EE0F00EC980E9C"
             {
-            "SourcePath" = "8:..\\BREPipelineFramework.PipelineComponents.BREPipelineFrameworkComponent\\obj\\Debug\\BREPipelineFrameworkComponent.dll"
+            "SourcePath" = "8:..\\BREPipelineFramework.PipelineComponents.BREPipelineFrameworkComponent\\obj\\Release\\BREPipelineFrameworkComponent.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_155BAF4D4FC34611ABC6D69AE77B419A"
@@ -4723,7 +4749,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_B9697B50024D4296B23E3F7FF24D728D"
             {
-            "SourcePath" = "8:..\\BREPipelineFramework\\obj\\Debug\\BREPipelineFramework.dll"
+            "SourcePath" = "8:..\\BREPipelineFramework\\obj\\Release\\BREPipelineFramework.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_87B5100C0F384260AA5A7E0551EE506F"
@@ -4751,7 +4777,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_C0596F2263444A7E91ED542060F7C8CF"
             {
-            "SourcePath" = "8:..\\BREPipelineFramework.PipelineComponents.BREPipelineFrameworkComponent\\obj\\Debug\\BREPipelineFrameworkComponent.dll"
+            "SourcePath" = "8:..\\BREPipelineFramework.PipelineComponents.BREPipelineFrameworkComponent\\obj\\Release\\BREPipelineFrameworkComponent.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_E8AF82D36A4F4E0BBE80882AAA423869"
@@ -4779,7 +4805,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D4711DFF145A40A3A9F1307568D3F475"
             {
-            "SourcePath" = "8:..\\BREPipelineFramework.PipelineComponents.BREPipelineFrameworkComponent\\obj\\Debug\\BREPipelineFrameworkComponent.dll"
+            "SourcePath" = "8:..\\BREPipelineFramework.PipelineComponents.BREPipelineFrameworkComponent\\obj\\Release\\BREPipelineFrameworkComponent.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_27076163ED074C63B4C31CABDCFCE93E"
