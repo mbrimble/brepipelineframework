@@ -1,0 +1,3 @@
+﻿<ns0:Envelope xmlns:ns0="http://BREPipelineFramework"><ns0:Messages><ns0:Sample xmlns:ns0="http://BREPipelineFramework.TestProject.Sample_FF">
+  <Body>TestBody</Body>
+</ns0:Sample></ns0:Messages><ns0:Message><ns0:Element /></ns0:Message></ns0:Envelope>

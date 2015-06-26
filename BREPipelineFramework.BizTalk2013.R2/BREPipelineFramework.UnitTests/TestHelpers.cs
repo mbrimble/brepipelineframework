@@ -7,7 +7,6 @@ using System.IO;
 using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BREPipelineFramework.CustomBizUnitTestSteps;
-using BTS.Testing.TraceMonitor.BizUnit4.TestSteps;
 using BizUnit.Xaml;
 
 namespace BREPipelineFramework.UnitTests
@@ -20,7 +19,8 @@ namespace BREPipelineFramework.UnitTests
         public static b.BizUnit BREPipelineFrameworkReceivePipelineBaseTest(string InputFileName, TestContext testContextInstance, string InstanceConfigFilePath = null, 
             XPathCollection contextXPathCollection = null, XPathCollection bodyXPathCollection = null, int ExpectedNumberOfFiles = 1, 
             string PipelineType = "BREPipelineFramework.TestProject.Rcv_BREPipelineFramework", string ExpectedOutputFileName = null,
-            string inputMessageType = "BREPipelineFramework.TestProject.Message", string InputContextFileName = null, DataLoaderBase instanceConfigLoader = null, DataLoaderBase inputContextLoader = null)
+            string inputMessageType = "BREPipelineFramework.TestProject.Message", string InputContextFileName = null, DataLoaderBase instanceConfigLoader = null, 
+            DataLoaderBase inputContextLoader = null, string additionalInputType = null, string yetAnotherInputType = null)
         {
             var _BREPipelineFrameworkTest = new b.Xaml.TestCase();
 
@@ -67,7 +67,27 @@ namespace BREPipelineFramework.UnitTests
             docSpecDefinition1.TypeName = inputMessageType;
 
             pipelineTestStep.DocSpecs.Add(docSpecDefinition1);
-            
+
+            if (!string.IsNullOrEmpty(additionalInputType))
+            {
+                var docSpecDefinition2 = new b.TestSteps.BizTalk.Pipeline.DocSpecDefinition();
+
+                docSpecDefinition2.AssemblyPath = @"..\..\..\BREPipelineFramework.TestProject\bin\debug\BREPipelineFramework.TestProject.dll";
+                docSpecDefinition2.TypeName = additionalInputType;
+
+                pipelineTestStep.DocSpecs.Add(docSpecDefinition2);
+            }
+
+            if (!string.IsNullOrEmpty(yetAnotherInputType))
+            {
+                var docSpecDefinition3 = new b.TestSteps.BizTalk.Pipeline.DocSpecDefinition();
+
+                docSpecDefinition3.AssemblyPath = @"..\..\..\BREPipelineFramework.TestProject\bin\debug\BREPipelineFramework.TestProject.dll";
+                docSpecDefinition3.TypeName = yetAnotherInputType;
+
+                pipelineTestStep.DocSpecs.Add(docSpecDefinition3);
+            }
+
             _BREPipelineFrameworkTest.ExecutionSteps.Add(pipelineTestStep);
 
             var fileReadMultipleStepContext = new BREPipelineFramework.CustomBizUnitTestSteps.FileReadMultipleStep
@@ -148,20 +168,72 @@ namespace BREPipelineFramework.UnitTests
             return bizUnit;
         }
 
-        public static b.BizUnit BREPipelineFrameworkSendPipelineBaseTest(string InputFileName, string InstanceConfigFilePath, XPathCollection _XPathCollection, TestContext testContextInstance)
+        public static b.BizUnit BREPipelineFrameworkSendPipelineBaseTest(string InputFileName, TestContext testContextInstance, string InstanceConfigFilePath = null,
+            XPathCollection contextXPathCollection = null, XPathCollection bodyXPathCollection = null, string PipelineType = "BREPipelineFramework.TestProject.Snd_BREPipelineFramework", 
+            string ExpectedOutputFileName = null, string inputMessageType = "BREPipelineFramework.TestProject.Message", string InputContextFileName = null, 
+            DataLoaderBase instanceConfigLoader = null, DataLoaderBase inputContextLoader = null, string additionalInputType = null, string yetAnotherInputType = null)
         {
             var _BREPipelineFrameworkTest = new b.Xaml.TestCase();
 
-            var pipelineTestStep = new b.TestSteps.BizTalk.Pipeline.ExecuteSendPipelineStep
+            var pipelineTestStep = new ExecuteSendPipelineWithNullablePropertyStep
             {
                 PipelineAssemblyPath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.TestProject\bin\debug\BREPipelineFramework.TestProject.dll",
-                PipelineTypeName = "BREPipelineFramework.TestProject.Snd_BREPipelineFramework",
+                PipelineTypeName = PipelineType,
                 SourceDir = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files",
                 SearchPattern = InputFileName,
                 Destination = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Output Files\Output.txt",
                 OutputContextFile = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Output Files\Context.xml",
-                InstanceConfigFile = InstanceConfigFilePath,
             };
+
+            if (!string.IsNullOrEmpty(InstanceConfigFilePath))
+            {
+                pipelineTestStep.InstanceConfigFile = InstanceConfigFilePath;
+            }
+
+            if (instanceConfigLoader != null)
+            {
+                pipelineTestStep.InstanceConfigLoader = instanceConfigLoader;
+            }
+            
+            if (inputContextLoader != null)
+            {
+                pipelineTestStep.InputContextLoader = inputContextLoader;
+            }
+
+            var docSpecDefinition = new b.TestSteps.BizTalk.Pipeline.DocSpecDefinition();
+
+            docSpecDefinition.AssemblyPath = @"..\..\..\BREPipelineFramework.TestProject\bin\debug\BREPipelineFramework.TestProject.dll";
+            docSpecDefinition.TypeName = "BREPipelineFramework.TestProject.Envelope";
+
+            pipelineTestStep.DocSpecs.Add(docSpecDefinition);
+
+            var docSpecDefinition1 = new b.TestSteps.BizTalk.Pipeline.DocSpecDefinition();
+
+            docSpecDefinition1.AssemblyPath = @"..\..\..\BREPipelineFramework.TestProject\bin\debug\BREPipelineFramework.TestProject.dll";
+            docSpecDefinition1.TypeName = inputMessageType;
+
+            pipelineTestStep.DocSpecs.Add(docSpecDefinition1);
+
+            if (!string.IsNullOrEmpty(additionalInputType))
+            {
+                var docSpecDefinition2 = new b.TestSteps.BizTalk.Pipeline.DocSpecDefinition();
+
+                docSpecDefinition2.AssemblyPath = @"..\..\..\BREPipelineFramework.TestProject\bin\debug\BREPipelineFramework.TestProject.dll";
+                docSpecDefinition2.TypeName = additionalInputType;
+
+                pipelineTestStep.DocSpecs.Add(docSpecDefinition2);
+            }
+
+            if (!string.IsNullOrEmpty(yetAnotherInputType))
+            {
+                var docSpecDefinition3 = new b.TestSteps.BizTalk.Pipeline.DocSpecDefinition();
+
+                docSpecDefinition3.AssemblyPath = @"..\..\..\BREPipelineFramework.TestProject\bin\debug\BREPipelineFramework.TestProject.dll";
+                docSpecDefinition3.TypeName = yetAnotherInputType;
+
+                pipelineTestStep.DocSpecs.Add(docSpecDefinition3);
+            }
+
 
             _BREPipelineFrameworkTest.ExecutionSteps.Add(pipelineTestStep);
 
@@ -176,7 +248,7 @@ namespace BREPipelineFramework.UnitTests
 
             var xmlValidateContextStep = new BREPipelineFramework.CustomBizUnitTestSteps.XmlValidationStep();
 
-            foreach (KeyValuePair<string, string> pair in _XPathCollection.XPathQueryList)
+            foreach (KeyValuePair<string, string> pair in contextXPathCollection.XPathQueryList)
             {
                 var xPathDefinitionPropertyValue = new BREPipelineFramework.CustomBizUnitTestSteps.XPathDefinition
                 {
@@ -197,10 +269,10 @@ namespace BREPipelineFramework.UnitTests
             return bizUnit;
         }
 
-        public static DataLoaderBase CreateInstanceConfig(TestContext testContextInstance, string applicationContext = null)
+        public static DataLoaderBase CreateInstanceConfig(TestContext testContextInstance, string applicationContext = null, string fileName = "Base Config.xml")
         {
             var xdl = new b.TestSteps.DataLoaders.Xml.XmlDataLoader();
-            xdl.FilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Base Config.xml"; ;
+            xdl.FilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\" + fileName;
             xdl.UpdateXml = new System.Collections.ObjectModel.Collection<b.TestSteps.Common.XPathDefinition>();
 
             if (applicationContext != null)

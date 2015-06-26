@@ -1,0 +1,14 @@
+﻿<ns0:Envelope xmlns:ns0="http://BREPipelineFramework">
+  <ns0:Messages>
+    <ns0:Message>
+      <ns0:Element>1</ns0:Element>
+    </ns0:Message>
+    <ns0:Message>
+      <ns0:Element>2</ns0:Element>
+    </ns0:Message>
+    <ns0:Message>
+      <ns0:Element>3</ns0:Element>
+      <test>231</test>
+    </ns0:Message>
+  </ns0:Messages>
+</ns0:Envelope>

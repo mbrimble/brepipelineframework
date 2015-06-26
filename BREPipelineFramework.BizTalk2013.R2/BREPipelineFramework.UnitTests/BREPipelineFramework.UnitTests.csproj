@@ -40,7 +40,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>..\..\BREPipelineFramework.snk</AssemblyOriginatorKeyFile>
@@ -155,6 +155,8 @@
   <ItemGroup>
     <Compile Include="ContextMetaInstructionsTests.cs" />
     <Compile Include="CachingMetaInstructionsTest.cs" />
+    <Compile Include="HttpHeaderInstructionsTests.cs" />
+    <Compile Include="PipelineMetaInstructionsTests.cs" />
     <Compile Include="XMLTranslatorMetaInstructionsTests.cs" />
     <Compile Include="MessagePartMetaInstructionsTests.cs" />
     <Compile Include="TypedXMLDocumentMetaInstructionsTests.cs" />
@@ -169,7 +171,16 @@
     <Folder Include="Sample Files\Output Files\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Sample Files\Expected Output FIles\Sample_FF_Footer_output.txt" />
+    <Content Include="Sample Files\Expected Output FIles\Sample_FF_HeaderAndTrailer_output.txt" />
+    <Content Include="Sample Files\Expected Output FIles\Sample_FF_Header_output.txt" />
+    <Content Include="Sample Files\Expected Output FIles\Sample_FF_output.txt" />
+    <Content Include="Sample Files\Expected Output FIles\Sample_FF_output.xml" />
+    <Content Include="Sample Files\Expected Output FIles\TestEnvelope.xml" />
+    <Content Include="Sample Files\Expected Output FIles\Test_DisassembleXML.xml" />
     <Content Include="Sample Files\Expected Output FIles\Test_RemoveAttributeByName_ResetPriority.xml" />
+    <Content Include="Sample Files\Expected Output FIles\Test_RemoveElementAndChildrenByName.xml" />
+    <Content Include="Sample Files\Expected Output FIles\Test_RemoveElementAndChildrenByNameAndNamespace.xml" />
     <Content Include="Sample Files\Expected Output FIles\Test_ReplaceNamespaceAndPrefixNoCurrentPrefix.xml" />
     <Content Include="Sample Files\Expected Output FIles\Test_RemoveNamespaceWithNoPrefix.xml">
       <SubType>Designer</SubType>
@@ -268,6 +279,7 @@
     <Content Include="Sample Files\Input Context Files\Base Context.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Sample Files\Input Context Files\HTTPHeaders_Input.xml" />
     <Content Include="Sample Files\Input Context Files\Test_Get_SMTP_From.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -308,13 +320,22 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Sample Files\Input Files\bretest.txt" />
+    <Content Include="Sample Files\Input Files\NoNamespace.xml" />
+    <Content Include="Sample Files\Input Files\Sample_FF_Footer_output.txt" />
+    <Content Include="Sample Files\Input Files\Sample_FF_HeaderAndTrailer_output.txt" />
+    <Content Include="Sample Files\Input Files\Sample_FF_Header_output.txt" />
+    <Content Include="Sample Files\Input Files\Sample_FF_output.txt" />
+    <Content Include="Sample Files\Input Files\Sample_FF_output.xml" />
     <Content Include="Sample Files\Input Files\TestCount.txt" />
+    <Content Include="Sample Files\Input Files\TestEnvelope1.xml" />
+    <Content Include="Sample Files\Input Files\Test_DisassembleXML.xml" />
     <Content Include="Sample Files\Input Files\Test_ReplaceNamespaceWithNoPrefix.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Sample Files\Input Files\Test_UpdateAttributeDetails.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Sample Files\Input Files\Test_UpdateAttributeDetails2.xml" />
     <Content Include="Sample Files\Input Files\Test_UpdateElementValueByNodeNameAndOldValue.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -340,15 +361,20 @@
     <Content Include="Sample Files\Input Files\Test_ReplaceNamespace.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Sample Files\Instance Config Files\Base Config No InstructionLoader.xml" />
     <Content Include="Sample Files\Instance Config Files\Base Config.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_AddCustomContextPropertyToCache_OverrideExpiryTimeSetPriorityDefault Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_AddCustomContextPropertyToCache_OverrideExpiryTimeSetPriorityNotRemovable Config.xml" />
+    <Content Include="Sample Files\Instance Config Files\Test_CustomMetaInstructionNoInstructionLoader Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_SetPartDetails Config.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Sample Files\Instance Config Files\Test_MIME_GetPartCount Config.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Sample Files\Instance Config Files\Test_TransformMessageWithDisassemble Config.xml" />
     <Content Include="Sample Files\Instance Config Files\Test_UpdateElementValueByNodeNameNamespaceAndOldValue Config.xml">
       <SubType>Designer</SubType>
     </Content>

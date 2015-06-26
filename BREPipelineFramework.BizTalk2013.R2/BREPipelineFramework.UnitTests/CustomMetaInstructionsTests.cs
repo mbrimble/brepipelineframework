@@ -35,9 +35,10 @@ namespace BREPipelineFramework.UnitTests
         [TestInitialize()]
         public void MyTestSetup()
         {
-            var oldCache = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache;
-            BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache = new MemoryCache("BREPipelineFramework.Cache", null);
-            oldCache.Dispose();
+            foreach (var element in MemoryCache.Default)
+            {
+                MemoryCache.Default.Remove(element.Key);
+            }
         }
 
         //Use TestCleanup to cleanup output files after each test has run
@@ -66,7 +67,7 @@ namespace BREPipelineFramework.UnitTests
         const string numberOfPropertiesXPath = "/*[local-name()='MessageInfo' and namespace-uri()='']/*[local-name()='ContextInfo' and namespace-uri()='']/@*[local-name()='PropertiesCount' and namespace-uri()='']";
 
         /// <summary>
-        ///Tests that custom MetaInstructions can be dynamically loaded using Instruction Loader Policies and then exercised in instruction loader policies.
+        ///Tests that custom MetaInstructions can be dynamically loaded using Instruction Loader Policies and then exercised in execution policies.
         ///</summary>
         [TestMethod()]
         public void Test_CustomMetaInstruction()
@@ -78,6 +79,27 @@ namespace BREPipelineFramework.UnitTests
 
             XPathCollection _XPathCollection = new XPathCollection();
             _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        /// <summary>
+        ///Tests that custom MetaInstructions can be loaded in a static fashion using pipeline parameters and then exercised in execution policies.
+        ///</summary>
+        [TestMethod()]
+        public void Test_CustomMetaInstructionNoInstructionLoader()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Test.xml";
+            string InstanceConfigFilePath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Instance Config Files\Test_CustomMetaInstructionNoInstructionLoader Config.xml";
+
+            string XPathQuery = "boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='Element'][@Promoted='false'][@Namespace='https://BREPipelineFramework.TestProject.BREPipelineFramework_PropSchema'][@Value='Test'])";
+            string XPathQuery1 = "boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='Property1'][@Promoted='false'][@Namespace='https://BREPipelineFramework.TestProject.BREPipelineFramework_PropSchema'][@Value='Test'])";
+            string ExpectedValue = "True";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+            _XPathCollection.XPathQueryList.Add(XPathQuery, ExpectedValue);
+            _XPathCollection.XPathQueryList.Add(XPathQuery1, ExpectedValue);
 
             var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, _XPathCollection);
             _BREPipelineFrameworkTest.RunTest();

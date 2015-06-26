@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{20543A14-F5A4-455F-9E0E-415C8F553932}"
 	ProjectSection(SolutionItems) = preProject
@@ -28,23 +28,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BRE Artifacts", "BRE Artifa
 		..\BRE Artifacts\All Test Artifacts.xml = ..\BRE Artifacts\All Test Artifacts.xml
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vocabularies", "Vocabularies", "{C2BB5D8F-0A76-4B8A-B1B5-6C60B49F506F}"
-	ProjectSection(SolutionItems) = preProject
-		..\BRE Artifacts\Vocabularies\BREPipelineFramework.TestDatabase.1.0.xml = ..\BRE Artifacts\Vocabularies\BREPipelineFramework.TestDatabase.1.0.xml
-		..\BRE Artifacts\Vocabularies\BREPipelineFramework.TestSampleInstructions.MetaInstruction.1.0.xml = ..\BRE Artifacts\Vocabularies\BREPipelineFramework.TestSampleInstructions.MetaInstruction.1.0.xml
-		..\BRE Artifacts\Vocabularies\BREPipelineFramework.TypedXmlDocumentSamples.1.0.xml = ..\BRE Artifacts\Vocabularies\BREPipelineFramework.TypedXmlDocumentSamples.1.0.xml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Policies", "Policies", "{11E685F8-12C4-4800-8A6F-59E6FEF4F6AC}"
-	ProjectSection(SolutionItems) = preProject
-		..\BRE Artifacts\Policies\BREPipelineFramework ExecutionPolicy.1.0.xml = ..\BRE Artifacts\Policies\BREPipelineFramework ExecutionPolicy.1.0.xml
-		..\BRE Artifacts\Policies\BREPipelineFramework ExecutionPolicy.1.1.xml = ..\BRE Artifacts\Policies\BREPipelineFramework ExecutionPolicy.1.1.xml
-		..\BRE Artifacts\Policies\BREPipelineFramework InstructionLoaderPolicy.1.0.xml = ..\BRE Artifacts\Policies\BREPipelineFramework InstructionLoaderPolicy.1.0.xml
-		..\BRE Artifacts\Policies\BREPipelineFramework InstructionLoaderPolicy.1.1.xml = ..\BRE Artifacts\Policies\BREPipelineFramework InstructionLoaderPolicy.1.1.xml
-		..\BRE Artifacts\Policies\BREPipelineFramework OverridePolicy.1.0.xml = ..\BRE Artifacts\Policies\BREPipelineFramework OverridePolicy.1.0.xml
-		..\BRE Artifacts\Policies\BREPipelineFramework OverridePolicy.1.1.xml = ..\BRE Artifacts\Policies\BREPipelineFramework OverridePolicy.1.1.xml
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BREPipelineFramework.CustomBizUnitTestSteps", "..\BREPipelineFramework.CustomBizUnitTestSteps\BREPipelineFramework.CustomBizUnitTestSteps.csproj", "{33FF3FE8-9A6B-42E8-A1F1-CAD65BCA84AE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BREPipelineFramework.TestSampleInstructions", "..\BREPipelineFramework.TestSampleInstructions\BREPipelineFramework.TestSampleInstructions.csproj", "{4B694161-3047-4BE1-B4CC-A0ED192E45F7}"
@@ -54,19 +37,19 @@ Global
 		SccNumberOfProjects = 5
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs13
-		SccProjectUniqueName0 = ..\\BREPipelineFramework.CustomBizUnitTestSteps\\BREPipelineFramework.CustomBizUnitTestSteps.csproj
-		SccProjectName0 = ../BREPipelineFramework.CustomBizUnitTestSteps
-		SccLocalPath0 = ..\\BREPipelineFramework.CustomBizUnitTestSteps
-		SccProjectUniqueName1 = ..\\BREPipelineFramework.TestSampleInstructions\\BREPipelineFramework.TestSampleInstructions.csproj
-		SccProjectName1 = ../BREPipelineFramework.TestSampleInstructions
-		SccLocalPath1 = ..\\BREPipelineFramework.TestSampleInstructions
-		SccLocalPath2 = .
-		SccProjectUniqueName3 = BREPipelineFramework.TestProject\\BREPipelineFramework.TestProject.btproj
-		SccProjectName3 = BREPipelineFramework.TestProject
-		SccLocalPath3 = BREPipelineFramework.TestProject
-		SccProjectUniqueName4 = BREPipelineFramework.UnitTests\\BREPipelineFramework.UnitTests.csproj
-		SccProjectName4 = BREPipelineFramework.UnitTests
-		SccLocalPath4 = BREPipelineFramework.UnitTests
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BREPipelineFramework.TestProject\\BREPipelineFramework.TestProject.btproj
+		SccProjectName1 = BREPipelineFramework.TestProject
+		SccLocalPath1 = BREPipelineFramework.TestProject
+		SccProjectUniqueName2 = BREPipelineFramework.UnitTests\\BREPipelineFramework.UnitTests.csproj
+		SccProjectName2 = BREPipelineFramework.UnitTests
+		SccLocalPath2 = BREPipelineFramework.UnitTests
+		SccProjectUniqueName3 = ..\\BREPipelineFramework.CustomBizUnitTestSteps\\BREPipelineFramework.CustomBizUnitTestSteps.csproj
+		SccProjectName3 = ../BREPipelineFramework.CustomBizUnitTestSteps
+		SccLocalPath3 = ..\\BREPipelineFramework.CustomBizUnitTestSteps
+		SccProjectUniqueName4 = ..\\BREPipelineFramework.TestSampleInstructions\\BREPipelineFramework.TestSampleInstructions.csproj
+		SccProjectName4 = ../BREPipelineFramework.TestSampleInstructions
+		SccLocalPath4 = ..\\BREPipelineFramework.TestSampleInstructions
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -110,9 +93,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{C2BB5D8F-0A76-4B8A-B1B5-6C60B49F506F} = {4D2DA409-B5E3-4BAF-8FA7-8418934799F6}
-		{11E685F8-12C4-4800-8A6F-59E6FEF4F6AC} = {4D2DA409-B5E3-4BAF-8FA7-8418934799F6}
 	EndGlobalSection
 EndGlobal

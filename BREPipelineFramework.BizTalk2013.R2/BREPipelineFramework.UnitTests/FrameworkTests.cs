@@ -38,9 +38,10 @@ namespace BREPipelineFramework.UnitTests
         [TestInitialize()]
         public void MyTestSetup()
         {
-            var oldCache = BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache;
-            BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache = new MemoryCache("BREPipelineFramework.Cache", null);
-            oldCache.Dispose();
+            foreach (var element in MemoryCache.Default)
+            {
+                MemoryCache.Default.Remove(element.Key);
+            }
         }
 
         //Use TestCleanup to cleanup output files after each test has run
@@ -279,30 +280,6 @@ namespace BREPipelineFramework.UnitTests
             _BREPipelineFrameworkTest.RunTest();        
         }
 
-        ///Tests that exceptions encountered during instruction execution will be handled properly with RIP enabled and that the message body and context will be rolled back
-        ///</summary>
-        [TestMethod()]
-        public void Test_UncaughtPolicyExceptionAfterUpdate()
-        {
-            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\Message_Transform.xml";
-
-            XPathCollection _XPathCollection = new XPathCollection();
-            string XPathQuery1 = "boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='MessageDestination'][@Promoted='false'][@Namespace='http://schemas.microsoft.com/BizTalk/2003/system-properties'][@Value='SuspendQueue'])";
-            string XPathQuery2 = "boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='SuspendMessageOnRoutingFailure'][@Promoted='false'][@Namespace='http://schemas.microsoft.com/BizTalk/2003/system-properties'][@Value='True'])";
-            string XPathQuery3 = "boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='MessageType'][@Promoted='true'][@Namespace='http://schemas.microsoft.com/BizTalk/2003/system-properties'][@Value='http://BREPipelineFramework#Message'])";
-            string XPathQuery4 = "boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='Element'][@Promoted='true'][@Namespace='https://BREPipelineFramework.TestProject.BREPipelineFramework_PropSchema'][@Value='Test'])";
-            string XPathQuery5 = "boolean(/*[local-name()='MessageInfo']/*[local-name()='ContextInfo']/*[local-name()='Property'][@Name='Password'][@Namespace='http://schemas.microsoft.com/BizTalk/2003/ftp-properties'])";
-            string ExpectedValue = "True";
-            _XPathCollection.XPathQueryList.Add(XPathQuery1, ExpectedValue);
-            _XPathCollection.XPathQueryList.Add(XPathQuery2, ExpectedValue);
-            _XPathCollection.XPathQueryList.Add(XPathQuery3, ExpectedValue);
-            _XPathCollection.XPathQueryList.Add(XPathQuery4, ExpectedValue);
-            _XPathCollection.XPathQueryList.Add(XPathQuery5, "False");
-
-            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, contextXPathCollection: _XPathCollection, ExpectedOutputFileName: InputFileName, PipelineType: "BREPipelineFramework.TestProject.Rcv_BREPipelineFrameworkXMLRIP");
-            _BREPipelineFrameworkTest.RunTest();
-        }
-
         ///Tests that having a valid tracking folder results in a tracking file being written out
         ///</summary>
         [TestMethod()]
@@ -403,6 +380,18 @@ namespace BREPipelineFramework.UnitTests
             XPathCollection _XPathCollection = new XPathCollection();
 
             var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, InstanceConfigFilePath, ExpectedOutputFileName:ExpectedOutputFileName);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
+        [TestMethod()]
+        public void MessageWithNoNamespace()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\NoNamespace.xml";
+            string ExpectedOutputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\NoNamespace.xml";
+
+            XPathCollection _XPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, PipelineType: "BREPipelineFramework.TestProject.Rcv_BREPipelineFrameworkXMLRIP", ExpectedOutputFileName: ExpectedOutputFileName, inputMessageType: "BREPipelineFramework.TestProject.MessageWithNoNamespace");
             _BREPipelineFrameworkTest.RunTest();
         }
 
@@ -606,5 +595,17 @@ namespace BREPipelineFramework.UnitTests
                 PipelineType: "BREPipelineFramework.TestProject.Rcv_BRETestFFNoStream", contextXPathCollection: _XPathCollection, inputMessageType: "BREPipelineFramework.TestProject.BRETest");
             _BREPipelineFrameworkTest.RunTest();
         }
+
+        ///Tests that envelope messages with multiple message bodies are handled correctly
+        ///</summary>
+        [TestMethod()]
+        public void Test_DisassembleEnvelopeWithMultipleBodies()
+        {
+            string InputFileName = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Files\TestEnvelope.xml";
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkReceivePipelineBaseTest(InputFileName, testContextInstance, PipelineType: "BREPipelineFramework.TestProject.Rcv_BREPipelineFrameworkXMLRIP", ExpectedNumberOfFiles: 3);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
     }
 }

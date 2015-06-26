@@ -278,6 +278,35 @@
       <Namespace>BREPipelineFramework.TestProject</Namespace>
     </Pipeline>
   </ItemGroup>
+  <ItemGroup>
+    <Schema Include="MessageWithNoNamespace.xsd">
+      <TypeName>MessageWithNoNamespace</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Sample_FF.xsd">
+      <TypeName>Sample_FF</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Sample_FF_Footer.xsd">
+      <TypeName>Sample_FF_Footer</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Sample_FF_Header.xsd">
+      <TypeName>Sample_FF_Header</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Pipeline Include="Snd_BREPipelineFramewrok2.btp">
+      <TypeName>Snd_BREPipelineFramewrok2</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
 </Project>
