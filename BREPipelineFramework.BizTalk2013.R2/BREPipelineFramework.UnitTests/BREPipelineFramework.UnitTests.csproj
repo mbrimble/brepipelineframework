@@ -156,6 +156,7 @@
     <Compile Include="ContextMetaInstructionsTests.cs" />
     <Compile Include="CachingMetaInstructionsTest.cs" />
     <Compile Include="HttpHeaderInstructionsTests.cs" />
+    <Compile Include="JSONMetaInstructionsTests.cs" />
     <Compile Include="PipelineMetaInstructionsTests.cs" />
     <Compile Include="XMLTranslatorMetaInstructionsTests.cs" />
     <Compile Include="MessagePartMetaInstructionsTests.cs" />
@@ -171,6 +172,9 @@
     <Folder Include="Sample Files\Output Files\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Sample Files\Expected Output FIles\XMLConvertedToJSONWithRootNotStripped.txt" />
+    <Content Include="Sample Files\Expected Output FIles\XMLConvertedToJSONWithRootStripped.txt" />
+    <Content Include="Sample Files\Expected Output FIles\JSONConvertedToXML.xml" />
     <Content Include="Sample Files\Expected Output FIles\Sample_FF_Footer_output.txt" />
     <Content Include="Sample Files\Expected Output FIles\Sample_FF_HeaderAndTrailer_output.txt" />
     <Content Include="Sample Files\Expected Output FIles\Sample_FF_Header_output.txt" />
@@ -279,6 +283,9 @@
     <Content Include="Sample Files\Input Context Files\Base Context.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Sample Files\Input Context Files\ContentTypeNotSpecified.xml" />
+    <Content Include="Sample Files\Input Context Files\ContentTypeXML.xml" />
+    <Content Include="Sample Files\Input Context Files\ContentTypeJSON.xml" />
     <Content Include="Sample Files\Input Context Files\HTTPHeaders_Input.xml" />
     <Content Include="Sample Files\Input Context Files\Test_Get_SMTP_From.xml">
       <SubType>Designer</SubType>
@@ -320,7 +327,10 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Sample Files\Input Files\bretest.txt" />
+    <Content Include="Sample Files\Input Files\JSONConvertedToXML.xml" />
     <Content Include="Sample Files\Input Files\NoNamespace.xml" />
+    <Content Include="Sample Files\Input Files\SampleJSONWithLeadingWhitespace.txt" />
+    <Content Include="Sample Files\Input Files\SampleJSON.txt" />
     <Content Include="Sample Files\Input Files\Sample_FF_Footer_output.txt" />
     <Content Include="Sample Files\Input Files\Sample_FF_HeaderAndTrailer_output.txt" />
     <Content Include="Sample Files\Input Files\Sample_FF_Header_output.txt" />

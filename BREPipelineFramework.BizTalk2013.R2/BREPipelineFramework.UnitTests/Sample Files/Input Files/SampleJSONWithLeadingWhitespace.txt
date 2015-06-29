@@ -1,0 +1,18 @@
+﻿
+
+
+
+
+			{
+  "Root": {
+    "Field": "Field_0",
+    "Record": {
+      "Field": {
+        "#text": "ns0:Field_0"
+      },
+      "Field1": {
+        "#text": "ns0:Field1_0"
+      }
+    }
+  }
+}

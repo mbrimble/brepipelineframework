@@ -307,6 +307,27 @@
       <SubType>Task</SubType>
     </Pipeline>
   </ItemGroup>
+  <ItemGroup>
+    <Pipeline Include="Rcv_API.btp">
+      <TypeName>Rcv_API</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
+  </ItemGroup>
+  <ItemGroup>
+    <Pipeline Include="Snd_API.btp">
+      <TypeName>Snd_API</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
+  </ItemGroup>
+  <ItemGroup>
+    <Pipeline Include="Snd_API2.btp">
+      <TypeName>Snd_API2</TypeName>
+      <Namespace>BREPipelineFramework.TestProject</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
 </Project>

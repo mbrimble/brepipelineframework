@@ -1,0 +1,9 @@
+﻿{
+  "Root": {
+    "Field": "Field_0",
+    "Record": {
+      "Field": "ns0:Field_0",
+      "Field1": "ns0:Field1_0"
+    }
+  }
+}

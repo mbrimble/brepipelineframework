@@ -190,6 +190,12 @@ namespace BREPipelineFramework.UnitTests
                 pipelineTestStep.InstanceConfigFile = InstanceConfigFilePath;
             }
 
+            if (!string.IsNullOrEmpty(InputContextFileName))
+            {
+                pipelineTestStep.InputContextDir = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Input Context Files";
+                pipelineTestStep.InputContextSearchPattern = InputContextFileName;
+            }
+
             if (instanceConfigLoader != null)
             {
                 pipelineTestStep.InstanceConfigLoader = instanceConfigLoader;
@@ -234,7 +240,6 @@ namespace BREPipelineFramework.UnitTests
                 pipelineTestStep.DocSpecs.Add(docSpecDefinition3);
             }
 
-
             _BREPipelineFrameworkTest.ExecutionSteps.Add(pipelineTestStep);
 
             var fileReadMultipleStepContext = new b.TestSteps.File.FileReadMultipleStep
@@ -261,8 +266,26 @@ namespace BREPipelineFramework.UnitTests
             }
 
             fileReadMultipleStepContext.SubSteps.Add(xmlValidateContextStep);
-
             _BREPipelineFrameworkTest.ExecutionSteps.Add(fileReadMultipleStepContext);
+
+            var fileReadMultipleStepBody = new b.TestSteps.File.FileReadMultipleStep
+            {
+                ExpectedNumberOfFiles = 1,
+                DeleteFiles = false,
+                DirectoryPath = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Output Files",
+                SearchPattern = "Output.txt",
+                Timeout = 3000
+            };
+
+            if (!String.IsNullOrEmpty(ExpectedOutputFileName))
+            {
+                var binaryStep = new BinaryComparisonTestStep();
+                binaryStep.ComparisonDataPath = ExpectedOutputFileName;
+                //binaryStep.CompareAsUTF8 = true;
+                fileReadMultipleStepBody.SubSteps.Add(binaryStep);
+            }
+
+            _BREPipelineFrameworkTest.ExecutionSteps.Add(fileReadMultipleStepBody);
 
             var bizUnit = new b.BizUnit(_BREPipelineFrameworkTest);
 

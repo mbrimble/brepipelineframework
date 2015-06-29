@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BREPipleineFramework.JSON
+namespace BREPipelineFramework.JSON
 {
     public class ApplyJSONEncoderInstruction : IBREPipelineInstruction
     {

@@ -32,7 +32,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BREPipelineFramework.Custom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BREPipelineFramework.TestSampleInstructions", "..\BREPipelineFramework.TestSampleInstructions\BREPipelineFramework.TestSampleInstructions.csproj", "{4B694161-3047-4BE1-B4CC-A0ED192E45F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BREPipleineFramework.JSON", "BREPipleineFramework.JSON\BREPipleineFramework.JSON.csproj", "{9EFFFC93-054B-4D25-AE84-DB6EA75BDD5E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Policies", "Policies", "{D3F6F306-387D-415E-B5AB-45B5CB3CC71D}"
+	ProjectSection(SolutionItems) = preProject
+		..\BRE Artifacts\Policies\BREPipelineFramework.JSONPolicy.1.0.xml = ..\BRE Artifacts\Policies\BREPipelineFramework.JSONPolicy.1.0.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vocabularies", "Vocabularies", "{AA6EBB4D-E3BF-45D2-8F5F-5B6105B51207}"
+	ProjectSection(SolutionItems) = preProject
+		..\BRE Artifacts\Vocabularies\BREPipelineFramework.JSONInstructions.1.0.xml = ..\BRE Artifacts\Vocabularies\BREPipelineFramework.JSONInstructions.1.0.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BREPipelineFramework.JSON", "BREPipelineFramework.JSON\BREPipelineFramework.JSON.csproj", "{9EFFFC93-054B-4D25-AE84-DB6EA75BDD5E}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
@@ -52,9 +62,9 @@ Global
 		SccProjectUniqueName4 = ..\\BREPipelineFramework.TestSampleInstructions\\BREPipelineFramework.TestSampleInstructions.csproj
 		SccProjectName4 = ../BREPipelineFramework.TestSampleInstructions
 		SccLocalPath4 = ..\\BREPipelineFramework.TestSampleInstructions
-		SccProjectUniqueName5 = BREPipleineFramework.JSON\\BREPipleineFramework.JSON.csproj
-		SccProjectName5 = BREPipleineFramework.JSON
-		SccLocalPath5 = BREPipleineFramework.JSON
+		SccProjectUniqueName5 = BREPipelineFramework.JSON\\BREPipelineFramework.JSON.csproj
+		SccProjectName5 = BREPipelineFramework.JSON
+		SccLocalPath5 = BREPipelineFramework.JSON
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,5 +114,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D3F6F306-387D-415E-B5AB-45B5CB3CC71D} = {4D2DA409-B5E3-4BAF-8FA7-8418934799F6}
+		{AA6EBB4D-E3BF-45D2-8F5F-5B6105B51207} = {4D2DA409-B5E3-4BAF-8FA7-8418934799F6}
 	EndGlobalSection
 EndGlobal

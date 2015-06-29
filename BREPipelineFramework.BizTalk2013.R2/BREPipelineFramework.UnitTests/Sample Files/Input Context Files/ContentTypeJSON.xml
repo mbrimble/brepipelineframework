@@ -1,0 +1,15 @@
+﻿<MessageInfo>
+  <ContextInfo PropertiesCount="27">
+    <ArrayProperty Name="PartNames" Namespace="http://schemas.microsoft.com/BizTalk/2003/messageagent-properties">
+      <ArrayElement1 Value="body" />
+    </ArrayProperty>
+    <Property Name="InboundHeaders" Namespace="http://schemas.microsoft.com/BizTalk/2006/01/Adapters/WCF-properties" Value="&lt;headers&gt;&lt;To a:mustUnderstand=&quot;1&quot; xmlns=&quot;http://schemas.microsoft.com/ws/2005/05/addressing/none&quot; xmlns:a=&quot;http://schemas.microsoft.com/ws/2005/05/envelope/none&quot;&gt;http://jc-bt2013r2vm/BREPipelineFramework.JSON/Service1.svc&lt;/To&gt;&lt;/headers&gt;" />
+    <Property Name="InboundHttpHeaders" Namespace="http://schemas.microsoft.com/BizTalk/2006/01/Adapters/WCF-properties" Value="Content-Length: 204&#xD;&#xA;Accept: application/json&#xD;&#xA;Host: localhost&#xD;&#xA;User-Agent: Fiddler&#xD;&#xA;Content-Type: application/json&#xD;&#xA;" />
+    <Property Name="InboundHttpMethod" Namespace="http://schemas.microsoft.com/BizTalk/2006/01/Adapters/WCF-properties" Value="POST" />
+    <Property Name="InterchangeID" Namespace="http://schemas.microsoft.com/BizTalk/2003/system-properties" Value="{3C66F687-FD72-46F7-84FC-6CD9CDFB8B5D}" />
+    <Property Name="Operation" Namespace="http://schemas.microsoft.com/BizTalk/2003/system-properties" Value="Operation" />
+  </ContextInfo>
+  <PartInfo PartsCount="1">
+    <MessagePart ID="{6BA99905-8A9A-4289-BEF1-B43A7D2A3F7A}" Name="body" FileName="C:\Users\johannc\Desktop\{68D74BB1-68FE-414F-96C9-EDFA5180E8D1}_{6BA99905-8A9A-4289-BEF1-B43A7D2A3F7A}_body.out" Charset="" ContentType="" IsBodyPart="0" />
+  </PartInfo>
+</MessageInfo>

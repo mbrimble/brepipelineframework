@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
+  <vocabulary id="2adcad3d-29da-4a99-a753-ded63d920759" name="BREPipelineFramework.JSONInstructions" uri="" description="">
+    <version major="1" minor="0" description="" modifiedby="JC-BT2013R2VM\johannc" date="2015-06-29T01:55:15.2813546+00:00" />
+    <vocabularydefinition id="784a4281-da21-427f-b0e6-db0d9b5158b9" name="DecodeJSON" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="DecodeJSONWithNamespaceSpecified" type="void">
+          <classinfo class="JSONMetaInstruction" instance="0">
+            <assembly>BREPipelineFramework.JSON, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.JSON\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.JSON.dll-->
+            <namespace>BREPipelineFramework.JSON</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+          <argument position="1">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Apply the JSON decoder to the message wrapping it with a root node named {0} with namespace {1}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+        <argument position="1">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="9ac1e40e-0562-4c73-a5a7-c84128d5071c" name="AssessContentType" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AssessContentType" type="boolean">
+          <classinfo class="JSONMetaInstruction" instance="0">
+            <assembly>BREPipelineFramework.JSON, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.JSON\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.JSON.dll-->
+            <namespace>BREPipelineFramework.JSON</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="BREPipelineFramework.JSON.ContentTypeEnum, BREPipelineFramework.JSON, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(Assess whether the content type of the request message is {0})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="BREPipelineFramework.JSON.ContentTypeEnum, BREPipelineFramework.JSON, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="64265577-390c-49b3-86b7-cdf1326702b8" name="EncodeJSON" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="EncodeJSON" type="void">
+          <classinfo class="JSONMetaInstruction" instance="0">
+            <assembly>BREPipelineFramework.JSON, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.JSON\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.JSON.dll-->
+            <namespace>BREPipelineFramework.JSON</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="BREPipelineFramework.JSON.JSONRemoveEnvelopeEnum, BREPipelineFramework.JSON, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Apply the JSON encoder to the message, {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="BREPipelineFramework.JSON.JSONRemoveEnvelopeEnum, BREPipelineFramework.JSON, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="4f9730ab-3e95-4bad-bfc1-5bea6c218239" name="CacheAcceptHeader" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="CacheAcceptHeader" type="void">
+          <classinfo class="JSONMetaInstruction" instance="0">
+            <assembly>BREPipelineFramework.JSON, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.JSON\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.JSON.dll-->
+            <namespace>BREPipelineFramework.JSON</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Cache the inbound accept header value for inspection when processing the response message" />
+    </vocabularydefinition>
+    <vocabularydefinition id="57714922-6a64-4b6e-8584-52bb731bdd14" name="GetCachedAcceptHeader" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="GetCachedAcceptHeader" type="string">
+          <classinfo class="JSONMetaInstruction" instance="0">
+            <assembly>BREPipelineFramework.JSON, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.JSON\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.JSON.dll-->
+            <namespace>BREPipelineFramework.JSON</namespace>
+          </classinfo>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(The cached accept header value)" />
+    </vocabularydefinition>
+    <vocabularydefinition id="28a4eb06-7f48-4b8e-82f2-5dc16c8140ea" name="AssessCachedAcceptHeader" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="AssessCachedAcceptHeader" type="boolean">
+          <classinfo class="JSONMetaInstruction" instance="0">
+            <assembly>BREPipelineFramework.JSON, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.JSON\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.JSON.dll-->
+            <namespace>BREPipelineFramework.JSON</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="BREPipelineFramework.JSON.ContentTypeEnum, BREPipelineFramework.JSON, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="(Assess whether the cached accept header specifies a response content type of {0})" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="BREPipelineFramework.JSON.ContentTypeEnum, BREPipelineFramework.JSON, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+  </vocabulary>
+</brl>
