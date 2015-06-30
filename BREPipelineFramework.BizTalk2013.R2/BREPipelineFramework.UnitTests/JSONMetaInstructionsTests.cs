@@ -163,5 +163,21 @@ namespace BREPipelineFramework.UnitTests
             var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkSendPipelineBaseTest(InputFileName, testContextInstance, PipelineType: "BREPipelineFramework.TestProject.Snd_API2", InputContextFileName: InputContextFile, contextXPathCollection: contextXPathCollection, ExpectedOutputFileName: ExpectedOutputFile);
             _BREPipelineFrameworkTest.RunTest();
         }
+
+        [TestMethod()]
+        public void Test_SndHTMLMessage()
+        {
+            BREPipelineFramework.SampleInstructions.MetaInstructions.CachingMetaInstructions.cache["BRE Pipeline Framework Accept Header Caching {3C66F687-FD72-46F7-84FC-6CD9CDFB8B5D}"] = "text/html";
+
+            string InputFileName = "JSONConvertedToXML.xml";
+            string InputContextFile = "ContentTypeNotSpecified.xml";
+            string ExpectedOutputFile = testContextInstance.TestDir + @"\..\..\BREPipelineFramework.UnitTests\Sample Files\Expected Output Files\HTMLOutput.html";
+
+            XPathCollection contextXPathCollection = new XPathCollection();
+
+            var _BREPipelineFrameworkTest = TestHelpers.BREPipelineFrameworkSendPipelineBaseTest(InputFileName, testContextInstance, PipelineType: "BREPipelineFramework.TestProject.Snd_API2", InputContextFileName: InputContextFile, contextXPathCollection: contextXPathCollection, ExpectedOutputFileName: ExpectedOutputFile);
+            _BREPipelineFrameworkTest.RunTest();
+        }
+
     }
 }

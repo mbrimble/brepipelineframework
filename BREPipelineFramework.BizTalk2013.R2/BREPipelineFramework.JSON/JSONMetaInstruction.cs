@@ -11,6 +11,8 @@ using System.Runtime.Caching;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Xsl;
 
 namespace BREPipelineFramework.JSON
 {
@@ -118,6 +120,35 @@ namespace BREPipelineFramework.JSON
             }
 
             return (assessedContentType == actualContentType);
+        }
+
+        public void ExecuteXSLTTransform(string _XSLTPath)
+        {
+            // Get the full path to the Xslt file
+            if (!System.IO.File.Exists(_XSLTPath))
+            {
+                throw new ArgumentException("The XSL transformation file " + _XSLTPath + " can not be found");
+            }
+
+            // Load transform
+            XslTransform transform = new XslTransform();
+            transform.Load(_XSLTPath);
+
+            //Load Xml stream in XmlDocument.
+            XmlDocument doc = new XmlDocument();
+            doc.Load(InMsg.BodyPart.GetOriginalDataStream());
+
+            //Create memory stream to hold transformed data.
+            MemoryStream ms = new MemoryStream();
+
+            //Preform transform
+            transform.Transform(doc, null, ms, null);
+            ms.Seek(0, SeekOrigin.Begin);
+
+            Pc.ResourceTracker.AddResource(ms);
+
+            InMsg.BodyPart.Data = ms;
+            InMsg.BodyPart.ContentType = "text/html";
         }
 
         #endregion

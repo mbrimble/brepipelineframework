@@ -2,7 +2,7 @@
 <brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
   <ruleset name="BREPipelineFramework.JSONPolicy">
     <version major="1" minor="1" description="" modifiedby="JC-BT2013R2VM\johannc" date="2015-06-28T22:59:59.5430308+00:00" />
-    <version major="1" minor="0" description="" modifiedby="JC-BT2013R2VM\johannc" date="2015-06-29T01:55:42.5125857+00:00" />
+    <version major="1" minor="0" description="" modifiedby="JC-BT2013R2VM\johannc" date="2015-06-30T08:54:45.0997418+00:00" />
     <configuration />
     <bindings>
       <class ref="ContentTypeEnum" class="ContentTypeEnum">
@@ -41,6 +41,58 @@
         <namespace>BREPipelineFramework.Helpers</namespace>
       </class>
     </bindings>
+    <rule name="Rcv_API" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <reference>
+              <vocabularylink uri="d892a25c-a516-4db9-b606-13c1f5954575" element="1ed7c5ef-ddbb-45e6-a655-7992b3b09f8d" />
+              <classref ref="string" />
+            </reference>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>Rcv_API</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="2adcad3d-29da-4a99-a753-ded63d920759" element="4f9730ab-3e95-4bad-bfc1-5bea6c218239" />
+          <classmember member="CacheAcceptHeader" sideeffects="true">
+            <classref ref="JSONMetaInstruction" />
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="f3fb93a9-fb39-4ae6-858e-b9a36b66d4f4" element="83373735-f898-4921-a3f5-39fe274c6acc" />
+          <classmember member="SetGlobalPropertySchemasContextProperty" sideeffects="true">
+            <classref ref="ContextMetaInstructions" />
+            <argument>
+              <constant>
+                <object classref="BizTalkGlobalPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABHQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtHbG9iYWxQcm9wZXJ0eVNjaGVtYUVudW0BAAAAB3ZhbHVlX18ACAIAAABJAAAACw==</object>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <string>true</string>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="ContextInstructionTypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAN0JSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuQ29udGV4dEluc3RydWN0aW9uVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAABAAAACw==</object>
+              </constant>
+            </argument>
+            <argument>
+              <constant>
+                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
     <rule name="Snd_API JSON" priority="0" active="true">
       <if>
         <and>
@@ -208,52 +260,70 @@
         </function>
       </then>
     </rule>
-    <rule name="Rcv_API" priority="0" active="true">
+    <rule name="Snd_API HTML" priority="0" active="true">
       <if>
-        <compare operator="equal">
-          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
-          <lhs>
-            <reference>
-              <vocabularylink uri="d892a25c-a516-4db9-b606-13c1f5954575" element="1ed7c5ef-ddbb-45e6-a655-7992b3b09f8d" />
-              <classref ref="string" />
-            </reference>
-          </lhs>
-          <rhs>
-            <constant>
-              <string>Rcv_API</string>
-            </constant>
-          </rhs>
-        </compare>
+        <and>
+          <or>
+            <compare operator="equal">
+              <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+              <lhs>
+                <reference>
+                  <vocabularylink uri="d892a25c-a516-4db9-b606-13c1f5954575" element="1ed7c5ef-ddbb-45e6-a655-7992b3b09f8d" />
+                  <classref ref="string" />
+                </reference>
+              </lhs>
+              <rhs>
+                <constant>
+                  <string>Snd_API</string>
+                </constant>
+              </rhs>
+            </compare>
+            <compare operator="equal">
+              <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+              <lhs>
+                <reference>
+                  <vocabularylink uri="d892a25c-a516-4db9-b606-13c1f5954575" element="1ed7c5ef-ddbb-45e6-a655-7992b3b09f8d" />
+                  <classref ref="string" />
+                </reference>
+              </lhs>
+              <rhs>
+                <constant>
+                  <string>Snd_API2</string>
+                </constant>
+              </rhs>
+            </compare>
+          </or>
+          <compare operator="equal">
+            <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+            <lhs>
+              <function>
+                <vocabularylink uri="2adcad3d-29da-4a99-a753-ded63d920759" element="28a4eb06-7f48-4b8e-82f2-5dc16c8140ea" />
+                <classmember member="AssessCachedAcceptHeader" sideeffects="true">
+                  <classref ref="JSONMetaInstruction" />
+                  <argument>
+                    <constant>
+                      <object classref="ContentTypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAFxCUkVQaXBlbGluZUZyYW1ld29yay5KU09OLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAKUJSRVBpcGVsaW5lRnJhbWV3b3JrLkpTT04uQ29udGVudFR5cGVFbnVtAQAAAAd2YWx1ZV9fAAgCAAAABQAAAAs=</object>
+                    </constant>
+                  </argument>
+                </classmember>
+              </function>
+            </lhs>
+            <rhs>
+              <constant>
+                <boolean>true</boolean>
+              </constant>
+            </rhs>
+          </compare>
+        </and>
       </if>
       <then>
         <function>
-          <vocabularylink uri="2adcad3d-29da-4a99-a753-ded63d920759" element="4f9730ab-3e95-4bad-bfc1-5bea6c218239" />
-          <classmember member="CacheAcceptHeader" sideeffects="true">
+          <vocabularylink uri="2adcad3d-29da-4a99-a753-ded63d920759" element="f38364ca-2e91-466a-b77c-ac5b8e540407" />
+          <classmember member="ExecuteXSLTTransform" sideeffects="true">
             <classref ref="JSONMetaInstruction" />
-          </classmember>
-        </function>
-        <function>
-          <vocabularylink uri="f3fb93a9-fb39-4ae6-858e-b9a36b66d4f4" element="83373735-f898-4921-a3f5-39fe274c6acc" />
-          <classmember member="SetGlobalPropertySchemasContextProperty" sideeffects="true">
-            <classref ref="ContextMetaInstructions" />
             <argument>
               <constant>
-                <object classref="BizTalkGlobalPropertySchemaEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAGpCUkVQaXBlbGluZUZyYW1ld29yay5TYW1wbGVJbnN0cnVjdGlvbnMsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj04M2VhYjBiMTY2NDcwZWJjBQEAAABHQlJFUGlwZWxpbmVGcmFtZXdvcmsuU2FtcGxlSW5zdHJ1Y3Rpb25zLkJpelRhbGtHbG9iYWxQcm9wZXJ0eVNjaGVtYUVudW0BAAAAB3ZhbHVlX18ACAIAAABJAAAACw==</object>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <string>true</string>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="ContextInstructionTypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAN0JSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuQ29udGV4dEluc3RydWN0aW9uVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAABAAAACw==</object>
-              </constant>
-            </argument>
-            <argument>
-              <constant>
-                <object classref="TypeEnum" encoding="base64">AAEAAAD/////AQAAAAAAAAAMAgAAAF9CUkVQaXBlbGluZUZyYW1ld29yay5IZWxwZXJzLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODNlYWIwYjE2NjQ3MGViYwUBAAAAJUJSRVBpcGVsaW5lRnJhbWV3b3JrLkhlbHBlcnMuVHlwZUVudW0BAAAAB3ZhbHVlX18ACAIAAAACAAAACw==</object>
+                <string>C:\BREPipelineFramewrok\BREPipelineFramework.BizTalk2013.R2\BREPipelineFramework.UnitTests\Sample Files\Input Files\HelloWorld.xslt</string>
               </constant>
             </argument>
           </classmember>

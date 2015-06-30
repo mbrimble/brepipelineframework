@@ -172,6 +172,7 @@
     <Folder Include="Sample Files\Output Files\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Sample Files\Expected Output FIles\HTMLOutput.html" />
     <Content Include="Sample Files\Expected Output FIles\XMLConvertedToJSONWithRootNotStripped.txt" />
     <Content Include="Sample Files\Expected Output FIles\XMLConvertedToJSONWithRootStripped.txt" />
     <Content Include="Sample Files\Expected Output FIles\JSONConvertedToXML.xml" />
@@ -327,6 +328,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Sample Files\Input Files\bretest.txt" />
+    <Content Include="Sample Files\Input Files\HelloWorld.xslt" />
     <Content Include="Sample Files\Input Files\JSONConvertedToXML.xml" />
     <Content Include="Sample Files\Input Files\NoNamespace.xml" />
     <Content Include="Sample Files\Input Files\SampleJSONWithLeadingWhitespace.txt" />

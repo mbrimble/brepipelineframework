@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
   <vocabulary id="2adcad3d-29da-4a99-a753-ded63d920759" name="BREPipelineFramework.JSONInstructions" uri="" description="">
-    <version major="1" minor="0" description="" modifiedby="JC-BT2013R2VM\johannc" date="2015-06-29T01:55:15.2813546+00:00" />
+    <version major="1" minor="0" description="" modifiedby="JC-BT2013R2VM\johannc" date="2015-06-30T02:15:49.9622599+00:00" />
     <vocabularydefinition id="784a4281-da21-427f-b0e6-db0d9b5158b9" name="DecodeJSON" description="">
       <bindingdefinition>
         <classmemberbindingdefinition member="DecodeJSONWithNamespaceSpecified" type="void">
@@ -51,6 +51,29 @@
       <formatstring language="en-US" string="(Assess whether the content type of the request message is {0})" delimiter="{[0-9]+}">
         <argument position="0">
           <valuedefinitionliteral type="BREPipelineFramework.JSON.ContentTypeEnum, BREPipelineFramework.JSON, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc" />
+        </argument>
+      </formatstring>
+    </vocabularydefinition>
+    <vocabularydefinition id="f38364ca-2e91-466a-b77c-ac5b8e540407" name="ExecuteXSLTTransform" description="">
+      <bindingdefinition>
+        <classmemberbindingdefinition member="ExecuteXSLTTransform" type="void">
+          <classinfo class="JSONMetaInstruction" instance="0">
+            <assembly>BREPipelineFramework.JSON, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83eab0b166470ebc</assembly>
+            <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\BREPipelineFramework.JSON\v4.0_1.0.0.0__83eab0b166470ebc\BREPipelineFramework.JSON.dll-->
+            <namespace>BREPipelineFramework.JSON</namespace>
+          </classinfo>
+          <argument position="0">
+            <valuedefinitionliteral type="string">
+              <string />
+            </valuedefinitionliteral>
+          </argument>
+        </classmemberbindingdefinition>
+      </bindingdefinition>
+      <formatstring language="en-US" string="Transform the message executing the XSLT file located at {0}" delimiter="{[0-9]+}">
+        <argument position="0">
+          <valuedefinitionliteral type="string">
+            <string />
+          </valuedefinitionliteral>
         </argument>
       </formatstring>
     </vocabularydefinition>
