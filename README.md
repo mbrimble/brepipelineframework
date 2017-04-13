@@ -1,5 +1,6 @@
 # brepipelineframework
-#Project Description
+
+Project Description
 The BizTalk BRE Pipeline Framework leverages the Business Rules Engine (BRE) to abstract away logic to be exercised in BizTalk pipelines thus catering for increased development flexibility and agility, especially when dealing with rapidly changing requirements, and easier deployments.  Note that this framework currently only works with BizTalk Server 2010, 2013, and 2013 R2.
 The design goals of the BRE Pipeline Framework are as below
 Abstract pipeline component logic into the BRE, allowing for logic to be changed at runtime without having to redeploy BizTalk artefacts. 
