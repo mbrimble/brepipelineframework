@@ -1,0 +1,187 @@
+<div class="wikidoc">
+<p><strong>How to install the BRE Pipeline Framework</strong></p>
+<p>Download the latest version of the installer and run it on your PC which has BizTalk Server 2010 or 2013&nbsp;installed on it. The installer will add the relevant assemblies to the .NET 4 GAC, will add the BREPipelineFrameworkComponent pipeline component
+ to the pipeline components folder, and will create the BRE Pipeline Framework folder in your 32-bit program files folder (so &quot;Program Files(x86)&quot; on a 64-bit machine, or &quot;Program Files&quot; on a 32-bit machine).&nbsp;</p>
+<p>Note that if you are installing a new version of the framework on a machine which is running a version older than 1.4.0 (this won't be a problem in version 1.4.0 or later)&nbsp;then you might have to shut down host instances in order for the installation
+ to complete.</p>
+<p>Open the Business Rules Engine Deployment Wizard (found in the Microsoft BizTalk Server 2010 folder in your start menu) and choose to import each of the vocabularies contained within the Vocabularies subfolder in the BRE Pipeline Framework program files
+ folder.&nbsp; You only need to install the latest version of each vocabulary unless older ones are required due to pre-existing BizTalk artefacts which depend on those versions.</p>
+<p>&nbsp;</p>
+<p><strong>How to use the BREPipelineFrameworkComponent Pipeline Component in a BizTalk Pipeline</strong></p>
+<p>In order to use the BREPipelineFrameworkComponent in a pipeline you will first need to add it to the pipeline toolbox in Visual Studio. Open (or choose to create) a send or receive pipeline in Visual Studio, hover your mouse over the toolbox on the left
+ hand side of the window, right click and click choose items. Navigate to the BizTalk Pipeline Components tab, tick the BREPipelineFrameworkComponent and click ok.</p>
+<p>Now drag the BREPipelineFrameworkComponent from the toolbox into the relevant stage of your pipeline (any stage except disasseble or assemble). You will need to set the relevant values for the below configuration properties on the component.</p>
+<ul>
+<li>ApplicationContext (Optional) - This can be any string which you can use in your business rules to selectively choose whether that rule should fire or not when the policy is called by a specific pipeline. Typically this should be the name of the pipeline,
+ but you could be more prescriptive and use the name of the pipeline and the stage of the pipeline in case you were going to use the BREPipelineFrameworkComponent in multiple stages of your pipeline.
+</li><li>Enabled - A boolean value which instructs whether the pipeline component should be active or not. If set to false then the pipeline component will behave in a pass through manner.&nbsp; The default value is true.
+</li><li>ExecutionPolicy (Optional) - The name of the BRE policy which contains all the logic used to assess and manipulate the message being processed by the pipeline.
+</li><li>InstructionLoaderPolicy (Optional) - The name of the BRE&nbsp;policy that allows you to conditionally load facts into your ExecutionPolicy in advanced used cases as below in addition to some other functionality.
+<ul>
+<li>Custom .NET based facts - The InstructionLoaderPolicy can be used to assert custom metainstruction classes into the ExecutionPolicy in case that you want to use custom .NET based vocabularies in your ExecutionPolicy in addition to out of the box vocabularies.&nbsp;
+</li><li>XML based facts - The InstructionLoaderPolicy can also be used to assert TypedXmlDocument facts into the ExecutionPolicy so you can make use of XML based vocabularies.
+</li><li>SQL based facts - The InstructionLoaderPolicy can also be used to assert SQL DataConnection facts into the ExecutionPolicy so you can make use of SQL based vocabularies.&nbsp;
+</li><li>Override ExecutionPolicy - The InstructionLoaderPolicy can be used to override which ExecutionPolicy gets called, which can help you to avoid building very large BRE policies for ExecutionPolicies, and potentially deliver you better performance by eliminating
+ the evaluation of unnecessary conditions. </li><li>Override ApplicationContext - The InstructionLoaderPolicy can be used to override the value of the ApplicationContext which is passed into the ExecutionPolicy, providing for more flexibility in complex use cases.
+</li></ul>
+</li><li>RecoverableInterchangeProcessing - This is a boolean value that specifies whether the pipeline component should behave in a recoverable interchange fashion or not.&nbsp; If&nbsp;a message has been debatched in a pipeline component prior to the BREPipelineFrameworkComponent
+ and one of the debatched messages fail, if this parameter is set to true then only that one debatched message fails.&nbsp; If the parameter value is set to false (default) then the entire message fails.
+</li><li>TrackingFolder - If a folder name is specified in this parameter then the rules engine debug tracing data will be written to this folder for both the InstructionLoaderPolicy and ExecutionPolicy, helping developers to debug their BRE policies.&nbsp; The
+ BizTalk host instance must have write access over the folder in question. </li></ul>
+<p>The pipeline can now be deployed to the BizTalk runtime.&nbsp; You will need to publish and deploy BRE policies with names matching those you set for the InstructionLoaderPolicy and ExecutionPolicy in the pipeline component parameters.&nbsp; Note that the
+ pipeline component will always choose the latest version of said policies that is currently deployed (though note that BizTalk caches policies and renews the cache at regular intervals, so you might not see new rules take effect immediately unless you restart
+ the rule engine update service).</p>
+<p>&nbsp;</p>
+<p><strong>Summary explanation of out of the box vocabularies</strong></p>
+<p>After completing the installation instructions you should three BRE Pipeline Framework related vocabularies (you might potentially have multiple versions of each one) published to the rules engine database that you can view in the Business Rules Composer
+ as below.</p>
+<ul>
+<li>BREPipelineFramework - This vocabulary for the most part can only be used in InstructionLoaderPolicy BRE policies.&nbsp; The one exception to this rule is the ApplicationContext vocabulary definition which can be used in ExecutionPolicy BRE policies as
+ well, and can be used in rules to evaluate the value of the ApplicationContext on the pipleine properties.&nbsp; Other vocabulary definitions that can only be used in InstructionLoaderPolicy BRE policies&nbsp;can be used to inspect the BizTalk message (through
+ regex matching, string finds, XPaths) for condition evaluation, and to assert .NET, XML, or SQL based facts, or to override the ExecutionPolicy to be called, or to override the ApplicationContext to be passed to the ExecutionPolicy.
+</li><li>BREPipelineFramework.SampleInstructions.ContextInstructions - This vocabulary can only be used in ExecutionPolicy BRE policies, and contains vocabulary definitions to get or set all BizTalk out of the box context properties through enumeration, to get or
+ set custom context properties, and to remove context properties. </li><li>BREPipelineInstructions.SampleInstructions.HelperInstructions - This vocabulary provides helper type functionality to evaluate and manipulate message content and context, as well as common helper functionality such as string concatenation and formatting,
+ date time rounding, guid generation, get the current date time, or throw an exception with a custom message.
+</li></ul>
+<p>&nbsp;</p>
+<p><strong>How to setup an ExecutionPolicy</strong></p>
+<p>An ExecutionPolicy is used to assess rule conditions and then to carry out actions which were specified by the rules that evaluated succesfully. The execution policy can make use of any vocabulary definitions in the out of the box BRE vocabularies which
+ should suffice in most simple message context/content assessment/manipulation scenarios.</p>
+<p>In more advanced scenarios&nbsp;one can also make use of&nbsp;BRE policies with custom .NET, SQL, or&nbsp;XML based vocabulary definitions if their corresponding facts were asserted into the ExecutionPolicy from within the InstructionLoaderPolicy.&nbsp;
+ InstructionLoaderPolicy BRE policies are only required for advanced scenarios.</p>
+<p>Assuming you only have simple requirements that only dicate usage of an ExecutionPolicy, create a new BRE policy using the Business Rules Composer and name it appropriately such that it matches the ExecutionPolicy parameter value on your pipeline. Create
+ a rule, and in the conditions section of the rule you can setup predicates which evaluate conditions based on applicable BRE vocabulary definitions.</p>
+<p><img src="http://www.codeplex.com/Download?ProjectName=brepipelineframework&DownloadId=571930" alt="" width="914" height="135"></p>
+<p>In the actions section of the rule you can specify what actions you want to carry out. In the below example the value BREPipelineFramework.csv is written to the ReceivedFileName context property (using the GetCustomContextProperty vocabulary definition contained
+ within the BREPipelineFramework.SampleInstructions.ContextInstructions vocabulary).</p>
+<p><img src="http://www.codeplex.com/Download?ProjectName=brepipelineframework&DownloadId=571931" alt="" width="1277" height="85"></p>
+<p>An ExecutionPolicy policy can be made up of multiple rules, each one with different sets of conditions and actions. An ExecutionPolicy might also be shared between multiple pipelines, with rules that aren't common to all pipelines having conditions based
+ on ApplicationContext.</p>
+<p>&nbsp;</p>
+<p><strong>Using the out of the box BREPipelineFramework vocabulary definitions</strong></p>
+<p>Below are some examples (this list is not all-inclusive) of usage of vocabulary definitions in the BREPipelineFramework BRE vocabulary (which can only be used in InstructionLoaderPolicy BRE policies except for ApplicationContext).</p>
+<ul>
+<li>AddMetaInstruction - This definition allows you to instantiate and assert a custom .NET fact into the ExecutionPolicy so that you can use corresponding .NET based vocabulary definitions in the ExecutionPolicy.
+</li><li>AddSQLDataConnection / AddSQLDataConnectionFromSSO - These definitions allow you to assert a SQL DataConnection based fact into the ExecutionPolicy so that you can use corresponding&nbsp;SQL based vocabulary definitions in the ExecutionPolicy.&nbsp; You
+ can add as many SQL DataConnections as required. </li><li>SetTypedXmlDocument - This definition allows you to assert the current BizTalk message as an&nbsp;XML fact into the ExecutionPolicy so that you can use corresponding&nbsp;XML based vocabulary definitions in the ExecutionPolicy.
+</li><li>ApplicationContext&nbsp;- This definition fetches the value of the ApplicationContext parameter set on the calling pipeline component.
+</li><li>CheckIfRegexEvaluatesInMessage - This definition returns a boolean value indicating whether a specified regular expression finds a match in the BizTalk message.
+</li><li>CheckIfStringExistsInMessage - This definition returns a boolean value indicating whether a specified string is found in the BizTalk message.
+</li><li>GetMessageBodyLength - This definition returns the length of the message body.
+</li><li>GetMessageRootNodeName / GetMessageRootNodeNamespace&nbsp;- These definitions returns the root node name/namespace of the BizTalk message assuming that the message is an XML message.&nbsp; If the BTS.MessageType context property is known then this definition
+ will extract the value from that, otherwise it will run an XPATH statement against the message which is slower.
+</li><li>OverrideApplicationContext - This definition allows you to override the ApplicationContext value set on the pipeline component properties when evaluated within the ExecutionPolicy.&nbsp; Note that the override will not apply for the remainder of the InstructionLoaderPolicy's
+ execution. </li><li>OverrideExecutionPolicy - This definition allows you to override the&nbsp;ExecutionPolicy value set on the pipeline component properties thus allowing for other ExecutionPolicy BRE policies to be called on.
+</li><li>ReturnFirstRegexMatch - This definition will return a string that is the first match for a given regular expression against the BizTalk message.
+</li><li>ReturnRegexMatchByIndex - This definition will return a string that is the match at the given index for a given regular expression against the BizTalk message.
+</li></ul>
+<p>&nbsp;</p>
+<p><strong>Using the out of the box BREPipelineFramework.SampleInstructions.ContextInstructions vocabulary definitions</strong></p>
+<p>Below are some examples (this list is not all-inclusive) of usage of vocabulary definitions in the BREPipelineFramework.SampleInstructions.ContextInstructions BRE vocabulary.</p>
+<ul>
+<li>Get&lt;XXX&gt;ContextProperty - These are a collection of definitions that allow you to get the context property values from the message being processed, the&nbsp;context properties being from&nbsp;any of&nbsp;the major out of the box BizTalk property schemas.&nbsp;
+ There is a seperate definition for each of the following major property schema namespaces -
+<strong>BTF2, BTS, EDI, EdiIntAS, EdiOverride, ErrorReport, FILE, FTP, HTTP, LEGACY, MessageTracking, MIME, MSMQT, POP3, SMTP, SOAP, SQL, WCF, WSS, XLANGsBTXEngine, and XMLNORM</strong>.&nbsp; These definition allow&nbsp;you to choose the relevant context property
+ within the contained property schema namespace from a drop down box containing a list of all the supported context properties, thus removing the need for the implementer to know the names of the context property names and namespaces, and also removing the
+ chance of typos.&nbsp; If the context property is not found on the message you can specify if the return value should be blank (or the default for whatever .NET type the property corresponds to) or if an exception should be thrown.
+</li></ul>
+<p><img src="http://www.codeplex.com/Download?ProjectName=brepipelineframework&DownloadId=571935" alt="" width="610" height="36"></p>
+<ul>
+<li>GetCustomContextProperty - This definition allows you to access any context properties on the message being processed by the pipeline by specifying the property name and namespace of the property. If the context property is not found you can specify if
+ the return value should be blank (or the default for whatever .NET type the property corresponds to) or if an exception should be thrown.
+</li></ul>
+<p>&nbsp;<img src="http://www.codeplex.com/Download?ProjectName=brepipelineframework&DownloadId=571936" alt="" width="762" height="32"></p>
+<ul>
+<li>RemoveCustomContextProperty - This definition allows you to remove any supported context property (some out of the box context properties can't be removed) from the message being processed by the pipeline by specifying the name and namespace of the property
+ to be removed. </li></ul>
+<p><img src="http://www.codeplex.com/Download?ProjectName=brepipelineframework&DownloadId=571938" alt=""></p>
+<ul>
+<li>Set&lt;XXX&gt;ContextProperty - These are a collection of definitions that allow you to set the context property values on the message being processed, the context properties being from any of the major out of the box BizTalk property schemas. There is
+ a seperate definition for each of the following major property schema namespaces -
+<strong>BTF2, BTS, EDI, EdiIntAS, EdiOverride, ErrorReport, FILE, FTP, HTTP, LEGACY, MessageTracking, MIME, MSMQT, POP3, SMTP, SOAP, SQL, WCF, WSS, XLANGsBTXEngine, and XMLNORM</strong>.&nbsp; These definition allow you to choose the relevant context property
+ within the contained property schema namespace from a drop down box containing a list of all the supported context properties, thus removing the need for the implementer to know the names of the context property names and namespaces, and also removing the
+ chance of typos. These definitions allow you to set any value (remember that this value doesn't have to be static, you can use vocabularies to dynamically set the value as well) to the relevant context properties.&nbsp; You can also choose whether you want
+ to promote the context property or just write the value to it. </li></ul>
+<p><img src="http://www.codeplex.com/Download?ProjectName=brepipelineframework&DownloadId=571939" alt=""></p>
+<ul>
+<li>SetCustomContextProperty - This definition allows you to set any value to any context property, the property being specified with the property name and namespace and by choosing the .NET type of the property with a drop down. You can also choose whether
+ you want to promote the context property or just write the value to it. </li></ul>
+<p><img src="http://www.codeplex.com/Download?ProjectName=brepipelineframework&DownloadId=571942" alt=""></p>
+<ul>
+<li>SetCustomContextPropertyFromSSO - This definition allows you to set a value that is read in from a specified SSO key in a specified SSO application to any context property, the property being specified with the property name and namespace and by choosing
+ the .NET type of the property with a drop down. You can also choose whether you want to promote the context property or just write the value to it.
+</li></ul>
+<p><img src="http://www.codeplex.com/Download?ProjectName=brepipelineframework&DownloadId=571943" alt=""></p>
+<ul>
+<li>SetCustomContextPropertyFromXPathResult - This definition allows you to set the resulting value / node name / node namespace of an XPath expression run against the message (you can choose whether to return an exception or not if the XPath expression does
+ not evaluate) to any context property, the property being specified with the property name and namespace and by choosing the .NET type of the property with a drop down. You can also choose whether you want to promote the context property or just write the
+ value to it. Using this definition against a message multiple times will still only result in the XML document being loaded into memory once.
+</li></ul>
+<p><img src="http://www.codeplex.com/Download?ProjectName=brepipelineframework&DownloadId=571945" alt="">&nbsp;</p>
+<p><strong>Using the out of the box BREPipelineFramework.SampleInstructions.HelperInstructions vocabulary definitions</strong></p>
+<p>Below are some examples (this list is not all-inclusive) of usage of vocabulary definitions in the BREPipelineFramework.SampleInstructions.HelperInstructions BRE vocabulary.&nbsp;</p>
+<ul>
+<li>GenerateGUID - This definition generates a random GUID. </li><li>GetCurrentDateTime - This definition gets the current date and time, allowing you to specify the format it should be fetched in.
+</li><li>GetFileExtension - This definition returns the file extension for a specified filename.
+</li><li>GetLowercaseString - This definition converts the string parameter to lowercase.
+</li><li>GetStringLength - This definition returns the length of a string. </li><li>GetUppercaseString - This definition converts the string parameter to uppercase.
+</li><li>GetXPathResult - This definition returns the resulting value / node name / node namespace of an XPath Expression. It allows you to specify whether an exception should be thrown if the expression doesn't evaluate.
+</li><li>ReplaceSubstring - This definition allows you to replace a substring in a given string with another string.
+</li><li>RoundCurrentTime - This definition allows you to round the current time up to a given interval, also allowing you to specify the format the time should be returned in. This can be quite handy for non-sequential convoy type batching scenarios.
+</li><li>StringContains - This definition checks whether a string contains the specified substring.
+</li><li>ValidateStringLength - This definition throws an exception if the length of a string does not exactly match a specified value. Since this defintion returns a void it is really only intended for usage in the Action section of a rule.
+</li></ul>
+<p>&nbsp;</p>
+<p><strong>Using XML based vocabulary definitions</strong></p>
+<p>XML based vocabulary definitions corresponding to the BizTalk message passing through the executing pipeline can be used in ExecutionPolicy BRE policies only, but must first be setup in an InstructionLoaderPolicy BRE policy.</p>
+<p>Rules can be setup in the InstructionLoaderPolicy in which conditions to check the message type based on the root node name and namespace are evaluated, and based on results the appropriate TypedXmlDocument type can be asserted into the ExecutionPolicy.
+ These conditions can be based on the GetMessageRootNodeName and GetMessageRootNodeNamespace vocabulary definitions in the BREPipelineFramework vocabulary.</p>
+<p>The action in these rules would make use of the SetTypedXmlDocument vocabulary definition in the BREPipelineFramework vocabulary, in which you would need to pass in the fully qualified .NET type corresponding to the schema in question.</p>
+<p>Once you've done this you can then make use of XML based vocabularies in your ExecutionPolicy just as you would with a BRE policy being called from within an orchestration.</p>
+<p>&nbsp;</p>
+<p><strong>Using SQL based vocabulary definitions</strong></p>
+<p>SQL based vocabulary definitions can be used in ExecutionPolicy BRE policies only, but first must be setup in an InstructionLoaderPolicy BRE policy, with one fact needing to be asserted per database table which will be evaluated or updated.</p>
+<p>The AddSQLDataConnection or AddSQLDataConnectionFromSSO vocabulary definitions can be used in InstructionLoaderPolicy rule actions to setup a SQL DataConnection object. The AddSQLDataConnection vocabulary definition requires you to specify a connection string,
+ the name of the database, and the name of the table in question. The AddSQLDataConnectionFromSSO vocabulary definition works in the same manner except it fetches the connection string from the nominated SSO config store (note that the BizTalk host instance
+ executing the pipeline must have access to this config store) which is handy in cases where you can't use integrated security and don't want to store credentials in your BRE policies.</p>
+<p>Once you've done this you can then make use of SQL based vocabularies in your ExecutionPolicy just as you would with a BRE policy being called from within an orchestration.</p>
+<p>&nbsp;</p>
+<p><strong>Overview on using custom .NET based vocabulary definitions</strong></p>
+<p>The BRE Pipeline Framework out of the box vocabuary definitions in the BREPipelineFramework.SampleInstructions.ContextInstructions and BREPipelineInstructions.SampleInstructions.HelperInstructions make use of an extensible framework which make us of MetaInstructions
+ and Instructions.&nbsp;</p>
+<p>It is possible to extend the framework by writing your own MetaInstruction and Instruction classes in assemblies which should be deployed to the GAC, creating vocabulary definitions that correspond to public methods on your MetaInstructions, and then using
+ the AddMetaInstruction vocabulary definition in the BREPipelineFramework vocabulary in InstructionLoaderPolicy BRE Policies which will allow you to use the your custom vocabularies in the ExecutionPolicy.</p>
+<p>A MetaInstruction is a class that derives from the BREPipelineFramework.MetaInstructionBase base class in the BREPipelineFramework assembly which is provided as part of the framework. A MetaInstruction is composed of helper methods which are intended to
+ be accessed from within a BRE policy. These methods could be used to access context information within a BizTalk message or could simply be Helper type methods such as one to check whether a string contains a given substring. A MetaInstruction also contains
+ a collection of Instructions and optionally a set of methods that are used to instantiate an instruction and add it to the collection.</p>
+<p>An Instruction is a class that implements the BREPipelineFramework.IInstruction interface in the BREPipelineFramework assembly which is provided as part of the framework. It must implement a method called Execute which performs the logic required by that
+ Instruction. Such logic would typically be an action that would modify something about a BizTalk message such as it's context or content. An example would be to promote a value into the BTS.DestinationPartyName context property.</p>
+<p>The MetaInstructionBase class also contains an overridable execute method which will perform the execute method on all contained instructions.&nbsp; The execute method on MetaInstruction classes will always be automatically called on after the ExecutionPolicy
+ completes.</p>
+<p>The below sections explain how you can write your own custom Instructions and MetaInstructions.</p>
+<p>&nbsp;</p>
+<p><strong>Writing your own custom Instruction</strong></p>
+<p>Create a new .NET class library type project using .NET 4.0 and reference the BREPipelineFramework.dll in the BRE Pipeline Framework\Bin folder in your program files folder (you can copy it to a local libraries folder in your solution folder if you want).
+ The project will need to be signed and added to the GAC once it has been completed.&nbsp;You will also find a lot of handy helper methods in BREPipelineFramework.Helpers.dll and BREPipelineFramework.SampleInstructions.dll also located in the BRE Pipeline Framework\Bin
+ folder in your program files folder and might want to add references to these assemblies as well.</p>
+<p>Create a new class and choose to implement the BREPipelineFramework.IBREPipelineInstruction interface. Create the appropriate properties that are required by your class and create as many constructors as you want. Implement the Execute(ref IBaseMessage inmsg,
+ IPipelineContext pc) method which is dictated by the IBREPipelineInstruction interface such that it manipulates your message in whatever way you want.</p>
+<p><span style="font-family:Consolas; color:#2b91af; font-size:x-small"><span style="font-family:Consolas; color:#2b91af; font-size:x-small"><span style="font-family:Consolas; color:#2b91af; font-size:x-small">&nbsp;</span></span></span></p>
+<p><strong>Writing your own custom MetaInstruction</strong></p>
+<p>Create a new .NET class library type project using .NET 4.0 and reference the BREPipelineFramework.dll in the BRE Pipeline Framework\Bin folder in your program files folder (you can copy it to a local libraries folder in your solution folder if you want).
+ Also reference the project that contains the instructions you want to work with, or optionally you can combine your Instructions and MetaInstructions into the same project. The project will need to be signed and added to the GAC once it has been completed.</p>
+<p>Create a new class and choose to inherit from the BREPipelineFramework.BREPipelineMetaInstructionBase base class. If you are going to specify constructors for this class then ensure that you specify a no-parameter constructor since that is how this class
+ will be instantiated by the InstructionLoaderPolicy.</p>
+<p>Create as many methods as you want to use within the BRE. These can be simple methods such as those contained within the out of the box BREPipelineFramework.SampleInstructions.MetaInstructions.HelperMetaInstructions class which are fully self contained.
+ Alternatively they can be methods which are used to instantiate Instructions and add them to the collection held by the MetaInstruction (do this by calling the base.InstructionCollection.Add(Instruction) method within your MetaInstruction) which will be executed
+ after the ExecutionPolicy has completed like the majority of the methods contained within the out of the box BREPipelineFramework.SampleInstructions.MetaInstructions.ContextMetaInstructions class.</p>
+<p>If you want to return an exception from any of your methods then it's preferable that you set the base.BREException property to your exception rather than throwing it, as throwing it would return a generic error to the pipeline saying there was an exception
+ encountered exercising a rules policy whereas setting the base property will instruct the pipeline component to throw the error so that the error details are surfaced properly.</p>
+<p>Once you have setup your MetaInstruction classes you will want to deploy the assembly to the GAC. You can now open the Business Rules Composer and create vocabularies for each of the methods exposed by your MetaInstruction. As long as you have specified
+ that your class should be instantiated in your InstructionLoaderPolicy you can make use of the vocabulary definitions in your ExecutionPolicy.</p>
+<p>&nbsp;</p>
+<p><strong>Using .NET based vocabulary definitions based on custom MetaInstruction classes</strong></p>
+<p>Use the AddMetaInstruction vocabulary definition from the BREPipelineFramework vocabulary to instantiate instances of your custom MetaInstruction classes in actions in your InstructionLoaderPolicy, and to then assert them into your ExecutionPolicy.&nbsp;
+ You will need to specify the fully qualified class name and fully qualified assembly name that contains that class as parameter values into the AddMetaInstruction vocabulary definition.</p>
+<p>All MetaInstructions that are used by the BRE Pipeline Framework must be in the GAC. In order to find out the fully qualified assembly name you can open a visual studio command prompt and type in - Gacutil -l &lt;assembly name without the .dll extension&gt;.</p>
+</div><div class="ClearBoth"></div>
